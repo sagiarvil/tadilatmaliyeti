@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f8f4">
+  <meta name="description" content="Banyo, mutfak, ev tadilatı ve boya badana maliyetini hesaplayın. İş kapsamını netleştirin, tadilat teklifinizi hazırlayın. Ücretsiz tadilat planlama aracı.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Tadilat Teklifi | Tadilata başlamadan bütçeni gör">
+  <meta property="og:description" content="Tadilat bütçesini planla, iş kapsamını belirle ve teklif talebini hazırla.">
+  <meta property="og:url" content="https://tadilatteklifi.com/">
+  <link rel="canonical" href="https://tadilatteklifi.com/">
+  <title>Tadilat Teklifi | Banyo, Mutfak ve Ev Tadilatı Maliyet Hesaplama</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#202725;--muted:#6e7772;--paper:#f9f8f4;--cream:#f0eee7;--white:#fff;--line:#e1e1d9;--orange:#f26842;--orange-dark:#da4b28;--blue:#4261cd;--yellow:#f9ca45;--green:#4e8b70;--pale-orange:#fff0e8;--pale-blue:#eaf0ff;--pale-green:#e8f3e8;--pale-yellow:#fff4c9;--r:18px;--radius-lg:25px;--shadow:0 20px 60px rgba(29,39,35,.07)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}body.modal-open{overflow:hidden}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}svg{display:block}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #2e65e6;outline-offset:3px}h1,h2,h3,p{margin-top:0}.wrap{width:min(1190px,calc(100% - 54px));margin:auto}.skip{position:absolute;top:-100px;left:16px;padding:10px;background:#fff;z-index:1000}.skip:focus{top:12px}.announcement{min-height:32px;display:flex;align-items:center;justify-content:center;gap:10px;background:#24312b;color:#fff;font-size:11px;font-weight:700;letter-spacing:.11em;text-align:center;padding:7px 16px}.announcement .dot{height:6px;width:6px;background:var(--yellow);border-radius:100%}.header{position:sticky;top:0;z-index:50;background:rgba(249,248,244,.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav{height:79px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{display:inline-flex;align-items:center;gap:11px;white-space:nowrap}.logomark{width:35px;height:35px;display:grid;grid-template-columns:1fr 1fr;gap:3px;transform:rotate(-7deg)}.logomark span{border-radius:3px}.logomark span:nth-child(1){background:var(--orange)}.logomark span:nth-child(2){background:var(--blue)}.logomark span:nth-child(3){background:var(--green)}.logomark span:nth-child(4){background:var(--yellow)}.logoname{font-family:Manrope,sans-serif;font-weight:800;font-size:20px;letter-spacing:-.07em}.logoname strong{font-weight:800;color:var(--orange)}.logoname small{font-size:13px;letter-spacing:-.05em;color:#808780}.desktop-nav{display:flex;align-items:center;gap:29px}.desktop-nav>a{font-size:13px;font-weight:700;color:#4f5752;transition:color .15s}.desktop-nav>a:hover{color:var(--orange-dark)}.nav-action{background:var(--ink);color:white;border:none;border-radius:12px;padding:13px 17px;font-weight:800;font-size:12px;white-space:nowrap;display:flex;gap:10px;align-items:center;justify-content:center}.nav-action:hover{background:#394942}.mobile-menu-btn{display:none;background:none;border:1px solid var(--line);height:40px;width:44px;border-radius:10px;place-items:center}.mobile-nav{display:none;border-top:1px solid var(--line);padding:14px 0 20px;gap:6px}.mobile-nav a{display:block;padding:12px 5px;font-size:14px;font-weight:800}
+    .hero{position:relative;overflow:hidden;padding:78px 0 89px}.hero:before{content:"";position:absolute;z-index:0;right:-110px;top:10px;width:370px;height:370px;border:1px solid #e9e6dc;border-radius:50%;pointer-events:none}.hero-inner{display:grid;grid-template-columns:1.04fr .96fr;gap:52px;align-items:center;position:relative;z-index:1}.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:800;letter-spacing:.13em;color:#5c655f;text-transform:uppercase}.eyebrow:before{content:"";display:block;width:29px;height:3px;background:var(--orange)}.hero h1{font-family:Manrope,sans-serif;font-size:clamp(44px,5.1vw,71px);line-height:1.12;letter-spacing:-.076em;font-weight:800;margin:22px 0 22px}.hero h1 .underline{position:relative;z-index:0;white-space:nowrap}.hero h1 .underline:after{content:"";position:absolute;height:14px;background:#f8d45c;left:-3px;bottom:4px;right:-8px;z-index:-1;transform:rotate(-1deg)}.hero-sub{font-size:17px;line-height:1.8;color:#647069;max-width:510px;margin-bottom:28px}.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:12px;padding:16px 21px;font-weight:800;font-size:14px;border:1px solid transparent;transition:transform .16s,background .16s,box-shadow .16s;min-height:52px;line-height:1.2;text-align:center}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--orange);color:white;box-shadow:0 7px 0 rgba(174,65,42,.08)}.btn-primary:hover{background:var(--orange-dark)}.btn-outline{border-color:#cfd4ce;background:transparent;color:#34413a}.btn-outline:hover{background:#fff}.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:#37463e}.under-hero{margin-top:36px;display:flex;gap:14px;align-items:center;color:#7a847c;font-size:12px;line-height:1.5}.mini-icons{display:flex}.mini-icons i{display:grid;place-items:center;width:34px;height:34px;border:2px solid var(--paper);background:var(--pale-yellow);border-radius:50%;font-style:normal;color:#34413a;font-weight:900;margin-right:-9px;font-size:13px}.mini-icons i:nth-child(2){background:#dbe8fc}.mini-icons i:nth-child(3){background:#deeee2}
+    .hero-panel-wrap{position:relative}.accent-square{position:absolute;right:-22px;bottom:-21px;background:var(--yellow);width:120px;height:120px;border-radius:22px;transform:rotate(11deg);z-index:-1}.hero-panel{padding:27px;background:white;border:1px solid #e8e5dc;border-radius:26px;box-shadow:0 25px 75px rgba(23,33,27,.095);position:relative}.panel-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);padding-bottom:19px;margin-bottom:23px}.panel-top .panel-kicker{font-size:11px;letter-spacing:.13em;font-weight:800;color:var(--orange-dark)}.panel-top h2{font-family:Manrope,sans-serif;font-size:23px;letter-spacing:-.045em;line-height:1.3;margin:6px 0 0}.panel-icon{width:46px;height:46px;background:var(--pale-orange);border-radius:13px;display:grid;place-items:center;color:var(--orange-dark);flex:none}.field-label{font-size:11px;font-weight:800;display:block;margin-bottom:9px;color:#414b43;letter-spacing:.025em}.service-pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.service-pill{background:#f6f6f2;border:1px solid transparent;padding:12px 8px;display:flex;gap:6px;justify-content:center;align-items:center;border-radius:10px;font-size:12px;font-weight:800;color:#59645c;min-height:42px}.service-pill[aria-pressed=true]{background:var(--pale-orange);border-color:#faab90;color:#a93d22}.hero-panel .fields{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:20px}.field{min-width:0}.control{width:100%;background:#f9faf7;border:1px solid #dedfd8;border-radius:11px;height:49px;padding:0 14px;color:#28322d;font-size:14px;outline:none}.control:focus{border-color:var(--blue);background:white;box-shadow:0 0 0 3px rgba(66,97,205,.09)}.control::placeholder{color:#a4aaa3}.helper{color:#818a82;font-size:11px;line-height:1.55}.panel-submit{display:flex;justify-content:space-between;gap:10px;margin-top:17px;align-items:center}.panel-submit .helper{max-width:155px}.panel-submit .btn{flex:1}.form-error{color:#b53d27;font-size:12px;font-weight:700;margin-top:10px;min-height:0}.card-decoration{position:absolute;top:-20px;right:39px;width:97px;height:23px;background:var(--blue);transform:rotate(9deg);z-index:-1;border-radius:3px}
+    .trustline{border-block:1px solid var(--line);background:#f5f3ed}.trust-inner{display:grid;grid-template-columns:1fr 1fr 1fr}.trust-item{display:flex;align-items:center;gap:16px;padding:23px 27px}.trust-item+.trust-item{border-left:1px solid #e4e1d7}.trust-num{font-family:Manrope,sans-serif;font-size:26px;color:#b9beb7;font-weight:800}.trust-item strong{font-size:14px;display:block}.trust-item small{font-size:12px;color:#7a837d;display:block;margin-top:3px}
+    section.block{padding:95px 0}.section-header{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:36px}.section-header h2{font-family:Manrope,sans-serif;font-size:clamp(32px,3.5vw,47px);line-height:1.16;letter-spacing:-.06em;margin:12px 0 0;max-width:640px}.section-note{max-width:330px;color:#78817b;line-height:1.75;font-size:14px;margin:0}.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.service-card{position:relative;text-align:left;border:1px solid #e8e6df;border-radius:20px;background:#fff;padding:24px;min-height:244px;transition:transform .18s,box-shadow .18s;display:flex;flex-direction:column}.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.service-card:nth-child(1){background:#fff3ec}.service-card:nth-child(2){background:#e9efff}.service-card:nth-child(3){background:#f0f1df}.service-card:nth-child(4){background:#eef4ed}.service-card:nth-child(5){background:#fff5db}.service-card:nth-child(6){background:#f4ecf5}.card-topline{display:flex;justify-content:space-between;align-items:flex-start}.service-icon{width:58px;height:58px;background:rgba(255,255,255,.75);display:grid;place-items:center;border-radius:15px}.service-icon svg{width:29px;height:29px;stroke:#2b3931;stroke-width:1.8;fill:none;stroke-linejoin:round;stroke-linecap:round}.service-index{font-weight:800;color:#89918a;font-size:11px}.service-card h3{font-family:Manrope,sans-serif;font-size:22px;letter-spacing:-.04em;margin:35px 0 8px}.service-card p{font-size:12px;color:#6a746c;line-height:1.6;margin:0 0 15px;max-width:230px}.service-link{margin-top:auto;font-weight:800;font-size:12px;display:inline-flex;align-items:center;gap:7px;color:#384b3f}
+    .calculator-band{background:#232f2a;color:#fff;position:relative;overflow:hidden}.calculator-band:before{content:"";position:absolute;width:520px;height:520px;border:1px solid #ffffff12;border-radius:50%;right:-180px;top:-270px}.calculator-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:52px;align-items:start;padding:84px 0}.cal-left{padding-top:23px}.cal-left .eyebrow{color:#c6d2c5}.cal-left h2{font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(38px,4vw,56px);line-height:1.12;letter-spacing:-.065em;margin:23px 0}.cal-left h2 em{font-style:normal;color:#ffc857}.cal-left p{color:#bac7be;font-size:15px;line-height:1.9;max-width:400px}.cal-points{display:grid;gap:18px;margin:35px 0}.cal-point{display:flex;gap:12px;align-items:center;font-size:13px;color:#e4e8e0;font-weight:700}.cal-point i{border:1px solid #65796d;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;font-style:normal;color:#ffc857}.calc-card{border-radius:23px;background:#fff;color:var(--ink);padding:28px;box-shadow:0 22px 65px #00000016}.calc-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:23px}.calc-card-head h3{font-family:Manrope,sans-serif;margin:0;font-size:20px;letter-spacing:-.05em}.status-tag{background:#f1f5ee;color:#526c57;border-radius:50px;font-size:10px;padding:7px 10px;font-weight:800}.calc-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}.calc-fields .wide{grid-column:1/-1}.choice-group{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.choice-button{border:1px solid #e0e3dc;background:#fbfbf8;border-radius:11px;min-height:46px;font-size:11px;font-weight:800;padding:9px 6px;color:#6e7970}.choice-button[aria-pressed=true]{border-color:#f5aa91;background:#fff0e7;color:#a84729}.result-box{margin-top:22px;background:#f7f7f1;border-radius:15px;padding:22px}.result-label{font-size:11px;font-weight:800;text-transform:uppercase;color:#7b887c;letter-spacing:.09em}.result-value{font-family:Manrope,sans-serif;font-size:clamp(25px,3vw,35px);font-weight:800;letter-spacing:-.055em;margin:11px 0 8px}.result-sub{color:#637066;line-height:1.6;font-size:12px}.calc-divider{border:none;border-top:1px solid #e4e6dd;margin:17px 0}.result-meta{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;color:#677268;font-size:12px}.result-meta strong{color:#2d3d33;text-align:right}.calc-actions{display:grid;grid-template-columns:1fr auto;gap:9px;margin-top:18px}.calc-actions .btn{font-size:12px;padding:13px 12px;min-height:48px}.calc-disclaimer{margin-top:15px;line-height:1.7;font-size:10px;color:#858e86}.calc-disclaimer a{text-decoration:underline;text-underline-offset:2px}.calc-more{border:0;background:transparent;text-decoration:underline;font-size:11px;font-weight:700;color:#495b4e;text-underline-offset:3px;padding:0;margin-top:12px}
+    .workflow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:44px}.workflow-item{padding:4px 12px 8px 0}.step-no{font:800 56px/1 Manrope,sans-serif;color:#e0e4dd;letter-spacing:-.07em}.workflow-item h3{font-size:18px;margin:19px 0 11px;letter-spacing:-.03em}.workflow-item p{color:#7a837a;font-size:13px;line-height:1.8;max-width:310px}.step-line{height:2px;background:#e2e2d9;width:100%;position:relative;margin:26px 0 8px}.step-line:before{content:"";position:absolute;top:-4px;width:10px;height:10px;background:var(--orange);border-radius:50%}
+    .editorial{display:grid;grid-template-columns:1.1fr .9fr;background:#f5e7db;border-radius:25px;overflow:hidden;min-height:330px}.editorial-text{padding:49px 56px}.editorial h2{font:800 clamp(29px,3vw,42px)/1.21 Manrope,sans-serif;letter-spacing:-.06em;margin:13px 0 15px}.editorial p{font-size:14px;color:#71685f;line-height:1.8;max-width:500px}.editorial-graphic{position:relative;background:#edb857;overflow:hidden;min-height:330px}.sheet{position:absolute;width:250px;min-height:263px;background:#fff;left:50%;top:50%;transform:translate(-60%,-50%) rotate(-9deg);box-shadow:14px 14px 0 #d79a40;padding:22px;border:1px solid #f5ece0}.sheet .sheet-title{font-size:10px;font-weight:900;color:#617368;letter-spacing:.13em;margin-bottom:22px}.sheet .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #ebebe5;font-size:12px;font-weight:700}.sheet .bar span:last-child{height:8px;background:#d9ded7;border-radius:10px;width:32px}.sheet .bar:nth-child(2) span:last-child{background:#e8a287;width:56px}.sheet .bar:nth-child(3) span:last-child{background:#99b9ac;width:82px}.sheet .bar:nth-child(4) span:last-child{background:#c2ccee;width:43px}.sheet-bottom{background:#26382c;height:34px;border-radius:5px;margin-top:17px}.shape-circle{position:absolute;border-radius:50%;width:170px;height:170px;background:#4164ce;right:-75px;top:-70px}.shape-line{position:absolute;width:300px;height:38px;background:#f06c49;right:-100px;bottom:45px;transform:rotate(-30deg)}
+    .faq{max-width:900px;margin:auto}.faq h2{text-align:center;font:800 clamp(30px,3.2vw,44px)/1.2 Manrope,sans-serif;letter-spacing:-.055em;margin-bottom:30px}.faq details{border-bottom:1px solid var(--line);padding:19px 0}.faq details:first-of-type{border-top:1px solid var(--line)}.faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:24px;font-weight:800;font-size:15px;cursor:pointer}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:'+';font-size:26px;font-weight:500;color:var(--orange)}.faq details[open] summary:after{content:'−'}.faq details p{font-size:13px;line-height:1.85;color:#727c73;max-width:760px;margin:12px 0 0}
+    .end-cta{background:var(--blue);color:white;padding:52px 0}.end-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.end-inner h2{font:800 clamp(28px,3.4vw,42px)/1.2 Manrope,sans-serif;letter-spacing:-.06em;max-width:610px;margin:0}.end-inner .btn{background:white;color:#2543a0;white-space:nowrap}
+    footer{padding:52px 0 26px;background:#f0efe8}footer .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}footer .footer-title{font-weight:900;margin-bottom:15px;font-size:12px}footer .foot-links{display:flex;flex-direction:column;align-items:start;gap:12px}footer .foot-links a,footer .foot-links button{font-size:13px;color:#66736a;background:none;border:0;padding:0}.footer-text{font-size:12px;color:#7a837a;line-height:1.9;max-width:360px;margin:18px 0}.foot-bottom{border-top:1px solid #deded5;padding-top:22px;margin-top:35px;display:flex;justify-content:space-between;gap:20px;color:#858d85;font-size:11px;line-height:1.6}
+    dialog{width:min(580px,calc(100% - 24px));max-height:min(88vh,800px);overflow:auto;border:0;border-radius:22px;box-shadow:0 35px 100px #12211a55;padding:0;background:#fff;color:var(--ink)}dialog::backdrop{background:rgba(15,26,19,.70);backdrop-filter:blur(4px)}.modal-head{padding:27px 30px 22px;border-bottom:1px solid #e7e8e1;display:flex;align-items:start;justify-content:space-between;gap:20px}.modal-head h2{font-family:Manrope,sans-serif;letter-spacing:-.04em;margin:4px 0 0;font-size:25px}.close{width:34px;height:34px;border-radius:10px;background:#f5f5f1;border:1px solid #e6e6df;font-size:25px;line-height:1;display:grid;place-items:center;flex:none}.modal-body{padding:24px 30px 30px}.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.modal-grid .wide{grid-column:1/-1}.modal-grid textarea{height:104px;min-height:104px;padding:14px;resize:vertical}.modal-desc{background:#f5f6f1;padding:13px 15px;border-radius:11px;color:#637064;font-size:12px;line-height:1.7;margin-bottom:20px}.modal-actions{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}.privacy-check{display:flex;align-items:start;gap:10px;margin-top:17px;font-size:11px;line-height:1.65;color:#667269}.privacy-check input{margin-top:3px;accent-color:var(--orange)}.preview-panel{background:#f6f6f2;border:1px solid #e1e2dc;border-radius:12px;padding:16px;margin-top:16px;white-space:pre-wrap;font-size:12px;line-height:1.75;max-height:220px;overflow:auto}.notice{display:none;background:#eaf4e9;color:#375c42;border-radius:10px;padding:12px 14px;font-size:12px;line-height:1.6;margin-top:13px}.notice.visible{display:block}.notice.error{background:#ffebe6;color:#a4321e}.sr-only{border:0!important;clip:rect(0,0,0,0)!important;height:1px!important;margin:-1px!important;overflow:hidden!important;padding:0!important;position:absolute!important;width:1px!important;white-space:nowrap!important}
+    .mobile-bottom{display:none}
+    @media(max-width:1050px){.desktop-nav{gap:16px}.hero-inner{gap:26px}.hero{padding:62px 0 68px}.hero h1{font-size:55px}.hero-panel{padding:21px}.cal-left h2{font-size:42px}.calculator-grid{gap:26px}.trust-item{padding:20px 13px}}
+    @media(max-width:800px){.desktop-nav{display:none}.mobile-menu-btn{display:grid}.mobile-nav.open{display:block}.wrap{width:min(100% - 34px,670px)}.hero-inner{grid-template-columns:1fr}.hero{padding:54px 0 65px}.hero h1{font-size:clamp(42px,7vw,62px)}.hero-sub{font-size:15px}.hero-panel-wrap{max-width:600px}.hero-panel{padding:24px}.trust-inner{grid-template-columns:1fr 1fr 1fr}.trust-item{padding:17px 8px;gap:8px}.trust-num{font-size:19px}.trust-item strong{font-size:12px}.trust-item small{font-size:10px}.services{grid-template-columns:repeat(2,minmax(0,1fr))}.section-header{align-items:start;flex-direction:column;gap:11px}.section-note{max-width:650px}.calculator-grid{grid-template-columns:1fr;gap:22px;padding:65px 0}.cal-left{padding-top:0}.cal-left h2{max-width:700px}.cal-left p{max-width:660px}.cal-points{display:flex;flex-wrap:wrap;gap:14px 24px}.editorial{grid-template-columns:1fr 1fr}.editorial-text{padding:30px}.editorial h2{font-size:30px}.sheet{transform:translate(-60%,-50%) rotate(-9deg) scale(.85)}.end-inner{align-items:start;flex-direction:column}footer .footer-grid{grid-template-columns:1.4fr 1fr 1fr;gap:16px}}
+    @media(max-width:560px){.announcement{font-size:9px;min-height:29px}.nav{height:66px}.logoname{font-size:18px}.hero{padding:42px 0 58px}.hero h1{font-size:43px;margin:18px 0}.hero h1 .underline{white-space:normal}.hero h1 .underline:after{height:9px;bottom:2px}.hero-actions .btn{font-size:12px;padding:13px 13px;min-height:48px}.under-hero{margin-top:23px;font-size:11px}.hero-panel{padding:19px;border-radius:20px}.panel-top h2{font-size:21px}.service-pills{grid-template-columns:repeat(3,1fr)}.service-pill{font-size:11px;padding:10px 3px}.panel-submit{flex-direction:column;align-items:stretch}.panel-submit .helper{max-width:none}.trust-inner{display:grid;grid-template-columns:1fr}.trust-item{padding:13px 0;gap:13px}.trust-item+.trust-item{border-left:0;border-top:1px solid #e4e1d7}.trust-num{font-size:21px}.trust-item strong{font-size:13px}.trust-item small{font-size:11px}section.block{padding:64px 0}.section-header h2{font-size:32px}.services{gap:10px}.service-card{padding:16px;border-radius:16px;min-height:233px}.service-icon{width:47px;height:47px}.service-card h3{font-size:18px;margin-top:29px}.service-card p{font-size:11px}.calculator-grid{padding:58px 0}.cal-left h2{font-size:39px}.calc-card{padding:19px;border-radius:17px}.calc-fields{gap:12px}.choice-group{gap:5px}.choice-button{font-size:10px}.calc-actions{grid-template-columns:1fr}.result-meta{font-size:11px}.workflow{grid-template-columns:1fr;gap:4px;margin-top:20px}.workflow-item{padding:4px 0 0}.step-no{font-size:39px}.step-line{margin:15px 0 8px}.workflow-item h3{margin:13px 0 8px}.editorial{grid-template-columns:1fr}.editorial-text{padding:26px}.editorial h2{font-size:28px}.editorial-graphic{min-height:270px}.faq h2{font-size:32px}.faq summary{font-size:13px}.end-cta{padding:38px 0}.end-inner h2{font-size:29px}footer .footer-grid{grid-template-columns:1fr 1fr;gap:22px}footer .footer-grid>div:first-child{grid-column:1/-1}footer .foot-bottom{flex-direction:column;gap:6px}.modal-head{padding:22px 18px 16px}.modal-body{padding:20px 18px}.modal-grid{gap:12px}.modal-grid .field:not(.wide){grid-column:1/-1}.modal-head h2{font-size:22px}.mobile-bottom{display:flex;position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-top:1px solid #ecece5;z-index:30;padding:9px max(14px,env(safe-area-inset-left)) calc(9px + env(safe-area-inset-bottom));box-shadow:0 -10px 24px #12221c0a;gap:9px}.mobile-bottom .btn{flex:1;min-height:43px;padding:10px;font-size:12px}body{padding-bottom:63px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  
+    /* V2 maliyet detay modülü: V1 renkler / tipografi / sayfa yerleşimi korunmuştur */
+    .enhancement-block{margin-top:18px;border-top:1px solid var(--line);padding-top:17px}.enhancement-title{display:flex;flex-direction:column;gap:4px;margin-bottom:12px}.enhancement-title strong{font-size:14px;letter-spacing:-.025em}.enhancement-title small,.enhancement-hint{font-size:11px;line-height:1.65;color:#79857a;margin:5px 0 0}.dimensions-grid{gap:12px}.calc-finance{background:#f9f9f4;border:1px solid #e7e9df;border-radius:14px;padding:16px}.financial-grid{gap:11px}.financial-grid .control{height:43px;font-size:12px}.cost-summary{display:grid;gap:8px;margin-top:15px;padding:17px;background:#f9f8f3;border:1px solid #e9e9e1;border-radius:14px}.cost-summary>div{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px;color:#5e695e}.cost-summary strong{font-variant-numeric:tabular-nums;color:#23342b}.cost-summary .grand{border-top:1px solid #dfe2d7;padding-top:12px;margin-top:5px;font-size:14px;font-weight:800}.cost-summary .grand strong{font-size:18px}.audit-note{padding:13px 14px;border-left:4px solid var(--yellow);background:#fff9e7;font-size:11px;line-height:1.6;margin:13px 0 3px;border-radius:0 9px 9px 0;color:#685b40}.audit-note ul{padding-left:18px;margin:7px 0 0}.cost-disclosure{margin-top:12px;border:1px solid #e3e6de;border-radius:13px;overflow:hidden;background:white}.cost-disclosure summary{list-style:none;cursor:pointer;padding:15px 13px;font-size:12px;font-weight:800;display:flex;justify-content:space-between;gap:10px;background:#f7f8f3}.cost-disclosure summary::-webkit-details-marker{display:none}.cost-disclosure[open] summary{background:#edf1e9}.cost-disclosure .see-more{font-size:10px;color:#728076;font-weight:600}.cost-disclosure .enhancement-hint{padding:5px 12px 15px}.table-wrap{overflow-x:auto;max-width:100%}.cost-table{width:100%;min-width:440px;border-collapse:collapse;font-size:11px}.cost-table th,.cost-table td{padding:10px 9px;border-bottom:1px solid #ecede7;text-align:left;vertical-align:middle}.cost-table th{font-size:10px;color:#6b776c;background:#fcfcf9}.cost-table td.num,.cost-table th.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.cost-table small{display:block;color:#88948b;font-size:10px;margin-top:3px}.cost-table tr:last-child td{border-bottom:0}.cost-table .row-disabled{opacity:.54}.line-check{display:flex;align-items:flex-start;gap:7px;font-weight:700;cursor:pointer}.line-check input{width:16px;height:16px;accent-color:var(--orange);flex:none}.rate-input{max-width:105px;width:100%;min-height:36px;border:1px solid #d6dcd3;border-radius:7px;padding:6px 7px;font-size:11px;background:#fff;color:#1d2c23}.calc-export{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}.calc-export button{border:0;background:transparent;border-bottom:1px solid #65716a;font-weight:700;color:#52675a;padding:5px 0;font-size:11px}.calc-export button:hover{color:var(--orange-dark);border-color:var(--orange-dark)}
+    @media(max-width:590px){.cost-table{min-width:430px}.calc-finance{padding:12px}.calc-export{gap:18px}}
+    @media print{.header,.announcement,.hero,.trustline,.services,.cal-left,.calc-actions,.calc-export,.footer-grid,footer,.end-cta,.mobile-bottom,.modal-head,.faq,.editorial,.workflow{display:none!important}.calculator-band{background:white!important;color:black!important}.calculator-grid{display:block!important;padding:0!important}.calc-card{box-shadow:none!important;border:0!important;padding:0!important}.wrap{width:100%!important}.calc-card .cost-disclosure{break-inside:avoid}.cost-disclosure{display:block!important}.cost-disclosure:not([open])>*:not(summary){display:block!important}.cost-table{min-width:0!important;font-size:9px}.enhancement-block,.result-box{break-inside:avoid}.calc-disclaimer{font-size:9px}}
+@media(max-width:800px){.calculator-grid{grid-template-columns:minmax(0,1fr)!important}.cal-left,.calc-card{min-width:0}.cost-disclosure,.table-wrap{min-width:0;max-width:100%}.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.calc-card-head{flex-wrap:wrap}.dimensions-grid,.financial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dimensions-grid .field,.financial-grid .field{min-width:0}}
+@media(max-width:560px){html,body{max-width:100%;overflow-x:clip}.nav{gap:8px}.nav-action{display:none}.mobile-menu-btn{flex:none}.calc-card-head{align-items:flex-start}}
+
+/* V3 — Denetlenebilir maliyet sistemi, simetrik masaüstü iş akışı */
+.calculator-grid{display:block;padding:76px 0 84px}
+.calc-heading{text-align:center;max-width:820px;margin:0 auto 37px;position:relative}
+.calc-heading .eyebrow{color:#c4d5c8}
+.calc-heading h2{font:800 clamp(36px,4.2vw,53px)/1.13 Manrope,sans-serif;letter-spacing:-.065em;margin:16px 0 14px}
+.calc-heading h2 em{font-style:normal;color:#ffc857}
+.calc-heading p{color:#b8c8bf;font-size:14px;line-height:1.7;max-width:760px;margin:0 auto 18px}
+.calc-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
+.calc-trust span{font-size:11px;font-weight:800;color:#dbebe0;border:1px solid #57706470;border-radius:100px;padding:8px 12px}
+.calc-duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:stretch;position:relative}
+.calc-duo>.calc-card{min-width:0;display:flex;flex-direction:column;border-radius:22px;padding:25px 25px 24px;box-shadow:0 16px 45px rgba(0,0,0,.12)}
+.calc-duo .calc-card-head{margin-bottom:19px;min-height:28px}
+.calc-duo .calc-card-head h3{font-size:20px}
+.wizard-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:5px;border:1px solid #e7e7df;background:#f7f7f3;border-radius:12px}
+.wizard-tab{min-width:0;min-height:46px;padding:9px 5px;border:1px solid transparent;border-radius:8px;background:transparent;color:#68746b;font-weight:800;font-size:11px;white-space:nowrap}
+.wizard-tab span{color:#8e9a90;margin-right:3px}
+.wizard-tab[aria-selected="true"]{background:#fff;box-shadow:0 2px 10px #16201812;border-color:#edeee8;color:#be4b30}
+.wizard-tab[aria-selected="true"] span{color:var(--orange)}
+.wizard-content{flex:1;min-height:340px;padding:23px 0 13px}
+.wizard-panel[hidden]{display:none!important}
+.wizard-section-title{display:flex;flex-direction:column;gap:4px;margin-bottom:15px}
+.wizard-section-title strong{font-size:14px}
+.wizard-section-title small{font-size:11px;color:#7a867b}
+.wizard-panel .enhancement-block{margin:0;padding:0;border:0}
+.wizard-panel .calc-finance{background:none;border:0;padding:0}
+.wizard-panel .enhancement-title{margin-bottom:15px}
+.wizard-panel .calc-fields{gap:13px}
+.wizard-panel .choice-group{gap:7px}
+.wizard-panel .control{height:45px}
+.wizard-bottom{border-top:1px solid #e8e9e1;padding-top:17px;margin-top:auto}
+.wizard-tip{font-size:11px;color:#738176;line-height:1.55;margin-bottom:13px}
+.wizard-controls{display:flex;justify-content:space-between;gap:10px}
+.wizard-controls button{border:1px solid #dbe0d6;background:#fff;color:#425448;font-size:12px;font-weight:800;padding:12px 18px;border-radius:10px;min-height:43px}
+.wizard-controls button:disabled{opacity:.4;cursor:not-allowed}
+.wizard-controls .wizard-next{background:var(--orange);border-color:var(--orange);color:white;min-width:155px}
+.wizard-controls .wizard-next:hover{background:var(--orange-dark)}
+.result-card .result-box{margin-top:0;padding:20px 21px}
+.result-card .result-value{font-size:clamp(25px,2.5vw,32px)}
+.result-card .cost-summary{margin-top:12px;gap:7px;padding:16px 18px}
+.result-card .cost-summary>div{font-size:11px}
+.result-card .cost-summary .grand{font-size:13px}
+.audit-wrap{margin-top:13px;padding:12px 14px;background:#fffbf0;border:1px solid #f3edda;border-radius:12px}
+.audit-wrap h4{font-size:11px;margin:0 0 6px;color:#665d42}
+.audit-wrap .audit-note{max-height:90px;overflow-y:auto;padding:0;background:none;border:0;margin:0;font-size:11px;scrollbar-width:thin}
+.audit-wrap .audit-note ul{margin:2px 0 0}
+.result-card .calc-actions{margin-top:auto;padding-top:18px;grid-template-columns:minmax(0,1fr) auto}
+.result-card .calc-actions .btn{min-height:48px}
+.calc-detail-area{margin-top:26px;background:#fff;border-radius:22px;padding:29px 32px 24px;color:var(--ink);box-shadow:0 16px 45px rgba(0,0,0,.10)}
+.calc-detail-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;padding:0 0 16px;border-bottom:1px solid #e5e7df}
+.calc-detail-heading .eyebrow{color:#7b887e;font-size:10px}
+.calc-detail-heading h3{font:800 clamp(22px,2.7vw,31px)/1.2 Manrope,sans-serif;letter-spacing:-.055em;margin:10px 0 0}
+.calc-detail-heading p{font-size:12px;line-height:1.65;color:#6d796e;max-width:325px;margin:0}
+.calc-detail-area .cost-disclosure{margin-top:12px}
+.calc-detail-area .cost-disclosure summary{font-size:13px;min-height:52px;align-items:center;padding:16px 17px}
+.calc-detail-area .cost-disclosure[open] .table-wrap{max-height:460px;overflow:auto}
+.calc-detail-area .cost-table{min-width:500px;font-size:12px}
+.calc-detail-area .cost-table th,.calc-detail-area .cost-table td{padding:11px 13px}
+.calc-detail-area .cost-table th{position:sticky;top:0;z-index:2}
+.detail-actions{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:5px}
+.detail-actions .calc-export{margin-top:12px}
+.detail-actions .enhancement-hint{margin:9px 0 0}
+.calc-detail-area .calc-disclaimer{border-top:1px solid #ecece6;padding-top:15px;margin-top:19px;color:#69776c;line-height:1.7;font-size:11px}
+.editorial{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media(max-width:1050px){.calc-duo{gap:14px}.calc-duo>.calc-card{padding:20px}.wizard-tab{font-size:10px}.status-tag{font-size:9px}.calc-detail-area{padding:25px}}
+@media(max-width:800px){.calculator-grid{padding:58px 0 68px}.calc-heading{margin-bottom:24px}.calc-heading p{font-size:13px}.calc-duo{grid-template-columns:1fr;gap:14px}.wizard-content{min-height:0}.wizard-panel{min-height:220px}.calc-duo>.calc-card{height:auto}.calc-detail-heading{align-items:start;flex-direction:column;gap:8px}.calc-detail-heading p{max-width:none}.result-card .calc-actions{margin-top:0}.calc-detail-area{margin-top:15px}}
+@media(max-width:560px){.calc-heading h2{font-size:34px}.calc-heading p{font-size:12px}.calc-trust span{font-size:10px;padding:7px 10px}.calc-duo>.calc-card{padding:18px;border-radius:16px}.wizard-tab{white-space:normal;line-height:1.25;min-height:50px;font-size:10px}.wizard-tab span{display:block;margin:0 0 4px}.calc-duo .calc-card-head{flex-wrap:wrap;gap:5px}.calc-detail-area{padding:18px;border-radius:16px}.calc-detail-area .cost-disclosure summary{font-size:11px}.calc-detail-area .cost-table{min-width:460px}.result-card .calc-actions{grid-template-columns:1fr}.detail-actions{align-items:start;flex-direction:column;gap:4px}.calc-trust{gap:5px}}
+@media print{.calc-heading,.wizard-card,.calc-detail-heading,.wizard-controls,.wizard-tabs,.calc-trust,.detail-actions{display:none!important}.calc-duo{display:block!important}.result-card{border:0!important;box-shadow:none!important;display:block!important}.calc-detail-area{box-shadow:none!important;padding:0!important}.calculator-grid{display:block!important}.calc-detail-area .cost-disclosure{break-inside:auto!important}.calc-detail-area .cost-disclosure .table-wrap{max-height:none!important;overflow:visible!important}.calc-detail-area .cost-disclosure>*{display:block!important}.result-card .calc-actions{display:none!important}}
+</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Tadilat Teklifi","url":"https://tadilatteklifi.com/","inLanguage":"tr-TR","description":"Tadilat maliyeti planlama ve teklif talebi hazırlama platformu."}</script>
+</head>
+<body>
+  <a href="#main" class="skip">İçeriğe geç</a>
+  <div class="announcement"><span class="dot"></span>TADİLATA BAŞLAMADAN ÖNCE BÜTÇENİ PLANLA<span class="dot"></span></div>
+  <header class="header">
+    <div class="wrap nav">
+      <a href="#top" class="logo" aria-label="Tadilat Teklifi ana sayfa"><span class="logomark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="logoname">tadilat<strong>teklifi</strong><small>.com</small></span></a>
+      <nav class="desktop-nav" aria-label="Ana menü"><a href="#hizmetler">Hizmetler</a><a href="#hesapla">Maliyet hesapla</a><a href="#nasil-calisir">Nasıl çalışır?</a><a href="#sss">Merak edilenler</a></nav>
+      <button type="button" class="nav-action" data-open-quote>Teklif talebi oluştur <span aria-hidden="true">↗</span></button>
+      <button type="button" class="mobile-menu-btn" id="menuToggle" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileNav"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+    <nav class="mobile-nav wrap" id="mobileNav" aria-label="Mobil menü"><a href="#hizmetler">Hizmetler</a><a href="#hesapla">Maliyet hesapla</a><a href="#nasil-calisir">Nasıl çalışır?</a><a href="#sss">Merak edilenler</a><a href="#" data-open-quote>Teklif talebi oluştur</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="wrap hero-inner">
+        <div>
+          <div class="eyebrow">EVİNİ YENİLEMENİN AKILLI YOLU</div>
+          <h1 id="heroTitle">Tadilata başla.<br><span class="underline">Sürpriz masrafa</span><br>değil.</h1>
+          <p class="hero-sub">Banyo, mutfak veya bütün ev… Önce ne yaptıracağını netleştir, olası bütçe aralığını gör, ardından talebini tek yerde hazırla.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#hesapla">Ücretsiz maliyet hesapla <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#nasil-calisir">Nasıl çalışır? <span aria-hidden="true">→</span></a></div>
+          <div class="under-hero"><span class="mini-icons" aria-hidden="true"><i>01</i><i>02</i><i>03</i></span><span>İşi tanımla · Bütçeyi planla · Teklif talebini hazırla</span></div>
+        </div>
+        <div class="hero-panel-wrap"><div class="card-decoration" aria-hidden="true"></div><div class="accent-square" aria-hidden="true"></div>
+          <form class="hero-panel" id="quickForm" novalidate>
+            <div class="panel-top"><div><span class="panel-kicker">HIZLI BAŞLANGIÇ</span><h2>Hangi işi yaptıracaksın?</h2></div><span class="panel-icon" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h16M5 20V8l7-5 7 5v12M9 20v-8h6v8"/></svg></span></div>
+            <span class="field-label" id="quickServiceLabel">Hizmet seçimi</span>
+            <div class="service-pills" role="group" aria-labelledby="quickServiceLabel">
+              <button type="button" class="service-pill" data-quick-service="banyo" aria-pressed="true">Banyo</button><button type="button" class="service-pill" data-quick-service="mutfak" aria-pressed="false">Mutfak</button><button type="button" class="service-pill" data-quick-service="boya" aria-pressed="false">Boya</button><button type="button" class="service-pill" data-quick-service="fayans" aria-pressed="false">Fayans</button><button type="button" class="service-pill" data-quick-service="ev" aria-pressed="false">Ev tadilatı</button><button type="button" class="service-pill" data-quick-service="diger" aria-pressed="false">Diğer</button>
+            </div>
+            <div class="fields"><div class="field"><label class="field-label" for="quickArea">Alan büyüklüğü (m²)</label><input class="control" id="quickArea" name="area" type="number" min="1" max="10000" step="1" value="6" required inputmode="numeric" aria-describedby="quickAreaNote"><span class="helper" id="quickAreaNote">Yaklaşık değer yeterli.</span></div><div class="field"><label class="field-label" for="quickCity">Şehir</label><select class="control" id="quickCity" name="city"><option>İzmir</option><option>İstanbul</option><option>Ankara</option><option>Bursa</option><option>Antalya</option><option>Muğla</option><option>Diğer</option></select><span class="helper">Şehir şu an fiyatı değiştirmez.</span></div></div>
+            <div class="panel-submit"><span class="helper">Hesaplama ücretsizdir. Üyelik gerektirmez.</span><button type="submit" class="btn btn-dark">Bütçe aralığını gör <span aria-hidden="true">↗</span></button></div><div class="form-error" id="quickError" role="alert"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div class="trustline"><div class="wrap trust-inner"><div class="trust-item"><span class="trust-num">01</span><span><strong>Önce kapsam</strong><small>Ne yapılacağını belirle</small></span></div><div class="trust-item"><span class="trust-num">02</span><span><strong>Sonra bütçe</strong><small>Aralığı ve değişkenleri gör</small></span></div><div class="trust-item"><span class="trust-num">03</span><span><strong>Ardından teklif</strong><small>Talebini eksiksiz oluştur</small></span></div></div></div>
+    <section class="block" id="hizmetler" aria-labelledby="servicesTitle"><div class="wrap"><div class="section-header"><div><span class="eyebrow">HANGİ İŞ İÇİN?</span><h2 id="servicesTitle">Evinin her köşesi için<br>ayrı bir başlangıç.</h2></div><p class="section-note">Bir kategori seç. Sistem seni doğrudan o işin hesaplama veya talep alanına götürsün.</p></div>
+      <div class="services">
+        <button type="button" class="service-card" data-service="banyo"><div class="card-topline"><div class="service-icon"><svg viewBox="0 0 32 32"><path d="M3 19h26M7 19v3a7 7 0 0 0 7 7h4a7 7 0 0 0 7-7v-3M9 18V9a4 4 0 0 1 8 0M14 11h8M23 11v4M9 5V3"/></svg></div><span class="service-index">01 / HİZMET</span></div><h3>Banyo tadilatı</h3><p>Kırım, seramik, tesisat ve vitrifiye dahil bütçe planı.</p><span class="service-link">Maliyet hesapla ↗</span></button>
+        <button type="button" class="service-card" data-service="mutfak"><div class="card-topline"><div class="service-icon"><svg viewBox="0 0 32 32"><path d="M5 5h22v22H5zM5 15h22M15 5v22M9 9h2M19 9h4M9 20h2M20 20h3"/></svg></div><span class="service-index">02 / HİZMET</span></div><h3>Mutfak yenileme</h3><p>Dolap, tezgâh, fayans ve tesisat için iş kapsamını belirle.</p><span class="service-link">Maliyet hesapla ↗</span></button>
+        <button type="button" class="service-card" data-service="ev"><div class="card-topline"><div class="service-icon"><svg viewBox="0 0 32 32"><path d="m3 15 13-11 13 11M7 13v16h18V13M13 29V19h7v10M10 16h1"/></svg></div><span class="service-index">03 / HİZMET</span></div><h3>Komple ev tadilatı</h3><p>Odadan odaya tüm işleri planla; keşif talebi oluştur.</p><span class="service-link">Teklif talebi hazırla ↗</span></button>
+        <button type="button" class="service-card" data-service="boya"><div class="card-topline"><div class="service-icon"><svg viewBox="0 0 32 32"><path d="M6 8h19v7H6zM25 11h3v7H17v10M13 8V5h5v3M13 23h4M15 23v6"/></svg></div><span class="service-index">04 / HİZMET</span></div><h3>Boya & badana</h3><p>Alan, boya sınıfı ve uygulama kapsamını dikkate al.</p><span class="service-link">Maliyet hesapla ↗</span></button>
+        <button type="button" class="service-card" data-service="fayans"><div class="card-topline"><div class="service-icon"><svg viewBox="0 0 32 32"><path d="M3 3h12v12H3zM17 3h12v12H17zM3 17h12v12H3zM17 17h12v12H17zM9 3v12M17 9h12M3 23h12M23 17v12"/></svg></div><span class="service-index">05 / HİZMET</span></div><h3>Fayans & seramik</h3><p>Uygulama alanını, zemin durumunu ve işçilik kapsamını yaz.</p><span class="service-link">Teklif talebi hazırla ↗</span></button>
+        <button type="button" class="service-card" data-service="diger"><div class="card-topline"><div class="service-icon"><svg viewBox="0 0 32 32"><path d="M5 27V5h22v22zM5 12h22M12 12v15M20 12v15M9 9h.1M15 9h.1M21 9h.1"/></svg></div><span class="service-index">06 / HİZMET</span></div><h3>Diğer tadilat işleri</h3><p>Çatı, alçıpan, zemin, pencere ve diğer işlerini tarif et.</p><span class="service-link">Talep oluştur ↗</span></button>
+      </div></div></section>
+    <section id="hesapla" class="calculator-band" aria-labelledby="calcTitle">
+  <div class="wrap calculator-grid">
+    <header class="calc-heading">
+      <span class="eyebrow">ÜCRETSİZ HESAPLAMA ARACI</span>
+      <h2 id="calcTitle">Tahmin yürütme. <em>Rakamı</em> gör.</h2>
+      <p>İşini tanımla, ölçüleri netleştir ve bütçe hesabını aynı ekranda gör. Malzeme, işçilik ve diğer giderleri ayrı hesaplıyoruz. Başlangıç fiyatları örnektir; yerel tekliflerle doğrulanmadan bağlayıcı fiyat sayılmaz.</p>
+      <div class="calc-trust" aria-label="Hesaplama özellikleri"><span>01 · İş kapsamı</span><span>02 · Gerçek metraj</span><span>03 · Açık maliyet</span></div>
+    </header>
+    <div class="calc-duo">
+      <div class="calc-card wizard-card" aria-label="Maliyet hesaplama girişleri">
+        <div class="calc-card-head"><h3>Proje bilgileri</h3><span class="status-tag">3 KOLAY ADIM</span></div>
+        <nav class="wizard-tabs" role="tablist" aria-label="Hesaplama aşamaları">
+          <button type="button" id="wizardTab1" class="wizard-tab" data-wizard-step="1" role="tab" aria-controls="wizardPanel1" aria-selected="true" tabindex="0"><span>01</span> İş ve kapsam</button>
+          <button type="button" id="wizardTab2" class="wizard-tab" data-wizard-step="2" role="tab" aria-controls="wizardPanel2" aria-selected="false" tabindex="-1"><span>02</span> Ölçüler</button>
+          <button type="button" id="wizardTab3" class="wizard-tab" data-wizard-step="3" role="tab" aria-controls="wizardPanel3" aria-selected="false" tabindex="-1"><span>03</span> Bütçe ayarı</button>
+        </nav>
+        <div class="wizard-content">
+          <div class="wizard-panel" id="wizardPanel1" role="tabpanel" aria-labelledby="wizardTab1">
+            <div class="wizard-section-title"><strong>Ne yapılacak?</strong><small>İşe ve kaliteye göre bütçe otomatik güncellenir.</small></div>
+            <div class="calc-fields"><div class="field wide"><label class="field-label" for="calcService">Yapılacak iş</label><select class="control" id="calcService"><option value="banyo">Banyo tadilatı</option><option value="mutfak">Mutfak yenileme</option><option value="ev">Komple ev tadilatı</option><option value="boya">Boya ve badana</option><option value="fayans">Fayans ve seramik</option><option value="diger">Diğer tadilat işleri</option></select></div><div class="field"><label class="field-label" for="calcArea" id="calcAreaLabel">Tadilat alanı (m²)</label><input class="control" id="calcArea" inputmode="numeric" max="10000" min="1" step="1" type="number" value="6"/></div><div class="field"><label class="field-label" for="calcCity">Şehir</label><select class="control" id="calcCity"><option>İzmir</option><option>İstanbul</option><option>Ankara</option><option>Bursa</option><option>Antalya</option><option>Muğla</option><option>Diğer</option></select></div><div class="field wide"><span class="field-label" id="qualityLabel">Malzeme tercihi</span><div aria-labelledby="qualityLabel" class="choice-group" id="qualityGroup" role="group"><button aria-pressed="false" class="choice-button" data-quality="basic" type="button">Ekonomik</button><button aria-pressed="true" class="choice-button" data-quality="normal" type="button">Standart</button><button aria-pressed="false" class="choice-button" data-quality="premium" type="button">Üst segment</button></div></div><div class="field wide"><span class="field-label" id="scopeLabel">Tadilat kapsamı</span><div aria-labelledby="scopeLabel" class="choice-group" id="scopeGroup" role="group"><button aria-pressed="false" class="choice-button" data-scope="light" type="button">Kısmi yenileme</button><button aria-pressed="true" class="choice-button" data-scope="normal" type="button">Standart tadilat</button><button aria-pressed="false" class="choice-button" data-scope="full" type="button">Komple yenileme</button></div></div></div>
+          </div>
+          <div class="wizard-panel" id="wizardPanel2" role="tabpanel" aria-labelledby="wizardTab2" hidden>
+            <div class="enhancement-block" id="dimensionBlock">
+<div class="enhancement-title"><strong>Ölçüleri netleştir</strong><small>Yaklaşık alan yerine gerçek ölçü, daha tutarlı sonuç verir</small></div>
+<div class="calc-fields dimensions-grid" id="dimensionFields"></div>
+<p class="enhancement-hint">Boş bırakılan özel ölçüler yaklaşık kabul edilir ve sonuçta uyarı olarak gösterilir. Bu alanlar gerçek keşfin yerine geçmez.</p>
+</div>
+          </div>
+          <div class="wizard-panel" id="wizardPanel3" role="tabpanel" aria-labelledby="wizardTab3" hidden>
+            <div class="enhancement-block calc-finance">
+<div class="enhancement-title"><strong>Gider ve bütçe ayarları</strong><small>Yüzdeler tamamen görünür ve değiştirilebilir</small></div>
+<div class="calc-fields financial-grid">
+<div class="field"><label class="field-label" for="overheadInput">Genel gider (%)</label><input class="control" id="overheadInput" max="40" min="0" step="1" type="number" value="10"/></div>
+<div class="field"><label class="field-label" for="marginInput">Yüklenici kâr eklemesi (%)</label><input class="control" id="marginInput" max="40" min="0" step="1" type="number" value="10"/></div>
+<div class="field"><label class="field-label" for="reserveInput">Belirsizlik / risk karşılığı (%)</label><input class="control" id="reserveInput" max="40" min="0" step="1" type="number" value="10"/></div>
+<div class="field"><label class="field-label" for="vatInput">KDV senaryosu</label><select class="control" id="vatInput"><option value="unknown">Belirlenmedi · hariç</option><option value="0">%0 (yalnız senaryo)</option><option value="10">%10 (yalnız senaryo)</option><option value="20">%20 (yalnız senaryo)</option></select></div>
+<div class="field wide"><label class="field-label" for="budgetInput">Ayrılan bütçe (isteğe bağlı, TL)</label><input class="control" id="budgetInput" inputmode="numeric" max="1000000000" min="1" placeholder="Örnek: 180000" type="number"/><p class="enhancement-hint" id="budgetDelta">Bütçe girersen farkı görürsün.</p></div>
+</div>
+<p class="enhancement-hint">Bölge fiyatı doğrulanmadığı için şehir otomatik katsayı uygulamaz. KDV oranı projenize göre ayrıca doğrulanmalıdır.</p>
+</div>
+          </div>
+        </div>
+        <div class="wizard-bottom">
+          <div class="wizard-tip" id="wizardTip">Seçimlerini değiştirdiğinde sağdaki tutarlar anında güncellenir.</div>
+          <div class="wizard-controls"><button type="button" class="wizard-prev" id="wizardPrev" disabled>Geri</button><button type="button" class="wizard-next" id="wizardNext">Ölçülere geç <span aria-hidden="true">→</span></button></div>
+        </div>
+      </div>
+      <div class="calc-card result-card" aria-label="Anlık maliyet sonucu">
+        <div class="calc-card-head"><h3>Hesap özeti</h3><span class="status-tag status-live">ANLIK SONUÇ</span></div>
+        <div id="calcError" class="form-error" role="alert"></div>
+        <div aria-atomic="true" aria-live="polite" class="result-box"><div class="result-label">Öngörülen bütçe aralığı</div><div class="result-value" id="estimateValue">—</div><div class="result-sub" id="estimateExplanation">Alan ve kapsam bilgilerini seç.</div><hr class="calc-divider"/><div class="result-meta"><span>Alan / Hizmet</span><strong id="estimateSummary">—</strong></div><div class="result-meta" style="margin-top:8px"><span>Hesaplama niteliği</span><strong id="estimateType">Ön bütçe</strong></div></div>
+        <div aria-live="polite" class="cost-summary">
+<div><span>Malzeme</span><strong id="materialsTotal">—</strong></div>
+<div><span>İşçilik ve hizmet</span><strong id="laborTotal">—</strong></div>
+<div><span>Genel gider</span><strong id="overheadTotal">—</strong></div>
+<div><span>Kâr eklemesi</span><strong id="marginTotal">—</strong></div>
+<div><span>Risk karşılığı</span><strong id="reserveTotal">—</strong></div>
+<div><span>KDV</span><strong id="vatTotal">—</strong></div>
+<div class="grand"><span>Hesaplanan ön bütçe</span><strong id="grandTotal">—</strong></div>
+</div>
+        <div class="audit-wrap"><h4>Hesaplamada dikkat edilecekler</h4><div class="audit-note" id="assumptions" role="status"></div></div>
+        <div class="calc-actions"><button class="btn btn-primary" id="calcToQuote" type="button">Teklif talebimi oluştur ↗</button><button class="btn btn-outline" id="copyEstimate" type="button">Hesabı kopyala</button></div>
+      </div>
+    </div>
+    <div class="calc-detail-area" id="calcDetailArea">
+      <div class="calc-detail-heading"><div><span class="eyebrow">DETAYLI MALİYET KONTROLÜ</span><h3>İş kalemleri ve birim fiyatlar.</h3></div><p>İstersen hesaplanan işleri ve birim fiyatları tek tek açıp düzenle. Ana ekrandaki iki sütun her zaman dengeli kalır.</p></div>
+      <details class="cost-disclosure" id="costBreakdown"="">
+<summary>İş kalemleri · Metraj ve malzeme/işçilik dağılımı <span class="see-more">Göster / gizle</span></summary>
+<div class="table-wrap"><table class="cost-table"><thead><tr><th>İş kapsamı</th><th class="num">Miktar</th><th class="num">Malzeme</th><th class="num">İşçilik</th></tr></thead><tbody id="quantityRows"></tbody></table></div>
+<p class="enhancement-hint">İstemediğiniz kalemi kutudan çıkarabilirsiniz. Kaplama firesi yalnız malzeme miktarına; boya sarfiyatı litre miktarına eklenir.</p>
+</details>
+      <details class="cost-disclosure" id="rateEditor">
+<summary>Örnek birim fiyatları düzenle <span class="see-more">Gerçek teklif fiyatlarını gir</span></summary>
+<div class="table-wrap"><table class="cost-table"><thead><tr><th>İş kalemi</th><th>Malzeme TL/birim</th><th>İşçilik TL/birim</th></tr></thead><tbody id="rateRows"></tbody></table></div>
+<p class="enhancement-hint">Buradaki fiyatlar doğrulanmış güncel firma teklifleri değildir. Birim fiyatları kendi tedarikçi/usta tekliflerinizle değiştirmeden sonucu sözleşmeye esas almayın.</p>
+</details>
+      <div class="detail-actions"><div class="calc-export"><button id="downloadCsv" type="button">CSV indir</button><button id="printCalc" type="button">Yazdır / PDF</button><button id="resetCalc" type="button">Varsayımlara dön</button></div><p class="enhancement-hint">CSV ve PDF çıktısı, hesaplanan kalemlere göre hazırlanır.</p></div>
+      <div class="calc-disclaimer" id="estimateDisclaimer">Hesaplama motoru V2: Açık metraj × örnek malzeme ve işçilik fiyatları. Bu örnek fiyatlar bağımsız saha denetimi yapılmış 2026 piyasa rayici olarak sunulmaz. <a href="https://yfk.csb.gov.tr/birim-fiyatlar-100468" rel="noopener noreferrer" target="_blank">2026 resmî inşaat ve tesisat birim fiyatları</a> yalnız kaynak karşılaştırması içindir; özel konut tadilatı sözleşme fiyatı değildir. Belirsizlik bandı istatistiksel güven aralığı değil bir senaryo kabulüdür.</div>
+    </div>
+  </div>
+</section>
+    <section class="block" id="nasil-calisir"><div class="wrap"><div class="section-header"><div><span class="eyebrow">SÜREÇ</span><h2>Üç adımda daha net<br>bir tadilat planı.</h2></div><p class="section-note">Uzun formlar, belirsiz şartlar yok. İşi önce tanımla, sonra teklif isteyeceğin kapsamı netleştir.</p></div><div class="workflow"><div class="workflow-item"><span class="step-no">01</span><div class="step-line"></div><h3>Ne yapılacağını seç</h3><p>İş kategorisi, yaklaşık alan, şehir ve malzeme tercihini gir.</p></div><div class="workflow-item"><span class="step-no">02</span><div class="step-line"></div><h3>Bütçeni değerlendir</h3><p>Uygun kategorilerde ön bütçe aralığını gör; gerçek teklif için gereken detayları tamamla.</p></div><div class="workflow-item"><span class="step-no">03</span><div class="step-line"></div><h3>Talebini hazırla</h3><p>Eksiksiz talep metnini kopyala veya indir. Gönderim entegrasyonu etkinleştirildiğinde doğrudan ilet.</p></div></div></div></section>
+    <section class="block" style="padding-top:0"><div class="wrap"><div class="editorial"><div class="editorial-text"><span class="eyebrow">AYNI İŞ. FARKLI KAPSAMLAR.</span><h2>Ucuz teklifi değil,<br>doğru kapsamı karşılaştır.</h2><p>İki teklifin fiyatı aynı olsa da biri söküm, moloz, tesisat veya nakliyeyi içermeyebilir. Önce yapılacak işleri kalemleştir.</p><button class="btn btn-dark" type="button" data-open-quote>Talep kapsamımı yazayım ↗</button></div><div class="editorial-graphic" aria-hidden="true"><div class="shape-circle"></div><div class="shape-line"></div><div class="sheet"><div class="sheet-title">İŞ KALEMLERİ / KAPSAM</div><div class="bar"><span>Söküm & hazırlık</span><span></span></div><div class="bar"><span>Malzeme seçimi</span><span></span></div><div class="bar"><span>Uygulama işçiliği</span><span></span></div><div class="bar"><span>Nakliye & atık</span><span></span></div><div class="sheet-bottom"></div></div></div></div></div></section>
+    <section class="block" id="sss" style="padding-top:0"><div class="wrap"><div class="faq"><h2>Karar vermeden önce<br>bilmen gerekenler.</h2><details><summary>Maliyet hesaplaması ücretsiz mi?</summary><p>Evet. Hesaplama alanını kullanmak için üyelik veya ödeme gerekmez.</p></details><details><summary>Gösterilen fiyat kesin teklif mi?</summary><p>Hayır. Birim fiyatlar örnek varsayımlardır; iş miktarlarını, malzeme fiyatını, işçilik ücretini ve vergi durumunu kontrol edip yerinde keşifle doğrulamak gerekir.</p></details><details><summary>Her iş türü için otomatik fiyat veriliyor mu?</summary><p>Hayır. Bu sürümde banyo, mutfak, komple ev, boya ve fayans için kalem bazlı örnek maliyet modeli vardır. Diğer işler için keşif gerekir. Doğrulanmamış fiyatlar kesin teklif olarak gösterilmez.</p></details><details><summary>Hangi şehirlerde kullanabilirim?</summary><p>Hesaplama aracı Türkiye genelinde kullanılabilir. Şehir bilginiz kaydedilir fakat doğrulanmış yerel fiyat bulunmadığından şehir seçimi fiyatı değiştirmez. Canlı teklif yönlendirmesi, hizmet ağı ve başvuru sunucusu etkinleştirildikten sonra sunulabilir.</p></details><details><summary>Teklif talebim otomatik olarak firmalara gidiyor mu?</summary><p>Bu ön izleme sürümünde hayır. Talep metni hazırlanır, kopyalanabilir veya indirilebilir. Site yöneticisi güvenli başvuru sunucusunu bağladığında doğrudan gönderim açılır.</p></details></div></div></section>
+    <section class="end-cta"><div class="wrap end-inner"><h2>Yaptırmak istediğin işi<br>önce doğru tarif et.</h2><button class="btn" type="button" data-open-quote>Teklif talebi oluştur ↗</button></div></section>
+  </main>
+  <footer><div class="wrap"><div class="footer-grid"><div><a href="#top" class="logo" aria-label="Başa dön"><span class="logomark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="logoname">tadilat<strong>teklifi</strong><small>.com</small></span></a><p class="footer-text">Tadilat ve yenileme işlerinde kapsamı belirlemeyi ve bütçe planlamasını kolaylaştıran dijital platform.</p></div><div><div class="footer-title">HİZMETLER</div><nav class="foot-links"><a href="#hizmetler">Banyo tadilatı</a><a href="#hizmetler">Mutfak yenileme</a><a href="#hizmetler">Boya badana</a><a href="#hizmetler">Ev tadilatı</a></nav></div><div><div class="footer-title">BİLGİ</div><nav class="foot-links"><a href="#hesapla">Bütçe hesaplama</a><a href="#nasil-calisir">Nasıl çalışır?</a><a href="#sss">Sık sorulan sorular</a><button type="button" data-open-quote>Teklif talebi hazırla</button></nav></div></div><div class="foot-bottom"><span>© <span id="year"></span> tadilatteklifi.com · Tüm hakları saklıdır.</span><span>Canlı gönderim ve KVKK sayfaları yayıma alınmadan önce tamamlanmalıdır.</span></div></div></footer>
+  <dialog id="quoteDialog" aria-labelledby="quoteTitle"><div class="modal-head"><div><span class="eyebrow">TADİLAT FORMU</span><h2 id="quoteTitle">Teklif talebini hazırla</h2></div><button class="close" type="button" data-close-dialog aria-label="Pencereyi kapat">×</button></div><div class="modal-body"><div class="modal-desc" id="quoteIntro">Proje bilgileri hesaplayıcıdan otomatik alınır. Bu sürümde bilgilerin herhangi bir sunucuya gönderilmesi etkin değildir.</div><form id="quoteForm" novalidate><div class="modal-grid"><div class="field"><label class="field-label" for="qName">Ad soyad *</label><input class="control" type="text" id="qName" maxlength="100" autocomplete="name" required placeholder="Adınız soyadınız"></div><div class="field"><label class="field-label" for="qPhone">Telefon *</label><input class="control" type="tel" id="qPhone" maxlength="20" autocomplete="tel" required inputmode="tel" placeholder="05xx xxx xx xx"></div><div class="field"><label class="field-label" for="qCity">Şehir *</label><input class="control" type="text" id="qCity" maxlength="60" required></div><div class="field"><label class="field-label" for="qDistrict">İlçe</label><input class="control" type="text" id="qDistrict" maxlength="60" placeholder="Örn. Karşıyaka"></div><div class="field wide"><label class="field-label" for="qDetail">İşin ayrıntıları *</label><textarea class="control" id="qDetail" required maxlength="2000" placeholder="Ne yapılacak? Mevcut durum nedir? Kırım, tesisat, malzeme veya teslim tarihi beklentiniz var mı?"></textarea></div></div><div class="privacy-check" id="consentWrap" hidden><input type="checkbox" id="qConsent"><label for="qConsent"><a id="privacyNoticeLink" href="#" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:2px">Aydınlatma metnini</a> okudum; başvuru amacıyla verilerimin işleneceği konusunda bilgilendirildim.</label></div><div class="form-error" id="quoteError" role="alert"></div><div class="modal-actions"><button class="btn btn-primary" type="submit" id="quoteSubmit">Talep metni oluştur ↗</button><button class="btn btn-outline" type="button" id="downloadQuote" hidden>TXT olarak indir</button><button class="btn btn-outline" type="button" id="copyQuote" hidden>Metni kopyala</button></div><div class="notice" id="quoteNotice" role="status"></div><div class="preview-panel" id="quotePreview" hidden></div></form></div></dialog>
+  <div class="mobile-bottom"><a href="#hesapla" class="btn btn-outline">Hesapla</a><button type="button" data-open-quote class="btn btn-primary">Talep oluştur ↗</button></div>
+  <script>
+(() => {
+  'use strict';
+  const SITE_CONFIG = Object.freeze({leadEndpoint:'', privacyNoticeUrl:'', requestTimeoutMs:12000});
+  const SERVICES={banyo:'Banyo tadilatı',mutfak:'Mutfak yenileme',ev:'Komple ev tadilatı',boya:'Boya ve badana',fayans:'Fayans ve seramik',diger:'Diğer tadilat işleri'};
+  const AREAS={banyo:6,mutfak:12,ev:100,boya:90,fayans:25,diger:30};
+  const LIMITS={banyo:[2,30],mutfak:[4,50],ev:[30,500],boya:[10,500],fayans:[2,300],diger:[1,10000]};
+  const QUALITY={basic:{label:'Ekonomik',factor:.82},normal:{label:'Standart',factor:1},premium:{label:'Üst segment',factor:1.45}};
+  const SCOPE={light:{label:'Kısmi yenileme'},normal:{label:'Standart tadilat'},full:{label:'Komple yenileme'}};
+  // Referans amaçlı ÖRNEK TARİFE: Gerçek saha teklifi, resmî rayiç veya otomatik onaylanmış 2026 birim fiyatı DEĞİLDİR.
+  // Güncel tedarikçi teklifi ve yerel işçilik maliyetiyle yayına alınmadan önce doğrulanmalıdır.
+  // Her satırın material ve labor (TL/birim) bilgisi kullanıcı tarafından değiştirilebilir.
+  const RATES = {
+    demolition:[0,1150], waterproof:[400,330],floorCeramic:[560,620],wallCeramic:[560,650],
+    plumbing:[1800,2100],electric:[1200,1100],wc:[7400,1450],shower:[11000,2800],
+    vanity:[11500,2600],bathLight:[1900,950],bathTowel:[3600,1350],transport:[0,4900],
+    cabinet:[10200,2900],counter:[4900,1550],backsplash:[550,600],sink:[4700,1500],
+    cabinetDemo:[0,3500],kitchenFloor:[560,620],kitchenLight:[3100,1400],
+    paintWalls:[265,125],paintCeiling:[260,110],surfaceRepair:[175,220],
+    flooring:[650,390],doors:[7100,1650],entryDoor:[18000,3000],
+    wholeElectrical:[1700,1750],wholePlumbing:[2200,1900]
+  };
+  const VERSION='2.0.0';
+  const s={service:'banyo',area:6,city:'İzmir',quality:'normal',scope:'normal',
+    dimension:{height:2.65,bathWall:'',kitchenMeters:'',counterMeters:'',paintSurface:'',tileSurface:'',
+      bathrooms:1,bathArea:6,kitchenArea:12,doors:5},customRates:{},customScope:{},
+    reserve:10,overhead:10,margin:10,vat:'unknown',budget:''};
+  let latestQuoteText='';
+  const $=id=>document.getElementById(id);
+  const tl=n=>new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',maximumFractionDigits:0}).format(n);
+  const round=n=>Math.round(n/100)*100;
+  const finite=(v,min,max)=>{const n=Number(v);return Number.isFinite(n)&&String(v).trim()!==''&&n>=min&&n<=max?n:null;};
+  const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const backendReady=!!(SITE_CONFIG.leadEndpoint&&SITE_CONFIG.privacyNoticeUrl);
+  const getNum=(name,fallback,notes,strict=false)=>{
+    const original=s.dimension[name];
+    if(String(original).trim()!==''){const n=finite(original,0.1,10000);if(n===null)throw new Error(`${name}: 0'dan büyük, en fazla 10.000 olan geçerli bir ölçü girilmelidir.`);return n;}
+    if(strict){notes.push(`${name} ölçüsü gerekli.`);return null;}
+    notes.push(`${({bathWall:'Duvar seramiği alanı',kitchenMeters:'Dolap metretülü',counterMeters:'Tezgâh uzunluğu',paintSurface:'Boyanacak yüzey',tileSurface:'Kaplama yapılacak yüzey'}[name]||name)} varsayılarak hesaplandı; yerinde ölçülmeli.`);
+    return fallback;
+  };
+  function item(id,title,unit,qty,opt={}){
+    const pair=RATES[id]; if(!pair)throw new Error('Fiyat kalemi tanımsız: '+id);
+    return {id,title,unit,qty,materialUnit:opt.materialUnit||unit,
+      materialQty:opt.materialQty===undefined?qty:opt.materialQty,
+      basicIncluded: opt.scopes||['normal','full'],waste:opt.waste||0,
+      qualityApplies:opt.qualityApplies!==false&&!['plumbing','electric','waterproof','wholeElectrical','wholePlumbing'].includes(id),group:opt.group||'Uygulama',
+      baseM:pair[0],baseL:pair[1],notes:opt.notes||''};
+  }
+  const all=['light','normal','full'];
+  function linesFor(category,area,notes,options={}){
+    const d=s.dimension;
+    if(category==='banyo'){
+      const height=finite(d.height,2,5);if(height===null)throw new Error('Tavan yüksekliği: 2–5 metre arasında bir değer girin.');
+      const approxWall=Math.max(1,2*Math.sqrt(area/1.25)*(1+1.25)*height-2);
+      const wall=options.fixedBath?approxWall:getNum('bathWall',approxWall,notes);
+      return [
+        item('demolition','Söküm ve moloz uzaklaştırma','m²',area,{scopes:['normal','full'],group:'Hazırlık',qualityApplies:false}),
+        item('waterproof','Islak hacim su yalıtımı','m²',Math.round(area*1.35*100)/100,{scopes:['normal','full'],group:'Yalıtım'}),
+        item('floorCeramic','Yer seramiği (fire yalnız malzemede)','m²',area,{waste:.10,scopes:['normal','full'],group:'Kaplama'}),
+        item('wallCeramic','Duvar seramiği (fire yalnız malzemede)','m²',wall,{waste:.10,scopes:['normal','full'],group:'Kaplama'}),
+        item('plumbing','Temiz su ve gider bağlantı noktaları','nokta',4,{scopes:['full'],group:'Tesisat'}),
+        item('electric','Elektrik ve aydınlatma noktaları','nokta',2,{scopes:['full'],group:'Tesisat'}),
+        item('wc','Klozet ve montajı','adet',1,{scopes:['normal','full'],group:'Vitrifiye'}),
+        item('shower','Duşakabin ve montajı','adet',1,{scopes:['normal','full'],group:'Vitrifiye'}),
+        item('vanity','Banyo dolabı ve lavabolu ünite','adet',1,{scopes:all,group:'Mobilya'}),
+        item('bathLight','Aydınlatma değişimi','adet',1,{scopes:all,group:'Elektrik'}),
+        item('bathTowel','Havlupan','adet',1,{scopes:['full'],group:'Donatı'}),
+        item('transport','Şantiye ulaşım ve nakliye','iş',1,{scopes:['normal','full'],group:'Lojistik',qualityApplies:false})];
+    }
+    if(category==='mutfak'){
+      // m² tek başına doğrulanmış dolap metrajı değildir. Kullanıcı ölçüsünü girmezse ön taslak uyarısı verir.
+      const mt=options.fixedKitchen?5:getNum('kitchenMeters',Math.max(1.5,Math.sqrt(area)*1.4),notes);
+      const counter=options.fixedKitchen?4.5:getNum('counterMeters',mt,notes);
+      return [
+        item('cabinetDemo','Eski dolapların sökümü','iş',1,{scopes:['normal','full'],group:'Hazırlık',qualityApplies:false}),
+        item('cabinet','Yeni mutfak dolabı (metretül)','mtül',mt,{scopes:all,group:'Mobilya'}),
+        item('counter','Mutfak tezgâhı (metretül)','mtül',counter,{scopes:['normal','full'],group:'Tezgâh'}),
+        item('backsplash','Tezgâh arası seramik','m²',counter*.65,{waste:.10,scopes:['full'],group:'Kaplama'}),
+        item('sink','Eviye ve armatür','takım',1,{scopes:['normal','full'],group:'Tesisat'}),
+        item('plumbing','Su ve gider tesisat noktaları','nokta',2,{scopes:['full'],group:'Tesisat'}),
+        item('electric','Elektrik ve priz noktaları','nokta',4,{scopes:['full'],group:'Elektrik'}),
+        item('kitchenFloor','Mutfak zemin kaplaması','m²',area,{waste:.10,scopes:['full'],group:'Kaplama'}),
+        item('kitchenLight','Yeni aydınlatma','iş',1,{scopes:['full'],group:'Elektrik'}),
+        item('transport','Şantiye ulaşım ve nakliye','iş',1,{scopes:['normal','full'],group:'Lojistik',qualityApplies:false})];
+    }
+    if(category==='boya'){
+      const surface=getNum('paintSurface',area*2.5,notes);
+      // Malzeme: iki kat / 10 m²/L, fire %8. İşçilik: fiziksel m², iki kez sayılmaz.
+      const liters=Math.ceil((surface*2/10)*1.08);
+      return [
+        item('surfaceRepair','Çatlak / yüzey onarımı','m²',surface*.12,{scopes:['normal','full'],group:'Hazırlık'}),
+        item('paintWalls','Duvar boya, 2 kat','m²',surface,{materialQty:liters,materialUnit:'L',scopes:all,group:'Boya'}),
+        item('paintCeiling','Tavan boya, 2 kat','m²',area,{materialQty:Math.ceil((area*2/10)*1.08),materialUnit:'L',scopes:['normal','full'],group:'Boya'}),
+        item('transport','Şantiye ulaşım ve nakliye','iş',1,{scopes:['full'],group:'Lojistik',qualityApplies:false})];
+    }
+    if(category==='fayans'){
+      const surface=getNum('tileSurface',area,notes);
+      return [item('demolition','Eski kaplama sökümü','m²',surface,{scopes:['normal','full'],group:'Hazırlık',qualityApplies:false}),
+        item('waterproof','Islak alanda su yalıtımı','m²',surface,{scopes:['full'],group:'Yalıtım'}),
+        item('floorCeramic','Yeni fayans/seramik döşemesi','m²',surface,{waste:.10,scopes:all,group:'Kaplama'}),
+        item('transport','Şantiye ulaşım ve nakliye','iş',1,{scopes:['normal','full'],group:'Lojistik',qualityApplies:false})];
+    }
+    if(category==='ev'){
+      const nBath=finite(d.bathrooms,0,6),nDoors=finite(d.doors,0,30);
+      const bathArea=finite(d.bathArea,2,30),kitchenArea=finite(d.kitchenArea,4,50);
+      if([nBath,nDoors,bathArea,kitchenArea].some(v=>v===null))throw new Error('Ev metrajı: banyo 0–6, kapı 0–30 adet; banyo alanı 2–30, mutfak alanı 4–50 m² olmalıdır.');
+      if(!Number.isInteger(nBath)||!Number.isInteger(nDoors))throw new Error('Ev metrajı: banyo ve kapı sayıları tam sayı olmalıdır.');
+      const bathroomCount=nBath,doorCount=nDoors;
+      notes.push('Ev paketinde mutfak (5 mtül) ve banyo alanı varsayımlarını mutlaka yerinde doğrulayın.');
+      const paintSurface=area*2.5;
+      // Tekrarlı gideri önle: banyo ve mutfaktaki nakliye tek şantiye nakliyesiyle değiştirilir.
+      const bath=linesFor('banyo',bathArea,notes,{fixedBath:true}).filter(x=>x.id!=='transport').map(x=>({...x,id:'evbath_'+x.id,title:`Banyo · ${x.title}`,qty:x.qty*bathroomCount,materialQty:x.materialQty*bathroomCount,scopes:x.basicIncluded}));
+      const kitchen=linesFor('mutfak',kitchenArea,notes,{fixedKitchen:true}).filter(x=>x.id!=='transport').map(x=>({...x,id:'evkitchen_'+x.id,title:`Mutfak · ${x.title}`,qty:x.qty,materialQty:x.materialQty,scopes:x.basicIncluded}));
+      const commons=[item('paintWalls','Ev duvar boyası, 2 kat','m²',paintSurface,{materialQty:Math.ceil((paintSurface*2/10)*1.08),materialUnit:'L',scopes:all,group:'Boya'}),
+        item('paintCeiling','Ev tavan boyası, 2 kat','m²',area,{materialQty:Math.ceil((area*2/10)*1.08),materialUnit:'L',scopes:['normal','full'],group:'Boya'}),
+        item('flooring','Ortak alan parke ve süpürgelik','m²',area*.70,{waste:.08,scopes:['normal','full'],group:'Zemin'}),
+        item('doors','İç kapı ve montaj','adet',doorCount,{scopes:['normal','full'],group:'Doğrama'}),
+        item('entryDoor','Daire giriş kapısı','adet',1,{scopes:['full'],group:'Doğrama'}),
+        item('wholeElectrical','Ortak alan elektrik revizyonu','nokta',8,{scopes:['full'],group:'Elektrik'}),
+        item('transport','Şantiye lojistik / moloz nakliyesi','iş',1,{scopes:['normal','full'],group:'Lojistik',qualityApplies:false})];
+      // Ev paketinde mutfak/banyo sadece standart ve tam kapsamda etkin.
+      const bundles=[...bath,...kitchen].map(x=>({...x,basicIncluded:x.basicIncluded.filter(z=>z!=='light')}));
+      return [...commons,...bundles];
+    }
+    return [];
+  }
+  function estimate(){
+    const area=finite(s.area,1,10000);
+    if(area===null)return {ok:false,warning:'Geçerli alan girin: 1–10.000 m².',lines:[]};
+    const lim=LIMITS[s.service];
+    if(area<lim[0]||area>lim[1])return {ok:false,warning:`${SERVICES[s.service]} için güvenli tahmin aralığı ${lim[0]}–${lim[1]} m². Bu ölçü için yerinde keşif gerekir.`,lines:[]};
+    if(s.service==='diger')return {ok:false,warning:'Diğer tadilat işleri için doğrulanmış maliyet modeli bulunmuyor. Lütfen özel teklif talebi oluşturun.',lines:[]};
+    const notes=[];
+    let scopedLines;try{scopedLines=linesFor(s.service,area,notes);}catch(err){return {ok:false,warning:err.message,lines:[]};}
+    const lines=scopedLines.map(l=>{
+      const enabled=s.customScope[l.id]===undefined?l.basicIncluded.includes(s.scope):s.customScope[l.id];
+      const price=s.customRates[l.id]||[l.baseM,l.baseL];
+      const quality=l.qualityApplies?QUALITY[s.quality].factor:1;
+      const mat=enabled?l.materialQty*price[0]*quality:0;
+      const labor=enabled?l.qty*price[1]:0;
+      return {...l,enabled,rateM:price[0],rateL:price[1],mat:round(mat),labor:round(labor),sum:round(mat+labor),qty:Math.round(l.qty*100)/100,materialQty:Math.round(l.materialQty*100)/100};
+    });
+    const included=lines.filter(l=>l.enabled);
+    if(!included.length)return {ok:false,warning:'En az bir iş kalemi seçilmelidir.',lines};
+    const mat=included.reduce((a,l)=>a+l.mat,0), labor=included.reduce((a,l)=>a+l.labor,0);
+    const subtotal=mat+labor;
+    const overhead=round(subtotal*s.overhead/100),margin=round((subtotal+overhead)*s.margin/100);
+    const base=subtotal+overhead+margin;
+    const reserve=round(base*s.reserve/100);
+    const preTax=base+reserve;
+    const vat=s.vat==='unknown'?null:round(preTax*Number(s.vat)/100);
+    const total=preTax+(vat||0);
+    const uncertainty=notes.length?0.23:0.15;
+    const low=round(total*(1-uncertainty));const high=round(total*(1+uncertainty));
+    return {ok:true,lines,notes,mat,labor,subtotal,overhead,margin,reserve,preTax,vat,total,low,high,
+      assumed:notes.length>0,taxSpecified:vat!==null,hasDemoRates:true,rateVersion:VERSION,
+      status:notes.length?'Varsayımlı ön taslak':'Örnek birim fiyatlı ön taslak'};
+  }
+  function describeRows(){
+    const r=estimate();
+    if(!r.ok)return r.warning;
+    const items=r.lines.filter(x=>x.enabled).map(x=>`${x.title} | ${x.qty} ${x.unit} | malzeme ${tl(x.mat)} | işçilik ${tl(x.labor)} | ara toplam ${tl(x.sum)}`).join('\n');
+    return `TADİLAT BÜTÇE TASLAĞI · MODEL ${VERSION}\nHizmet: ${SERVICES[s.service]}\nAlan: ${s.area} m²\nİl: ${s.city}\nKapsam: ${SCOPE[s.scope].label}\nMalzeme: ${QUALITY[s.quality].label}\n\nİŞ KALEMLERİ\n${items}\n\nMalzeme: ${tl(r.mat)}\nİşçilik/hizmet: ${tl(r.labor)}\nGenel gider (%${s.overhead}): ${tl(r.overhead)}\nYüklenici payı (%${s.margin}): ${tl(r.margin)}\nRisk karşılığı (%${s.reserve}): ${tl(r.reserve)}\nKDV: ${r.vat===null?'Belirlenmedi, dahil edilmedi':tl(r.vat)}\nÖn bütçe: ${tl(r.total)}\nKurgusal belirsizlik bandı: ${tl(r.low)} – ${tl(r.high)}\n\nVARSAYIMLAR\n${r.notes.join('\n')||'Metrajlar kullanıcı tarafından girildi.'}\n\nUYARI: Varsayımsal örnek birim fiyatlar kullanılmıştır; saha fiyatı, resmi rayiç ya da garanti edilmiş teklif değildir. Yerel fiyatlar, KDV ve malzeme spesifikasyonları ayrıca doğrulanmalıdır.\n`;
+  }
+  const DIMENSIONS={
+    banyo:[['height','Tavan yüksekliği (m)','2,65'],['bathWall','Duvar seramiği toplam alanı (m²)','Ölçülmediyse boş bırak']],
+    mutfak:[['kitchenMeters','Dolap uzunluğu (metretül)','Gerçek ölçü'],['counterMeters','Tezgâh uzunluğu (metretül)','Gerçek ölçü']],
+    ev:[['bathrooms','Banyo adedi','1'],['bathArea','Bir banyonun alanı (m²)','6'],['kitchenArea','Mutfak alanı (m²)','12'],['doors','İç kapı adedi','5']],
+    boya:[['paintSurface','Gerçek boyanacak toplam alan (m²)','Bilinmiyorsa yaklaşık hesap']],
+    fayans:[['tileSurface','Kaplanacak gerçek yüzey (m²)','Bilinmiyorsa zemin alanı']],
+    diger:[]};
+  function renderDimensionFields(){
+    $('dimensionFields').innerHTML=(DIMENSIONS[s.service]||[]).map(([id,label,placeholder])=>`<div class="field"><label class="field-label" for="dim_${id}">${esc(label)}</label><input type="number" class="control" id="dim_${id}" data-dimension="${id}" inputmode="decimal" min="0" max="10000" step="0.1" value="${esc(s.dimension[id])}" placeholder="${esc(placeholder)}"></div>`).join('');
+  }
+  function render(){
+    document.querySelectorAll('[data-quality]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.quality===s.quality)));
+    document.querySelectorAll('[data-scope]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scope===s.scope)));
+    document.querySelectorAll('[data-quick-service]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.quickService===s.service)));
+    $('reserveInput').value=s.reserve;$('overheadInput').value=s.overhead;$('marginInput').value=s.margin;$('vatInput').value=s.vat;
+    const r=estimate();
+    $('calcError').textContent=r.ok?'':r.warning;
+    $('estimateValue').textContent=r.ok?`${tl(r.low)} – ${tl(r.high)}`:'Keşif / metraj gerekli';
+    $('estimateExplanation').textContent=r.ok?`Örnek birim fiyatlardan türetilmiş riskli ön bütçe. ${r.taxSpecified?'Seçilen KDV uygulanmıştır.':'KDV dahil değildir.'}`:'Geçerli ve desteklenen kapsam seçin.';
+    $('estimateSummary').textContent=`${s.area||'—'} m² · ${SERVICES[s.service]}`;
+    $('estimateType').textContent=r.ok?r.status:'Otomatik fiyat verilmedi';
+    $('calcToQuote').disabled=false;$('copyEstimate').disabled=!r.ok;
+    $('calcToQuote').style.opacity='1';
+    $('assumptions').innerHTML=r.ok?(r.notes.length?`<strong>Doğrulanacak ölçüler:</strong><ul>${r.notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'Girilen metrajlar kullanıldı. Örnek fiyatlar ayrıca doğrulanmalıdır.'):'Bu kapsam için hesap üretilemedi; özel teklif talebi oluşturabilirsiniz.';
+    $('quantityRows').innerHTML=r.lines.map(l=>`<tr class="${l.enabled?'':'row-disabled'}"><td><label class="line-check"><input type="checkbox" data-toggle="${esc(l.id)}" ${l.enabled?'checked':''}><span>${esc(l.title)}<small>${esc(l.group)}</small></span></label></td><td class="num">${l.qty.toLocaleString('tr-TR')} ${esc(l.unit)}</td><td class="num">${l.enabled?tl(l.mat):'—'}</td><td class="num">${l.enabled?tl(l.labor):'—'}</td></tr>`).join('');
+    $('rateRows').innerHTML=r.lines.map(l=>`<tr><td>${esc(l.title)}<small>${esc(l.unit)} · malz. ${esc(l.materialUnit)}</small></td><td><input class="rate-input" aria-label="${esc(l.title)} malzeme fiyatı" type="number" min="0" max="5000000" step="10" data-rate="${esc(l.id)}" data-rate-type="mat" value="${l.rateM}"></td><td><input class="rate-input" aria-label="${esc(l.title)} işçilik fiyatı" type="number" min="0" max="5000000" step="10" data-rate="${esc(l.id)}" data-rate-type="labor" value="${l.rateL}"></td></tr>`).join('');
+    $('materialsTotal').textContent=r.ok?tl(r.mat):'—';$('laborTotal').textContent=r.ok?tl(r.labor):'—';
+    $('overheadTotal').textContent=r.ok?tl(r.overhead):'—';$('marginTotal').textContent=r.ok?tl(r.margin):'—';
+    $('reserveTotal').textContent=r.ok?tl(r.reserve):'—';$('vatTotal').textContent=r.ok?(r.vat===null?'Hariç / seçilmedi':tl(r.vat)):'—';
+    $('grandTotal').textContent=r.ok?tl(r.total):'—';
+    const budget=finite(s.budget,1,1000000000);
+    $('budgetDelta').textContent=budget===null?'Bütçe girersen farkı görürsün.':!r.ok?'Önce geçerli bir hesap oluştur.':r.total<=budget?`Bütçe içinde: ${tl(budget-r.total)} pay var.`:`Bütçe açığı: ${tl(r.total-budget)}. Kapsamı veya fiyatları yeniden değerlendir.`;
+    return r;
+  }
+  function serviceChange(service,reset=true){
+    if(!SERVICES[service])return;
+    s.service=service;
+    if(reset)s.area=AREAS[service];
+    s.customScope={};
+    $('calcService').value=service;$('calcArea').value=s.area;$('quickArea').value=s.area;
+    $('calcAreaLabel').textContent=service==='boya'?'Konut net taban alanı (m²)':service==='fayans'?'Kaplanacak taban alanı (m²)':'Tadilat yapılan taban alanı (m²)';
+    renderDimensionFields();render();
+  }
+  function scrollCalc(){ $('hesapla').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}); }
+  document.querySelectorAll('[data-service]').forEach(b=>b.addEventListener('click',()=>{serviceChange(b.dataset.service);scrollCalc();}));
+  document.querySelectorAll('[data-quick-service]').forEach(b=>b.addEventListener('click',()=>serviceChange(b.dataset.quickService)));
+  document.querySelectorAll('[data-quality]').forEach(b=>b.addEventListener('click',()=>{s.quality=b.dataset.quality;render();}));
+  document.querySelectorAll('[data-scope]').forEach(b=>b.addEventListener('click',()=>{s.scope=b.dataset.scope;s.customScope={};render();}));
+  $('calcService').addEventListener('change',e=>serviceChange(e.target.value));
+  $('calcArea').addEventListener('input',e=>{s.area=e.target.value;$('quickArea').value=e.target.value;render();});
+  $('calcCity').addEventListener('change',e=>{s.city=e.target.value;$('quickCity').value=e.target.value;render();});
+  $('quickCity').addEventListener('change',e=>{s.city=e.target.value;$('calcCity').value=e.target.value;render();});
+  $('quickForm').addEventListener('submit',e=>{
+    e.preventDefault();const val=finite($('quickArea').value,1,10000);
+    if(val===null){$('quickError').textContent='1–10.000 m² arasında alan girin.';$('quickArea').focus();return;}
+    $('quickError').textContent='';s.area=val;s.city=$('quickCity').value;
+    $('calcArea').value=val;$('calcCity').value=s.city;render();scrollCalc();
+  });
+  $('dimensionFields').addEventListener('input',e=>{
+    const k=e.target.dataset.dimension;if(!k)return;
+    // Boş alan bilinmeyen metrajdır; sıfıra dönüştürülmez.
+    s.dimension[k]=e.target.value;render();
+  });
+  $('quantityRows').addEventListener('change',e=>{
+    const id=e.target.dataset.toggle;if(id){s.customScope[id]=e.target.checked;render();}
+  });
+  $('rateRows').addEventListener('change',e=>{
+    const id=e.target.dataset.rate;if(!id)return;
+    const n=finite(e.target.value,0,5000000);
+    if(n===null){$('calcError').textContent=`${id} birim fiyatı 0–5.000.000 TL olmalıdır.`;return;}
+    const base=RATES[id]||RATES[id.replace(/^evbath_|^evkitchen_/, '')];
+    if(!base)return;
+    const r=s.customRates[id]?[...s.customRates[id]]:[...base];
+    r[e.target.dataset.rateType==='mat'?0:1]=n;s.customRates[id]=r;render();
+  });
+  for(const id of ['reserveInput','overheadInput','marginInput']){
+    $(id).addEventListener('change',e=>{
+      const n=finite(e.target.value,0,40);
+      if(n===null){$('calcError').textContent=`${id}: 0–40 arasında yüzde girilmelidir.`;e.target.value=s[id==='reserveInput'?'reserve':id==='overheadInput'?'overhead':'margin'];return;}
+      s[id==='reserveInput'?'reserve':id==='overheadInput'?'overhead':'margin']=n;render();
+    });
+  }
+  $('vatInput').addEventListener('change',e=>{s.vat=e.target.value;render();});
+  $('budgetInput').addEventListener('input',e=>{s.budget=e.target.value;const r=estimate(),b=finite(s.budget,1,1000000000);$('budgetDelta').textContent=b===null?'Bütçe girersen farkı görürsün.':!r.ok?'Hesap bulunmuyor.':r.total>b?`Bütçe açığı: ${tl(r.total-b)}`:`Bütçe içinde: ${tl(b-r.total)} pay var.`;});
+  $('resetCalc').addEventListener('click',()=>{s.customRates={};s.customScope={};s.reserve=10;s.margin=10;s.overhead=10;s.vat='unknown';s.budget='';s.dimension={height:2.65,bathWall:'',kitchenMeters:'',counterMeters:'',paintSurface:'',tileSurface:'',bathrooms:1,bathArea:6,kitchenArea:12,doors:5};$('budgetInput').value='';renderDimensionFields();render();});
+  const csvSafe=t=>{const v=String(t);return '"'+(/^[=+@\-\t\r]/.test(v)?"'":"")+v.replace(/"/g,'""')+'"';};
+  function save(name,body,mime){const blob=new Blob(['\ufeff'+body],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);}
+  $('downloadCsv').addEventListener('click',()=>{
+    const r=estimate();if(!r.ok){$('calcError').textContent=r.warning;return;}
+    const rows=[['Kalem','Miktar','Birim','Malzeme birim fiyatı','İşçilik birim fiyatı','Malzeme toplam','İşçilik toplam','Toplam'],...r.lines.filter(x=>x.enabled).map(x=>[x.title,x.qty,x.unit,x.rateM,x.rateL,x.mat,x.labor,x.sum])];
+    save('tadilat-maliyet-kalemleri.csv',rows.map(row=>row.map(csvSafe).join(';')).join('\r\n'),'text/csv;charset=utf-8');
+  });
+  $('printCalc').addEventListener('click',()=>window.print());
+  async function copyText(text){if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return;}const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();const ok=document.execCommand('copy');t.remove();if(!ok)throw new Error('copy failed');}
+  $('copyEstimate').addEventListener('click',async()=>{try{await copyText(describeRows());$('copyEstimate').textContent='Kopyalandı ✓';setTimeout(()=>$('copyEstimate').textContent='Hesabı kopyala',1800);}catch{$('calcError').textContent='Kopyalama izni verilmedi; CSV indirebilirsiniz.';}});
+  const dialog=$('quoteDialog');
+  function openQuote(){
+    $('qCity').value=s.city==='Diğer'?'':s.city;
+    $('quoteIntro').textContent=backendReady?'İş bilgilerini tamamlayın. Gönderimden önce aydınlatma metnini inceleyin.':'Bütçe kalemleri forma aktarılır. Bu sürümde hiçbir bilgi sunucuya gönderilmez; metni indirebilirsiniz.';
+    $('quoteSubmit').textContent=backendReady?'Teklif talebini gönder ↗':'Talep metni oluştur ↗';
+    $('consentWrap').hidden=!backendReady;$('qConsent').required=backendReady;
+    if(backendReady)$('privacyNoticeLink').href=SITE_CONFIG.privacyNoticeUrl;
+    $('quoteError').textContent='';$('quoteNotice').className='notice';$('quoteNotice').textContent='';
+    $('quotePreview').hidden=true;$('copyQuote').hidden=true;$('downloadQuote').hidden=true;
+    if(!dialog.open){dialog.showModal();document.body.classList.add('modal-open');}
+  }
+  function closeQuote(){dialog.close();document.body.classList.remove('modal-open');}
+  document.querySelectorAll('[data-open-quote]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();openQuote();$('mobileNav').classList.remove('open');$('menuToggle').setAttribute('aria-expanded','false');}));
+  $('calcToQuote').addEventListener('click',openQuote);
+  document.querySelectorAll('[data-close-dialog]').forEach(b=>b.addEventListener('click',closeQuote));
+  dialog.addEventListener('close',()=>document.body.classList.remove('modal-open'));
+  dialog.addEventListener('click',e=>{if(e.target===dialog)closeQuote();});
+  $('menuToggle').addEventListener('click',()=>{const open=$('mobileNav').classList.toggle('open');$('menuToggle').setAttribute('aria-expanded',String(open));$('menuToggle').setAttribute('aria-label',open?'Menüyü kapat':'Menüyü aç');});
+  document.querySelectorAll('#mobileNav a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{$('mobileNav').classList.remove('open');$('menuToggle').setAttribute('aria-expanded','false');}));
+  const norm=t=>String(t||'').replace(/[<>]/g,'').trim();
+  function quoteBody(){return `${describeRows()}\nTALEP SAHİBİ\nAd soyad: ${norm($('qName').value)}\nTelefon: ${norm($('qPhone').value)}\nŞehir: ${norm($('qCity').value)}\nİlçe: ${norm($('qDistrict').value)||'Belirtilmedi'}\n\nİŞİN AYRINTILARI\n${norm($('qDetail').value)}\n`;}
+  function showNotice(msg,bad=false){$('quoteNotice').textContent=msg;$('quoteNotice').className=`notice visible${bad?' error':''}`;}
+  $('quoteForm').addEventListener('submit',async e=>{
+    e.preventDefault();const n=norm($('qName').value),p=norm($('qPhone').value),c=norm($('qCity').value),d=norm($('qDetail').value);
+    if(n.length<3||c.length<2||d.length<12){$('quoteError').textContent='Ad soyad, şehir ve en az 12 karakterlik iş açıklaması girin.';return;}
+    if(!/^\+?[0-9\s()+-]{10,20}$/.test(p)||p.replace(/\D/g,'').length<10){$('quoteError').textContent='Geçerli bir telefon numarası girin.';return;}
+    if(backendReady&&!$('qConsent').checked){$('quoteError').textContent='Lütfen aydınlatma metnini inceleyin.';return;}
+    $('quoteError').textContent='';latestQuoteText=quoteBody();
+    if(!backendReady){$('quotePreview').textContent=latestQuoteText;$('quotePreview').hidden=false;$('copyQuote').hidden=false;$('downloadQuote').hidden=false;showNotice('Talep taslağı oluşturuldu. Sunucuya veya firmaya gönderilmedi.');return;}
+    const btn=$('quoteSubmit');btn.disabled=true;btn.textContent='Gönderiliyor…';
+    const controller=new AbortController(),tm=setTimeout(()=>controller.abort(),SITE_CONFIG.requestTimeoutMs);
+    try{
+      const response=await fetch(SITE_CONFIG.leadEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,phone:p,city:c,district:norm($('qDistrict').value),details:d,service:s.service,area:Number(s.area),quality:s.quality,scope:s.scope,estimator:estimate(),privacyAcknowledged:true}),signal:controller.signal,credentials:'same-origin'});
+      if(!response.ok)throw new Error('Sunucu gönderimi doğrulamadı.');
+      showNotice('Talebiniz sunucu tarafından alındı.');$('quoteForm').reset();
+    }catch(err){showNotice(err.name==='AbortError'?'Sunucu zaman aşımı. Gönderim doğrulanamadı.':'Gönderim doğrulanamadı. Metni kopyalayabilirsiniz.',true);$('quotePreview').textContent=latestQuoteText;$('quotePreview').hidden=false;$('copyQuote').hidden=false;$('downloadQuote').hidden=false;}
+    finally{clearTimeout(tm);btn.disabled=false;btn.textContent='Teklif talebini gönder ↗';}
+  });
+  $('quoteForm').addEventListener('input',()=>{if(!$('quotePreview').hidden){$('quotePreview').hidden=true;$('copyQuote').hidden=true;$('downloadQuote').hidden=true;showNotice('Talebi yeniden oluşturmalısınız.');}});
+  $('copyQuote').addEventListener('click',async()=>{try{await copyText(latestQuoteText);showNotice('Talep metni kopyalandı.');}catch{showNotice('Kopyalama izni verilmedi.',true);}});
+  $('downloadQuote').addEventListener('click',()=>{save('tadilat-teklif-talebi.txt',latestQuoteText,'text/plain;charset=utf-8');showNotice('Metin dosyanız indirildi; gönderim yapılmadı.');});
+
+  // V3 Görsel denge: tüm hesaplama girişleri tek anda değil, eşit kart düzeninde adımlı sunulur.
+  let wizardStep=1;
+  function wizardGo(step,focus=false){
+    wizardStep=Math.max(1,Math.min(3,Number(step)||1));
+    for(let i=1;i<=3;i++){
+      const selected=i===wizardStep;
+      $('wizardPanel'+i).hidden=!selected;
+      const tab=$('wizardTab'+i);
+      tab.setAttribute('aria-selected',String(selected));
+      tab.tabIndex=selected?0:-1;
+    }
+    $('wizardPrev').disabled=wizardStep===1;
+    $('wizardNext').innerHTML=wizardStep===3?'İş kalemlerini gör <span aria-hidden="true">↓</span>':(wizardStep===1?'Ölçülere geç <span aria-hidden="true">→</span>':'Bütçe ayarına geç <span aria-hidden="true">→</span>');
+    $('wizardTip').textContent=[
+      'Seçimlerini değiştirdiğinde sağdaki tutarlar anında güncellenir.',
+      'Ölçülmeyen değerler varsayım olarak hesaplanır ve sonuçta açıklanır.',
+      'Gider, kâr ve KDV seçimlerini istediğin zaman değiştirebilirsin.'
+    ][wizardStep-1];
+    if(focus)$('wizardTab'+wizardStep).focus();
+  }
+  document.querySelectorAll('[data-wizard-step]').forEach(el=>el.addEventListener('click',()=>wizardGo(el.dataset.wizardStep)));
+  $('wizardPrev').addEventListener('click',()=>wizardGo(wizardStep-1,true));
+  $('wizardNext').addEventListener('click',()=>{
+    if(wizardStep<3){wizardGo(wizardStep+1,true);return;}
+    $('costBreakdown').open=true;
+    $('calcDetailArea').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+  });
+  document.querySelector('.wizard-tabs').addEventListener('keydown',e=>{
+    if(!['ArrowRight','ArrowLeft','Home','End'].includes(e.key))return;
+    e.preventDefault();
+    const next=e.key==='Home'?1:e.key==='End'?3:(wizardStep+(e.key==='ArrowRight'?1:-1)+2)%3+1;
+    wizardGo(next,true);
+  });
+
+
+  let oldDetailStates=null;
+  window.addEventListener('beforeprint',()=>{
+    oldDetailStates=[$('costBreakdown').open,$('rateEditor').open];
+    $('costBreakdown').open=true;
+    $('rateEditor').open=true;
+  });
+  window.addEventListener('afterprint',()=>{
+    if(oldDetailStates){$('costBreakdown').open=oldDetailStates[0];$('rateEditor').open=oldDetailStates[1];oldDetailStates=null;}
+  });
+
+  $('year').textContent=new Date().getFullYear();
+  renderDimensionFields();render();
+  // Sadece test ortamında kullanılmak üzere saf hesap fonksiyonuna erişim.
+  if(typeof window!=='undefined'&&window.__ESTIMATOR_TEST__)window.__ESTIMATOR_TEST__.api={state:s,estimate,linesFor};
+})();
+
+  </script>
+</body>
+</html>
