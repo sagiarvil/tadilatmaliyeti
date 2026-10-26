@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "dilekce-7956e"
+  },
+  "targets": {
+    "dilekce-7956e": {
+      "hosting": {
+        "tadilatmaliyeti": [
+          "tadilatmaliyeti"
+        ]
+      }
+    }
+  }
+}
