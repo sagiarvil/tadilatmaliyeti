@@ -243,8 +243,8 @@
     .hero-inner{
       display:grid;
       grid-template-columns:1.05fr .95fr;
-      gap:54px;
-      align-items:center;
+      gap:52px;
+      align-items:start;
       position:relative;
       z-index:1;
     }
@@ -271,7 +271,7 @@
       line-height:1.13;
       letter-spacing:-.065em;
       font-weight:800;
-      margin:22px 0 20px;
+      margin:18px 0 18px;
       color:var(--ink-dark);
     }
     .hero h1 .underline{
@@ -295,7 +295,7 @@
       line-height:1.75;
       color:#3e4c43;
       max-width:530px;
-      margin-bottom:30px;
+      margin-bottom:24px;
     }
     .hero-actions{
       display:flex;
@@ -345,7 +345,7 @@
     .btn-whatsapp svg{width:20px;height:20px;fill:currentColor}
     
     .under-hero{
-      margin-top:36px;
+      margin-top:28px;
       display:flex;
       gap:16px;
       align-items:center;
@@ -386,12 +386,16 @@
       z-index:-1;
     }
     .hero-panel{
-      padding:30px;
+      padding:32px 34px;
       background:white;
       border:1px solid #e5e3d8;
       border-radius:26px;
       box-shadow:0 25px 75px rgba(22,33,26,.10);
       position:relative;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
     .panel-top{
       display:flex;
@@ -497,7 +501,8 @@
       display:flex;
       justify-content:space-between;
       gap:14px;
-      margin-top:20px;
+      margin-top:auto;
+      padding-top:20px;
       align-items:center;
     }
     .panel-submit .helper{max-width:180px;margin-top:0}
@@ -529,12 +534,14 @@
     .trust-inner{
       display:grid;
       grid-template-columns:1fr 1fr 1fr;
+      align-items:stretch;
     }
     .trust-item{
       display:flex;
       align-items:center;
       gap:18px;
       padding:24px 30px;
+      height:100%;
     }
     .trust-item+.trust-item{border-left:1px solid #e1ded3}
     .trust-num{
@@ -585,7 +592,8 @@
     .services{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:16px;
+      gap:18px;
+      align-items:stretch;
     }
     .service-card{
       position:relative;
@@ -594,7 +602,8 @@
       border-radius:22px;
       background:#fff;
       padding:26px;
-      min-height:250px;
+      height:100%;
+      min-height:260px;
       transition:transform .18s,box-shadow .18s;
       display:flex;
       flex-direction:column;
@@ -1203,13 +1212,19 @@
     /* Editorial Kapsam Karşılaştırma */
     .editorial{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1fr 1fr;
       background:#f4e5d7;
       border-radius:26px;
       overflow:hidden;
-      min-height:330px;
+      align-items:stretch;
+      min-height:340px;
     }
-    .editorial-text{padding:50px 58px}
+    .editorial-text{
+      padding:48px 54px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
     .editorial h2{
       font:800 clamp(29px,3vw,42px)/1.21 Manrope,sans-serif;
       letter-spacing:-.055em;
@@ -1226,7 +1241,8 @@
       position:relative;
       background:#e8b14a;
       overflow:hidden;
-      min-height:330px;
+      height:100%;
+      min-height:340px;
     }
     .sheet{
       position:absolute;
@@ -2260,7 +2276,7 @@
           </div>
 
           <div class="calc-disclaimer" id="estimateDisclaimer">
-            <strong>Maliyet Hesaplama Motoru V2.2:</strong> Açık metraj × 2026 ortalama malzeme ve işçilik rayici. Resmi Çevre ve Şehircilik Bakanlığı birim fiyatları kamu yapımları içindir; özel konut tadilatlarında piyasa usta teklifleri ve yerinde keşif esastır. Bütçe aralığı güvenli senaryo yaklaşımıyla hesaplanır.
+            <strong>2026 Gerçek Saha Rayici (Cem Yeşilay Luxury • İzmir • 26 Ekim 2026):</strong> Hesaplama motoru, doğrudan usta ve taşeron alış maliyeti listesine dayanır (firma kârı ve KDV hariç çıplak şantiye bütçesi). Mükerrer kırım, moloz ve tesisat bedelleri otomatik elenir. Kesin uygulama öncesi yerinde keşif ve metraj doğrulaması esastır.
           </div>
         </div>
       </div>
@@ -2420,7 +2436,7 @@
       </div>
       <div class="foot-bottom">
         <span>© <span id="year"></span> tadilatmaliyeti.com · Tüm hakları saklıdır.</span>
-        <span>Türkiye Geneli Banyo, Mutfak ve Ev Tadilatı Maliyet Rehberi</span>
+        <span>26 Ekim 2026 İzmir Cem Yeşilay Luxury Ön Maliyet Listesi Esas Alınmıştır</span>
       </div>
     </div>
   </footer>
@@ -2528,16 +2544,62 @@
     full:{label:'Komple / Anahtar Teslim'}
   };
 
-  // 2026 Piyasa Birim Fiyatları (Referans Rayiçler): [Malzeme TL/birim, İşçilik TL/birim]
+  // 26 Ekim 2026 İzmir Cem Yeşilay Luxury İnşaat İşleri Ön Maliyet Listesi
+  // Firma kârı ve KDV hariç yaklaşık taşeron/usta alış bütçesi rayiçleri: [Malzeme TL/birim, İşçilik TL/birim]
   const RATES = {
-    demolition:[0,1150], waterproof:[400,330], floorCeramic:[560,620], wallCeramic:[560,650],
-    plumbing:[1800,2100], electric:[1200,1100], wc:[7400,1450], shower:[11000,2800],
-    vanity:[11500,2600], bathLight:[1900,950], bathTowel:[3600,1350], transport:[0,4900],
-    cabinet:[10200,2900], counter:[4900,1550], backsplash:[550,600], sink:[4700,1500],
-    cabinetDemo:[0,3500], kitchenFloor:[560,620], kitchenLight:[3100,1400],
-    paintWalls:[265,125], paintCeiling:[260,110], surfaceRepair:[175,220],
-    flooring:[650,390], doors:[7100,1650], entryDoor:[18000,3000],
-    wholeElectrical:[1700,1750], wholePlumbing:[2200,1900]
+    // Şantiye Hazırlığı, Koruma ve Moloz
+    prepProtection: [2500, 5000],       // Şantiye hazırlığı ve koruma (daire ve ortak alan): 7.500 TL
+    debrisTransport: [0, 8000],        // Moloz atımı (çuval, taşıma, nakliye, döküm): 8.000 TL
+    finalCleaning: [2000, 4500],        // Son kaba ve ince temizlik (85 m² daire): 6.500 TL
+
+    // Banyo Kalemleri (25 m² yüzey bazlı)
+    fixtureDemo: [0, 4000],            // Ekipman sökümü (klozet, lavabo, duşakabin): 4.000 TL
+    ceramicDemo: [0, 340],             // Seramik kırımı m² işçilik: 340 TL/m²
+    plumbingBath: [10000, 15000],      // Banyo su tesisatı (temiz + pis su malzemeli): 25.000 TL
+    electricBath: [2500, 4000],        // Banyo elektrik tesisatı (standart noktalar malzemeli): 6.500 TL
+    plasterRepair: [3500, 6500],       // Sıva ve şap tamiratı (lokal düzeltme malzemeli): 10.000 TL
+    waterproof: [450, 550],            // Su yalıtımı (zemin ve duş, malzemeli m²): 1.000 TL/m²
+    ceramicLabor: [0, 1000],           // Seramik işçiliği m²: 1.000 TL/m²
+    ceramicSupplies: [220, 0],         // Seramik sarf malzemesi (yapıştırıcı, derz, profil): 220 TL/m²
+    ceramicProduct: [550, 0],          // Seramik kaplama ürünü (seçime bağlı): 550 TL/m²
+    fixtureInstall: [0, 5000],         // Vitrifiye ve klozet montajı (ürünler hariç): 5.000 TL
+    showerInstall: [0, 2500],          // Duşakabin montajı (ürün hariç): 2.500 TL
+    vanity: [11500, 1500],             // Banyo dolabı ve lavabolu ünite: 13.000 TL
+    bathTowel: [3600, 1000],           // Havlupan ve montajı: 4.600 TL
+
+    // Mutfak Kalemleri (4 mtül & 15 m² seramik bazlı)
+    kitchenDemo: [0, 5000],            // Dolap ve tezgâh sökümü (4 m mutfak): 5.000 TL
+    kitchenDebris: [0, 5500],          // Mutfak moloz atımı (taşıma ve döküm dahil): 5.500 TL
+    kitchenPlumbing: [5000, 9000],     // Mutfak su tesisatı (evye + bulaşık, malzemeli): 14.000 TL
+    kitchenElectric: [8000, 12000],    // Mutfak elektrik tesisatı (8-10 nokta, malzemeli): 20.000 TL
+    kitchenPlaster: [2800, 5200],      // Mutfak sıva ve şap tamiratı (lokal malzemeli): 8.000 TL
+    cabinet: [10200, 2900],            // Yeni mutfak dolabı imalatı (metretül): 13.100 TL/mtül
+    counter: [4900, 1550],             // Mutfak tezgâhı (metretül): 6.450 TL/mtül
+    sinkInstall: [0, 3000],            // Evye ve batarya montajı: 3.000 TL
+    sinkProduct: [4700, 0],            // Evye ve batarya takımı: 4.700 TL
+
+    // Boya Badana & Alçı
+    paintWalls: [90, 90],              // Duvar boyası 2 kat malzemeli: 180 TL/m²
+    paintCeiling: [80, 80],            // Tavan boyası 2 kat malzemeli: 160 TL/m²
+    surfaceRepair: [90, 110],          // Yüzey alçı tamiratı & astar malzemeli: 200 TL/m²
+
+    // Ev Geneli & Doğrama / Zemin
+    parkeDemo: [0, 110],               // Parke sökümü (taşıma hariç): 110 TL/m²
+    doorDemo: [0, 1000],               // İç kapı sökümü (kasa ve pervaz dahil): 1.000 TL/adet
+    partitionWallDemo: [0, 700],       // Bölme duvar kırımı (moloz hariç): 700 TL/m²
+    partitionWallNew: [450, 650],      // Yeni bölme duvar (10 cm gazbeton): 1.100 TL/m²
+    flooring: [650, 250],              // Laminat parke ve süpürgelik döşeme: 900 TL/m²
+    doors: [7500, 1500],               // İç kapı ve montaj: 9.000 TL/adet
+    entryDoor: [18000, 3000],          // Çelik daire giriş kapısı: 21.000 TL
+    wholeElectrical: [32000, 48000],   // Komple elektrik tesisatı (85 m², 45-50 nokta): 80.000 TL
+    wholePlumbing: [18000, 27000],     // Komple su tesisatı (1 banyo + 1 mutfak): 45.000 TL
+    heatingPlumbing: [12000, 20500],   // Kalorifer tesisatı (6 nokta, kombi-petek hariç): 32.500 TL
+    postPlumbingPlaster: [7000, 13000],// Tesisat sonrası sıva-alçı (lokal, malzemeli): 20.000 TL
+
+    // Mimarlık & Proje Hizmetleri (İsteğe bağlı)
+    archDiscovery: [0, 6500],          // Keşif ve mevcut plan / rölöve: 6.500 TL
+    archDesign: [0, 32500],            // Tasarım ve 3D uygulama projesi (85 m²): 32.500 TL
+    archBoq: [0, 10000]                // Metraj ve ayrıntılı iş dosyası: 10.000 TL
   };
 
   const VERSION = '2.2.0';
@@ -2606,54 +2668,66 @@
       if (height === null) throw new Error('Tavan yüksekliği: 2–5 metre arasında olmalıdır.');
       const approxWall = Math.max(1, 2 * Math.sqrt(area / 1.25) * (1 + 1.25) * height - 2);
       const wall = options.fixedBath ? approxWall : getNum('bathWall', approxWall, notes);
+      const totalTileArea = Math.round((area + wall) * 100) / 100;
       return [
-        item('demolition','Söküm ve moloz atımı','m²',area,{scopes:['normal','full'],group:'Hazırlık',qualityApplies:false}),
-        item('waterproof','Islak hacim su izolasyonu','m²',Math.round(area*1.35*100)/100,{scopes:['normal','full'],group:'Yalıtım'}),
-        item('floorCeramic','Yer seramiği döşeme (fire dahil)','m²',area,{waste:.10,scopes:['normal','full'],group:'Kaplama'}),
-        item('wallCeramic','Duvar seramiği kaplama','m²',wall,{waste:.10,scopes:['normal','full'],group:'Kaplama'}),
-        item('plumbing','Sıhhi tesisat & gider revizyonu','nokta',4,{scopes:['full'],group:'Tesisat'}),
-        item('electric','Elektrik & aydınlatma hattı','nokta',2,{scopes:['full'],group:'Tesisat'}),
-        item('wc','Gömme rezervuar & asma klozet','adet',1,{scopes:['normal','full'],group:'Vitrifiye'}),
-        item('shower','Duşakabin & temperli cam montajı','adet',1,{scopes:['normal','full'],group:'Vitrifiye'}),
-        item('vanity','Banyo dolabı & lavabolu modül','adet',1,{scopes:all,group:'Mobilya'}),
-        item('bathLight','LED aydınlatma & armatür','adet',1,{scopes:all,group:'Elektrik'}),
-        item('bathTowel','Havlupan & vana montajı','adet',1,{scopes:['full'],group:'Donatı'}),
-        item('transport','Şantiye ulaşım & moloz nakliyesi','iş',1,{scopes:['normal','full'],group:'Lojistik',qualityApplies:false})
+        item('prepProtection', 'Şantiye hazırlığı ve koruma', 'daire', 1, {scopes:['normal','full'], group:'Hazırlık', qualityApplies:false}),
+        item('fixtureDemo', 'Ekipman sökümü (klozet, lavabo, duşakabin)', 'iş', 1, {scopes:all, group:'Söküm', qualityApplies:false}),
+        item('ceramicDemo', 'Seramik kırımı (duvar ve zemin)', 'm²', totalTileArea, {scopes:['normal','full'], group:'Söküm', qualityApplies:false}),
+        item('debrisTransport', 'Moloz atımı (çuval, nakliye, döküm)', 'iş', 1, {scopes:['normal','full'], group:'Lojistik', qualityApplies:false}),
+        item('plumbingBath', 'Banyo su tesisatı (temiz + pis su malzemeli)', 'paket', 1, {scopes:['normal','full'], group:'Tesisat'}),
+        item('electricBath', 'Banyo elektrik tesisatı (noktalar malzemeli)', 'paket', 1, {scopes:['normal','full'], group:'Tesisat'}),
+        item('plasterRepair', 'Sıva ve şap tamiratı (lokal düzeltme)', 'iş', 1, {scopes:['normal','full'], group:'Altyapı'}),
+        item('waterproof', 'Su yalıtımı (zemin ve duş alanı malzemeli)', 'm²', Math.round(area * 1.35 * 100) / 100, {scopes:all, group:'Yalıtım'}),
+        item('ceramicLabor', 'Seramik döşeme işçiliği (götürü metraj)', 'm²', totalTileArea, {scopes:all, group:'Kaplama'}),
+        item('ceramicSupplies', 'Seramik sarf malzemesi (yapıştırıcı, derz, profil)', 'm²', totalTileArea, {waste:.10, scopes:all, group:'Kaplama'}),
+        item('ceramicProduct', 'Seramik kaplama karosu (tercihe göre)', 'm²', totalTileArea, {waste:.10, scopes:all, group:'Kaplama'}),
+        item('fixtureInstall', 'Vitrifiye ve klozet montajı (ürünler hariç)', 'iş', 1, {scopes:['normal','full'], group:'Montaj'}),
+        item('showerInstall', 'Duşakabin montajı (ürün hariç)', 'iş', 1, {scopes:['normal','full'], group:'Montaj'}),
+        item('vanity', 'Banyo dolabı ve lavabolu modül', 'adet', 1, {scopes:all, group:'Mobilya'}),
+        item('bathTowel', 'Havlupan ve vana montajı', 'adet', 1, {scopes:['full'], group:'Donatı'})
       ];
     }
     if (category === 'mutfak') {
-      const mt = options.fixedKitchen ? 5 : getNum('kitchenMeters', Math.max(1.5, Math.sqrt(area)*1.4), notes);
-      const counter = options.fixedKitchen ? 4.5 : getNum('counterMeters', mt, notes);
+      const mt = options.fixedKitchen ? 4.5 : getNum('kitchenMeters', Math.max(1.5, Math.sqrt(area)*1.4), notes);
+      const counter = options.fixedKitchen ? 4.0 : getNum('counterMeters', mt, notes);
+      const backsplashArea = Math.round(counter * 0.65 * 100) / 100;
       return [
-        item('cabinetDemo','Eski mutfak sökümü & moloz','iş',1,{scopes:['normal','full'],group:'Hazırlık',qualityApplies:false}),
-        item('cabinet','Yeni mutfak dolabı imalatı','mtül',mt,{scopes:all,group:'Mobilya'}),
-        item('counter','Tezgâh imalatı ve montajı','mtül',counter,{scopes:['normal','full'],group:'Tezgâh'}),
-        item('backsplash','Tezgâh arası seramik kaplama','m²',counter*.65,{waste:.10,scopes:['full'],group:'Kaplama'}),
-        item('sink','Eviye & batarya montajı','takım',1,{scopes:['normal','full'],group:'Tesisat'}),
-        item('plumbing','Temiz su & atık su revizyonu','nokta',2,{scopes:['full'],group:'Tesisat'}),
-        item('electric','Priz & ankastre elektrik hattı','nokta',4,{scopes:['full'],group:'Elektrik'}),
-        item('kitchenFloor','Mutfak zemin seramiği döşeme','m²',area,{waste:.10,scopes:['full'],group:'Kaplama'}),
-        item('kitchenLight','Mutfak aydınlatma hattı','iş',1,{scopes:['full'],group:'Elektrik'}),
-        item('transport','Şantiye nakliyesi & moloz atımı','iş',1,{scopes:['normal','full'],group:'Lojistik',qualityApplies:false})
+        item('prepProtection', 'Şantiye hazırlığı ve koruma', 'daire', 1, {scopes:['normal','full'], group:'Hazırlık', qualityApplies:false}),
+        item('kitchenDemo', 'Dolap ve tezgâh sökümü (4 mtül)', 'iş', 1, {scopes:all, group:'Söküm', qualityApplies:false}),
+        item('ceramicDemo', 'Tezgâh arası & zemin seramik kırımı', 'm²', backsplashArea + area, {scopes:['normal','full'], group:'Söküm', qualityApplies:false}),
+        item('kitchenDebris', 'Moloz atımı (taşıma ve döküm dahil)', 'iş', 1, {scopes:['normal','full'], group:'Lojistik', qualityApplies:false}),
+        item('kitchenPlumbing', 'Mutfak su tesisatı (evye + bulaşık, malzemeli)', 'paket', 1, {scopes:['normal','full'], group:'Tesisat'}),
+        item('kitchenElectric', 'Mutfak elektrik tesisatı (8-10 nokta, malzemeli)', 'paket', 1, {scopes:['normal','full'], group:'Tesisat'}),
+        item('kitchenPlaster', 'Mutfak sıva ve şap tamiratı (malzemeli)', 'iş', 1, {scopes:['normal','full'], group:'Altyapı'}),
+        item('cabinet', 'Yeni mutfak dolabı imalatı (MDF/Kapak)', 'mtül', mt, {scopes:all, group:'Mobilya'}),
+        item('counter', 'Mutfak tezgâhı (Granit/Çimstone/Akrilik)', 'mtül', counter, {scopes:['normal','full'], group:'Tezgâh'}),
+        item('ceramicLabor', 'Tezgâh arası & zemin seramik işçiliği', 'm²', backsplashArea + area, {scopes:['normal','full'], group:'Kaplama'}),
+        item('ceramicSupplies', 'Seramik sarf malzemesi (yapıştırıcı, derz)', 'm²', backsplashArea + area, {waste:.10, scopes:['normal','full'], group:'Kaplama'}),
+        item('sinkInstall', 'Evye ve batarya montajı (ürünler hariç)', 'iş', 1, {scopes:all, group:'Montaj'}),
+        item('sinkProduct', 'Evye ve batarya armatür seti', 'takım', 1, {scopes:['normal','full'], group:'Vitrifiye'})
       ];
     }
     if (category === 'boya') {
       const surface = getNum('paintSurface', area * 2.5, notes);
-      const liters = Math.ceil((surface * 2 / 10) * 1.08);
       return [
-        item('surfaceRepair','Yüzey alçı tamiratı & astar','m²',surface*.12,{scopes:['normal','full'],group:'Hazırlık'}),
-        item('paintWalls','Duvar boyası 2 kat uygulama','m²',surface,{materialQty:liters,materialUnit:'L',scopes:all,group:'Boya'}),
-        item('paintCeiling','Tavan boyası 2 kat uygulama','m²',area,{materialQty:Math.ceil((area*2/10)*1.08),materialUnit:'L',scopes:['normal','full'],group:'Boya'}),
-        item('transport','Şantiye malzeme nakliyesi','iş',1,{scopes:['full'],group:'Lojistik',qualityApplies:false})
+        item('prepProtection', 'Zemin & süpürgelik maskeleme ve koruma', 'daire', 1, {scopes:all, group:'Hazırlık', qualityApplies:false}),
+        item('surfaceRepair', 'Yüzey alçı tamiratı, çatlak onarımı & astar', 'm²', surface * 0.15, {scopes:['normal','full'], group:'Hazırlık'}),
+        item('paintWalls', 'Duvar boyası 2 kat (silikonlu mat, malzemeli)', 'm²', surface, {scopes:all, group:'Boya'}),
+        item('paintCeiling', 'Tavan boyası 2 kat (plastik mat, malzemeli)', 'm²', area, {scopes:['normal','full'], group:'Boya'}),
+        item('finalCleaning', 'Boya sonrası kaba/ince temizlik', 'daire', 1, {scopes:['full'], group:'Temizlik', qualityApplies:false})
       ];
     }
     if (category === 'fayans') {
       const surface = getNum('tileSurface', area, notes);
       return [
-        item('demolition','Eski seramik kırım ve temizliği','m²',surface,{scopes:['normal','full'],group:'Hazırlık',qualityApplies:false}),
-        item('waterproof','Su izolasyonu uygulaması','m²',surface,{scopes:['full'],group:'Yalıtım'}),
-        item('floorCeramic','Fayans & seramik döşeme işçiliği','m²',surface,{waste:.10,scopes:all,group:'Kaplama'}),
-        item('transport','Şantiye moloz & malzeme nakliyesi','iş',1,{scopes:['normal','full'],group:'Lojistik',qualityApplies:false})
+        item('prepProtection', 'Şantiye koruma ve hazırlığı', 'alan', 1, {scopes:['normal','full'], group:'Hazırlık', qualityApplies:false}),
+        item('ceramicDemo', 'Eski seramik kırım ve yüzey kazıma', 'm²', surface, {scopes:['normal','full'], group:'Söküm', qualityApplies:false}),
+        item('debrisTransport', 'Moloz nakliyesi ve döküm harcı', 'iş', 1, {scopes:['normal','full'], group:'Lojistik', qualityApplies:false}),
+        item('plasterRepair', 'Zemin şap düzeltme & terazi harcı', 'iş', 1, {scopes:['normal','full'], group:'Altyapı'}),
+        item('waterproof', 'Su yalıtımı uygulaması (malzemeli)', 'm²', surface, {scopes:['full'], group:'Yalıtım'}),
+        item('ceramicLabor', 'Fayans ve seramik döşeme işçiliği', 'm²', surface, {scopes:all, group:'Kaplama'}),
+        item('ceramicSupplies', 'Yapıştırıcı, derz dolgu ve profil sarfı', 'm²', surface, {waste:.10, scopes:all, group:'Kaplama'}),
+        item('ceramicProduct', 'Fayans ve seramik karo malzemesi', 'm²', surface, {waste:.10, scopes:all, group:'Kaplama'})
       ];
     }
     if (category === 'ev') {
@@ -2662,25 +2736,36 @@
       if ([nBath,nDoors,bathArea,kitchenArea].some(v => v === null)) {
         throw new Error('Daire metrajı: banyo 0–6, kapı 0–30 adet; banyo alanı 2–30 m², mutfak 4–50 m² olmalıdır.');
       }
-      notes.push('Komple ev paketinde mutfak ve banyo alanları yerinde keşif ile kesinleştirilir.');
+      notes.push('Komple ev paketinde 26 Ekim 2026 Cem Yeşilay Luxury alış rayiçleri baz alınmıştır; banyo ve mutfakta mükerrer tesisat bedelleri düşürülmüştür.');
       const paintSurface = area * 2.5;
-      const bath = linesFor('banyo', bathArea, notes, {fixedBath:true}).filter(x => x.id !== 'transport').map(x => ({
-        ...x, id:'evbath_'+x.id, title:`Banyo · ${x.title}`, qty:x.qty*nBath, materialQty:x.materialQty*nBath, scopes:x.basicIncluded
-      }));
-      const kitchen = linesFor('mutfak', kitchenArea, notes, {fixedKitchen:true}).filter(x => x.id !== 'transport').map(x => ({
-        ...x, id:'evkitchen_'+x.id, title:`Mutfak · ${x.title}`, qty:x.qty, materialQty:x.materialQty, scopes:x.basicIncluded
-      }));
+
+      // Komple tesisatta banyo ve mutfak tesisatları tekrarlanmaz (Footnote kuralı)
+      const bath = linesFor('banyo', bathArea, notes, {fixedBath:true})
+        .filter(x => !['prepProtection','debrisTransport','plumbingBath','electricBath'].includes(x.id))
+        .map(x => ({...x, id:'evbath_'+x.id, title:`Banyo · ${x.title}`, qty:x.qty*nBath, materialQty:x.materialQty*nBath, scopes:x.basicIncluded}));
+
+      const kitchen = linesFor('mutfak', kitchenArea, notes, {fixedKitchen:true})
+        .filter(x => !['prepProtection','kitchenDebris','kitchenPlumbing','kitchenElectric'].includes(x.id))
+        .map(x => ({...x, id:'evkitchen_'+x.id, title:`Mutfak · ${x.title}`, qty:x.qty, materialQty:x.materialQty, scopes:x.basicIncluded}));
+
       const commons = [
-        item('paintWalls','Tüm daire duvar boyası 2 kat','m²',paintSurface,{materialQty:Math.ceil((paintSurface*2/10)*1.08),materialUnit:'L',scopes:all,group:'Boya'}),
-        item('paintCeiling','Tüm tavanlar boya 2 kat','m²',area,{materialQty:Math.ceil((area*2/10)*1.08),materialUnit:'L',scopes:['normal','full'],group:'Boya'}),
-        item('flooring','Salon & odalar parke ve süpürgelik','m²',area*.70,{waste:.08,scopes:['normal','full'],group:'Zemin'}),
-        item('doors','Panel / Lake iç oda kapıları','adet',nDoors,{scopes:['normal','full'],group:'Doğrama'}),
-        item('entryDoor','Çelik daire giriş kapısı','adet',1,{scopes:['full'],group:'Doğrama'}),
-        item('wholeElectrical','Tüm daire elektrik tesisat revizyonu','nokta',8,{scopes:['full'],group:'Elektrik'}),
-        item('transport','Şantiye moloz atımı & genel lojistik','iş',1,{scopes:['normal','full'],group:'Lojistik',qualityApplies:false})
+        item('prepProtection', 'Şantiye hazırlığı ve ortak alan koruma', 'daire', 1, {scopes:['normal','full'], group:'Hazırlık', qualityApplies:false}),
+        item('parkeDemo', 'Eski parke sökümü (taşıma hariç)', 'm²', area * 0.70, {scopes:['normal','full'], group:'Söküm', qualityApplies:false}),
+        item('doorDemo', 'Eski iç kapı sökümü (kasa ve pervaz dahil)', 'adet', nDoors, {scopes:['normal','full'], group:'Söküm', qualityApplies:false}),
+        item('debrisTransport', 'Ortak şantiye moloz atımı & nakliyesi', 'iş', 1, {scopes:['normal','full'], group:'Lojistik', qualityApplies:false}),
+        item('wholeElectrical', 'Komple elektrik tesisatı (85 m², 45-50 nokta malzemeli)', 'paket', 1, {scopes:['normal','full'], group:'Tesisat'}),
+        item('wholePlumbing', 'Komple su tesisatı (1 banyo + 1 mutfak malzemeli)', 'paket', 1, {scopes:['normal','full'], group:'Tesisat'}),
+        item('postPlumbingPlaster', 'Tesisat kanalları sonrası sıva-alçı tamiratı (malzemeli)', 'iş', 1, {scopes:['normal','full'], group:'Altyapı'}),
+        item('heatingPlumbing', 'Kalorifer tesisatı (6 nokta, kombi-petek hariç)', 'iş', 1, {scopes:['full'], group:'Tesisat'}),
+        item('paintWalls', 'Tüm daire duvar boyası 2 kat malzemeli', 'm²', paintSurface, {scopes:all, group:'Boya'}),
+        item('paintCeiling', 'Tüm tavanlar boya 2 kat malzemeli', 'm²', area, {scopes:['normal','full'], group:'Boya'}),
+        item('flooring', 'Salon & odalar laminat parke ve süpürgelik döşeme', 'm²', area * 0.70, {waste:.08, scopes:['normal','full'], group:'Zemin'}),
+        item('doors', 'Panel / lake iç oda kapıları ve montajı', 'adet', nDoors, {scopes:['normal','full'], group:'Doğrama'}),
+        item('entryDoor', 'Çelik daire giriş kapısı ve montajı', 'adet', 1, {scopes:['full'], group:'Doğrama'}),
+        item('finalCleaning', 'Anahtar teslim son temizlik (85 m² boş daire)', 'daire', 1, {scopes:['normal','full'], group:'Temizlik', qualityApplies:false})
       ];
-      const bundles = [...bath, ...kitchen].map(x => ({...x, basicIncluded: x.basicIncluded.filter(z => z !== 'light')}));
-      return [...commons, ...bundles];
+
+      return [...commons, ...bath, ...kitchen];
     }
     return [];
   }
