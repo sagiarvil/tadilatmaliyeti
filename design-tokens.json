@@ -1,0 +1,89 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "color": {
+    "brand": {
+      "primary": {
+        "value": "#d97706",
+        "type": "color"
+      },
+      "primary-hover": {
+        "value": "#b45309",
+        "type": "color"
+      },
+      "surface-dark": {
+        "value": "#090d16",
+        "type": "color"
+      },
+      "surface-card": {
+        "value": "#0f172a",
+        "type": "color"
+      },
+      "surface-border": {
+        "value": "#1e293b",
+        "type": "color"
+      }
+    },
+    "neutral": {
+      "text-main": {
+        "value": "#f8fafc",
+        "type": "color"
+      },
+      "text-muted": {
+        "value": "#94a3b8",
+        "type": "color"
+      },
+      "border-subtle": {
+        "value": "rgba(255, 255, 255, 0.08)",
+        "type": "color"
+      }
+    },
+    "accent": {
+      "glow-gold": {
+        "value": "rgba(251, 191, 36, 0.15)",
+        "type": "color"
+      },
+      "glow-blue": {
+        "value": "rgba(56, 189, 248, 0.15)",
+        "type": "color"
+      }
+    }
+  },
+  "typography": {
+    "font-sans": {
+      "value": "Plus Jakarta Sans, sans-serif",
+      "type": "fontFamily"
+    },
+    "font-mono": {
+      "value": "JetBrains Mono, monospace",
+      "type": "fontFamily"
+    }
+  },
+  "elevation": {
+    "card": {
+      "value": "0 10px 30px -10px rgba(0,0,0,0.5)",
+      "type": "shadow"
+    },
+    "spotlight": {
+      "value": "0 0 40px rgba(245, 158, 11, 0.12)",
+      "type": "shadow"
+    }
+  },
+  "motion": {
+    "duration-fast": {
+      "value": "150ms",
+      "type": "duration"
+    },
+    "duration-normal": {
+      "value": "300ms",
+      "type": "duration"
+    },
+    "duration-smooth": {
+      "value": "500ms",
+      "type": "duration"
+    },
+    "ease-spring": {
+      "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "type": "cubicBezier"
+    }
+  }
+}
