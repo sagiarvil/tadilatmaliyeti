@@ -1896,10 +1896,10 @@
           </p>
           
           <div class="tm-hero-cta-group">
-            <a href="#hesapla" class="btn-primary">Ücretsiz Maliyet Tablomu Çıkar ↗</a>
+            <a href="#hesapla" class="btn-primary">Maliyetini Hesapla ↗</a>
             <a href="https://wa.me/905333333303?text=Merhaba%2C%20ev%20tadilat%C4%B1%20maliyeti%20ve%20fiyatlar%20hakk%C4%B1nda%20dan%C4%B1%C5%9Fmak%20istiyorum." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;flex:none;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8 2.53 1.09 2.53.73 2.99.69.45-.04 1.47-.6 1.68-1.18.21-.59.21-1.09.15-1.19-.06-.1-.23-.17-.48-.29"/></svg>
-              <span>WhatsApp'tan Fotoğraf At, Ön Fiyat Al</span>
+              <span>WhatsApp Ön Fiyat</span>
             </a>
             <a href="#nasil-calisir" class="btn-secondary">Nasıl Çalışır? →</a>
           </div>
@@ -2079,24 +2079,36 @@
     }
 
     .tm-hero-cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
       margin-bottom: 2.5rem;
+    }
+
+    .tm-hero-cta-group .btn-primary,
+    .tm-hero-cta-group .btn-whatsapp,
+    .tm-hero-cta-group .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px 10px;
+      font-size: 0.90rem;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      white-space: nowrap;
+      min-height: 48px;
+      gap: 6px;
+      box-sizing: border-box;
+      width: 100%;
+      transition: all .2s ease;
     }
 
     .tm-hero-cta-group .btn-primary {
       background: var(--orange, #ea580c);
       color: #fff;
-      font-weight: 700;
-      padding: 13px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 14px rgba(234,88,12,.25);
-      transition: all .2s ease;
+      box-shadow: 0 4px 14px rgba(234,88,12,.22);
     }
     .tm-hero-cta-group .btn-primary:hover {
       background: #c2410c;
@@ -2107,15 +2119,7 @@
     .tm-hero-cta-group .btn-whatsapp {
       background: #25d366;
       color: #fff;
-      font-weight: 700;
-      padding: 13px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 14px rgba(37,211,102,.25);
-      transition: all .2s ease;
+      box-shadow: 0 4px 14px rgba(37,211,102,.22);
     }
     .tm-hero-cta-group .btn-whatsapp:hover {
       background: #20ba5a;
@@ -2126,19 +2130,12 @@
     .tm-hero-cta-group .btn-secondary {
       background: #ffffff;
       color: #0f172a;
-      font-weight: 700;
-      padding: 13px 20px;
-      border-radius: 12px;
-      text-decoration: none;
       border: 1px solid #cbd5e1;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all .2s ease;
     }
     .tm-hero-cta-group .btn-secondary:hover {
       background: #f1f5f9;
       border-color: #94a3b8;
+      transform: translateY(-2px);
     }
 
     .tm-hero-steps-footer {
@@ -2469,6 +2466,10 @@
     }
 
     @media (max-width: 640px) {
+      .tm-hero-cta-group {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+      }
       .tm-scenario-tabs {
         grid-template-columns: 1fr;
       }
