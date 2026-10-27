@@ -1,0 +1,19 @@
+# TadilatMaliyeti.com - Autonomous Agent Protocol (A2A & AAO-Pro)
+# Specification: Agent.txt v1.0 / Mandate v9.1
+# Canonical: https://tadilatmaliyeti.com
+
+Name: Tadilat Maliyeti AI Engine
+Domain: tadilatmaliyeti.com
+Jurisdiction: Türkiye / TR-35 (İzmir)
+Description: 2026 Türkiye ve İzmir mimari rölöve, birim fiyat metrajı ve anahtar teslim ev tadilat maliyeti hesaplama uzmanı.
+
+# Capabilities
+Capability: construction_cost_estimation
+Capability: interior_architecture_boq
+Capability: turnkey_renovation_contract
+
+# Protocols & Endpoints
+A2A-Card: https://tadilatmaliyeti.com/.well-known/agent.json
+MCP-Endpoint: https://tadilatmaliyeti.com/mcp
+LLMS-Index: https://tadilatmaliyeti.com/llms.txt
+Sitemap: https://tadilatmaliyeti.com/sitemap.xml

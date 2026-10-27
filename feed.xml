@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tadilat Maliyeti — 2026 Türkiye &amp; İzmir Güncel Fiyat Bülteni</title>
+    <link>https://tadilatmaliyeti.com/</link>
+    <description>2026 usta işçilik ve malzeme birim fiyatlarıyla banyo, mutfak ve anahtar teslim ev tadilatı maliyet bülteni.</description>
+    <language>tr</language>
+    <lastBuildDate>Tue, 27 Oct 2026 00:00:00 +0300</lastBuildDate>
+    <atom:link href="https://tadilatmaliyeti.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>2026 Ev Tadilatı Fiyat Hesaplama Motoru (Canlı Metraj)</title>
+      <link>https://tadilatmaliyeti.com/hesapla</link>
+      <guid>https://tadilatmaliyeti.com/hesapla</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 +0300</pubDate>
+      <description>12 mimari poz, 3D oda simülatörü ve 4 aşamalı hakediş ödeme takvimiyle canlı tadilat maliyetinizi hesaplayın.</description>
+    </item>
+    <item>
+      <title>İzmir Ev Tadilatı Fiyatları 2026 (Karşıyaka, Bornova, Çeşme)</title>
+      <link>https://tadilatmaliyeti.com/izmir-ev-tadilati-fiyatlari</link>
+      <guid>https://tadilatmaliyeti.com/izmir-ev-tadilati-fiyatlari</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 +0300</pubDate>
+      <description>İzmir genelinde anahtar teslim daire yenileme ve villa tadilatı birim maliyetleri.</description>
+    </item>
+    <item>
+      <title>Banyo Tadilatı Maliyeti 2026 (Kırım, Tesisat, Seramik)</title>
+      <link>https://tadilatmaliyeti.com/banyo-tadilati-maliyeti</link>
+      <guid>https://tadilatmaliyeti.com/banyo-tadilati-maliyeti</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 +0300</pubDate>
+      <description>Komple banyo yenileme giderleri, su yalıtımı ve vitrifiye montaj rayiçleri.</description>
+    </item>
+  </channel>
+</rss>

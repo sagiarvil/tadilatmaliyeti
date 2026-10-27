@@ -1,0 +1,23 @@
+{
+  "name": "Tadilat Maliyeti",
+  "short_name": "TadilatMaliyeti",
+  "description": "2026 Türkiye ve İzmir Güncel Şantiye ve Ev Tadilatı Fiyat Hesaplama Platformu",
+  "start_url": "/hesapla",
+  "display": "standalone",
+  "background_color": "#faf9f6",
+  "theme_color": "#ea580c",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

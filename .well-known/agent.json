@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schemas.org/draft/2020-12/schema",
+  "name": "Tadilat Maliyeti",
+  "id": "https://tadilatmaliyeti.com",
+  "url": "https://tadilatmaliyeti.com",
+  "description": "2026 Türkiye ve İzmir ev, banyo, mutfak tadilat maliyetlerini kalem kalem hesaplayan A2A ajan protokol kartı.",
+  "provider": {
+    "name": "Tadilat Maliyeti Mühendislik",
+    "url": "https://tadilatmaliyeti.com"
+  },
+  "endpoints": {
+    "estimator": "https://tadilatmaliyeti.com/hesapla",
+    "mcp": "https://tadilatmaliyeti.com/mcp",
+    "llms": "https://tadilatmaliyeti.com/llms.txt"
+  },
+  "supportedRegions": [
+    "TR",
+    "TR-35",
+    "TR-34",
+    "TR-06",
+    "TR-07",
+    "TR-16"
+  ],
+  "currency": "TRY",
+  "version": "9.1.0"
+}

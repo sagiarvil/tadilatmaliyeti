@@ -1,0 +1,16 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Tadilat Maliyeti",
+  "home_page_url": "https://tadilatmaliyeti.com/",
+  "feed_url": "https://tadilatmaliyeti.com/feed.json",
+  "description": "2026 Türkiye ve İzmir ev tadilat maliyeti canlı veri akışı",
+  "items": [
+    {
+      "id": "https://tadilatmaliyeti.com/hesapla",
+      "url": "https://tadilatmaliyeti.com/hesapla",
+      "title": "2026 Ev Tadilatı Fiyat Hesaplama Motoru",
+      "summary": "12 mimari poz, 3D oda simülatörü ve 4 aşamalı hakediş takvimi.",
+      "date_published": "2026-10-27T00:00:00Z"
+    }
+  ]
+}
