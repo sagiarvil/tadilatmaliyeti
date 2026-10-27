@@ -201,7 +201,7 @@
       --wp-dark: #128c7e;
     }
     .wrap {
-      width: min(1240px, calc(100% - 32px));
+      width: min(1080px, calc(100% - 48px));
       margin: 0 auto;
     }
     .skip {
@@ -648,7 +648,7 @@
     </div>
   </section>
   <!-- MAIN WORKSPACE CONTAINER -->
-  <main class="flex-grow wrap w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <main class="flex-grow w-full max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
       <!-- LEFT 8 COLUMNS: CONFIGURATOR ENGINE -->
@@ -1076,142 +1076,296 @@
             </label>
           </div>
 
-          <!-- BEFORE/AFTER SLIDER & 3D STUDIO -->
-          <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white rounded-3xl p-5 sm:p-6 border border-slate-800 shadow-2xl space-y-6">
+          <!-- ======================================================= -->
+          <!-- 1. BÜYÜK 3D CANLI MİMARİ HACİM & YÜZEY STÜDYOSU (SHOWCASE) -->
+          <!-- ======================================================= -->
+          <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white rounded-3xl p-5 sm:p-7 border border-slate-800 shadow-2xl space-y-5">
             <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
               <div>
                 <span class="text-[10px] font-extrabold uppercase tracking-widest text-orange-400 flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-orange-400 animate-ping"></span> Canlı Mimari Dönüşüm &amp; 3D Yüzey Stüdyosu
+                  <span class="w-2.5 h-2.5 rounded-full bg-orange-400 animate-ping"></span> Real-Time 3D Mimari Yüzey Simülatörü
                 </span>
-                <h3 class="text-base sm:text-lg font-extrabold text-white mt-0.5">Önce / Sonra Karşılaştırma &amp; Canlı 3D Tasarım Simülatörü</h3>
+                <h3 class="text-base sm:text-xl font-black text-white mt-0.5">3D Mimari Hacim, Malzeme &amp; Aydınlatma Stüdyosu</h3>
               </div>
-              <!-- Room Scene Switcher -->
-              <div class="flex items-center gap-1.5 bg-slate-800/90 p-1 rounded-xl border border-slate-700 text-xs">
-                <button type="button" id="baRoomLiving" class="ba-room-btn px-3 py-1.5 rounded-lg font-bold bg-orange-600 text-white transition-all">Salon &amp; Mutfak</button>
-                <button type="button" id="baRoomPenthouse" class="ba-room-btn px-3 py-1.5 rounded-lg font-semibold text-slate-300 hover:text-white transition-all">Ultra Lüks Salon</button>
-                <button type="button" id="baRoomBath" class="ba-room-btn px-3 py-1.5 rounded-lg font-semibold text-slate-300 hover:text-white transition-all">Lüks Spa Banyo</button>
+              <div class="flex items-center gap-2">
+                <span id="lightingModeBadge" class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  3000K Sıcak Gizli LED
+                </span>
               </div>
             </div>
 
-            <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-stretch">
-              <!-- Left: Interactive Slider -->
-              <div class="xl:col-span-7 flex flex-col justify-between space-y-3">
-                <div class="relative w-full h-64 sm:h-80 rounded-2xl overflow-hidden select-none border border-slate-700 shadow-inner group" id="baSliderWrapper">
-                  <!-- AFTER IMAGE -->
-                  <img id="baAfterImg" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500"><rect width="100%" height="100%" fill="%23fff7ed"/><rect x="40" y="40" width="720" height="420" rx="12" fill="%23ffedd5" stroke="%23ea580c" stroke-width="3"/><text x="50%" y="45%" font-family="sans-serif" font-size="26" font-weight="bold" fill="%23c2410c" text-anchor="middle">2027 MODERN KONFOR PROJESİ</text><text x="50%" y="55%" font-family="sans-serif" font-size="15" fill="%237c2d12" text-anchor="middle">Açık Mutfak Adası, Gizli LED ve 10mm AC4 Parke</text></svg>" alt="2027 Sonrası" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
-                  <div class="absolute top-3 right-3 bg-orange-600/95 backdrop-blur-md text-white text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg z-10">
-                    PROJE 2027 // <span id="baAfterLabel">2027 Modern Konfor</span>
-                  </div>
+            <!-- BÜYÜTÜLMÜŞ SİNEMATİK 3D MİMARİ TUVAL (EXPANDED 3D VIEWPORT) -->
+            <div class="relative w-full rounded-2xl overflow-hidden border-2 border-slate-800 bg-slate-950 shadow-inner group">
+              <svg id="room3dSvg" viewBox="0 0 800 440" class="w-full h-[320px] sm:h-[440px] md:h-[480px] block transition-all duration-500">
+                <defs>
+                  <linearGradient id="ledGlowCove" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.05"/>
+                  </linearGradient>
+                  <linearGradient id="islandTopGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ffffff"/>
+                    <stop offset="100%" stop-color="#e2e8f0"/>
+                  </linearGradient>
+                </defs>
 
-                  <!-- BEFORE IMAGE (Clipped) -->
-                  <div id="baBeforeClip" class="absolute inset-0 overflow-hidden pointer-events-none" style="clip-path: inset(0 50% 0 0);">
-                    <img id="baBeforeImg" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500"><rect width="100%" height="100%" fill="%23e2e8f0"/><text x="50%" y="45%" font-family="sans-serif" font-size="24" font-weight="bold" fill="%23475569" text-anchor="middle">MEVCUT YAPI DURUMU // 1995</text><text x="50%" y="55%" font-family="sans-serif" font-size="14" fill="%2364748b" text-anchor="middle">Eski Demir Tesisat, Klasik Fayans ve Yorgun Zemin</text></svg>" alt="Mevcut Durum" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute top-3 left-3 bg-rose-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg">
-                      MEVCUT DURUM // ESKİ YAPI
-                    </div>
-                  </div>
+                <!-- Arka Duvar (Back Wall) -->
+                <polygon id="svg3dBackWall" points="150,70 650,70 650,310 150,310" fill="#e7e2d8" class="transition-colors duration-500"/>
+                <!-- Sol Duvar (Left Wall) -->
+                <polygon id="svg3dLeftWall" points="0,0 150,70 150,310 0,440" fill="#dcd6ca" class="transition-colors duration-500"/>
+                <!-- Sağ Duvar (Right Wall) -->
+                <polygon id="svg3dRightWall" points="650,70 800,0 800,440 650,310" fill="#cfc8ba" class="transition-colors duration-500"/>
+                <!-- Asma Tavan (Ceiling) -->
+                <polygon id="svg3dCeiling" points="0,0 800,0 650,70 150,70" fill="#f8fafc"/>
+                
+                <!-- Gizli Tavan LED Işık Kanalı (Perimeter Cove Light) -->
+                <polygon id="svg3dLedGlow" points="120,55 680,55 650,70 150,70" fill="url(#ledGlowCove)" opacity="0.75" class="transition-opacity duration-500"/>
 
-                  <!-- Divider Line & Handle -->
-                  <div id="baDividerLine" class="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_12px_rgba(255,255,255,0.9)] pointer-events-none z-20" style="left: 50%;">
-                    <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white text-slate-900 shadow-xl flex items-center justify-center font-extrabold text-xs border-2 border-orange-500">
-                      ↔
-                    </div>
-                  </div>
+                <!-- Zemin (Floor) -->
+                <polygon id="svg3dFloor" points="150,310 650,310 800,440 0,440" fill="#b88655" class="transition-colors duration-500"/>
+                
+                <!-- Zemin Derz / Parke Perspektif Çizgileri -->
+                <g stroke="rgba(0,0,0,0.18)" stroke-width="1.2">
+                  <line x1="230" y1="310" x2="110" y2="440"/>
+                  <line x1="320" y1="310" x2="270" y2="440"/>
+                  <line x1="400" y1="310" x2="400" y2="440"/>
+                  <line x1="480" y1="310" x2="530" y2="440"/>
+                  <line x1="570" y1="310" x2="690" y2="440"/>
+                  <line x1="100" y1="355" x2="700" y2="355"/>
+                  <line x1="50" y1="400" x2="750" y2="400"/>
+                </g>
 
-                  <input id="baRangeInput" type="range" min="5" max="95" value="50" aria-label="Önce Sonra Karşılaştırma Sürgüsü" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30">
-                </div>
+                <!-- Sol Manzara Penceresi (Window) -->
+                <polygon id="svg3dWindow" points="25,55 125,90 125,270 25,335" fill="#bae6fd" stroke="#1e293b" stroke-width="3"/>
+                <line x1="75" y1="73" x2="75" y2="302" stroke="#1e293b" stroke-width="2.5"/>
+                <line x1="25" y1="190" x2="125" y2="180" stroke="#1e293b" stroke-width="2.5"/>
 
-                <div class="flex items-center justify-between text-[11px] text-slate-400 px-1">
-                  <span>Sürgü eksenini kaydırarak mevcut yapı durumu ile 2027 proje kesitini karşılaştırın.</span>
-                  <span id="baSliderPctText" class="font-mono text-orange-400 font-bold">%50 Dönüşüm Açısı</span>
-                </div>
+                <!-- Modern Mutfak Üst Modüller (Upper Cabinets) -->
+                <rect id="svg3dCabinetUpper" x="200" y="95" width="310" height="75" rx="3" fill="#1e293b" stroke="#0f172a" stroke-width="1.5" class="transition-colors duration-500"/>
+                <line x1="303" y1="95" x2="303" y2="170" stroke="#0f172a" stroke-width="1.5"/>
+                <line x1="406" y1="95" x2="406" y2="170" stroke="#0f172a" stroke-width="1.5"/>
+
+                <!-- Tezgah Arası Seramik / Porselen (Backsplash) -->
+                <rect id="svg3dBacksplash" x="200" y="170" width="310" height="45" fill="#f8fafc"/>
+                <line x1="200" y1="170" x2="510" y2="170" stroke="#fde047" stroke-width="2.5" opacity="0.9"/>
+
+                <!-- Alt Dolaplar (Lower Cabinets) -->
+                <rect id="svg3dCabinetLower" x="200" y="215" width="310" height="85" rx="3" fill="#1e293b" stroke="#0f172a" stroke-width="1.5" class="transition-colors duration-500"/>
+                <line x1="303" y1="215" x2="303" y2="300" stroke="#0f172a" stroke-width="1.5"/>
+                <line x1="406" y1="215" x2="406" y2="300" stroke="#0f172a" stroke-width="1.5"/>
+
+                <!-- Mutfak Adası Gövdesi (Island Body) -->
+                <polygon id="svg3dIslandBody" points="260,265 580,265 610,380 230,380" fill="#1e293b" class="transition-colors duration-500"/>
+                <!-- Mutfak Adası Waterfall Porselen Tezgahı (Island Countertop) -->
+                <polygon id="svg3dIslandTop" points="250,255 590,255 615,270 225,270" fill="url(#islandTopGrad)" stroke="#cbd5e1" stroke-width="1.5"/>
+                <polygon points="225,270 250,255 230,380 205,380" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+
+                <!-- Çift Sarkıt Tasarım Lambaları (Pendant Lights) -->
+                <line x1="350" y1="35" x2="350" y2="140" stroke="#475569" stroke-width="2"/>
+                <circle id="svg3dLamp1" cx="350" cy="148" r="14" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+                <line x1="490" y1="35" x2="490" y2="140" stroke="#475569" stroke-width="2"/>
+                <circle id="svg3dLamp2" cx="490" cy="148" r="14" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+
+                <!-- Dinamik Ortam Işığı Katmanı (Ambient Overlay) -->
+                <rect id="svg3dAmbientOverlay" x="0" y="0" width="800" height="440" fill="#0f172a" opacity="0.08" pointer-events="none" class="transition-opacity duration-500"/>
+              </svg>
+
+              <div class="absolute bottom-3 left-3 bg-slate-900/85 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-700/80 text-[11px] text-slate-300 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>Alttaki seçenekleri değiştirerek mimari atmosferi canlı test edin.</span>
+              </div>
+            </div>
+
+            <!-- CANLI MALZEME VE YÜZEY SEÇİCİ (HORIZONTAL DOCK) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs pt-1">
+              <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                <label for="simWallSelect" class="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider block mb-1.5">1. Duvar Rengi (Jotun/Filli)</label>
+                <select id="simWallSelect" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white font-bold text-xs focus:ring-2 focus:ring-orange-500 outline-none">
+                  <option value="sand">Jotun Space (Kum Beji)</option>
+                  <option value="white">İpek Mat Lületaşı Beyaz</option>
+                  <option value="sage">Adaçayı Yeşili (Pale Green)</option>
+                  <option value="anthracite">Modern Antrasit &amp; Gri</option>
+                </select>
               </div>
 
-              <!-- Right: 3D Room Studio Scene -->
-              <div class="xl:col-span-5 bg-slate-950/90 rounded-2xl p-4 border border-slate-800 flex flex-col justify-between space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-extrabold text-white flex items-center gap-1.5">
-                    3D Mimari Hacim, Yüzey ve Aydınlatma Kesiti
-                  </span>
-                  <span id="lightingModeBadge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">3000K Sıcak LED</span>
-                </div>
+              <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                <label for="simFloorSelect" class="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider block mb-1.5">2. Zemin Dokusu &amp; Parke</label>
+                <select id="simFloorSelect" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white font-bold text-xs focus:ring-2 focus:ring-orange-500 outline-none">
+                  <option value="oak">Balıksırtı Doğal Meşe</option>
+                  <option value="marble">Calacatta Mermer Porselen</option>
+                  <option value="nordic">İskandinav Açık Kayın</option>
+                  <option value="walnut">Koyu Amerikan Ceviz</option>
+                </select>
+              </div>
 
-                <div class="relative rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                  <svg id="room3dSvg" viewBox="0 0 400 220" class="w-full h-auto block">
-                    <polygon id="svg3dBackWall" points="70,35 330,35 330,145 70,145" fill="#e7e2d8" />
-                    <polygon id="svg3dLeftWall" points="0,0 70,35 70,145 0,220" fill="#dcd6ca" />
-                    <polygon id="svg3dRightWall" points="330,35 400,0 400,220 330,145" fill="#cfc8ba" />
-                    <polygon id="svg3dCeiling" points="0,0 400,0 330,35 70,35" fill="#f8fafc" />
-                    <polygon id="svg3dLedGlow" points="55,28 345,28 330,36 70,36" fill="#fbbf24" opacity="0.65" />
-                    <polygon id="svg3dFloor" points="70,145 330,145 400,220 0,220" fill="#b88655" />
-                    <g stroke="rgba(0,0,0,0.14)" stroke-width="1">
-                      <line x1="110" y1="145" x2="60" y2="220" />
-                      <line x1="155" y1="145" x2="130" y2="220" />
-                      <line x1="200" y1="145" x2="200" y2="220" />
-                      <line x1="245" y1="145" x2="270" y2="220" />
-                      <line x1="290" y1="145" x2="340" y2="220" />
-                      <line x1="45" y1="170" x2="355" y2="170" />
-                      <line x1="20" y1="195" x2="380" y2="195" />
-                    </g>
-                    <polygon id="svg3dWindow" points="14,32 58,52 58,132 14,165" fill="#bae6fd" stroke="#334155" stroke-width="2.5" />
-                    <rect id="svg3dCabinetUpper" x="95" y="48" width="145" height="34" rx="2" fill="#334155" stroke="#1e293b" stroke-width="1" />
-                    <rect id="svg3dBacksplash" x="95" y="82" width="145" height="22" fill="#f1f5f9" />
-                    <rect id="svg3dCabinetLower" x="95" y="104" width="145" height="41" rx="2" fill="#334155" stroke="#1e293b" stroke-width="1" />
-                    <polygon id="svg3dIslandBody" points="125,132 275,132 290,178 110,178" fill="#1e293b" />
-                    <polygon id="svg3dIslandTop" points="120,126 280,126 293,134 107,134" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-                    <line x1="165" y1="18" x2="165" y2="62" stroke="#475569" stroke-width="1.5" />
-                    <circle id="svg3dLamp1" cx="165" cy="65" r="7" fill="#fde68a" />
-                    <line x1="225" y1="18" x2="225" y2="62" stroke="#475569" stroke-width="1.5" />
-                    <circle id="svg3dLamp2" cx="225" cy="65" r="7" fill="#fde68a" />
-                    <rect id="svg3dAmbientOverlay" x="0" y="0" width="400" height="220" fill="#0f172a" opacity="0" pointer-events="none" />
-                  </svg>
-                </div>
+              <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                <label for="simCabinetSelect" class="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider block mb-1.5">3. Mutfak &amp; Ada Cephesi</label>
+                <select id="simCabinetSelect" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white font-bold text-xs focus:ring-2 focus:ring-orange-500 outline-none">
+                  <option value="anthracite">Mat Antrasit Lake</option>
+                  <option value="cashmere">Kaşmir &amp; Kum Beji Lake</option>
+                  <option value="walnut">Doğal Ceviz &amp; Siyah</option>
+                  <option value="emerald">Zümrüt Yeşili &amp; Pirinç</option>
+                </select>
+              </div>
 
-                <div class="grid grid-cols-2 gap-2 text-[11px]">
-                  <div>
-                    <label for="simWallSelect" class="text-[10px] text-slate-400 font-bold block mb-1">Duvar Rengi (Jotun/Filli)</label>
-                    <select id="simWallSelect" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-white font-semibold">
-                      <option value="sand">Jotun Space (Kum Beji)</option>
-                      <option value="white">İpek Mat Lületaşı Beyaz</option>
-                      <option value="sage">Adaçayı Yeşili (Pale Green)</option>
-                      <option value="anthracite">Modern Antrasit &amp; Gri</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="simFloorSelect" class="text-[10px] text-slate-400 font-bold block mb-1">Zemin Dokusu</label>
-                    <select id="simFloorSelect" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-white font-semibold">
-                      <option value="oak">Balıksırtı Doğal Meşe</option>
-                      <option value="marble">Calacatta Mermer Porselen</option>
-                      <option value="nordic">İskandinav Açık Kayın</option>
-                      <option value="walnut">Koyu Amerikan Ceviz</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="simCabinetSelect" class="text-[10px] text-slate-400 font-bold block mb-1">Mutfak &amp; Ada Cephesi</label>
-                    <select id="simCabinetSelect" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-white font-semibold">
-                      <option value="anthracite">Mat Antrasit Lake</option>
-                      <option value="cashmere">Kaşmir &amp; Kum Beji Lake</option>
-                      <option value="walnut">Doğal Ceviz &amp; Siyah</option>
-                      <option value="emerald">Zümrüt Yeşili &amp; Pirinç</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="simLightSelect" class="text-[10px] text-slate-400 font-bold block mb-1">Aydınlatma Atmosferi</label>
-                    <select id="simLightSelect" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-white font-semibold">
-                      <option value="warm">Akşam 3000K Gizli LED</option>
-                      <option value="daylight">Gündüz Doğal Güneş Işığı</option>
-                      <option value="cinema">Gece Sinema &amp; Lounge</option>
-                    </select>
-                  </div>
-                </div>
+              <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                <label for="simLightSelect" class="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider block mb-1.5">4. Aydınlatma Atmosferi</label>
+                <select id="simLightSelect" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white font-bold text-xs focus:ring-2 focus:ring-orange-500 outline-none">
+                  <option value="warm">Akşam 3000K Gizli LED</option>
+                  <option value="daylight">Gündüz Doğal Güneş Işığı</option>
+                  <option value="cinema">Gece Sinema &amp; Lounge</option>
+                </select>
               </div>
             </div>
           </div>
 
-          <!-- Hardware Finish Bar -->
-          <div class="bg-slate-50 dark:bg-slate-850 p-4 rounded-2xl border border-slate-200/70 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <div class="text-xs font-extrabold text-slate-900 dark:text-white">Armatür, Profil ve Donanım Yüzey Şartnamesi</div>
+          <!-- ======================================================= -->
+          <!-- 2. CANLI ÖNCE / SONRA MİMARİ KARŞILAŞTIRMA SÜRGÜSÜ      -->
+          <!-- ======================================================= -->
+          <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white rounded-3xl p-5 sm:p-7 border border-slate-800 shadow-2xl space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3.5">
+              <div>
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400 flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> İnteraktif Karşılaştırma Motoru
+                </span>
+                <h3 class="text-base sm:text-lg font-black text-white mt-0.5">Mevcut Eski Yapı vs 2027 Proje Kesiti</h3>
+              </div>
+
+              <div class="flex items-center gap-1.5 bg-slate-800/90 p-1 rounded-xl border border-slate-700 text-xs">
+                <button type="button" id="baRoomLiving" class="ba-room-btn px-3 py-1.5 rounded-lg font-bold bg-orange-600 text-white transition-all">Salon &amp; Mutfak</button>
+                <button type="button" id="baRoomPenthouse" class="ba-room-btn px-3 py-1.5 rounded-lg font-semibold text-slate-300 hover:text-white transition-all">Ultra Lüks Penthouse</button>
+                <button type="button" id="baRoomBath" class="ba-room-btn px-3 py-1.5 rounded-lg font-semibold text-slate-300 hover:text-white transition-all">Lüks Spa Banyo</button>
+              </div>
+            </div>
+
+            <!-- INTERACTIVE SLIDER VIEWPORT (VECTOR-RENDERED, ZERO BROKEN IMAGES) -->
+            <div class="relative w-full h-[280px] sm:h-[380px] rounded-2xl overflow-hidden select-none border-2 border-slate-800 shadow-2xl group" id="baSliderWrapper">
+              
+              <!-- 1. AFTER SCENE (2027 MODERN KONFOR) -->
+              <div class="absolute inset-0 w-full h-full pointer-events-none">
+                <svg id="baAfterSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <linearGradient id="newWallG" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#fdfbf7"/>
+                      <stop offset="100%" stop-color="#f5f0e6"/>
+                    </linearGradient>
+                    <linearGradient id="newFloorG" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#b88655"/>
+                      <stop offset="100%" stop-color="#8c5828"/>
+                    </linearGradient>
+                    <linearGradient id="ledGlowG" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.95"/>
+                      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.05"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="800" height="460" fill="#0f172a"/>
+                  <polygon points="140,65 660,65 660,310 140,310" fill="url(#newWallG)"/>
+                  <polygon points="0,0 140,65 140,310 0,460" fill="#ede7dc"/>
+                  <polygon points="660,65 800,0 800,460 660,310" fill="#e4ddd0"/>
+                  <polygon points="0,0 800,0 660,65 140,65" fill="#ffffff"/>
+                  <polygon points="110,50 690,50 660,65 140,65" fill="url(#ledGlowG)"/>
+                  <polygon points="140,310 660,310 800,460 0,460" fill="url(#newFloorG)"/>
+                  <g stroke="#6e4219" stroke-width="1.2" opacity="0.45">
+                    <line x1="220" y1="310" x2="110" y2="460"/>
+                    <line x1="310" y1="310" x2="260" y2="460"/>
+                    <line x1="400" y1="310" x2="400" y2="460"/>
+                    <line x1="490" y1="310" x2="540" y2="460"/>
+                    <line x1="580" y1="310" x2="690" y2="460"/>
+                    <line x1="90" y1="360" x2="710" y2="360"/>
+                    <line x1="40" y1="410" x2="760" y2="410"/>
+                  </g>
+                  <polygon points="25,55 115,90 115,270 25,335" fill="#bae6fd" stroke="#0f172a" stroke-width="3.5"/>
+                  <line x1="70" y1="73" x2="70" y2="302" stroke="#0f172a" stroke-width="2.5"/>
+                  <line x1="25" y1="195" x2="115" y2="180" stroke="#0f172a" stroke-width="2.5"/>
+                  <rect x="180" y="90" width="310" height="75" rx="3" fill="#1e293b" stroke="#0f172a" stroke-width="2"/>
+                  <line x1="283" y1="90" x2="283" y2="165" stroke="#0f172a" stroke-width="2"/>
+                  <line x1="386" y1="90" x2="386" y2="165" stroke="#0f172a" stroke-width="2"/>
+                  <rect x="180" y="165" width="310" height="5" fill="#fde047" opacity="0.95"/>
+                  <rect x="180" y="170" width="310" height="45" fill="#f8fafc"/>
+                  <rect x="180" y="215" width="310" height="85" rx="3" fill="#1e293b" stroke="#0f172a" stroke-width="2"/>
+                  <polygon points="240,265 560,265 590,375 210,375" fill="#0f172a"/>
+                  <polygon points="230,255 570,255 595,270 205,270" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+                  <line x1="330" y1="30" x2="330" y2="145" stroke="#0f172a" stroke-width="2"/>
+                  <circle cx="330" cy="150" r="14" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/>
+                  <line x1="470" y1="30" x2="470" y2="145" stroke="#0f172a" stroke-width="2"/>
+                  <circle cx="470" cy="150" r="14" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/>
+                </svg>
+              </div>
+
+              <!-- AFTER LABEL (Top-Right) -->
+              <div class="absolute top-3.5 right-3.5 bg-emerald-600/95 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-xl z-10 flex items-center gap-1.5 border border-emerald-400/40">
+                <span class="w-2 h-2 rounded-full bg-white"></span>
+                <span>PROJE 2027 // <span id="baAfterLabel">2027 MODERN KONFOR</span></span>
+              </div>
+
+              <!-- 2. BEFORE SCENE (CLIPPED OVERLAY) -->
+              <div id="baBeforeClip" class="absolute inset-0 overflow-hidden pointer-events-none transition-none" style="clip-path: inset(0 50% 0 0);">
+                <svg id="baBeforeSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <linearGradient id="oldWallG2" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#57534e"/>
+                      <stop offset="100%" stop-color="#44403c"/>
+                    </linearGradient>
+                    <linearGradient id="oldFloorG2" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#292524"/>
+                      <stop offset="100%" stop-color="#1c1917"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="800" height="460" fill="#1c1917"/>
+                  <polygon points="140,65 660,65 660,310 140,310" fill="url(#oldWallG2)"/>
+                  <polygon points="0,0 140,65 140,310 0,460" fill="#3f3f46"/>
+                  <polygon points="660,65 800,0 800,460 660,310" fill="#332f2e"/>
+                  <polygon points="0,0 800,0 660,65 140,65" fill="#44403c"/>
+                  <polygon points="140,310 660,310 800,460 0,460" fill="url(#oldFloorG2)"/>
+                  <g stroke="#0c0a09" stroke-width="1.5" opacity="0.6">
+                    <line x1="220" y1="310" x2="110" y2="460"/>
+                    <line x1="310" y1="310" x2="260" y2="460"/>
+                    <line x1="400" y1="310" x2="400" y2="460"/>
+                    <line x1="490" y1="310" x2="540" y2="460"/>
+                    <line x1="580" y1="310" x2="690" y2="460"/>
+                    <line x1="90" y1="360" x2="710" y2="360"/>
+                    <line x1="40" y1="410" x2="760" y2="410"/>
+                  </g>
+                  <path d="M 270,370 L 285,385 L 280,398" stroke="#000" stroke-width="1.8" fill="none" opacity="0.8"/>
+                  <path d="M 440,340 L 452,355 L 445,365" stroke="#000" stroke-width="1.5" fill="none" opacity="0.8"/>
+                  <rect x="200" y="105" width="270" height="65" fill="#582f0e" stroke="#371b05" stroke-width="2"/>
+                  <rect x="200" y="170" width="270" height="38" fill="#78716c" opacity="0.8"/>
+                  <rect x="200" y="208" width="270" height="85" fill="#582f0e" stroke="#371b05" stroke-width="2"/>
+                  <polygon points="25,65 105,100 105,260 25,325" fill="#475569" stroke="#1e293b" stroke-width="3"/>
+                  <line x1="60" y1="80" x2="60" y2="295" stroke="#1e293b" stroke-width="2"/>
+                  <line x1="520" y1="65" x2="520" y2="310" stroke="#7f1d1d" stroke-width="5" opacity="0.85"/>
+                  <line x1="535" y1="65" x2="535" y2="310" stroke="#1e3a8a" stroke-width="4" opacity="0.85"/>
+                  <line x1="390" y1="20" x2="390" y2="110" stroke="#000" stroke-width="2"/>
+                  <circle cx="390" cy="115" r="9" fill="#fef08a" opacity="0.75"/>
+                </svg>
+
+                <!-- BEFORE LABEL (Top-Left) -->
+                <div class="absolute top-3.5 left-3.5 bg-rose-600/95 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-xl flex items-center gap-1.5 border border-rose-400/40">
+                  <span class="w-2 h-2 rounded-full bg-white"></span>
+                  <span>MEVCUT DURUM // ESKİ YAPI (1995)</span>
+                </div>
+              </div>
+
+              <!-- DIVIDER LINE & HANDLE -->
+              <div id="baDividerLine" class="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_16px_rgba(255,255,255,1)] pointer-events-none z-20" style="left: 50%;">
+                <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white text-slate-900 shadow-2xl flex items-center justify-center font-black text-sm border-2 border-orange-500">
+                  ↔
+                </div>
+              </div>
+
+              <!-- INVISIBLE SLIDER RANGE INPUT -->
+              <input id="baRangeInput" type="range" min="5" max="95" value="50" aria-label="Önce Sonra Karşılaştırma Sürgüsü" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30">
+            </div>
+
+            <!-- SLIDER FOOTER INFO BAR -->
+            <div class="flex items-center justify-between text-xs text-slate-400 px-1 pt-1">
+              <span class="flex items-center gap-1.5">
+                <span>↔</span>
+                <span id="baSceneDesc">Mevcut eski yapı tesisatı ile 2027 açık mutfak ve ada dönüşümünü sürgüyü kaydırarak inceleyin.</span>
+              </span>
+              <span id="baSliderPctText" class="font-mono text-orange-400 font-extrabold">%50 Dönüşüm Açısı</span>
+            </div>
+          </div>
+
               <p class="text-[11px] text-slate-500">Banyo bataryaları, kapı kolları ve aydınlatma profillerinin yüzey tercihi</p>
             </div>
             <div class="flex items-center gap-2">
@@ -3659,17 +3813,59 @@ MADDE 4 - İŞ SÜRESİ, GECİKME CEZASI VE GARANTİ ŞARTLARI
       const baBeforeClip = document.getElementById('baBeforeClip');
       const baDividerLine = document.getElementById('baDividerLine');
       const baSliderPctText = document.getElementById('baSliderPctText');
-      const baAfterImg = document.getElementById('baAfterImg');
       const baAfterLabel = document.getElementById('baAfterLabel');
+      const baSceneDesc = document.getElementById('baSceneDesc');
 
-      if (baRangeInput) {
+      if (baRangeInput && baBeforeClip && baDividerLine) {
         baRangeInput.addEventListener('input', e => {
           const val = parseFloat(e.target.value);
           baBeforeClip.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
           baDividerLine.style.left = `${val}%`;
-          baSliderPctText.textContent = `%${Math.round(val)} Önce / %${Math.round(100 - val)} Sonra`;
+          if (baSliderPctText) baSliderPctText.textContent = `%${Math.round(val)} Önce / %${Math.round(100 - val)} Sonra`;
         });
       }
+
+      // Scene Switcher Buttons
+      const scenes = {
+        living: {
+          label: '2027 MODERN KONFOR (AÇIK MUTFAK & ADA)',
+          desc: 'Mevcut eski yapı tesisatı ile 2027 açık mutfak ve ada dönüşümünü sürgüyü kaydırarak inceleyin.'
+        },
+        penthouse: {
+          label: '2027 MİMARİ PRESTİJ (A+ SALON & VİLLA)',
+          desc: 'Tavana kadar gizli LED aydınlatma, Neolith porselen kaplama ve ithal balıksırtı meşe parke dönüşümü.'
+        },
+        bath: {
+          label: '2027 LÜKS SPA BANYO (GEBERİT & 60x120 PORSELEN)',
+          desc: 'Eski sararmış fayans ve demir tesisattan, sürme yalıtımlı Geberit gömme rezervuar ve duş nişine geçiş.'
+        }
+      };
+
+      function setScene(scKey) {
+        const sc = scenes[scKey];
+        if (!sc) return;
+        if (baAfterLabel) baAfterLabel.textContent = sc.label;
+        if (baSceneDesc) baSceneDesc.textContent = sc.desc;
+        ['baRoomLiving', 'baRoomPenthouse', 'baRoomBath'].forEach(id => {
+          const btn = document.getElementById(id);
+          if (!btn) return;
+          if ((id === 'baRoomLiving' && scKey === 'living') ||
+              (id === 'baRoomPenthouse' && scKey === 'penthouse') ||
+              (id === 'baRoomBath' && scKey === 'bath')) {
+            btn.className = 'ba-room-btn px-3 py-1.5 rounded-lg font-bold bg-orange-600 text-white shadow-md transition-all';
+          } else {
+            btn.className = 'ba-room-btn px-3 py-1.5 rounded-lg font-semibold text-slate-300 hover:text-white transition-all';
+          }
+        });
+      }
+
+      const btnLiving = document.getElementById('baRoomLiving');
+      const btnPenthouse = document.getElementById('baRoomPenthouse');
+      const btnBath = document.getElementById('baRoomBath');
+
+      if (btnLiving) btnLiving.addEventListener('click', () => setScene('living'));
+      if (btnPenthouse) btnPenthouse.addEventListener('click', () => setScene('penthouse'));
+      if (btnBath) btnBath.addEventListener('click', () => setScene('bath'));
 
       function update3dStudio() {
         const wall = document.getElementById('simWallSelect').value || 'sand';
