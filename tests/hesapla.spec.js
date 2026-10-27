@@ -1,64 +1,65 @@
 const { test, expect } = require("@playwright/test");
 const path = require("path");
 
-test.describe("2027 Tadilat Maliyeti — Gerçek Mimari Fotoğraflar & 7 Motor Testi", () => {
+test.describe("2027 Tadilat & Maliyet Hesaplama Motoru (Mutfak, Banyo, Komple Daire)", () => {
   const fileUrl = "file://" + path.join(process.cwd(), "hesapla.html");
 
   test("1. Sayfa yükleme ve başlık doğrulaması", async ({ page }) => {
     await page.goto(fileUrl, { waitUntil: "domcontentloaded" });
-    await expect(page).toHaveTitle(/2027 Ev Tadilatı Fiyat & Metraj Hesaplama Motoru/);
+    await expect(page).toHaveTitle(/2027 Tadilat & Maliyet Hesaplama Motoru/);
   });
 
-  test("2. Adım geçişleri ve Kalite Segmenti doğrulaması", async ({ page }) => {
+  test("2. 3 Ana Kategori Sekmesi (Mutfak, Banyo, Komple) Geçişleri", async ({ page }) => {
     await page.goto(fileUrl, { waitUntil: "domcontentloaded" });
-    
-    // Adım 1 görünür
-    const step1 = page.locator("#sectionStep1");
-    await expect(step1).toBeVisible();
 
-    // Adım 2 sekmesine tıkla
-    await page.locator("#stepTab2").click();
-    const step2 = page.locator("#sectionStep2");
-    await expect(step2).toBeVisible();
-
-    // 3 Tier fotoğrafının varlığını doğrula
-    await expect(page.locator("#tierImgEco")).toHaveAttribute("src", "images/tier-eco.jpg");
-    await expect(page.locator("#tierImgStd")).toHaveAttribute("src", "images/tier-std.jpg");
-    await expect(page.locator("#tierImgLux")).toHaveAttribute("src", "images/tier-lux.jpg");
-  });
-
-  test("3. Gerçek Fotoğraflı Öncesi / Sonrası Mekan Değişimi", async ({ page }) => {
-    await page.goto(fileUrl, { waitUntil: "domcontentloaded" });
-    await page.locator("#stepTab2").click();
-
-    // Başlangıç Mutfak Fotoğrafları
-    const afterImg = page.locator("#baAfterImg");
-    const beforeImg = page.locator("#baBeforeImg");
-    await expect(afterImg).toBeVisible();
-    await expect(beforeImg).toBeVisible();
-    await expect(afterImg).toHaveAttribute("src", "images/kitchen-after.jpg");
-    await expect(beforeImg).toHaveAttribute("src", "images/kitchen-before.jpg");
+    // Başlangıçta Mutfak Paneli aktif
+    const pMutfak = page.locator("#panelMutfak");
+    await expect(pMutfak).toBeVisible();
 
     // Banyo sekmesine tıkla
-    await page.locator("#baRoomBath").click();
-    await expect(afterImg).toHaveAttribute("src", "images/bath-after.jpg");
-    await expect(beforeImg).toHaveAttribute("src", "images/bath-before.jpg");
+    await page.locator("button[data-target='panelBanyo']").click();
+    const pBanyo = page.locator("#panelBanyo");
+    await expect(pBanyo).toBeVisible();
+    await expect(pMutfak).toBeHidden();
 
     // Komple Daire sekmesine tıkla
-    await page.locator("#baRoomPenthouse").click();
-    await expect(afterImg).toHaveAttribute("src", "images/living-after.jpg");
-    await expect(beforeImg).toHaveAttribute("src", "images/living-before.jpg");
+    await page.locator("button[data-target='panelKomple']").click();
+    const pKomple = page.locator("#panelKomple");
+    await expect(pKomple).toBeVisible();
+    await expect(pBanyo).toBeHidden();
   });
 
-  test("4. Dinamik metraj ve canlı bütçe reaksiyonu", async ({ page }) => {
+  test("3. Mutfak Stepper & Canlı Fiyat Hesaplaması", async ({ page }) => {
     await page.goto(fileUrl, { waitUntil: "domcontentloaded" });
 
-    const sqmInput = page.locator("#sqmInput");
-    await sqmInput.fill("140");
-    await sqmInput.dispatchEvent("input");
+    // m2 değiştir
+    const mInput = page.locator("#m_alan_input");
+    await mInput.fill("18");
+    await mInput.dispatchEvent("input");
 
-    const badge = page.locator("#topTotalBadge");
-    const text = await badge.textContent();
-    expect(text).toContain("₺");
+    // Min ve Max göstergeleri kontrol et
+    const minText = await page.locator("#m_min_display").textContent();
+    const maxText = await page.locator("#m_max_display").textContent();
+    expect(minText).toContain("₺");
+    expect(maxText).toContain("₺");
+
+    // 2. Adıma geç
+    await page.locator(".btn-next-m").first().click();
+    await expect(page.locator("#m_step_2")).toBeVisible();
+  });
+
+  test("4. Komple Daire Metraj ve Canlı Fiyat Reaksiyonu", async ({ page }) => {
+    await page.goto(fileUrl, { waitUntil: "domcontentloaded" });
+
+    // Komple paneline geç
+    await page.locator("button[data-target='panelKomple']").click();
+
+    // 140 m2 hızlı butonuna tıkla
+    await page.locator("button.btn-quick-k-m2[data-val='140']").click();
+
+    const minText = await page.locator("#k_min_display").textContent();
+    const maxText = await page.locator("#k_max_display").textContent();
+    expect(minText).toContain("₺");
+    expect(maxText).toContain("₺");
   });
 });

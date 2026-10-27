@@ -1,0 +1,1585 @@
+import os
+
+print("Building new premium hesapla.html inspired by izmirmutfakbanyo.com.tr...")
+
+html_content = """<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth bg-slate-950 text-slate-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>2027 Tadilat &amp; Maliyet Hesaplama Motoru | Mutfak, Banyo &amp; Komple Daire</title>
+  <meta name="description" content="2027 güncel İzmir ve Ege bölgesi mutfak yenileme, banyo tadilatı ve anahtar teslim komple daire tadilatı maliyet hesaplama motoru. Şeffaf malzeme ve işçilik fiyatları.">
+  <link rel="canonical" href="https://tadilatmaliyeti.com/hesapla">
+  
+  <!-- FAVICONS -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <!-- TAILWIND CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              amber: '#d97706',
+              gold: '#f59e0b',
+              dark: '#090d16',
+              card: '#0f172a',
+              cardLight: '#1e293b',
+              border: '#1e293b'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- GSAP 3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- CUSTOM STYLES & TRANSITIONS -->
+  <style>
+    :root {
+      --color-primary: #d97706;
+      --color-surface-dark: #090d16;
+      --color-surface-card: #0f172a;
+      --color-border: #1e293b;
+    }
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: 0.28s;
+      animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .spotlight-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(800px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(245, 158, 11, 0.08), transparent 45%);
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+    input[type=range] {
+      accent-color: #d97706;
+    }
+  </style>
+
+  <!-- JSON-LD SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "2027 Tadilat & Maliyet Hesaplama Motoru",
+    "url": "https://tadilatmaliyeti.com/hesapla",
+    "description": "2027 İzmir ve Ege bölgesi anahtar teslim mutfak, banyo ve komple ev tadilatı maliyet hesaplayıcısı.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All"
+  }
+  </script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950 flex flex-col justify-between">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-18 py-3.5 flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-slate-950 font-black text-lg shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+          T
+        </div>
+        <div>
+          <span class="text-base sm:text-lg font-black tracking-tight text-white block">tadilat<span class="text-amber-500">maliyeti</span>.com</span>
+          <span class="text-[10px] font-mono text-slate-400 block -mt-1">2027 MİMARİ HESAPLAMA SİSTEMİ</span>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-bold text-slate-300">
+        <a href="/" class="hover:text-white transition-colors">Ana Sayfa</a>
+        <a href="/hizmetler" class="hover:text-white transition-colors">Hizmetler</a>
+        <a href="/hesapla" class="text-amber-400 font-extrabold flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Maliyet Hesapla
+        </a>
+        <a href="/sozlesme" class="hover:text-white transition-colors">Sözleşme Örneği</a>
+        <a href="/sss" class="hover:text-white transition-colors">Sık Sorulanlar</a>
+      </nav>
+
+      <!-- WHATSAPP CTA -->
+      <a id="headerWhatsappBtn" href="https://wa.me/905393333303" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg shadow-emerald-600/20 transition-all hover:scale-[1.02]">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+        <span class="hidden sm:inline">WhatsApp Keşif Hattı</span>
+        <span class="sm:hidden">Keşif Al</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN HERO & INTRO -->
+  <main class="flex-grow py-8 px-4 sm:px-6 max-w-7xl mx-auto w-full space-y-6">
+    
+    <!-- PAGE TITLE & HERO BADGE -->
+    <div class="text-center max-w-3xl mx-auto space-y-2.5">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-black">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        2027 İzmir &amp; Ege Bölgesi Şeffaf Tadilat Maliyet Motoru
+      </div>
+      <h1 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+        Tadilat Bütçenizi Şeffaf &amp; Gerçekçi Olarak Hesaplayın
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-2xl mx-auto">
+        Mutfak, banyo veya komple daire alanınızı seçin; malzeme kalitesi ve tesisat kalemlerine göre güncel anahtar teslim maliyet dökümünü anında görün.
+      </p>
+    </div>
+
+    <!-- 3 ANA KATEGORİ SEÇİCİ SEKMELERİ (MUTFAK / BANYO / KOMPLE DAİRE) -->
+    <div class="flex items-center justify-center">
+      <div class="inline-flex p-1.5 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl max-w-2xl w-full">
+        <button type="button" class="main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-amber-500 text-slate-950 shadow-md" data-target="panelMutfak">
+          <span>🍳</span>
+          <span>Mutfak Tadilatı</span>
+        </button>
+        <button type="button" class="main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white" data-target="panelBanyo">
+          <span>🛁</span>
+          <span>Banyo Yenileme</span>
+        </button>
+        <button type="button" class="main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white" data-target="panelKomple">
+          <span>🏡</span>
+          <span>Komple Daire</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- PANEL 1: MUTFAK TADİLATI PANELİ (3 ADIMLI SİHİRBAZ) -->
+    <!-- ============================================================== -->
+    <div id="panelMutfak" class="cat-panel block space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        
+        <!-- SOL FORM (7 SÜTUN) -->
+        <div class="lg:col-span-7 bg-slate-900/90 rounded-3xl border border-slate-800 shadow-xl overflow-hidden spotlight-card">
+          
+          <!-- STEPPER HEADER -->
+          <div class="p-5 border-b border-slate-800 bg-slate-950/60 flex items-center justify-between">
+            <div>
+              <span id="m_step_badge" class="text-xs font-black text-amber-400 uppercase tracking-wider block">Adım 1 / 3: Mekân Ölçüsü &amp; Altyapı</span>
+              <span class="text-sm font-extrabold text-white mt-0.5 block">Mutfak Boyutu ve Tesisat Durumu</span>
+            </div>
+            <span id="m_step_percent" class="text-xs font-mono font-black px-2.5 py-1 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">%33 Tamamlandı</span>
+          </div>
+
+          <!-- PROGRESS BAR -->
+          <div class="w-full bg-slate-800 h-1.5">
+            <div id="m_progress_bar" class="bg-amber-500 h-1.5 transition-all duration-300" style="width: 33.3%;"></div>
+          </div>
+
+          <!-- STEPPER TABS -->
+          <div class="grid grid-cols-3 border-b border-slate-800 text-xs font-bold bg-slate-950/30">
+            <button type="button" class="m-step-tab py-3 text-center border-b-2 border-amber-500 text-white font-black" data-step="1">1. Ölçü &amp; Tip</button>
+            <button type="button" class="m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-300" data-step="2">2. Dolap &amp; Tezgah</button>
+            <button type="button" class="m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-300" data-step="3">3. İmalat &amp; Tesisat</button>
+          </div>
+
+          <!-- FORM ADIMLARI -->
+          <div class="p-6 sm:p-7 space-y-6">
+            
+            <!-- MUTFAK ADIM 1 -->
+            <div id="m_step_1" class="m-step-content space-y-6">
+              <!-- Mutfak Alanı Slider -->
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <label class="text-xs sm:text-sm font-black text-white">Mutfak Taban Alanı (m²)</label>
+                  <div class="flex items-center gap-1.5">
+                    <input id="m_alan_input" type="number" min="6" max="50" value="14" class="w-16 px-2.5 py-1 text-right font-mono font-black text-sm bg-slate-950 border border-slate-700 rounded-lg text-white">
+                    <span class="text-xs text-slate-400 font-bold">m²</span>
+                  </div>
+                </div>
+                <input id="m_alan_slider" type="range" min="6" max="50" value="14" class="w-full h-2 bg-slate-800 rounded-lg cursor-pointer">
+                
+                <!-- Hızlı Seçim Butonları -->
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white" data-val="8">8 m² (Küçük)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border-2 border-amber-500 bg-amber-500/10 text-xs font-black text-amber-400" data-val="14">14 m² (Standart)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white" data-val="22">22 m² (Geniş Ada)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white" data-val="32">32 m² (Lüks Villa)</button>
+                </div>
+                <p class="text-[11px] text-slate-500">Tahmini Dolap Metrajı: <span id="m_calc_mtul" class="font-bold text-amber-400">5.3 Metretül (mtül)</span></p>
+              </div>
+
+              <!-- Mutfak Tipi -->
+              <div class="space-y-2">
+                <label class="text-xs font-black text-slate-300 uppercase tracking-wider block">Mutfak Yerleşim Tipi</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
+                  <button type="button" class="m-tip-btn p-3 rounded-xl border border-slate-700 hover:border-slate-500 text-center font-bold" data-val="duz">Düz Tek Hat</button>
+                  <button type="button" class="m-tip-btn p-3 rounded-xl border-2 border-amber-500 bg-amber-500/10 text-amber-400 text-center font-black" data-val="l">L Mutfak</button>
+                  <button type="button" class="m-tip-btn p-3 rounded-xl border border-slate-700 hover:border-slate-500 text-center font-bold" data-val="u">U Mutfak</button>
+                  <button type="button" class="m-tip-btn p-3 rounded-xl border border-slate-700 hover:border-slate-500 text-center font-bold" data-val="ada">Adalı Mutfak</button>
+                </div>
+              </div>
+
+              <!-- Bina Yaşı / Tesisat Durumu -->
+              <div class="space-y-2">
+                <label class="text-xs font-black text-slate-300 uppercase tracking-wider block">Bina Yaşı &amp; Altyapı Durumu</label>
+                <div class="grid grid-cols-3 gap-2.5 text-xs">
+                  <button type="button" class="m-bina-btn p-3 rounded-xl border border-slate-700 text-center font-bold" data-val="yeni">0-5 Yıl (Yeni)</button>
+                  <button type="button" class="m-bina-btn p-3 rounded-xl border-2 border-amber-500 bg-amber-500/10 text-amber-400 text-center font-black" data-val="orta">5-20 Yıl (Orta)</button>
+                  <button type="button" class="m-bina-btn p-3 rounded-xl border border-slate-700 text-center font-bold" data-val="eski">20+ Yıl (Eski Altyapı)</button>
+                </div>
+              </div>
+
+              <!-- İLERİ BUTONU -->
+              <div class="pt-2 flex justify-end">
+                <button type="button" class="btn-next-m px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="2">
+                  <span>2. Adıma Geç: Dolap &amp; Tezgah Seçimi</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- MUTFAK ADIM 2 -->
+            <div id="m_step_2" class="m-step-content hidden space-y-6">
+              <!-- Dolap Kapağı -->
+              <div class="space-y-2">
+                <label class="text-xs font-black text-slate-300 uppercase tracking-wider block">Dolap Kapak Modeli</label>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <button type="button" class="m-dolap-btn p-4 rounded-xl border border-slate-700 text-left font-bold" data-val="mdf">
+                    <span class="block text-xs text-slate-400">Ekonomik</span>
+                    <span class="block text-sm font-black text-white mt-0.5">MDF Lam Kapak</span>
+                    <span class="block text-[11px] text-slate-500 mt-1">Dayanıklı standart yüzey</span>
+                  </button>
+                  <button type="button" class="m-dolap-btn p-4 rounded-xl border-2 border-amber-500 bg-amber-500/10 text-left font-bold" data-val="akrilik">
+                    <span class="block text-xs text-amber-400 font-black">Popüler Referans</span>
+                    <span class="block text-sm font-black text-white mt-0.5">Akrilik / Lake Parlak</span>
+                    <span class="block text-[11px] text-slate-400 mt-1">Çizilmeye dirençli parlak kapak</span>
+                  </button>
+                  <button type="button" class="m-dolap-btn p-4 rounded-xl border border-slate-700 text-left font-bold" data-val="lake">
+                    <span class="block text-xs text-amber-400 font-black">A+ Mimari</span>
+                    <span class="block text-sm font-black text-white mt-0.5">Mat İpek Lake &amp; Masif</span>
+                    <span class="block text-[11px] text-slate-400 mt-1">Pürüzsüz boyalı lüks kapak</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tezgah Seçimi -->
+              <div class="space-y-2">
+                <label class="text-xs font-black text-slate-300 uppercase tracking-wider block">Tezgah Malzemesi</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
+                  <button type="button" class="m-tezgah-btn p-3 rounded-xl border border-slate-700 text-left font-bold" data-val="laminat">
+                    <span class="block font-black text-white">Laminat</span>
+                    <span class="block text-[10px] text-slate-400 mt-0.5">Ekonomik</span>
+                  </button>
+                  <button type="button" class="m-tezgah-btn p-3 rounded-xl border border-slate-700 text-left font-bold" data-val="granit">
+                    <span class="block font-black text-white">Doğal Granit</span>
+                    <span class="block text-[10px] text-slate-400 mt-0.5">Doğal Taş</span>
+                  </button>
+                  <button type="button" class="m-tezgah-btn p-3 rounded-xl border-2 border-amber-500 bg-amber-500/10 text-left font-bold" data-val="kuvars">
+                    <span class="block font-black text-amber-400">Kuvars (Çimstone)</span>
+                    <span class="block text-[10px] text-slate-300 mt-0.5">Leke Tutmaz</span>
+                  </button>
+                  <button type="button" class="m-tezgah-btn p-3 rounded-xl border border-slate-700 text-left font-bold" data-val="porselen">
+                    <span class="block font-black text-white">Porselen (Neolith)</span>
+                    <span class="block text-[10px] text-slate-400 mt-0.5">Sıfır Çizilme</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP NAV BUTONLARI -->
+              <div class="pt-2 flex items-center justify-between">
+                <button type="button" class="btn-prev-m px-4 py-2.5 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-300 font-bold text-xs" data-prev="1">
+                  ← 1. Adıma Dön
+                </button>
+                <button type="button" class="btn-next-m px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="3">
+                  <span>3. Adıma Geç: Tesisat &amp; İşçilik</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- MUTFAK ADIM 3 -->
+            <div id="m_step_3" class="m-step-content hidden space-y-4">
+              <label class="text-xs font-black text-slate-300 uppercase tracking-wider block">İmalat &amp; Tesisat Kalemleri</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="m_chk_yikim" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Eski Mutfak Kırım &amp; Moloz</span>
+                    <span class="text-[11px] text-slate-400 block">Dolap ve fayansların sökülüp atılması</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="m_chk_zemin" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Zemin Seramik / Porselen</span>
+                    <span class="text-[11px] text-slate-400 block">Zemin kaplama ve derz uygulaması</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="m_chk_su" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Sıhhi Tesisat Yenileme</span>
+                    <span class="text-[11px] text-slate-400 block">PPRC temiz su ve PVC gider hatları</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="m_chk_elektrik" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Elektrik &amp; Priz Altyapısı</span>
+                    <span class="text-[11px] text-slate-400 block">Ankastre hatları ve tezgah üstü prizler</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="m_chk_boya" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Tavan &amp; Duvar Boyası</span>
+                    <span class="text-[11px] text-slate-400 block">Jotun / Filli silinebilir antibakteriyel boya</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="m_chk_aydinlatma" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Tezgah Altı Gizli LED</span>
+                    <span class="text-[11px] text-slate-400 block">3000K sıcak lineer profil aydınlatma</span>
+                  </div>
+                </label>
+              </div>
+
+              <!-- GERİ DÖN BUTONU -->
+              <div class="pt-2 flex justify-start">
+                <button type="button" class="btn-prev-m px-4 py-2.5 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-300 font-bold text-xs" data-prev="2">
+                  ← 2. Adıma Dön
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SAĞ KOKPİT (5 SÜTUN): CANLI FİYAT, GERÇEK FOTOĞRAF & WHATSAPP -->
+        <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl border border-slate-800 p-6 shadow-2xl space-y-5 sticky top-24 spotlight-card">
+          
+          <!-- GERÇEK MUTFAK ÖNCESİ / SONRASI SLIDER -->
+          <div class="relative w-full h-56 rounded-2xl overflow-hidden border border-slate-800 shadow-inner group">
+            <img id="m_after_img" src="images/kitchen-after.jpg" alt="2027 Mutfak Dönüşümü" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute top-2.5 right-2.5 bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow">
+              2027 Proje Sonrası
+            </div>
+            <div id="m_before_clip" class="absolute inset-0 overflow-hidden pointer-events-none" style="clip-path: inset(0 50% 0 0);">
+              <img src="images/kitchen-before.jpg" alt="Eski Mutfak" class="w-full h-full object-cover">
+              <div class="absolute top-2.5 left-2.5 bg-slate-950/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow border border-red-500/50">
+                Eski Yapı Öncesi
+              </div>
+            </div>
+            <div id="m_divider_line" class="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_10px_white] pointer-events-none" style="left: 50%;">
+              <div class="absolute top-1/2 -translate-y-1/2 -left-3.5 w-7 h-7 rounded-full bg-white text-slate-950 font-black text-xs flex items-center justify-center shadow-lg">⇄</div>
+            </div>
+            <input id="m_slider_range" type="range" min="5" max="95" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize">
+          </div>
+
+          <!-- CANLI FİYAT GÖSTERGESİ -->
+          <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-1">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">TAHMİNİ ANAHTAR TESLİM MUTFAK MALİYETİ</span>
+            <div class="flex items-baseline justify-between gap-2">
+              <span id="m_min_display" class="text-xl sm:text-2xl font-black text-white font-mono">₺ 0</span>
+              <span class="text-xs text-slate-500 font-bold">ile</span>
+              <span id="m_max_display" class="text-xl sm:text-2xl font-black text-amber-400 font-mono">₺ 0</span>
+            </div>
+            <p class="text-[11px] text-slate-500">KDV, 1. sınıf malzeme, montaj ve usta işçiliği dahildir.</p>
+          </div>
+
+          <!-- KALEM DAĞILIMI -->
+          <div class="space-y-2">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">MALİYET KALEMLERİ KIRILIMI</span>
+            <div id="m_breakdown_list" class="space-y-1.5 max-h-48 overflow-y-auto pr-1"></div>
+          </div>
+
+          <!-- WHATSAPP CTA -->
+          <a id="m_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+            <span>Mutfak Teklifini WhatsApp'tan Al</span>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- PANEL 2: BANYO YENİLEME PANELİ (3 ADIMLI SİHİRBAZ) -->
+    <!-- ============================================================== -->
+    <div id="panelBanyo" class="cat-panel hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        
+        <!-- SOL FORM (7 SÜTUN) -->
+        <div class="lg:col-span-7 bg-slate-900/90 rounded-3xl border border-slate-800 shadow-xl overflow-hidden spotlight-card">
+          
+          <div class="p-5 border-b border-slate-800 bg-slate-950/60 flex items-center justify-between">
+            <div>
+              <span id="b_step_badge" class="text-xs font-black text-amber-400 uppercase tracking-wider block">Adım 1 / 3: Banyo Alanı &amp; Tesisat</span>
+              <span class="text-sm font-extrabold text-white mt-0.5 block">Banyo Metrekaresi ve Yapı Yaşı</span>
+            </div>
+            <span id="b_step_percent" class="text-xs font-mono font-black px-2.5 py-1 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">%33 Tamamlandı</span>
+          </div>
+
+          <div class="w-full bg-slate-800 h-1.5">
+            <div id="b_progress_bar" class="bg-amber-500 h-1.5 transition-all duration-300" style="width: 33.3%;"></div>
+          </div>
+
+          <div class="grid grid-cols-3 border-b border-slate-800 text-xs font-bold bg-slate-950/30">
+            <button type="button" class="b-step-tab py-3 text-center border-b-2 border-amber-500 text-white font-black" data-step="1">1. Banyo Alanı</button>
+            <button type="button" class="b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-300" data-step="2">2. Seramik &amp; Klozet</button>
+            <button type="button" class="b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-300" data-step="3">3. Donatı &amp; İzolasyon</button>
+          </div>
+
+          <div class="p-6 sm:p-7 space-y-6">
+            
+            <!-- BANYO ADIM 1 -->
+            <div id="b_step_1" class="b-step-content space-y-6">
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <label class="text-xs sm:text-sm font-black text-white">Banyo Alanı (m²)</label>
+                  <div class="flex items-center gap-1.5">
+                    <input id="b_alan_input" type="number" min="3" max="25" value="6" class="w-16 px-2.5 py-1 text-right font-mono font-black text-sm bg-slate-950 border border-slate-700 rounded-lg text-white">
+                    <span class="text-xs text-slate-400 font-bold">m²</span>
+                  </div>
+                </div>
+                <input id="b_alan_slider" type="range" min="3" max="25" value="6" class="w-full h-2 bg-slate-800 rounded-lg cursor-pointer">
+                
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white" data-val="4">4 m² (Küçük)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border-2 border-amber-500 bg-amber-500/10 text-xs font-black text-amber-400" data-val="6">6 m² (Standart)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white" data-val="9">9 m² (Ebeveyn)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white" data-val="14">14 m² (Lüks Spa)</button>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-xs font-black text-slate-300 uppercase tracking-wider block">Bina Yaşı &amp; Tesisat Durumu</label>
+                <div class="grid grid-cols-3 gap-2.5 text-xs">
+                  <button type="button" class="b-bina-btn p-3 rounded-xl border border-slate-700 text-center font-bold" data-val="yeni">0-5 Yıl (Yeni)</button>
+                  <button type="button" class="b-bina-btn p-3 rounded-xl border-2 border-amber-500 bg-amber-500/10 text-amber-400 text-center font-black" data-val="orta">5-20 Yıl (Orta)</button>
+                  <button type="button" class="b-bina-btn p-3 rounded-xl border border-slate-700 text-center font-bold" data-val="eski">20+ Yıl (Eski Altyapı)</button>
+                </div>
+              </div>
+
+              <div class="pt-2 flex justify-end">
+                <button type="button" class="btn-next-b px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="2">
+                  <span>2. Adıma Geç: Seramik &amp; Klozet</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- BANYO ADIM 2 -->
+            <div id="b_step_2" class="b-step-content hidden space-y-6">
+              <div class="space-y-2">
+                <label class="text-xs font-black text-slate-300 uppercase tracking-wider block">Fayans / Seramik Kalitesi</label>
+                <div class="grid grid-cols-2 gap-3 text-xs">
+                  <button type="button" class="b-seramik-btn p-4 rounded-xl border-2 border-amber-500 bg-amber-500/10 text-left font-bold" data-val="standart">
+                    <span class="block text-amber-400 font-black">Standart</span>
+                    <span class="block text-sm font-black text-white mt-0.5">30x60 / 60x60 Seramik</span>
+                    <span class="block text-[11px] text-slate-400 mt-1">Ege / Kütahya kaliteli yerli seramik</span>
+                  </button>
+                  <button type="button" class="b-seramik-btn p-4 rounded-xl border border-slate-700 text-left font-bold" data-val="premium">
+                    <span class="block text-slate-400 font-bold">Lüks Mimari</span>
+                    <span class="block text-sm font-black text-white mt-0.5">60x120 Calacatta Porselen</span>
+                    <span class="block text-[11px] text-slate-400 mt-1">Geniş ebat rektifiye porselen</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-xs font-black text-slate-300 uppercase tracking-wider block">Klozet &amp; Rezervuar Tipi</label>
+                <div class="grid grid-cols-2 gap-3 text-xs">
+                  <button type="button" class="b-klozet-btn p-4 rounded-xl border border-slate-700 text-left font-bold" data-val="standart">
+                    <span class="block text-slate-400 font-bold">Standart</span>
+                    <span class="block text-sm font-black text-white mt-0.5">Yerden Ayaklı Takım</span>
+                    <span class="block text-[11px] text-slate-400 mt-1">Geleneksel seramik rezervuar</span>
+                  </button>
+                  <button type="button" class="b-klozet-btn p-4 rounded-xl border-2 border-amber-500 bg-amber-500/10 text-left font-bold" data-val="asma">
+                    <span class="block text-amber-400 font-black">Modern Standart</span>
+                    <span class="block text-sm font-black text-white mt-0.5">Geberit Asma Klozet</span>
+                    <span class="block text-[11px] text-slate-400 mt-1">Gömme rezervuar &amp; rimless asma taş</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="pt-2 flex items-center justify-between">
+                <button type="button" class="btn-prev-b px-4 py-2.5 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-300 font-bold text-xs" data-prev="1">
+                  ← 1. Adıma Dön
+                </button>
+                <button type="button" class="btn-next-b px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="3">
+                  <span>3. Adıma Geç: Donatı &amp; İzolasyon</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- BANYO ADIM 3 -->
+            <div id="b_step_3" class="b-step-content hidden space-y-4">
+              <label class="text-xs font-black text-slate-300 uppercase tracking-wider block">İmalat &amp; Donatı Kalemleri</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="b_chk_yikim" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Eski Banyo Kırım &amp; Moloz</span>
+                    <span class="text-[11px] text-slate-400 block">Eski seramik, küvet ve harç sökümü</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="b_chk_izolasyon" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Çift Kat Sürme Su İzolasyonu</span>
+                    <span class="text-[11px] text-slate-400 block">Sürme membran ile %100 su sızdırmazlık</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="b_chk_dolap" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Marin Hilton Banyo Dolabı</span>
+                    <span class="text-[11px] text-slate-400 block">Suya dayanıklı dolap, seramik lavabo &amp; LED ayna</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="b_chk_dus" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Walk-in Cam Duşakabin</span>
+                    <span class="text-[11px] text-slate-400 block">6mm temperli cam &amp; paslanmaz lineer süzgeç</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="b_chk_su" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Sıhhi Tesisat Altyapısı</span>
+                    <span class="text-[11px] text-slate-400 block">Yeni PPRC borulama &amp; batarya bağlantıları</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                  <input type="checkbox" id="b_chk_havlupan" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                  <div>
+                    <span class="font-bold text-white block">Mat Siyah / Krom Havlupan</span>
+                    <span class="text-[11px] text-slate-400 block">Radyatör petek &amp; vana montajı</span>
+                  </div>
+                </label>
+              </div>
+
+              <div class="pt-2 flex justify-start">
+                <button type="button" class="btn-prev-b px-4 py-2.5 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-300 font-bold text-xs" data-prev="2">
+                  ← 2. Adıma Dön
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SAĞ KOKPİT (5 SÜTUN): CANLI BANYO FİYATI & GERÇEK FOTOĞRAF -->
+        <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl border border-slate-800 p-6 shadow-2xl space-y-5 sticky top-24 spotlight-card">
+          
+          <!-- GERÇEK BANYO ÖNCESİ / SONRASI SLIDER -->
+          <div class="relative w-full h-56 rounded-2xl overflow-hidden border border-slate-800 shadow-inner group">
+            <img src="images/bath-after.jpg" alt="2027 Banyo Dönüşümü" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute top-2.5 right-2.5 bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow">
+              2027 Proje Sonrası
+            </div>
+            <div id="b_before_clip" class="absolute inset-0 overflow-hidden pointer-events-none" style="clip-path: inset(0 50% 0 0);">
+              <img src="images/bath-before.jpg" alt="Eski Banyo" class="w-full h-full object-cover">
+              <div class="absolute top-2.5 left-2.5 bg-slate-950/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow border border-red-500/50">
+                Eski Yapı Öncesi
+              </div>
+            </div>
+            <div id="b_divider_line" class="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_10px_white] pointer-events-none" style="left: 50%;">
+              <div class="absolute top-1/2 -translate-y-1/2 -left-3.5 w-7 h-7 rounded-full bg-white text-slate-950 font-black text-xs flex items-center justify-center shadow-lg">⇄</div>
+            </div>
+            <input id="b_slider_range" type="range" min="5" max="95" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize">
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-1">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">TAHMİNİ BANYO YENİLEME MALİYETİ</span>
+            <div class="flex items-baseline justify-between gap-2">
+              <span id="b_min_display" class="text-xl sm:text-2xl font-black text-white font-mono">₺ 0</span>
+              <span class="text-xs text-slate-500 font-bold">ile</span>
+              <span id="b_max_display" class="text-xl sm:text-2xl font-black text-amber-400 font-mono">₺ 0</span>
+            </div>
+            <p class="text-[11px] text-slate-500">KDV, VitrA/Geberit malzeme, montaj ve usta işçiliği dahildir.</p>
+          </div>
+
+          <div class="space-y-2">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">MALİYET KALEMLERİ KIRILIMI</span>
+            <div id="b_breakdown_list" class="space-y-1.5 max-h-48 overflow-y-auto pr-1"></div>
+          </div>
+
+          <a id="b_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+            <span>Banyo Teklifini WhatsApp'tan Al</span>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- PANEL 3: KOMPLE DAİRE TADİLATI PANELİ -->
+    <!-- ============================================================== -->
+    <div id="panelKomple" class="cat-panel hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        
+        <!-- SOL FORM (7 SÜTUN) -->
+        <div class="lg:col-span-7 bg-slate-900/90 rounded-3xl border border-slate-800 shadow-xl overflow-hidden spotlight-card p-6 sm:p-7 space-y-6">
+          
+          <div>
+            <span class="text-xs font-black text-amber-400 uppercase tracking-wider block">Anahtar Teslim Komple Daire Planlayıcı</span>
+            <h2 class="text-lg sm:text-xl font-black text-white mt-0.5">Daire Metrekaresi &amp; Kalite Segmenti</h2>
+            <p class="text-xs text-slate-400 mt-1">Dairenizin net süpürülebilir kullanım alanını girin ve dahil edilecek imalatları belirleyin.</p>
+          </div>
+
+          <!-- Daire Alanı Slider -->
+          <div class="space-y-3 bg-slate-950/70 p-4 rounded-2xl border border-slate-800">
+            <div class="flex items-center justify-between">
+              <label class="text-xs sm:text-sm font-black text-white">Net Daire Alanı (m²)</label>
+              <div class="flex items-center gap-1.5">
+                <input id="k_alan_input" type="number" min="40" max="350" value="110" class="w-20 px-2.5 py-1 text-right font-mono font-black text-sm bg-slate-950 border border-slate-700 rounded-lg text-white">
+                <span class="text-xs text-slate-400 font-bold">m²</span>
+              </div>
+            </div>
+            <input id="k_alan_slider" type="range" min="40" max="350" value="110" class="w-full h-2 bg-slate-800 rounded-lg cursor-pointer">
+            
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white" data-val="65">65 m² (1+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white" data-val="90">90 m² (2+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border-2 border-amber-500 bg-amber-500/10 text-xs font-black text-amber-400" data-val="110">110 m² (3+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white" data-val="140">140 m² (4+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white" data-val="180">180 m² (Dubleks)</button>
+            </div>
+          </div>
+
+          <!-- 3 Kalite Segmenti -->
+          <div class="space-y-2.5">
+            <label class="text-xs font-black text-slate-300 uppercase tracking-wider block">Malzeme &amp; Kalite Segmenti</label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <button type="button" class="k-kalite-btn p-4 rounded-2xl border border-slate-700 text-left font-bold" data-val="ekonomik">
+                <span class="block text-xs text-slate-400 font-bold">1.0x Çarpan</span>
+                <span class="block text-sm font-black text-white mt-0.5">İskandinav Pratik</span>
+                <span class="block text-[11px] text-slate-400 mt-1">8mm parke, laminat tezgah, yerli seramik</span>
+              </button>
+              <button type="button" class="k-kalite-btn p-4 rounded-2xl border-2 border-amber-500 bg-amber-500/10 text-left font-bold" data-val="standart">
+                <span class="block text-xs text-amber-400 font-black">1.35x Referans</span>
+                <span class="block text-sm font-black text-white mt-0.5">Modern Konfor</span>
+                <span class="block text-[11px] text-slate-300 mt-1">Akrilik dolap, Çimstone tezgah, Geberit</span>
+              </button>
+              <button type="button" class="k-kalite-btn p-4 rounded-2xl border border-slate-700 text-left font-bold" data-val="luks">
+                <span class="block text-xs text-amber-400 font-black">1.9x Prestij</span>
+                <span class="block text-sm font-black text-white mt-0.5">A+ Mimari Lüks</span>
+                <span class="block text-[11px] text-slate-400 mt-1">Balıksırtı meşe, Neolith porselen, LED asma tavan</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Kapsam Seçim Kutuları -->
+          <div class="space-y-3">
+            <label class="text-xs font-black text-slate-300 uppercase tracking-wider block">Dahil Edilecek Tadilat Kalemleri</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" id="k_chk_mutfak" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                <div>
+                  <span class="font-bold text-white block">Komple Mutfak Yenileme</span>
+                  <span class="text-[11px] text-slate-400 block">Dolap, tezgah, evye &amp; tesisat</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" id="k_chk_banyo" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                <div>
+                  <span class="font-bold text-white block">Komple Banyo Yenileme</span>
+                  <span class="text-[11px] text-slate-400 block">Seramik, duşakabin, Geberit &amp; dolap</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" id="k_chk_parke" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                <div>
+                  <span class="font-bold text-white block">Zemin Parke &amp; Süpürgelik</span>
+                  <span class="text-[11px] text-slate-400 block">Salon ve tüm odalarda derzli laminat parke</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" id="k_chk_boya" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                <div>
+                  <span class="font-bold text-white block">Tüm Daire Alçı &amp; Boya</span>
+                  <span class="text-[11px] text-slate-400 block">Tamirler, astar ve silinebilir iç cephe boyası</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" id="k_chk_kapi" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                <div>
+                  <span class="font-bold text-white block">İç Oda Kapıları (5 Adet)</span>
+                  <span class="text-[11px] text-slate-400 block">Melamin / Lake mobilya oda kapıları</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" id="k_chk_celik_kapi" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                <div>
+                  <span class="font-bold text-white block">Çelik Daire Giriş Kapısı</span>
+                  <span class="text-[11px] text-slate-400 block">Çift kilitli monoblok güvenlikli çelik kapı</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" id="k_chk_alcipan" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                <div>
+                  <span class="font-bold text-white block">Asma Tavan &amp; Gizli LED</span>
+                  <span class="text-[11px] text-slate-400 block">Salon ve koridorda ışık bandı havuzu</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" id="k_chk_tesisat" checked class="w-4 h-4 rounded text-amber-500 bg-slate-900 border-slate-700">
+                <div>
+                  <span class="font-bold text-white block">Elektrik &amp; Su Altyapısı</span>
+                  <span class="text-[11px] text-slate-400 block">Pano yenileme, sigortalar ve hat çekimleri</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SAĞ KOKPİT (5 SÜTUN): KOMPLE DAİRE CANLI FİYAT & FOTOĞRAF -->
+        <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl border border-slate-800 p-6 shadow-2xl space-y-5 sticky top-24 spotlight-card">
+          
+          <!-- GERÇEK KOMPLE DAİRE ÖNCESİ / SONRASI SLIDER -->
+          <div class="relative w-full h-56 rounded-2xl overflow-hidden border border-slate-800 shadow-inner group">
+            <img src="images/living-after.jpg" alt="2027 Komple Daire Dönüşümü" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute top-2.5 right-2.5 bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow">
+              2027 Proje Sonrası
+            </div>
+            <div id="k_before_clip" class="absolute inset-0 overflow-hidden pointer-events-none" style="clip-path: inset(0 50% 0 0);">
+              <img src="images/living-before.jpg" alt="Eski Daire" class="w-full h-full object-cover">
+              <div class="absolute top-2.5 left-2.5 bg-slate-950/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow border border-red-500/50">
+                Harabe / Kırım Öncesi
+              </div>
+            </div>
+            <div id="k_divider_line" class="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_10px_white] pointer-events-none" style="left: 50%;">
+              <div class="absolute top-1/2 -translate-y-1/2 -left-3.5 w-7 h-7 rounded-full bg-white text-slate-950 font-black text-xs flex items-center justify-center shadow-lg">⇄</div>
+            </div>
+            <input id="k_slider_range" type="range" min="5" max="95" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize">
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-1">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">ANAHTAR TESLİM KOMPLE DAİRE MALİYETİ</span>
+            <div class="flex items-baseline justify-between gap-2">
+              <span id="k_min_display" class="text-xl sm:text-2xl font-black text-white font-mono">₺ 0</span>
+              <span class="text-xs text-slate-500 font-bold">ile</span>
+              <span id="k_max_display" class="text-xl sm:text-2xl font-black text-amber-400 font-mono">₺ 0</span>
+            </div>
+            <p class="text-[11px] text-slate-500">Mimar kontrolü, malzeme, nakliye, montaj ve temizlik dahildir.</p>
+          </div>
+
+          <div class="space-y-2">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">MALİYET KALEMLERİ KIRILIMI</span>
+            <div id="k_breakdown_list" class="space-y-1.5 max-h-48 overflow-y-auto pr-1"></div>
+          </div>
+
+          <a id="k_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+            <span>Daire Teklifini WhatsApp'tan Al</span>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4 GÜVENCE ROZETİ (GLOBAL STANDART) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+      <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-center space-y-1">
+        <span class="text-xl block">🛡️</span>
+        <span class="text-xs font-black text-white block">5 Yıl İşçilik Garantisi</span>
+        <span class="text-[11px] text-slate-400 block">Sözleşmeli resmi teminat</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-center space-y-1">
+        <span class="text-xl block">📜</span>
+        <span class="text-xs font-black text-white block">Sabit Fiyat Sözleşmesi</span>
+        <span class="text-[11px] text-slate-400 block">Süreçte ek maliyet çıkmaz</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-center space-y-1">
+        <span class="text-xl block">⏱️</span>
+        <span class="text-xs font-black text-white block">Gecikme Cezai Şartı</span>
+        <span class="text-[11px] text-slate-400 block">Taahhüt edilen günde teslim</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-center space-y-1">
+        <span class="text-xl block">📐</span>
+        <span class="text-xs font-black text-white block">3D Mimari Projelendirme</span>
+        <span class="text-[11px] text-slate-400 block">İmalat öncesi fotorealistik plan</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 border-t border-slate-800 bg-slate-950 py-8 px-4 sm:px-6 text-xs text-slate-500 text-center">
+    <div class="max-w-7xl mx-auto space-y-2">
+      <p class="font-bold text-slate-400">© 2027 tadilatmaliyeti.com — Tüm Hakları Saklıdır.</p>
+      <p>İzmir (Karşıyaka, Bornova, Çeşme, Urla, Konak) ve tüm Ege bölgesi için ÇŞB birim fiyatları ile şeffaf tadilat hesaplayıcı.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================== -->
+  <!-- JAVASCRIPT HESAPLAMA MOTORU & ETKİLEŞİM MİMARİSİ -->
+  <!-- ============================================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      const fmt = (num) => "₺ " + Math.round(num).toLocaleString("tr-TR");
+
+      // -------------------------------------------------------------
+      // 1. ANA KATEGORİ SEKMELERİ (MUTFAK / BANYO / KOMPLE DAİRE)
+      // -------------------------------------------------------------
+      const mainTabs = document.querySelectorAll(".main-cat-tab");
+      const catPanels = document.querySelectorAll(".cat-panel");
+
+      mainTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          const targetId = tab.dataset.target;
+          
+          mainTabs.forEach(t => {
+            t.className = "main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white";
+          });
+          tab.className = "main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-amber-500 text-slate-950 shadow-md";
+
+          catPanels.forEach(p => p.classList.add("hidden"));
+          const targetPanel = document.getElementById(targetId);
+          if (targetPanel) targetPanel.classList.remove("hidden");
+        });
+      });
+
+      // -------------------------------------------------------------
+      // 2. FİYAT MATRİSİ (2027 İZMİR & EGE PİYASA RAYİÇLERİ)
+      // -------------------------------------------------------------
+      const mPrices = {
+        binaMultiplier: { yeni: 1.0, orta: 1.15, eski: 1.25 },
+        iscilikM2: { min: 1400, max: 2100 },
+        dolap: {
+          mdf: { min: 9500, max: 13000 },
+          akrilik: { min: 14500, max: 19500 },
+          lake: { min: 22500, max: 32500 }
+        },
+        tezgah: {
+          laminat: { min: 1800, max: 3200 },
+          granit: { min: 4500, max: 7500 },
+          kuvars: { min: 9800, max: 15500 },
+          porselen: { min: 16500, max: 25000 }
+        },
+        yikim: { min: 3800, max: 7500 },
+        zeminM2: { min: 1650, max: 2800 },
+        su: { min: 6500, max: 11500 },
+        elektrik: { min: 4800, max: 8800 },
+        boya: { min: 4200, max: 7200 },
+        aydinlatma: { min: 3200, max: 5500 }
+      };
+
+      const bPrices = {
+        binaMultiplier: { yeni: 1.0, orta: 1.15, eski: 1.25 },
+        iscilikM2: { min: 2600, max: 4200 },
+        seramik: {
+          standart: { min: 2600, max: 4200 },
+          premium: { min: 4800, max: 7800 }
+        },
+        klozet: {
+          standart: { min: 5500, max: 9800 },
+          asma: { min: 11500, max: 19500 }
+        },
+        yikim: { min: 4200, max: 7500 },
+        izolasyon: { min: 4500, max: 7500 },
+        dolap: { min: 8800, max: 18500 },
+        dus: { min: 7800, max: 16500 },
+        su: { min: 5500, max: 9800 },
+        havlupan: { min: 3500, max: 6500 }
+      };
+
+      const kPrices = {
+        multiplier: { ekonomik: 1.0, standart: 1.35, luks: 1.9 },
+        baseM2: { min: 2400, max: 3800 },
+        mutfak: { min: 75000, max: 135000 },
+        banyo: { min: 55000, max: 88000 },
+        parkeM2: { min: 550, max: 980 },
+        boyaM2: { min: 190, max: 380 },
+        kapiBirim: { min: 5500, max: 10500 },
+        celikKapi: { min: 13500, max: 23500 },
+        alcipanM2: { min: 420, max: 780 },
+        tesisatM2: { min: 600, max: 1150 }
+      };
+
+      // -------------------------------------------------------------
+      // 3. MUTFAK HESAPLAMA MOTORU
+      // -------------------------------------------------------------
+      const mState = {
+        alan: 14,
+        bina: "orta",
+        dolap: "akrilik",
+        tezgah: "kuvars",
+        yikim: true,
+        zemin: true,
+        su: true,
+        elektrik: true,
+        boya: true,
+        aydinlatma: true
+      };
+
+      function calcMutfak() {
+        const mult = mPrices.binaMultiplier[mState.bina];
+        const m2 = mState.alan;
+        const dolapMetre = Math.max(3, m2 * 0.38);
+
+        const mtulEl = document.getElementById("m_calc_mtul");
+        if (mtulEl) mtulEl.textContent = `${dolapMetre.toFixed(1)} Metretül (mtül)`;
+
+        let totalMin = 0; let totalMax = 0;
+        const breakdown = [];
+
+        const iscMin = mPrices.iscilikM2.min * m2 * mult;
+        const iscMax = mPrices.iscilikM2.max * m2 * mult;
+        totalMin += iscMin; totalMax += iscMax;
+        breakdown.push({ name: "Usta & Şantiye İşçiliği", min: iscMin, max: iscMax });
+
+        const dMin = mPrices.dolap[mState.dolap].min * dolapMetre;
+        const dMax = mPrices.dolap[mState.dolap].max * dolapMetre;
+        totalMin += dMin; totalMax += dMax;
+        breakdown.push({ name: `Mutfak Dolabı (${dolapMetre.toFixed(1)} mtül)`, min: dMin, max: dMax });
+
+        const tMin = mPrices.tezgah[mState.tezgah].min * (dolapMetre * 0.9);
+        const tMax = mPrices.tezgah[mState.tezgah].max * (dolapMetre * 0.9);
+        totalMin += tMin; totalMax += tMax;
+        breakdown.push({ name: "Mutfak Tezgahı", min: tMin, max: tMax });
+
+        if (mState.yikim) {
+          const valMin = mPrices.yikim.min * mult;
+          const valMax = mPrices.yikim.max * mult;
+          totalMin += valMin; totalMax += valMax;
+          breakdown.push({ name: "Kırım & Moloz Tahliyesi", min: valMin, max: valMax });
+        }
+        if (mState.zemin) {
+          const valMin = mPrices.zeminM2.min * m2;
+          const valMax = mPrices.zeminM2.max * m2;
+          totalMin += valMin; totalMax += valMax;
+          breakdown.push({ name: "Zemin Seramik / Porselen", min: valMin, max: valMax });
+        }
+        if (mState.su) {
+          const valMin = mPrices.su.min * mult;
+          const valMax = mPrices.su.max * mult;
+          totalMin += valMin; totalMax += valMax;
+          breakdown.push({ name: "Sıhhi Su Tesisatı", min: valMin, max: valMax });
+        }
+        if (mState.elektrik) {
+          const valMin = mPrices.elektrik.min * mult;
+          const valMax = mPrices.elektrik.max * mult;
+          totalMin += valMin; totalMax += valMax;
+          breakdown.push({ name: "Elektrik & Priz Hatları", min: valMin, max: valMax });
+        }
+        if (mState.boya) {
+          totalMin += mPrices.boya.min; totalMax += mPrices.boya.max;
+          breakdown.push({ name: "Tavan & Duvar Boyası", min: mPrices.boya.min, max: mPrices.boya.max });
+        }
+        if (mState.aydinlatma) {
+          totalMin += mPrices.aydinlatma.min; totalMax += mPrices.aydinlatma.max;
+          breakdown.push({ name: "Tezgah Altı Gizli LED", min: mPrices.aydinlatma.min, max: mPrices.aydinlatma.max });
+        }
+
+        document.getElementById("m_min_display").textContent = fmt(totalMin);
+        document.getElementById("m_max_display").textContent = fmt(totalMax);
+
+        const listEl = document.getElementById("m_breakdown_list");
+        listEl.innerHTML = breakdown.map(item => `
+          <div class="flex justify-between items-center text-xs py-1 border-b border-slate-800/60">
+            <span class="text-slate-300 font-medium truncate max-w-[200px]">${item.name}</span>
+            <span class="font-mono text-white font-bold">${fmt(item.min)} – ${fmt(item.max)}</span>
+          </div>
+        `).join("");
+
+        const msg = `Merhaba tadilatmaliyeti.com,
+2027 Mutfak Tadilatı hesaplama sonucum:
+
+📐 Alan: ${mState.alan} m² (${dolapMetre.toFixed(1)} mtül)
+🚪 Dolap: ${mState.dolap.toUpperCase()}
+💎 Tezgah: ${mState.tezgah.toUpperCase()}
+🏢 Bina Durumu: ${mState.bina.toUpperCase()}
+
+💰 Tahmini Maliyet: ${fmt(totalMin)} – ${fmt(totalMax)}
+
+Ücretsiz yerinde keşif randevusu rica ediyorum.`;
+        document.getElementById("m_btn_whatsapp").href = `https://wa.me/905393333303?text=${encodeURIComponent(msg)}`;
+      }
+
+      // Mutfak Stepper & Event Listeners
+      function setMutfakStep(stepNum) {
+        document.querySelectorAll(".m-step-content").forEach(el => el.classList.add("hidden"));
+        const target = document.getElementById(`m_step_${stepNum}`);
+        if (target) target.classList.remove("hidden");
+
+        document.querySelectorAll(".m-step-tab").forEach(tab => {
+          const s = Number(tab.dataset.step);
+          if (s === stepNum) {
+            tab.className = "m-step-tab py-3 text-center border-b-2 border-amber-500 text-white font-black";
+          } else {
+            tab.className = "m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-300";
+          }
+        });
+
+        const badges = {
+          1: { text: "Adım 1 / 3: Mekân Ölçüsü & Altyapı", pct: "%33 Tamamlandı", w: "33.3%" },
+          2: { text: "Adım 2 / 3: Dolap & Tezgah Seçimi", pct: "%66 Tamamlandı", w: "66.6%" },
+          3: { text: "Adım 3 / 3: İmalat & Tesisat Kalemleri", pct: "%100 Tamamlandı", w: "100%" }
+        };
+        const info = badges[stepNum];
+        if (info) {
+          document.getElementById("m_step_badge").textContent = info.text;
+          document.getElementById("m_step_percent").textContent = info.pct;
+          document.getElementById("m_progress_bar").style.width = info.w;
+        }
+      }
+
+      document.querySelectorAll(".m-step-tab").forEach(tab => {
+        tab.addEventListener("click", () => setMutfakStep(Number(tab.dataset.step)));
+      });
+      document.querySelectorAll(".btn-next-m").forEach(btn => {
+        btn.addEventListener("click", () => setMutfakStep(Number(btn.dataset.next)));
+      });
+      document.querySelectorAll(".btn-prev-m").forEach(btn => {
+        btn.addEventListener("click", () => setMutfakStep(Number(btn.dataset.prev)));
+      });
+
+      const mSlider = document.getElementById("m_alan_slider");
+      const mInput = document.getElementById("m_alan_input");
+      mSlider.addEventListener("input", (e) => {
+        mInput.value = e.target.value;
+        mState.alan = Number(e.target.value);
+        calcMutfak();
+      });
+      mInput.addEventListener("input", (e) => {
+        const val = Math.max(6, Math.min(50, Number(e.target.value) || 6));
+        mSlider.value = val;
+        mState.alan = val;
+        calcMutfak();
+      });
+
+      document.querySelectorAll(".btn-quick-m-m2").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const val = Number(btn.dataset.val);
+          mInput.value = val;
+          mSlider.value = val;
+          mState.alan = val;
+          document.querySelectorAll(".btn-quick-m-m2").forEach(b => {
+            b.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white";
+          });
+          btn.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border-2 border-amber-500 bg-amber-500/10 text-xs font-black text-amber-400";
+          calcMutfak();
+        });
+      });
+
+      document.querySelectorAll(".m-bina-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          mState.bina = btn.dataset.val;
+          document.querySelectorAll(".m-bina-btn").forEach(b => {
+            b.className = "m-bina-btn p-3 rounded-xl border border-slate-700 text-center font-bold";
+          });
+          btn.className = "m-bina-btn p-3 rounded-xl border-2 border-amber-500 bg-amber-500/10 text-amber-400 text-center font-black";
+          calcMutfak();
+        });
+      });
+
+      document.querySelectorAll(".m-dolap-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          mState.dolap = btn.dataset.val;
+          document.querySelectorAll(".m-dolap-btn").forEach(b => {
+            b.classList.remove("border-2", "border-amber-500", "bg-amber-500/10");
+            b.classList.add("border-slate-700");
+          });
+          btn.classList.add("border-2", "border-amber-500", "bg-amber-500/10");
+          btn.classList.remove("border-slate-700");
+          calcMutfak();
+        });
+      });
+
+      document.querySelectorAll(".m-tezgah-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          mState.tezgah = btn.dataset.val;
+          document.querySelectorAll(".m-tezgah-btn").forEach(b => {
+            b.classList.remove("border-2", "border-amber-500", "bg-amber-500/10");
+            b.classList.add("border-slate-700");
+          });
+          btn.classList.add("border-2", "border-amber-500", "bg-amber-500/10");
+          btn.classList.remove("border-slate-700");
+          calcMutfak();
+        });
+      });
+
+      ["m_chk_yikim", "m_chk_zemin", "m_chk_su", "m_chk_elektrik", "m_chk_boya", "m_chk_aydinlatma"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener("change", (e) => {
+            const key = id.replace("m_chk_", "");
+            mState[key] = e.target.checked;
+            calcMutfak();
+          });
+        }
+      });
+
+      // Mutfak Fotoğraf Slider
+      const mRange = document.getElementById("m_slider_range");
+      const mClip = document.getElementById("m_before_clip");
+      const mDivLine = document.getElementById("m_divider_line");
+      if (mRange && mClip && mDivLine) {
+        mRange.addEventListener("input", (e) => {
+          const val = e.target.value;
+          mClip.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+          mDivLine.style.left = `${val}%`;
+        });
+      }
+
+
+      // -------------------------------------------------------------
+      // 4. BANYO HESAPLAMA MOTORU
+      // -------------------------------------------------------------
+      const bState = {
+        alan: 6,
+        bina: "orta",
+        seramik: "standart",
+        klozet: "asma",
+        yikim: true,
+        izolasyon: true,
+        dolap: true,
+        dus: true,
+        su: true,
+        havlupan: true
+      };
+
+      function calcBanyo() {
+        const mult = bPrices.binaMultiplier[bState.bina];
+        const m2 = bState.alan;
+        let totalMin = 0; let totalMax = 0;
+        const breakdown = [];
+
+        const iscMin = bPrices.iscilikM2.min * m2 * mult;
+        const iscMax = bPrices.iscilikM2.max * m2 * mult;
+        totalMin += iscMin; totalMax += iscMax;
+        breakdown.push({ name: "Banyo Seramik & İmalat İşçiliği", min: iscMin, max: iscMax });
+
+        const serMin = bPrices.seramik[bState.seramik].min * (m2 * 2.8);
+        const serMax = bPrices.seramik[bState.seramik].max * (m2 * 2.8);
+        totalMin += serMin; totalMax += serMax;
+        breakdown.push({ name: "Seramik & Fayans Malzeme", min: serMin, max: serMax });
+
+        const klzMin = bPrices.klozet[bState.klozet].min;
+        const klzMax = bPrices.klozet[bState.klozet].max;
+        totalMin += klzMin; totalMax += klzMax;
+        breakdown.push({ name: "Klozet & Gömme Rezervuar", min: klzMin, max: klzMax });
+
+        if (bState.yikim) {
+          const valMin = bPrices.yikim.min * mult;
+          const valMax = bPrices.yikim.max * mult;
+          totalMin += valMin; totalMax += valMax;
+          breakdown.push({ name: "Kırım & Moloz Tahliyesi", min: valMin, max: valMax });
+        }
+        if (bState.izolasyon) {
+          totalMin += bPrices.izolasyon.min; totalMax += bPrices.izolasyon.max;
+          breakdown.push({ name: "Sürme Su İzolasyonu", min: bPrices.izolasyon.min, max: bPrices.izolasyon.max });
+        }
+        if (bState.dolap) {
+          totalMin += bPrices.dolap.min; totalMax += bPrices.dolap.max;
+          breakdown.push({ name: "Marin Hilton Dolap & LED Ayna", min: bPrices.dolap.min, max: bPrices.dolap.max });
+        }
+        if (bState.dus) {
+          totalMin += bPrices.dus.min; totalMax += bPrices.dus.max;
+          breakdown.push({ name: "Cam Duşakabin & Lineer Süzgeç", min: bPrices.dus.min, max: bPrices.dus.max });
+        }
+        if (bState.su) {
+          const valMin = bPrices.su.min * mult;
+          const valMax = bPrices.su.max * mult;
+          totalMin += valMin; totalMax += valMax;
+          breakdown.push({ name: "Sıhhi Su Tesisatı", min: valMin, max: valMax });
+        }
+        if (bState.havlupan) {
+          totalMin += bPrices.havlupan.min; totalMax += bPrices.havlupan.max;
+          breakdown.push({ name: "Havlupan Radyatör", min: bPrices.havlupan.min, max: bPrices.havlupan.max });
+        }
+
+        document.getElementById("b_min_display").textContent = fmt(totalMin);
+        document.getElementById("b_max_display").textContent = fmt(totalMax);
+
+        const listEl = document.getElementById("b_breakdown_list");
+        listEl.innerHTML = breakdown.map(item => `
+          <div class="flex justify-between items-center text-xs py-1 border-b border-slate-800/60">
+            <span class="text-slate-300 font-medium truncate max-w-[200px]">${item.name}</span>
+            <span class="font-mono text-white font-bold">${fmt(item.min)} – ${fmt(item.max)}</span>
+          </div>
+        `).join("");
+
+        const msg = `Merhaba tadilatmaliyeti.com,
+2027 Banyo Yenileme hesaplama sonucum:
+
+📐 Alan: ${bState.alan} m²
+💎 Seramik: ${bState.seramik.toUpperCase()}
+🚽 Klozet: ${bState.klozet.toUpperCase()}
+🏢 Bina Durumu: ${bState.bina.toUpperCase()}
+
+💰 Tahmini Banyo Maliyeti: ${fmt(totalMin)} – ${fmt(totalMax)}
+
+Ücretsiz yerinde keşif randevusu rica ediyorum.`;
+        document.getElementById("b_btn_whatsapp").href = `https://wa.me/905393333303?text=${encodeURIComponent(msg)}`;
+      }
+
+      // Banyo Stepper & Event Listeners
+      function setBanyoStep(stepNum) {
+        document.querySelectorAll(".b-step-content").forEach(el => el.classList.add("hidden"));
+        const target = document.getElementById(`b_step_${stepNum}`);
+        if (target) target.classList.remove("hidden");
+
+        document.querySelectorAll(".b-step-tab").forEach(tab => {
+          const s = Number(tab.dataset.step);
+          if (s === stepNum) {
+            tab.className = "b-step-tab py-3 text-center border-b-2 border-amber-500 text-white font-black";
+          } else {
+            tab.className = "b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-300";
+          }
+        });
+
+        const badges = {
+          1: { text: "Adım 1 / 3: Banyo Alanı & Tesisat", pct: "%33 Tamamlandı", w: "33.3%" },
+          2: { text: "Adım 2 / 3: Seramik & Klozet", pct: "%66 Tamamlandı", w: "66.6%" },
+          3: { text: "Adım 3 / 3: Donatı & İzolasyon", pct: "%100 Tamamlandı", w: "100%" }
+        };
+        const info = badges[stepNum];
+        if (info) {
+          document.getElementById("b_step_badge").textContent = info.text;
+          document.getElementById("b_step_percent").textContent = info.pct;
+          document.getElementById("b_progress_bar").style.width = info.w;
+        }
+      }
+
+      document.querySelectorAll(".b-step-tab").forEach(tab => {
+        tab.addEventListener("click", () => setBanyoStep(Number(tab.dataset.step)));
+      });
+      document.querySelectorAll(".btn-next-b").forEach(btn => {
+        btn.addEventListener("click", () => setBanyoStep(Number(btn.dataset.next)));
+      });
+      document.querySelectorAll(".btn-prev-b").forEach(btn => {
+        btn.addEventListener("click", () => setBanyoStep(Number(btn.dataset.prev)));
+      });
+
+      const bSlider = document.getElementById("b_alan_slider");
+      const bInput = document.getElementById("b_alan_input");
+      bSlider.addEventListener("input", (e) => {
+        bInput.value = e.target.value;
+        bState.alan = Number(e.target.value);
+        calcBanyo();
+      });
+      bInput.addEventListener("input", (e) => {
+        const val = Math.max(3, Math.min(25, Number(e.target.value) || 3));
+        bSlider.value = val;
+        bState.alan = val;
+        calcBanyo();
+      });
+
+      document.querySelectorAll(".btn-quick-b-m2").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const val = Number(btn.dataset.val);
+          bInput.value = val;
+          bSlider.value = val;
+          bState.alan = val;
+          document.querySelectorAll(".btn-quick-b-m2").forEach(b => {
+            b.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white";
+          });
+          btn.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border-2 border-amber-500 bg-amber-500/10 text-xs font-black text-amber-400";
+          calcBanyo();
+        });
+      });
+
+      document.querySelectorAll(".b-bina-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          bState.bina = btn.dataset.val;
+          document.querySelectorAll(".b-bina-btn").forEach(b => {
+            b.className = "b-bina-btn p-3 rounded-xl border border-slate-700 text-center font-bold";
+          });
+          btn.className = "b-bina-btn p-3 rounded-xl border-2 border-amber-500 bg-amber-500/10 text-amber-400 text-center font-black";
+          calcBanyo();
+        });
+      });
+
+      document.querySelectorAll(".b-seramik-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          bState.seramik = btn.dataset.val;
+          document.querySelectorAll(".b-seramik-btn").forEach(b => {
+            b.classList.remove("border-2", "border-amber-500", "bg-amber-500/10");
+            b.classList.add("border-slate-700");
+          });
+          btn.classList.add("border-2", "border-amber-500", "bg-amber-500/10");
+          btn.classList.remove("border-slate-700");
+          calcBanyo();
+        });
+      });
+
+      document.querySelectorAll(".b-klozet-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          bState.klozet = btn.dataset.val;
+          document.querySelectorAll(".b-klozet-btn").forEach(b => {
+            b.classList.remove("border-2", "border-amber-500", "bg-amber-500/10");
+            b.classList.add("border-slate-700");
+          });
+          btn.classList.add("border-2", "border-amber-500", "bg-amber-500/10");
+          btn.classList.remove("border-slate-700");
+          calcBanyo();
+        });
+      });
+
+      ["b_chk_yikim", "b_chk_izolasyon", "b_chk_dolap", "b_chk_dus", "b_chk_su", "b_chk_havlupan"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener("change", (e) => {
+            const key = id.replace("b_chk_", "");
+            bState[key] = e.target.checked;
+            calcBanyo();
+          });
+        }
+      });
+
+      const bRange = document.getElementById("b_slider_range");
+      const bClip = document.getElementById("b_before_clip");
+      const bDivLine = document.getElementById("b_divider_line");
+      if (bRange && bClip && bDivLine) {
+        bRange.addEventListener("input", (e) => {
+          const val = e.target.value;
+          bClip.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+          bDivLine.style.left = `${val}%`;
+        });
+      }
+
+
+      // -------------------------------------------------------------
+      // 5. KOMPLE DAİRE HESAPLAMA MOTORU
+      // -------------------------------------------------------------
+      const kState = {
+        alan: 110,
+        kalite: "standart",
+        mutfak: true,
+        banyo: true,
+        parke: true,
+        boya: true,
+        kapi: true,
+        celikKapi: true,
+        alcipan: true,
+        tesisat: true
+      };
+
+      function calcKomple() {
+        const mult = kPrices.multiplier[kState.kalite];
+        const m2 = kState.alan;
+        let totalMin = 0; let totalMax = 0;
+        const breakdown = [];
+
+        const baseMin = kPrices.baseM2.min * (m2 * 0.45);
+        const baseMax = kPrices.baseM2.max * (m2 * 0.45);
+        totalMin += baseMin; totalMax += baseMax;
+        breakdown.push({ name: "Kırım, Moloz & Şantiye", min: baseMin, max: baseMax });
+
+        if (kState.mutfak) {
+          const minVal = kPrices.mutfak.min * mult;
+          const maxVal = kPrices.mutfak.max * mult;
+          totalMin += minVal; totalMax += maxVal;
+          breakdown.push({ name: "Komple Mutfak Renovasyonu", min: minVal, max: maxVal });
+        }
+        if (kState.banyo) {
+          const minVal = kPrices.banyo.min * mult;
+          const maxVal = kPrices.banyo.max * mult;
+          totalMin += minVal; totalMax += maxVal;
+          breakdown.push({ name: "Komple Banyo Yenileme", min: minVal, max: maxVal });
+        }
+        if (kState.parke) {
+          const pM2 = m2 * 0.7;
+          const minVal = kPrices.parkeM2.min * pM2 * mult;
+          const maxVal = kPrices.parkeM2.max * pM2 * mult;
+          totalMin += minVal; totalMax += maxVal;
+          breakdown.push({ name: "Zemin Parke & Süpürgelik", min: minVal, max: maxVal });
+        }
+        if (kState.boya) {
+          const bM2 = m2 * 2.6;
+          const minVal = kPrices.boyaM2.min * bM2 * mult;
+          const maxVal = kPrices.boyaM2.max * bM2 * mult;
+          totalMin += minVal; totalMax += maxVal;
+          breakdown.push({ name: "Tüm Daire Alçı & Boya", min: minVal, max: maxVal });
+        }
+        if (kState.kapi) {
+          const minVal = kPrices.kapiBirim.min * 5 * mult;
+          const maxVal = kPrices.kapiBirim.max * 5 * mult;
+          totalMin += minVal; totalMax += maxVal;
+          breakdown.push({ name: "İç Oda Kapıları (5 Adet)", min: minVal, max: maxVal });
+        }
+        if (kState.celikKapi) {
+          const minVal = kPrices.celikKapi.min * mult;
+          const maxVal = kPrices.celikKapi.max * mult;
+          totalMin += minVal; totalMax += maxVal;
+          breakdown.push({ name: "Çelik Giriş Kapısı", min: minVal, max: maxVal });
+        }
+        if (kState.alcipan) {
+          const aM2 = m2 * 0.4;
+          const minVal = kPrices.alcipanM2.min * aM2 * mult;
+          const maxVal = kPrices.alcipanM2.max * aM2 * mult;
+          totalMin += minVal; totalMax += maxVal;
+          breakdown.push({ name: "Asma Tavan & Gizli LED", min: minVal, max: maxVal });
+        }
+        if (kState.tesisat) {
+          const minVal = kPrices.tesisatM2.min * m2 * mult;
+          const maxVal = kPrices.tesisatM2.max * m2 * mult;
+          totalMin += minVal; totalMax += maxVal;
+          breakdown.push({ name: "Elektrik & Su Altyapısı", min: minVal, max: maxVal });
+        }
+
+        document.getElementById("k_min_display").textContent = fmt(totalMin);
+        document.getElementById("k_max_display").textContent = fmt(totalMax);
+
+        const listEl = document.getElementById("k_breakdown_list");
+        listEl.innerHTML = breakdown.map(item => `
+          <div class="flex justify-between items-center text-xs py-1 border-b border-slate-800/60">
+            <span class="text-slate-300 font-medium truncate max-w-[200px]">${item.name}</span>
+            <span class="font-mono text-white font-bold">${fmt(item.min)} – ${fmt(item.max)}</span>
+          </div>
+        `).join("");
+
+        const msg = `Merhaba tadilatmaliyeti.com,
+2027 Komple Daire Tadilatı hesaplama sonucum:
+
+📐 Net Alan: ${kState.alan} m²
+💎 Kalite Segmenti: ${kState.kalite.toUpperCase()}
+🍳 Mutfak: ${kState.mutfak ? "Dahil" : "Hariç"}
+🛁 Banyo: ${kState.banyo ? "Dahil" : "Hariç"}
+🚪 Kapılar: ${kState.kapi ? "Dahil" : "Hariç"}
+
+💰 Tahmini Komple Daire Maliyeti: ${fmt(totalMin)} – ${fmt(totalMax)}
+
+Ücretsiz yerinde mimari keşif randevusu rica ediyorum.`;
+        document.getElementById("k_btn_whatsapp").href = `https://wa.me/905393333303?text=${encodeURIComponent(msg)}`;
+      }
+
+      const kSlider = document.getElementById("k_alan_slider");
+      const kInput = document.getElementById("k_alan_input");
+      kSlider.addEventListener("input", (e) => {
+        kInput.value = e.target.value;
+        kState.alan = Number(e.target.value);
+        calcKomple();
+      });
+      kInput.addEventListener("input", (e) => {
+        const val = Math.max(40, Math.min(350, Number(e.target.value) || 40));
+        kSlider.value = val;
+        kState.alan = val;
+        calcKomple();
+      });
+
+      document.querySelectorAll(".btn-quick-k-m2").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const val = Number(btn.dataset.val);
+          kInput.value = val;
+          kSlider.value = val;
+          kState.alan = val;
+          document.querySelectorAll(".btn-quick-k-m2").forEach(b => {
+            b.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-bold text-slate-300 hover:border-amber-500 hover:text-white";
+          });
+          btn.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border-2 border-amber-500 bg-amber-500/10 text-xs font-black text-amber-400";
+          calcKomple();
+        });
+      });
+
+      document.querySelectorAll(".k-kalite-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          kState.kalite = btn.dataset.val;
+          document.querySelectorAll(".k-kalite-btn").forEach(b => {
+            b.classList.remove("border-2", "border-amber-500", "bg-amber-500/10");
+            b.classList.add("border-slate-700");
+          });
+          btn.classList.add("border-2", "border-amber-500", "bg-amber-500/10");
+          btn.classList.remove("border-slate-700");
+          calcKomple();
+        });
+      });
+
+      ["k_chk_mutfak", "k_chk_banyo", "k_chk_parke", "k_chk_boya", "k_chk_kapi", "k_chk_celik_kapi", "k_chk_alcipan", "k_chk_tesisat"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener("change", (e) => {
+            const key = id.replace("k_chk_", "").replace("_kapi", "Kapi");
+            kState[key] = e.target.checked;
+            calcKomple();
+          });
+        }
+      });
+
+      const kRange = document.getElementById("k_slider_range");
+      const kClip = document.getElementById("k_before_clip");
+      const kDivLine = document.getElementById("k_divider_line");
+      if (kRange && kClip && kDivLine) {
+        kRange.addEventListener("input", (e) => {
+          const val = e.target.value;
+          kClip.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+          kDivLine.style.left = `${val}%`;
+        });
+      }
+
+      // React-Bits: Spotlight Mouse Takipçisi
+      document.addEventListener("mousemove", (e) => {
+        document.querySelectorAll(".spotlight-card").forEach(card => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+          card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+        });
+      });
+
+      // İLK HESAPLAMALARI BAŞLAT
+      calcMutfak();
+      calcBanyo();
+      calcKomple();
+    });
+  </script>
+</body>
+</html>
+"""
+
+with open("hesapla.html", "w", encoding="utf-8") as f:
+    f.write(html_content.strip())
+
+print("✅ Yeni hesapla.html başarıyla oluşturuldu.")
