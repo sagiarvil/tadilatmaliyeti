@@ -648,11 +648,7 @@
     </div>
   </section>
   <!-- MAIN WORKSPACE CONTAINER -->
-  <main class="flex-grow w-full max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-      <!-- LEFT 8 COLUMNS: CONFIGURATOR ENGINE -->
-      <div class="lg:col-span-7 xl:col-span-8 space-y-8">
+  <main class="flex-grow w-full max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
 
         <!-- WIZARD STEP NAVIGATION BAR -->
         <div id="wizardProgressWrapper" class="no-print bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200/80 dark:border-slate-800 shadow-card">
@@ -698,8 +694,16 @@
         <!-- ======================================================= -->
         <!-- STEP 1: PROPERTY SPECS & INTERACTIVE FLOORPLAN BLUEPRINT -->
         <!-- ======================================================= -->
-        <div id="sectionStep1" class="step-container bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-card space-y-7">
-          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+
+        <!-- ======================================================= -->
+        <!-- STEP 1: BALANCED 50/50 DUAL STUDIO (PARAMETRE & KOKPİT)  -->
+        <!-- ======================================================= -->
+        <div id="sectionStep1" class="step-container space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            
+            <!-- SOL 50%: KONUT PARAMETRELERİ GİRİŞ KARTI -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-800 shadow-card flex flex-col justify-between space-y-6">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
             <div>
               <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5">
                 <span class="w-8 h-8 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 flex items-center justify-center text-sm font-extrabold">1</span>
@@ -963,13 +967,136 @@
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
           </div>
+            </div>
+
+            <!-- SAĞ 50%: CANLI FİNANSAL KOKPİT (TAM SİMETRİ & DENGE) -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-800 shadow-card flex flex-col justify-between space-y-4">
+              <div class="absolute -top-12 -right-12 w-44 h-44 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3.5 mb-4">
+            <div>
+              <span class="text-[10px] font-extrabold uppercase tracking-widest text-orange-600 dark:text-orange-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span> Canlı Finansal Kokpit
+              </span>
+              <h3 class="text-sm font-extrabold text-slate-900 dark:text-white mt-0.5">Tahmini Anahtar Teslim Bütçe</h3>
+            </div>
+            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold" id="cityBadge">İzmir</span>
+          </div>
+
+          <!-- Grand Total Dark Card -->
+          <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-850 text-white rounded-2xl p-5 mb-4 shadow-lg border border-slate-800">
+            <div class="text-[11px] text-slate-400 font-medium flex justify-between items-center mb-1">
+              <span>Önerilen Ortalama Bütçe</span>
+              <span class="text-[10px] text-orange-400 bg-orange-950/80 border border-orange-800/60 px-2 py-0.5 rounded font-mono">KDV Hariç</span>
+            </div>
+            <div class="text-3xl sm:text-4xl font-extrabold font-mono text-orange-400 tracking-tight" id="mainAveragePrice">
+              ₺ 0
+            </div>
+
+            <div class="mt-3 pt-3 border-t border-slate-800/90 flex justify-between text-xs text-slate-300">
+              <div>
+                <span class="text-slate-400 block text-[10px]">İyimser Alt Limit</span>
+                <span class="font-mono font-bold" id="mainMinPrice">₺ 0</span>
+              </div>
+              <div class="text-right">
+                <span class="text-slate-400 block text-[10px]">Üst Kalite Limiti</span>
+                <span class="font-mono font-bold" id="mainMaxPrice">₺ 0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart.js Doughnut Breakdown -->
+          <div class="mb-4 bg-slate-50 dark:bg-slate-850 p-3.5 rounded-2xl border border-slate-200/60 dark:border-slate-800">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">
+              <span>Kategori Bazlı Bütçe Dağılımı</span>
+              <span id="activeCategoryCountBadge" class="text-[10px] text-orange-600 dark:text-orange-400 font-mono">11 Kalem Aktif</span>
+            </div>
+            <div class="relative h-44 w-full">
+              <canvas id="costDoughnutChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Material vs Labor vs Logistics Bar -->
+          <div class="space-y-2 mb-4">
+            <div class="h-2.5 w-full rounded-full bg-slate-100 dark:bg-slate-800 flex overflow-hidden">
+              <div id="barMaterial" class="bg-orange-500 transition-all duration-300" style="width: 52%"></div>
+              <div id="barLabor" class="bg-amber-500 transition-all duration-300" style="width: 36%"></div>
+              <div id="barDemolition" class="bg-slate-500 transition-all duration-300" style="width: 12%"></div>
+            </div>
+            <div class="grid grid-cols-3 gap-1 text-[10px] font-semibold">
+              <div class="flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                <span class="text-slate-600 dark:text-slate-400">Malzeme <span id="pctMaterial">52%</span></span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <span class="text-slate-600 dark:text-slate-400">İşçilik <span id="pctLabor">36%</span></span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-slate-500"></span>
+                <span class="text-slate-600 dark:text-slate-400">Kırım/Proje <span id="pctDemolition">12%</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unit Cost & Timeline Mini Cards -->
+          <div class="grid grid-cols-2 gap-2.5 mb-4">
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/60 dark:border-slate-800">
+              <span class="text-[10px] uppercase font-bold text-slate-400 block">m² Birim Maliyet</span>
+              <span class="text-xs sm:text-sm font-extrabold font-mono text-slate-900 dark:text-white" id="panelUnitCost">₺ 0 / m²</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/60 dark:border-slate-800">
+              <span class="text-[10px] uppercase font-bold text-slate-400 block">İş Programı</span>
+              <span class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white" id="panelTimeline">~35 İş Günü</span>
+            </div>
+          </div>
+
+          <!-- 10% Contingency Buffer Toggle -->
+          <div class="bg-amber-50/70 dark:bg-amber-950/25 border border-amber-200/70 dark:border-amber-900/40 rounded-2xl p-3 mb-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <label for="toggleBuffer" class="text-xs font-bold text-amber-900 dark:text-amber-300 block cursor-pointer">
+                  %10 Sıva Altı Güvenlik Rezervi
+                </label>
+                <p class="text-[10px] text-amber-700/80 dark:text-amber-400/80">Beklenmedik kırım/tesisat sürprizleri için</p>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="toggleBuffer" checked class="sr-only peer">
+                <div class="w-9 h-5 bg-amber-200 rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-500"></div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="space-y-2">
+            <button id="btnJumpToReport" type="button" class="w-full py-3 px-4 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              Kalem Kalem Keşif Özeti
+            </button>
+
+            <div class="grid grid-cols-2 gap-2">
+              <button id="btnCopyBudgetSummary" type="button" class="py-2.5 px-3 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-bold transition-all flex items-center justify-center gap-1.5">
+                Özeti Panoya Kopyala
+              </button>
+              <button id="btnResetAll" type="button" class="py-2.5 px-3 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-rose-500 text-xs font-bold transition-all">
+                Seçimleri Varsayılana Sıfırla
+              </button>
+            </div>
+          </div>
+            </div>
+
+          </div>
         </div>
 
         <!-- ======================================================= -->
-        <!-- STEP 2: MOODBOARD & MATERIAL QUALITY TIER               -->
+        <!-- STEP 2: BALANCED 50/50 DUAL STUDIO (KALİTE & 3D STÜDYO) -->
         <!-- ======================================================= -->
-        <div id="sectionStep2" class="step-container hidden bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-card space-y-7">
-          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+        <div id="sectionStep2" class="step-container hidden space-y-6">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <!-- SOL 50%: 3 KALİTE SEGMENTİ KARTI & DONANIM ŞARTNAMESİ -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-800 shadow-card flex flex-col justify-between space-y-5">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
             <div>
               <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5">
                 <span class="w-8 h-8 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 flex items-center justify-center text-sm font-extrabold">2</span>
@@ -1075,8 +1202,36 @@
               </div>
             </label>
           </div>
+              <div class="bg-slate-50 dark:bg-slate-850 p-4 rounded-2xl border border-slate-200/70 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <div class="text-xs font-extrabold text-slate-900 dark:text-white">Armatür, Profil ve Donanım Yüzey Şartnamesi</div>
+                  <p class="text-[11px] text-slate-500">Banyo bataryaları, kapı kolları ve aydınlatma profillerinin yüzey tercihi</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" data-finish="chrome" class="finish-swatch px-3 py-1.5 rounded-xl text-xs font-bold border-2 border-orange-500 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                    <span class="w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-slate-300 to-white border border-slate-400"></span> Parlak Krom
+                  </button>
+                  <button type="button" data-finish="matte_black" class="finish-swatch px-3 py-1.5 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                    <span class="w-3.5 h-3.5 rounded-full bg-slate-900 border border-slate-600"></span> Mat Siyah
+                  </button>
+                  <button type="button" data-finish="brushed_gold" class="finish-swatch px-3 py-1.5 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                    <span class="w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-amber-600 to-amber-300 border border-amber-500"></span> Fırçalanmış Pirinç (+%4)
+                  </button>
+                </div>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <button id="btnBackToStep1" type="button" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-700 font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm transition-all">
+                  ← 1. Adıma Dön (Daire & Metraj)
+                </button>
+                <button id="btnGoToStep3" type="button" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-amber-500/35 flex items-center justify-center gap-3 transition-all hover:scale-[1.01]">
+                  <span>3. Adıma Geç: 12 İmalat Pozunu Belirleyin</span>
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+              </div>
+            </div>
 
-          <!-- ======================================================= -->
+            <!-- SAĞ 50%: CANLI 3D MİMARİ HACİM & YÜZEY SİMÜLATÖRÜ -->
+            <!-- ======================================================= -->
           <!-- 1. BÜYÜK 3D CANLI MİMARİ HACİM & YÜZEY STÜDYOSU (SHOWCASE) -->
           <!-- ======================================================= -->
           <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white rounded-3xl p-5 sm:p-7 border border-slate-800 shadow-2xl space-y-5">
@@ -1217,7 +1372,9 @@
               </div>
             </div>
           </div>
+          </div>
 
+          <!-- ALT TAM GENİŞLİK: CANLI ÖNCE / SONRA MİMARİ KARŞILAŞTIRMA SÜRGÜSÜ -->
           <!-- ======================================================= -->
           <!-- 2. CANLI ÖNCE / SONRA MİMARİ KARŞILAŞTIRMA SÜRGÜSÜ      -->
           <!-- ======================================================= -->
@@ -1368,33 +1525,9 @@
 
               <p class="text-[11px] text-slate-500">Banyo bataryaları, kapı kolları ve aydınlatma profillerinin yüzey tercihi</p>
             </div>
-            <div class="flex items-center gap-2">
-              <button type="button" data-finish="chrome" class="finish-swatch px-3 py-1.5 rounded-xl text-xs font-bold border-2 border-orange-500 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                <span class="w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-slate-300 to-white border border-slate-400"></span> Parlak Krom
-              </button>
-              <button type="button" data-finish="matte_black" class="finish-swatch px-3 py-1.5 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
-                <span class="w-3.5 h-3.5 rounded-full bg-slate-900 border border-slate-600"></span> Mat Siyah
-              </button>
-              <button type="button" data-finish="brushed_gold" class="finish-swatch px-3 py-1.5 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
-                <span class="w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-amber-600 to-amber-300 border border-amber-500"></span> Fırçalanmış Pirinç (+%4)
-              </button>
-            </div>
-          </div>
 
-          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <button id="btnBackToStep1" type="button" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-700 font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm transition-all">
-              ← 1. Adıma Dön (Daire & Metraj)
-            </button>
-            <button id="btnGoToStep3" type="button" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-amber-500/35 flex items-center justify-center gap-3 transition-all hover:scale-[1.01]">
-              <span>3. Adıma Geç: 12 İmalat Pozunu Belirleyin</span>
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </button>
-          </div>
         </div>
 
-        <!-- ======================================================= -->
-        <!-- STEP 3: 12 GRANULAR WORK ITEMS                          -->
-        <!-- ======================================================= -->
         <div id="sectionStep3" class="step-container hidden bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-card space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
             <div>
@@ -1968,6 +2101,7 @@
         <!-- ======================================================= -->
         <!-- STEP 4: EXECUTIVE BOQ REPORT & FINANCES                 -->
         <!-- ======================================================= -->
+
         <div id="sectionStep4" class="step-container hidden bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-card space-y-8">
           <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
             <div>
@@ -2206,128 +2340,7 @@
           </div>
         </div>
 
-      </div>
-
-      <!-- RIGHT 4 COLUMNS: LIVE EXECUTIVE FINANCIAL DASHBOARD -->
-      <div class="no-print lg:col-span-5 xl:col-span-4 sticky top-24 space-y-5">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200/90 dark:border-slate-800 shadow-premium relative overflow-hidden">
-          <div class="absolute -top-12 -right-12 w-44 h-44 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-          <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3.5 mb-4">
-            <div>
-              <span class="text-[10px] font-extrabold uppercase tracking-widest text-orange-600 dark:text-orange-400 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span> Canlı Finansal Kokpit
-              </span>
-              <h3 class="text-sm font-extrabold text-slate-900 dark:text-white mt-0.5">Tahmini Anahtar Teslim Bütçe</h3>
-            </div>
-            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold" id="cityBadge">İzmir</span>
-          </div>
-
-          <!-- Grand Total Dark Card -->
-          <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-850 text-white rounded-2xl p-5 mb-4 shadow-lg border border-slate-800">
-            <div class="text-[11px] text-slate-400 font-medium flex justify-between items-center mb-1">
-              <span>Önerilen Ortalama Bütçe</span>
-              <span class="text-[10px] text-orange-400 bg-orange-950/80 border border-orange-800/60 px-2 py-0.5 rounded font-mono">KDV Hariç</span>
-            </div>
-            <div class="text-3xl sm:text-4xl font-extrabold font-mono text-orange-400 tracking-tight" id="mainAveragePrice">
-              ₺ 0
-            </div>
-
-            <div class="mt-3 pt-3 border-t border-slate-800/90 flex justify-between text-xs text-slate-300">
-              <div>
-                <span class="text-slate-400 block text-[10px]">İyimser Alt Limit</span>
-                <span class="font-mono font-bold" id="mainMinPrice">₺ 0</span>
-              </div>
-              <div class="text-right">
-                <span class="text-slate-400 block text-[10px]">Üst Kalite Limiti</span>
-                <span class="font-mono font-bold" id="mainMaxPrice">₺ 0</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Chart.js Doughnut Breakdown -->
-          <div class="mb-4 bg-slate-50 dark:bg-slate-850 p-3.5 rounded-2xl border border-slate-200/60 dark:border-slate-800">
-            <div class="flex items-center justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">
-              <span>Kategori Bazlı Bütçe Dağılımı</span>
-              <span id="activeCategoryCountBadge" class="text-[10px] text-orange-600 dark:text-orange-400 font-mono">11 Kalem Aktif</span>
-            </div>
-            <div class="relative h-44 w-full">
-              <canvas id="costDoughnutChart"></canvas>
-            </div>
-          </div>
-
-          <!-- Material vs Labor vs Logistics Bar -->
-          <div class="space-y-2 mb-4">
-            <div class="h-2.5 w-full rounded-full bg-slate-100 dark:bg-slate-800 flex overflow-hidden">
-              <div id="barMaterial" class="bg-orange-500 transition-all duration-300" style="width: 52%"></div>
-              <div id="barLabor" class="bg-amber-500 transition-all duration-300" style="width: 36%"></div>
-              <div id="barDemolition" class="bg-slate-500 transition-all duration-300" style="width: 12%"></div>
-            </div>
-            <div class="grid grid-cols-3 gap-1 text-[10px] font-semibold">
-              <div class="flex items-center gap-1">
-                <span class="w-2 h-2 rounded-full bg-orange-500"></span>
-                <span class="text-slate-600 dark:text-slate-400">Malzeme <span id="pctMaterial">52%</span></span>
-              </div>
-              <div class="flex items-center gap-1">
-                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                <span class="text-slate-600 dark:text-slate-400">İşçilik <span id="pctLabor">36%</span></span>
-              </div>
-              <div class="flex items-center gap-1">
-                <span class="w-2 h-2 rounded-full bg-slate-500"></span>
-                <span class="text-slate-600 dark:text-slate-400">Kırım/Proje <span id="pctDemolition">12%</span></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Unit Cost & Timeline Mini Cards -->
-          <div class="grid grid-cols-2 gap-2.5 mb-4">
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/60 dark:border-slate-800">
-              <span class="text-[10px] uppercase font-bold text-slate-400 block">m² Birim Maliyet</span>
-              <span class="text-xs sm:text-sm font-extrabold font-mono text-slate-900 dark:text-white" id="panelUnitCost">₺ 0 / m²</span>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/60 dark:border-slate-800">
-              <span class="text-[10px] uppercase font-bold text-slate-400 block">İş Programı</span>
-              <span class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white" id="panelTimeline">~35 İş Günü</span>
-            </div>
-          </div>
-
-          <!-- 10% Contingency Buffer Toggle -->
-          <div class="bg-amber-50/70 dark:bg-amber-950/25 border border-amber-200/70 dark:border-amber-900/40 rounded-2xl p-3 mb-4">
-            <div class="flex items-center justify-between">
-              <div>
-                <label for="toggleBuffer" class="text-xs font-bold text-amber-900 dark:text-amber-300 block cursor-pointer">
-                  %10 Sıva Altı Güvenlik Rezervi
-                </label>
-                <p class="text-[10px] text-amber-700/80 dark:text-amber-400/80">Beklenmedik kırım/tesisat sürprizleri için</p>
-              </div>
-              <label class="relative inline-flex items-center cursor-pointer">
-                <input type="checkbox" id="toggleBuffer" checked class="sr-only peer">
-                <div class="w-9 h-5 bg-amber-200 rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-500"></div>
-              </label>
-            </div>
-          </div>
-
-          <!-- Quick Action Buttons -->
-          <div class="space-y-2">
-            <button id="btnJumpToReport" type="button" class="w-full py-3 px-4 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-              Kalem Kalem Keşif Özeti
-            </button>
-
-            <div class="grid grid-cols-2 gap-2">
-              <button id="btnCopyBudgetSummary" type="button" class="py-2.5 px-3 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-bold transition-all flex items-center justify-center gap-1.5">
-                Özeti Panoya Kopyala
-              </button>
-              <button id="btnResetAll" type="button" class="py-2.5 px-3 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-rose-500 text-xs font-bold transition-all">
-                Seçimleri Varsayılana Sıfırla
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </main>
+</main>
   <!-- Footer -->
   <footer class="no-print">
     <div class="wrap">
