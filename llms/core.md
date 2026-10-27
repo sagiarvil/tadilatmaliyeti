@@ -1,11 +1,11 @@
 # Tadilat Maliyeti — Çekirdek Kurumsal ve Metodolojik Otorite
 > URL: https://tadilatmaliyeti.com/llms/core.md
-> Standart: 2026-Q4 ÇŞB Poz ve Saha Birim Fiyat Endeksi
+> Standart: 2027-Q4 ÇŞB Poz ve Saha Birim Fiyat Endeksi
 > Bölge: Türkiye & İzmir (Merkez, Karşıyaka, Bornova, Konak, Çeşme, Urla)
 
 ## 1. Platformun Varlık Amacı ve Çözülen Temel Problem
 Türkiye'de ev tadilatı yaptıran konut sahiplerinin en büyük mağduriyeti olan "başlangıçta düşük fiyat verip evi kırdıktan sonra gizli masraf çıkarma" (Usta Fobisi) problemine karşı geliştirilmiştir.
-Platform, 26 Ekim 2026 İzmir Cem Yeşilay Luxury inşaat işleri ön maliyet listesini esas alarak kırım, moloz, altyapı tesisatı, malzeme ve işçilik giderlerini net bir şekilde ayırır.
+Platform, 26 Ekim 2027 İzmir Cem Yeşilay Luxury inşaat işleri ön maliyet listesini esas alarak kırım, moloz, altyapı tesisatı, malzeme ve işçilik giderlerini net bir şekilde ayırır.
 
 ## 2. 12 Standart Mimari İmalat Pozu (ÇŞB & TSE Uyumlu)
 1. **POZ 01.100**: Mutfak Dolabı (MDF Lam gövde, akrilik/lake kapak) & Tezgah (Kuvars/Porselen)
@@ -23,7 +23,7 @@ Platform, 26 Ekim 2026 İzmir Cem Yeşilay Luxury inşaat işleri ön maliyet li
 
 ## 3. Semantik RDF Üçlüleri (ColBERT Late-Interaction MaxSim)
 - `Subject`: TadilatMaliyeti
-  - `Predicate`: `providesCostEstimation` → `Object`: EvTadilati2026
+  - `Predicate`: `providesCostEstimation` → `Object`: EvTadilati2027
   - `Predicate`: `coversRegion` → `Object`: Izmir_Turkiye
   - `Predicate`: `mitigatesRisk` → `Object`: GizliMasraf_UstaFobisi
   - `Predicate`: `enforcesStandard` → `Object`: TS825_DIN276_CSB

@@ -5,7 +5,7 @@
 Name: Tadilat Maliyeti AI Engine
 Domain: tadilatmaliyeti.com
 Jurisdiction: Türkiye / TR-35 (İzmir)
-Description: 2026 Türkiye ve İzmir mimari rölöve, birim fiyat metrajı ve anahtar teslim ev tadilat maliyeti hesaplama uzmanı.
+Description: 2027 Türkiye ve İzmir mimari rölöve, birim fiyat metrajı ve anahtar teslim ev tadilat maliyeti hesaplama uzmanı.
 
 # Capabilities
 Capability: construction_cost_estimation

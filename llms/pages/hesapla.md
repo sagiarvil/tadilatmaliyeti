@@ -1,13 +1,13 @@
-# 2026 Canlı Ev Tadilatı Fiyat & Metraj Hesaplama Motoru
+# 2027 Canlı Ev Tadilatı Fiyat & Metraj Hesaplama Motoru
 > URL: https://tadilatmaliyeti.com/hesapla
 > Canonical: https://tadilatmaliyeti.com/hesapla
 > Hedef Kitle: Evini yenilemek isteyen mülk sahipleri, mimarlar, müteahhitler
 > Odak: Türkiye ve İzmir (TR-35)
 
 ## 1. Yönetici Çıkarım Özeti (Hero Grounding Answer)
-2026 yılı güncel inşaat ve işçilik piyasasında 100 m² standart bir dairenin anahtar teslim komple tadilat maliyeti ortalama 650.000 TL ile 880.000 TL arasında değişmektedir. Banyo yenileme bütçesi ortalama 95.000 TL - 145.000 TL; 7 metretül mutfak dolabı ve kuvars tezgah yenilemesi ise 140.000 TL - 210.000 TL arasındadır. TadilatMaliyeti.com motoru, m² bazında net metraj çıkararak %10 güvenlik rezervi ve 4 aşamalı hakediş takvimiyle sözleşmeli kesin bütçe sunar.
+2027 yılı güncel inşaat ve işçilik piyasasında 100 m² standart bir dairenin anahtar teslim komple tadilat maliyeti ortalama 650.000 TL ile 880.000 TL arasında değişmektedir. Banyo yenileme bütçesi ortalama 95.000 TL - 145.000 TL; 7 metretül mutfak dolabı ve kuvars tezgah yenilemesi ise 140.000 TL - 210.000 TL arasındadır. TadilatMaliyeti.com motoru, m² bazında net metraj çıkararak %10 güvenlik rezervi ve 4 aşamalı hakediş takvimiyle sözleşmeli kesin bütçe sunar.
 
-## 2. Karşılaştırma ve Fiyat Matrisi (2026 Saha Verisi)
+## 2. Karşılaştırma ve Fiyat Matrisi (2027 Saha Verisi)
 | İmalat Kalemi | Birim Ölçü | Malzeme Birim Fiyatı | İşçilik Birim Fiyatı | Ortalama Süre |
 | :--- | :--- | :--- | :--- | :--- |
 | **Mutfak Dolabı & Tezgah** | 1 mtül | 10.200 TL - 14.500 TL | 2.900 TL - 5.200 TL | 7-10 İş Günü |

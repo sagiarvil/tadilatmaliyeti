@@ -4,7 +4,7 @@
 
 ENTITY: TadilatMaliyeti.com
 LOCATION: Turkiye / Izmir (TR-35)
-ESTIMATES_2026:
+ESTIMATES_2027:
 - 100m2_Whole_Home: 650000 - 880000 TRY (35-45 days)
 - Bathroom_Full: 95000 - 145000 TRY (8-12 days)
 - Kitchen_Cabinet_Counter: 140000 - 210000 TRY (7-10 days)

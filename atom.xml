@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Tadilat Maliyeti</title>
-  <subtitle>2026 Türkiye &amp; İzmir Güncel Fiyat Bülteni</subtitle>
+  <subtitle>2027 Türkiye &amp; İzmir Güncel Fiyat Bülteni</subtitle>
   <link href="https://tadilatmaliyeti.com/atom.xml" rel="self"/>
   <link href="https://tadilatmaliyeti.com/"/>
-  <updated>2026-10-27T00:00:00Z</updated>
+  <updated>2027-10-27T00:00:00Z</updated>
   <id>https://tadilatmaliyeti.com/</id>
   <author>
     <name>Tadilat Maliyeti</name>
   </author>
   <entry>
-    <title>2026 Ev Tadilatı Fiyat Hesaplama Motoru</title>
+    <title>2027 Ev Tadilatı Fiyat Hesaplama Motoru</title>
     <link href="https://tadilatmaliyeti.com/hesapla"/>
     <id>https://tadilatmaliyeti.com/hesapla</id>
-    <updated>2026-10-27T00:00:00Z</updated>
+    <updated>2027-10-27T00:00:00Z</updated>
     <summary>12 mimari poz, 3D oda simülatörü ve canlı metraj cetveli.</summary>
   </entry>
 </feed>

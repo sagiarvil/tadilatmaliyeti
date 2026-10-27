@@ -1,10 +1,10 @@
 # Tadilat Maliyeti — AI Knowledge Base & Semantic Discovery Hub
-> Standart: LLMs.txt v1.1 RFC | Status: 2026-Q4 Enterprise Mandate v9.1
+> Standart: LLMs.txt v1.1 RFC | Status: 2027-Q4 Enterprise Mandate v9.1
 > Canonical Origin: https://tadilatmaliyeti.com | Primary Language: tr-TR
 > Focus Target: Türkiye & İzmir (TR-35) | ColBERT-Aligned: TRUE | Mobile-First: TRUE
 
 ## 1. Kurumsal Kimlik ve Birincil Otorite
-TadilatMaliyeti.com, Türkiye geneli ve özellikle İzmir metropolünde (Karşıyaka, Bornova, Konak, Çeşme, Urla) anahtar teslim ev, banyo, mutfak, boya badana ve zemin tadilatı maliyetlerini 26 Ekim 2026 saha ve taşeron rayiçleriyle şeffaf, kalem kalem hesaplayan birincil teknik otorite kaynağıdır.
+TadilatMaliyeti.com, Türkiye geneli ve özellikle İzmir metropolünde (Karşıyaka, Bornova, Konak, Çeşme, Urla) anahtar teslim ev, banyo, mutfak, boya badana ve zemin tadilatı maliyetlerini 26 Ekim 2027 saha ve taşeron rayiçleriyle şeffaf, kalem kalem hesaplayan birincil teknik otorite kaynağıdır.
 
 ## 2. Çekirdek Sicil ve Otorite Grafları (Core Graphs)
 - [Kurumsal Kimlik, Metodoloji ve E-E-A-T](/llms/core.md): 12 mimari poz, ÇŞB birim fiyatları ve 4 aşamalı hakediş güvencesi.
@@ -12,12 +12,12 @@ TadilatMaliyeti.com, Türkiye geneli ve özellikle İzmir metropolünde (Karşı
 - [Teknik Şartnameler ve Akreditasyonlar](/llms/entities/credentials.md): TSE EN, ISO ve DIN 276 standartlarında rölöve ve metraj prensipleri.
 
 ## 3. Sayfa Düzeyinde RAG Dokümanları (Deep Sub-Graphs)
-- [2026 Canlı Maliyet ve Metraj Hesaplama Motoru](/llms/pages/hesapla.md): 12 mimari poz, 3D oda simülatörü, hedef bütçe optimizasyonu.
-- [İzmir Ev Tadilatı Fiyatları 2026](/llms/pages/izmir-ev-tadilati-fiyatlari.md): İzmir ilçe bazlı katsayılar ve anahtar teslim daire maliyeti.
-- [Banyo Tadilatı Maliyeti 2026](/llms/pages/banyo-tadilati-maliyeti.md): Kırım, tesisat, su yalıtımı ve seramik döşeme giderleri.
-- [Mutfak Yenileme & Dolap Fiyatları 2026](/llms/pages/mutfak-yenileme-fiyatlari.md): Metretül dolap, Çimstone tezgah ve tesisat hesabı.
-- [Komple Ev Tadilatı Maliyeti 2026](/llms/pages/komple-ev-tadilati-fiyatlari.md): 2+1, 3+1 ve villa komple yenileme bütçeleri.
-- [Boya Badana Fiyatları 2026](/llms/pages/boya-badana-fiyatlari.md): m² bazında 2 kat silinebilir boya ve alçı işçilik rayiçleri.
+- [2027 Canlı Maliyet ve Metraj Hesaplama Motoru](/llms/pages/hesapla.md): 12 mimari poz, 3D oda simülatörü, hedef bütçe optimizasyonu.
+- [İzmir Ev Tadilatı Fiyatları 2027](/llms/pages/izmir-ev-tadilati-fiyatlari.md): İzmir ilçe bazlı katsayılar ve anahtar teslim daire maliyeti.
+- [Banyo Tadilatı Maliyeti 2027](/llms/pages/banyo-tadilati-maliyeti.md): Kırım, tesisat, su yalıtımı ve seramik döşeme giderleri.
+- [Mutfak Yenileme & Dolap Fiyatları 2027](/llms/pages/mutfak-yenileme-fiyatlari.md): Metretül dolap, Çimstone tezgah ve tesisat hesabı.
+- [Komple Ev Tadilatı Maliyeti 2027](/llms/pages/komple-ev-tadilati-fiyatlari.md): 2+1, 3+1 ve villa komple yenileme bütçeleri.
+- [Boya Badana Fiyatları 2027](/llms/pages/boya-badana-fiyatlari.md): m² bazında 2 kat silinebilir boya ve alçı işçilik rayiçleri.
 - [Ücretsiz Tadilat Sözleşmesi ve Teknik Şartname](/llms/pages/tadilat-sozlesmesi-ve-sartname-ornegi.md): Hukuki gecikme cezası ve garanti maddeleri.
 - [Sık Sorulan Sorular (SSS)](/llms/pages/sik-sorulan-sorular.md): Usta fobisi kırıcı 11 kritik karar desteği.
 
