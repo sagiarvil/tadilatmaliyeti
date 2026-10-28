@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#ea580c">
+  <meta name="theme-color" content="#D40000">
   <meta property="og:site_name" content="Tadilat Maliyeti">
   <link rel="canonical" href="https://tadilatmaliyeti.com/sik-sorulan-sorular">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -43,14 +43,14 @@
       --white:#ffffff;
       --line:#deded4;
       --line-dark:#c9cbbe;
-      --orange:#f26842;
-      --orange-dark:#d94d24;
+      --orange:#D40000;
+      --orange-dark:#B30000;
       --blue:#3354c4;
       --yellow:#f5ba24;
       --green:#108759;
       --wp-green:#25d366;
       --wp-dark:#128c7e;
-      --pale-orange:#fff0e8;
+      --pale-orange:#FFEBEB;
       --pale-blue:#eaf0ff;
       --pale-green:#e7f5ed;
       --pale-yellow:#fff6d6;
@@ -480,7 +480,7 @@
       background:var(--pale-orange);
       border-color:#f89a7a;
       color:#9c3419;
-      box-shadow:0 2px 8px rgba(242,104,66,.15);
+      box-shadow:0 2px 8px rgba(212, 0, 0,.15);
     }
     .hero-panel .fields{
       display:grid;
@@ -867,7 +867,7 @@
       border-color:#f59b7e;
       background:#fff1e8;
       color:#a6381b;
-      box-shadow:0 2px 8px rgba(242,104,66,.15);
+      box-shadow:0 2px 8px rgba(212, 0, 0,.15);
     }
     .wizard-bottom{
       border-top:1px solid #e7e8df;
@@ -1875,6 +1875,57 @@
   ]
 }
   </script>
+<style>
+    /* WHATSAPP DESTEK KAPSÜL BUTONU (KULLANICI RESMİ BİREBİR) */
+    .wp-support-pill {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    .wp-support-pill:hover {
+      transform: translateY(-1px);
+      filter: drop-shadow(0 4px 12px rgba(37, 211, 102, 0.25));
+    }
+    .wp-icon-bubble {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.35);
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+    .wp-pill-content {
+      background: linear-gradient(90deg, #dcfce7 0%, rgba(220, 252, 231, 0.7) 65%, rgba(255, 255, 255, 0) 100%);
+      padding: 5px 18px 5px 14px;
+      margin-left: -12px;
+      border-radius: 0 9999px 9999px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+    }
+    .wp-pill-title {
+      font-size: 13px;
+      font-weight: 900;
+      color: #000000;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    .wp-pill-sub {
+      font-size: 11px;
+      font-weight: 500;
+      color: #0f172a;
+      line-height: 1.15;
+    }
+</style>
 </head>
 <body>
   <a href="#main" class="skip">İçeriğe geç</a>
@@ -2032,7 +2083,7 @@
           </details>
       </div>
 
-        <div style="background:var(--pale-orange);border:1.5px solid rgba(242,104,66,.35);border-radius:var(--r);padding:28px 32px;margin-top:40px;text-align:center;">
+        <div style="background:var(--pale-orange);border:1.5px solid rgba(212, 0, 0,.35);border-radius:var(--r);padding:28px 32px;margin-top:40px;text-align:center;">
           <h3 style="font-size:20px;font-weight:800;color:var(--ink-dark);margin:0 0 10px;">Aradığınız Sorunun Yanıtını Bulamadınız mı?</h3>
           <p style="font-size:15px;color:var(--muted-dark);margin:0 0 18px;">Dairenizin fotoğraflarını ve yapılacak işleri WhatsApp üzerinden mimarımıza iletin, 15 dakika içinde profesyonel teknik görüş ve ön bütçe çıkaralım.</p>
           <a href="https://wa.me/905333333303?text=Merhaba%2C%20tadilatimla%20ilgili%20ozel%20bir%20soru%20sormak%20istiyorum." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">

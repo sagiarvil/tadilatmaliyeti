@@ -16,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#ea580c">
+  <meta name="theme-color" content="#D40000">
   <meta property="og:site_name" content="Tadilat Maliyeti">
   <link rel="canonical" href="https://tadilatmaliyeti.com/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -42,14 +42,14 @@
       --white:#ffffff;
       --line:#deded4;
       --line-dark:#c9cbbe;
-      --orange:#f26842;
-      --orange-dark:#d94d24;
+      --orange:#D40000;
+      --orange-dark:#B30000;
       --blue:#3354c4;
       --yellow:#f5ba24;
       --green:#108759;
       --wp-green:#25d366;
       --wp-dark:#128c7e;
-      --pale-orange:#fff0e8;
+      --pale-orange:#FFEBEB;
       --pale-blue:#eaf0ff;
       --pale-green:#e7f5ed;
       --pale-yellow:#fff6d6;
@@ -479,7 +479,7 @@
       background:var(--pale-orange);
       border-color:#f89a7a;
       color:#9c3419;
-      box-shadow:0 2px 8px rgba(242,104,66,.15);
+      box-shadow:0 2px 8px rgba(212, 0, 0,.15);
     }
     .hero-panel .fields{
       display:grid;
@@ -866,7 +866,7 @@
       border-color:#f59b7e;
       background:#fff1e8;
       color:#a6381b;
-      box-shadow:0 2px 8px rgba(242,104,66,.15);
+      box-shadow:0 2px 8px rgba(212, 0, 0,.15);
     }
     .wizard-bottom{
       border-top:1px solid #e7e8df;
@@ -1858,9 +1858,9 @@
           colors: {
             brand: {
               50: '#fff7ed',
-              500: '#f97316',
-              600: '#ea580c',
-              700: '#c2410c',
+              500: '#D40000',
+              600: '#D40000',
+              700: '#B30000',
             }
           }
         }
@@ -1943,6 +1943,57 @@
   
   </style>
 
+<style>
+    /* WHATSAPP DESTEK KAPSÜL BUTONU (KULLANICI RESMİ BİREBİR) */
+    .wp-support-pill {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    .wp-support-pill:hover {
+      transform: translateY(-1px);
+      filter: drop-shadow(0 4px 12px rgba(37, 211, 102, 0.25));
+    }
+    .wp-icon-bubble {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.35);
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+    .wp-pill-content {
+      background: linear-gradient(90deg, #dcfce7 0%, rgba(220, 252, 231, 0.7) 65%, rgba(255, 255, 255, 0) 100%);
+      padding: 5px 18px 5px 14px;
+      margin-left: -12px;
+      border-radius: 0 9999px 9999px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+    }
+    .wp-pill-title {
+      font-size: 13px;
+      font-weight: 900;
+      color: #000000;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    .wp-pill-sub {
+      font-size: 11px;
+      font-weight: 500;
+      color: #0f172a;
+      line-height: 1.15;
+    }
+</style>
 </head>
 <body>
   <a href="#main" class="skip">İçeriğe geç</a>
@@ -1958,12 +2009,20 @@
       </a>
       <nav class="desktop-nav" aria-label="Ana menü">
         <a href="#hizmetler">Tadilat Hizmetleri</a>
-        <a href="/hesapla" style="color:#ea580c;font-weight:700;">Maliyet Hesapla ↗</a>
+        <a href="/hesapla" style="color:#D40000;font-weight:700;">Maliyet Hesapla ↗</a>
         <a href="#nasil-calisir">Nasıl Hesaplanır?</a>
         <a href="/sik-sorulan-sorular">Sık Sorulanlar</a>
       </nav>
       <div class="header-actions">
-        <button type="button" class="nav-action" data-open-quote>Teklif Talebi Al <span aria-hidden="true">↗</span></button>
+        <a href="https://wa.me/905393333303?text=Merhaba%2C%20tadilatmaliyeti.com%20üzerinden%20bilgi%20ve%20destek%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="wp-support-pill group" aria-label="WhatsApp Destek">
+          <div class="wp-icon-bubble">
+            <svg viewBox="0 0 24 24" fill="#ffffff" style="width:20px;height:20px;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+          </div>
+          <div class="wp-pill-content">
+            <span class="wp-pill-title">WhatsApp Destek</span>
+            <span class="wp-pill-sub">Bize mesaj gönderin</span>
+          </div>
+        </a>
         <button type="button" class="mobile-menu-btn" id="menuToggle" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileNav">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -1971,7 +2030,7 @@
     </div>
     <nav class="mobile-nav wrap" id="mobileNav" aria-label="Mobil menü">
       <a href="#hizmetler">Tadilat Hizmetleri</a>
-      <a href="/hesapla" style="color:#ea580c;font-weight:700;">Maliyet Hesapla ↗</a>
+      <a href="/hesapla" style="color:#D40000;font-weight:700;">Maliyet Hesapla ↗</a>
       <a href="#nasil-calisir">Nasıl Hesaplanır?</a>
       <a href="/sik-sorulan-sorular">Sık Sorulanlar</a>
       <a href="#" data-open-quote>Teklif Talebi Oluştur</a>
@@ -2005,7 +2064,7 @@
           </p>
           
           <div class="tm-hero-cta-group">
-            <a href="#hesapla" class="btn-primary" style="background:linear-gradient(135deg, #ea580c, #c2410c);box-shadow:0 10px 25px -5px rgba(234,88,12,0.5);">🚀 2027 Canlı Maliyet Motoru ↗</a>
+            <a href="#hesapla" class="btn-primary" style="background:linear-gradient(135deg, #D40000, #B30000);box-shadow:0 10px 25px -5px rgba(212, 0, 0,0.5);">🚀 2027 Canlı Maliyet Motoru ↗</a>
             <a href="https://wa.me/905333333303?text=Merhaba%2C%20ev%20tadilat%C4%B1%20maliyeti%20ve%20fiyatlar%20hakk%C4%B1nda%20dan%C4%B1%C5%9Fmak%20istiyorum." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;flex:none;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8 2.53 1.09 2.53.73 2.99.69.45-.04 1.47-.6 1.68-1.18.21-.59.21-1.09.15-1.19-.06-.1-.23-.17-.48-.29"/></svg>
               <span>WhatsApp Ön Fiyat</span>
@@ -2148,7 +2207,7 @@
     .tm-unified-hero {
       position: relative;
       padding: 4.5rem 1.5rem 5.5rem;
-      background: radial-gradient(circle at 12% 16%, rgba(234, 88, 12, 0.035) 0%, transparent 40%),
+      background: radial-gradient(circle at 12% 16%, rgba(212, 0, 0, 0.035) 0%, transparent 40%),
                   radial-gradient(circle at 88% 12%, rgba(37, 99, 235, 0.04) 0%, transparent 45%),
                   radial-gradient(circle at 80% 85%, rgba(245, 158, 11, 0.045) 0%, transparent 40%),
                   #fbfbfa;
@@ -2177,7 +2236,7 @@
       gap: 10px;
       font-size: 12px;
       font-weight: 800;
-      color: #ea580c;
+      color: #D40000;
       letter-spacing: 0.06em;
       margin-bottom: 1.25rem;
       text-transform: uppercase;
@@ -2187,7 +2246,7 @@
       display: inline-block;
       width: 28px;
       height: 3px;
-      background: #ea580c;
+      background: #D40000;
       border-radius: 2px;
     }
 
@@ -2262,12 +2321,12 @@
     }
 
     .tm-hero-cta-group .btn-primary {
-      background: var(--orange, #ea580c);
+      background: var(--orange, #D40000);
       color: #fff;
-      box-shadow: 0 4px 14px rgba(234,88,12,.22);
+      box-shadow: 0 4px 14px rgba(212, 0, 0,.22);
     }
     .tm-hero-cta-group .btn-primary:hover {
-      background: #c2410c;
+      background: #B30000;
       transform: translateY(-2px);
       color: #fff;
     }
@@ -2402,7 +2461,7 @@
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.08em;
-      color: #ea580c;
+      color: #D40000;
       margin-bottom: 4px;
     }
 
@@ -2481,7 +2540,7 @@
     }
 
     .tm-tab.active small {
-      color: #ea580c;
+      color: #D40000;
       font-weight: 600;
     }
 
@@ -2872,8 +2931,8 @@
     </section>
 
     <!-- Hesaplayıcı Bandı (Calculator Band) -->
-    <!-- 2027 Canlı Tadilat Maliyet Motoru (İzmir Mutfak Banyo Canlı Kurumsal Palet: Aydınlık Beyaz, #1c282f, #CB000F, #F9C349) -->
-    <section id="hesapla" class="tm-calculator-gateway" style="padding: 60px 0; background: #F4F6F8; color: #1c282f; border-top: 3px solid #CB000F; border-bottom: 3px solid #1c282f;">
+    <!-- 2027 Canlı Tadilat Maliyet Motoru (Ferrari Kırmızısı #D40000 & Kurumsal Palet) -->
+    <section id="hesapla" class="tm-calculator-gateway" style="padding: 60px 0; background: #F4F6F8; color: #1c282f; border-top: 3px solid #D40000; border-bottom: 3px solid #1c282f;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
     
@@ -2957,10 +3016,10 @@
                 
                 <!-- Hızlı Seçim Butonları -->
                 <div class="flex flex-wrap gap-2 pt-1">
-                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="8">8 m² (Küçük)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]" data-val="8">8 m² (Küçük)</button>
                   <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border-2 border-[#CB000F] bg-red-50 text-xs font-black text-red-600" data-val="14">14 m² (Standart)</button>
-                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="22">22 m² (Geniş Ada)</button>
-                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="32">32 m² (Lüks Villa)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]" data-val="22">22 m² (Geniş Ada)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]" data-val="32">32 m² (Lüks Villa)</button>
                 </div>
                 <p class="text-[11px] text-slate-500">Tahmini Dolap Metrajı: <span id="m_calc_mtul" class="font-bold text-red-600">5.3 Metretül (mtül)</span></p>
               </div>
@@ -3210,10 +3269,10 @@
                 <input id="b_alan_slider" type="range" min="3" max="25" value="6" class="w-full h-2 bg-slate-100 rounded-lg cursor-pointer">
                 
                 <div class="flex flex-wrap gap-2 pt-1">
-                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="4">4 m² (Küçük)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]" data-val="4">4 m² (Küçük)</button>
                   <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border-2 border-[#CB000F] bg-red-50 text-xs font-black text-red-600" data-val="6">6 m² (Standart)</button>
-                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="9">9 m² (Ebeveyn)</button>
-                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="14">14 m² (Lüks Spa)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]" data-val="9">9 m² (Ebeveyn)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]" data-val="14">14 m² (Lüks Spa)</button>
                 </div>
               </div>
 
@@ -3416,11 +3475,11 @@
             <input id="k_alan_slider" type="range" min="40" max="350" value="110" class="w-full h-2 bg-slate-100 rounded-lg cursor-pointer">
             
             <div class="flex flex-wrap gap-2 pt-1">
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="65">65 m² (1+1)</button>
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="90">90 m² (2+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]" data-val="65">65 m² (1+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]" data-val="90">90 m² (2+1)</button>
               <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border-2 border-[#CB000F] bg-red-50 text-xs font-black text-red-600" data-val="110">110 m² (3+1)</button>
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="140">140 m² (4+1)</button>
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="180">180 m² (Dubleks)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]" data-val="140">140 m² (4+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]" data-val="180">180 m² (Dubleks)</button>
             </div>
           </div>
 
@@ -3591,6 +3650,7 @@
   
       </div>
     </section>
+
 
 
 
@@ -4877,7 +4937,7 @@ document.addEventListener("DOMContentLoaded", () => {
           mSlider.value = val;
           mState.alan = val;
           document.querySelectorAll(".btn-quick-m-m2").forEach(b => {
-            b.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]";
+            b.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]";
           });
           btn.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border-2 border-[#CB000F] bg-red-50 text-xs font-black text-red-600";
           calcMutfak();
@@ -5095,7 +5155,7 @@ document.addEventListener("DOMContentLoaded", () => {
           bSlider.value = val;
           bState.alan = val;
           document.querySelectorAll(".btn-quick-b-m2").forEach(b => {
-            b.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]";
+            b.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]";
           });
           btn.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border-2 border-[#CB000F] bg-red-50 text-xs font-black text-red-600";
           calcBanyo();
@@ -5288,7 +5348,7 @@ document.addEventListener("DOMContentLoaded", () => {
           kSlider.value = val;
           kState.alan = val;
           document.querySelectorAll(".btn-quick-k-m2").forEach(b => {
-            b.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]";
+            b.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#D40000]";
           });
           btn.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border-2 border-[#CB000F] bg-red-50 text-xs font-black text-red-600";
           calcKomple();
