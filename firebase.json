@@ -59,6 +59,23 @@
           }
         ]
       }
+    ],
+    "redirects": [
+      {
+        "source": "/hizmetler",
+        "destination": "/#hizmetler",
+        "type": 301
+      },
+      {
+        "source": "/sozlesme",
+        "destination": "/tadilat-sozlesmesi-ve-sartname-ornegi",
+        "type": 301
+      },
+      {
+        "source": "/sss",
+        "destination": "/sik-sorulan-sorular",
+        "type": 301
+      }
     ]
   }
 }
