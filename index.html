@@ -1988,40 +1988,55 @@
     
     
     /* ARCHITECTURAL GIANT WATERMARK (DEV AÇIK GRİ FİLİGRAN - SIFIR EZİLME, SIFIR KIRILMA) */
+    /* ==========================================================================
+       STACKED DYNAMIC VECTOR WATERMARK ARCHITECTURE (SIFIR ÇAKIŞMALI SIRALI DÜZEN)
+       Dev filigran daima ÜSTTE dinamik SVG viewBox ile konumlanır.
+       Ana başlık ve açıklama grubu onun ALTINDA bağımsız, sürtünmesiz ve temizdir.
+       Asla üst üste basmaz; cihaz ekranında oto boyutlanır, kırılma/kesilme yapmaz.
+       ========================================================================== */
     .wm-section-header {
       position: relative;
       text-align: center;
-      margin: 0 auto 30px;
-      padding: 38px 16px 20px;
-      max-width: 980px;
-      overflow: hidden;
+      margin: 0 auto 32px;
+      padding: 10px 16px 0;
+      max-width: 960px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      gap: 6px;
     }
-    .wm-ghost-backdrop {
-      position: absolute;
-      top: 52%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: clamp(76px, 16vw, 185px);
-      font-weight: 900;
-      color: rgba(30, 41, 59, 0.095); /* Net açık gri filigran, dev ve berrak */
-      letter-spacing: -0.04em;
-      line-height: 1;
-      white-space: nowrap;
+    .wm-vector-backdrop {
+      width: 100%;
+      max-width: 640px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #e2e8f0; /* Ultra soft, premium açık gri ton - asla koyu değil */
       user-select: none;
       pointer-events: none;
-      z-index: 0;
+      line-height: 1;
+      margin-bottom: -10px;
+      opacity: 0.95;
+    }
+    .wm-vector-backdrop svg.wm-svg {
+      width: 100%;
+      height: auto;
+      max-height: 82px;
+      display: block;
+      overflow: visible;
     }
     .wm-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     .wm-title {
-      font-size: clamp(22px, 3.6vw, 38px);
+      font-size: clamp(22px, 3.4vw, 36px);
       font-weight: 900;
       color: #0F172A;
       letter-spacing: -0.03em;
@@ -2030,10 +2045,10 @@
       text-wrap: balance;
     }
     .wm-subtitle {
-      font-size: clamp(13px, 1.4vw, 15px);
+      font-size: clamp(14px, 1.7vw, 15.5px);
       font-weight: 500;
       color: #475569;
-      line-height: 1.6;
+      line-height: 1.65;
       max-width: 680px;
       margin: 0 auto;
     }
@@ -3074,10 +3089,18 @@
 
     
     <!-- PAGE TITLE & HERO BADGE -->
+    <!-- PAGE TITLE & GHOST WATERMARK HEADER (STACKED DYNAMIC ARCHITECTURE) -->
     <div class="wm-section-header">
-      <span class="wm-ghost-backdrop" aria-hidden="true">Maliyet.</span>
+      <!-- 1. DEV WATERMARK / GHOST TYPOGRAPHY (DAİMA ÜSTTE, DİNAMİK VEKTÖREL SVG, SIFIR ÇAKIŞMA) -->
+      <div class="wm-vector-backdrop" aria-hidden="true">
+        <svg viewBox="0 0 760 110" preserveAspectRatio="xMidYMid meet" class="wm-svg">
+          <text x="50%" y="78%" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="104" letter-spacing="-0.04em" fill="currentColor">MALİYET</text>
+        </svg>
+      </div>
+
+      <!-- 2. İÇERİK GRUBU (ALTINDA BAĞIMSIZ, SÜRTÜNMESİZ VE TEMİZ) -->
       <div class="wm-content">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#E2E8F0] text-[#1c282f] shadow-sm text-xs font-black mb-3.5">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#E2E8F0] text-[#1c282f] shadow-sm text-xs font-black mb-3">
           <span class="spectrum-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
           2027 İzmir &amp; Ege Bölgesi Şeffaf Tadilat Maliyet Motoru
         </div>
