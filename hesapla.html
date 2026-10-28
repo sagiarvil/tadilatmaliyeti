@@ -39,12 +39,16 @@
         extend: {
           colors: {
             brand: {
-              amber: '#d97706',
-              gold: '#f59e0b',
-              dark: '#090d16',
-              card: '#0f172a',
-              cardLight: '#1e293b',
-              border: '#1e293b'
+              red: '#e73345',
+              blue: '#1557d5',
+              green: '#078653',
+              yellow: '#ffcf24',
+              amber: '#e73345',
+              gold: '#ffcf24',
+              dark: '#0f172a',
+              card: '#ffffff',
+              cardLight: '#f6f8fb',
+              border: '#e5e9ef'
             }
           },
           fontFamily: {
@@ -62,10 +66,25 @@
   <!-- CUSTOM STYLES & TRANSITIONS -->
   <style>
     :root {
-      --color-primary: #d97706;
-      --color-surface-dark: #090d16;
-      --color-surface-card: #0f172a;
-      --color-border: #1e293b;
+      --color-primary: #e73345;
+      --color-blue: #1557d5;
+      --color-green: #078653;
+      --color-yellow: #ffcf24;
+      --color-surface-dark: #0f172a;
+      --color-surface-card: #ffffff;
+      --color-border: #e5e9ef;
+    }
+    .spectrum-dots{display:inline-flex;align-items:center;gap:3px;vertical-align:middle;margin-right:6px}
+    .spectrum-dots i{width:7px;height:7px;border-radius:2px;display:inline-block}
+    .spectrum-dots i:nth-child(1){background:var(--color-primary, #e73345)}
+    .spectrum-dots i:nth-child(2){background:var(--color-green, #078653)}
+    .spectrum-dots i:nth-child(3){background:var(--color-yellow, #ffcf24)}
+    .spectrum-dots i:nth-child(4){background:var(--color-blue, #1557d5)}
+    .spectrum-bar {
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(90deg, #e73345 0% 25%, #078653 25% 50%, #ffcf24 50% 75%, #1557d5 75% 100%);
+      display: block;
     }
     ::view-transition-old(root),
     ::view-transition-new(root) {
@@ -153,10 +172,10 @@
       border-radius: 4.5px;
       display: block;
     }
-    .logomark-4col span:nth-child(1) { background: #f97316; } /* Canlı Turuncu */
-    .logomark-4col span:nth-child(2) { background: #2563eb; } /* Kobalt Mavi */
-    .logomark-4col span:nth-child(3) { background: #16a34a; } /* Şantiye Yeşili */
-    .logomark-4col span:nth-child(4) { background: #eab308; } /* Altın Sarı */
+    .logomark-4col span:nth-child(1) { background: #e73345; } /* Canlı Turuncu */
+    .logomark-4col span:nth-child(2) { background: #1557d5; } /* Kobalt Mavi */
+    .logomark-4col span:nth-child(3) { background: #078653; } /* Şantiye Yeşili */
+    .logomark-4col span:nth-child(4) { background: #ffcf24; } /* Altın Sarı */
     .logoname-brand {
       font-family: 'Plus Jakarta Sans', Manrope, sans-serif;
       font-weight: 800;
@@ -194,7 +213,7 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: #25D366;
+      background: #078653;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -405,13 +424,13 @@
 
       <!-- DESKTOP NAV -->
       <nav class="hidden md:flex items-center gap-6 text-xs font-bold text-slate-700 font-semibold">
-        <a href="/" class="hover:text-[#ea580c] transition-colors">Ana Sayfa</a>
-        <a href="/#hizmetler" class="hover:text-[#ea580c] transition-colors">Tadilat Hizmetleri</a>
-        <a href="/hesapla" class="text-[#ea580c] font-extrabold flex items-center gap-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Maliyet Hesapla
+        <a href="/" class="hover:text-[#1557d5] transition-colors">Ana Sayfa</a>
+        <a href="/#hizmetler" class="hover:text-[#1557d5] transition-colors">Tadilat Hizmetleri</a>
+        <a href="/hesapla" class="text-[#e73345] font-extrabold flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#ffcf24]"></span> Maliyet Hesapla
         </a>
-        <a href="/tadilat-sozlesmesi-ve-sartname-ornegi" class="hover:text-[#ea580c] transition-colors">Sözleşme &amp; Şartname</a>
-        <a href="/sik-sorulan-sorular" class="hover:text-[#ea580c] transition-colors">Sık Sorulanlar</a>
+        <a href="/tadilat-sozlesmesi-ve-sartname-ornegi" class="hover:text-[#1557d5] transition-colors">Sözleşme &amp; Şartname</a>
+        <a href="/sik-sorulan-sorular" class="hover:text-[#1557d5] transition-colors">Sık Sorulanlar</a>
       </nav>
 
       <!-- WHATSAPP CTA -->
@@ -426,6 +445,7 @@
       </a>
     </div>
   </header>
+  <div class="spectrum-bar" aria-hidden="true"></div>
 
   <!-- MAIN HERO & INTRO -->
   <main class="flex-grow py-8 px-4 sm:px-6 max-w-7xl mx-auto w-full space-y-6">
@@ -435,7 +455,7 @@
       <span class="wm-ghost-backdrop" aria-hidden="true">Maliyet.</span>
       <div class="wm-content">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#E2E8F0] text-[#1c282f] shadow-sm text-xs font-black mb-3.5">
-          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <span class="w-2 h-2 rounded-full bg-[#ffcf24] animate-pulse"></span>
           2027 İzmir &amp; Ege Bölgesi Şeffaf Tadilat Maliyet Motoru
         </div>
         <h1 class="wm-title">
@@ -450,15 +470,15 @@
     <!-- 3 ANA KATEGORİ SEÇİCİ SEKMELERİ (MUTFAK / BANYO / KOMPLE DAİRE) -->
     <div class="flex items-center justify-center">
       <div class="inline-flex p-1.5 rounded-2xl bg-white border border-[#E2E8F0] shadow-md max-w-2xl w-full">
-        <button type="button" class="main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-[#ea580c] text-white shadow-md" data-target="panelMutfak">
+        <button type="button" class="main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-[#1557d5] text-white shadow-md" data-target="panelMutfak">
           <span>🍳</span>
           <span>Mutfak Tadilatı</span>
         </button>
-        <button type="button" class="main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-[#2d3e48] hover:text-[#ea580c] font-semibold" data-target="panelBanyo">
+        <button type="button" class="main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-[#2d3e48] hover:text-[#1557d5] font-semibold" data-target="panelBanyo">
           <span>🛁</span>
           <span>Banyo Yenileme</span>
         </button>
-        <button type="button" class="main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-[#2d3e48] hover:text-[#ea580c] font-semibold" data-target="panelKomple">
+        <button type="button" class="main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-[#2d3e48] hover:text-[#1557d5] font-semibold" data-target="panelKomple">
           <span>🏡</span>
           <span>Komple Daire</span>
         </button>
@@ -477,10 +497,10 @@
           <!-- STEPPER HEADER -->
           <div class="p-5 border-b border-[#E2E8F0] bg-[#FAF6F6] flex items-center justify-between">
             <div>
-              <span id="m_step_badge" class="text-xs font-black text-[#ea580c] uppercase tracking-wider block">Adım 1 / 3: Mekân Ölçüsü &amp; Altyapı</span>
+              <span id="m_step_badge" class="text-xs font-black text-[#1557d5] uppercase tracking-wider block">Adım 1 / 3: Mekân Ölçüsü &amp; Altyapı</span>
               <span class="text-sm font-bold text-[#1c282f] mt-0.5 block">Mutfak Boyutu ve Tesisat Durumu</span>
             </div>
-            <span id="m_step_percent" class="text-xs font-mono font-black px-2.5 py-1 rounded-lg bg-orange-50 text-[#ea580c] border border-orange-200">%33 Tamamlandı</span>
+            <span id="m_step_percent" class="text-xs font-mono font-black px-2.5 py-1 rounded-lg bg-blue-50 text-[#1557d5] border border-blue-200">%33 Tamamlandı</span>
           </div>
 
           <!-- PROGRESS BAR -->
@@ -490,7 +510,7 @@
 
           <!-- STEPPER TABS -->
           <div class="grid grid-cols-3 border-b border-slate-200 text-xs font-bold bg-[#FAF6F6]">
-            <button type="button" class="m-step-tab py-3 text-center border-b-2 border-amber-500 text-[#1c282f] font-black" data-step="1">1. Ölçü &amp; Tip</button>
+            <button type="button" class="m-step-tab py-3 text-center border-b-2 border-[#1557d5] text-[#1c282f] font-black" data-step="1">1. Ölçü &amp; Tip</button>
             <button type="button" class="m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-700 font-semibold" data-step="2">2. Dolap &amp; Tezgah</button>
             <button type="button" class="m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-700 font-semibold" data-step="3">3. İmalat &amp; Tesisat</button>
           </div>
@@ -513,12 +533,12 @@
                 
                 <!-- Hızlı Seçim Butonları -->
                 <div class="flex flex-wrap gap-2 pt-1">
-                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="8">8 m² (Küçük)</button>
-                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border-2 border-[#ea580c] bg-orange-50 text-xs font-black text-[#ea580c]" data-val="14">14 m² (Standart)</button>
-                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="22">22 m² (Geniş Ada)</button>
-                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="32">32 m² (Lüks Villa)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="8">8 m² (Küçük)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]" data-val="14">14 m² (Standart)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="22">22 m² (Geniş Ada)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="32">32 m² (Lüks Villa)</button>
                 </div>
-                <p class="text-[11px] text-slate-500">Tahmini Dolap Metrajı: <span id="m_calc_mtul" class="font-bold text-[#ea580c]">5.3 Metretül (mtül)</span></p>
+                <p class="text-[11px] text-slate-500">Tahmini Dolap Metrajı: <span id="m_calc_mtul" class="font-bold text-[#1557d5]">5.3 Metretül (mtül)</span></p>
               </div>
 
               <!-- Mutfak Tipi -->
@@ -526,7 +546,7 @@
                 <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Mutfak Yerleşim Tipi</label>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
                   <button type="button" class="m-tip-btn p-3 rounded-xl border border-slate-300 hover:border-slate-500 text-center font-bold" data-val="duz">Düz Tek Hat</button>
-                  <button type="button" class="m-tip-btn p-3 rounded-xl border-2 border-[#ea580c] bg-orange-50 text-[#ea580c] font-black text-center font-black" data-val="l">L Mutfak</button>
+                  <button type="button" class="m-tip-btn p-3 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-[#1557d5] font-black text-center font-black" data-val="l">L Mutfak</button>
                   <button type="button" class="m-tip-btn p-3 rounded-xl border border-slate-300 hover:border-slate-500 text-center font-bold" data-val="u">U Mutfak</button>
                   <button type="button" class="m-tip-btn p-3 rounded-xl border border-slate-300 hover:border-slate-500 text-center font-bold" data-val="ada">Adalı Mutfak</button>
                 </div>
@@ -537,7 +557,7 @@
                 <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Bina Yaşı &amp; Altyapı Durumu</label>
                 <div class="grid grid-cols-3 gap-2.5 text-xs">
                   <button type="button" class="m-bina-btn p-3 rounded-xl border border-slate-300 text-center font-bold" data-val="yeni">0-5 Yıl (Yeni)</button>
-                  <button type="button" class="m-bina-btn p-3 rounded-xl border-2 border-[#ea580c] bg-orange-50 text-[#ea580c] font-black text-center font-black" data-val="orta">5-20 Yıl (Orta)</button>
+                  <button type="button" class="m-bina-btn p-3 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-[#1557d5] font-black text-center font-black" data-val="orta">5-20 Yıl (Orta)</button>
                   <button type="button" class="m-bina-btn p-3 rounded-xl border border-slate-300 text-center font-bold" data-val="eski">20+ Yıl (Eski Altyapı)</button>
                 </div>
               </div>
@@ -562,13 +582,13 @@
                     <span class="block text-sm font-black text-[#1C282F] mt-0.5">MDF Lam Kapak</span>
                     <span class="block text-[11px] text-slate-500 mt-1">Dayanıklı standart yüzey</span>
                   </button>
-                  <button type="button" class="m-dolap-btn p-4 rounded-xl border-2 border-[#ea580c] bg-orange-50 text-left font-bold" data-val="akrilik">
-                    <span class="block text-xs text-[#ea580c] font-black">Popüler Referans</span>
+                  <button type="button" class="m-dolap-btn p-4 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-left font-bold" data-val="akrilik">
+                    <span class="inline-block text-xs font-black px-2 py-0.5 rounded bg-[#ffcf24] text-[#0f172a]">Popüler Referans</span>
                     <span class="block text-sm font-black text-[#1C282F] mt-0.5">Akrilik / Lake Parlak</span>
                     <span class="block text-[12px] text-[#475569] font-medium mt-1">Çizilmeye dirençli parlak kapak</span>
                   </button>
                   <button type="button" class="m-dolap-btn p-4 rounded-xl border border-slate-300 text-left font-bold" data-val="lake">
-                    <span class="block text-xs text-[#ea580c] font-black">A+ Mimari</span>
+                    <span class="inline-block text-xs font-black px-2 py-0.5 rounded bg-blue-100 text-[#1557d5]">A+ Mimari</span>
                     <span class="block text-sm font-black text-[#1C282F] mt-0.5">Mat İpek Lake &amp; Masif</span>
                     <span class="block text-[12px] text-[#475569] font-medium mt-1">Pürüzsüz boyalı lüks kapak</span>
                   </button>
@@ -587,8 +607,8 @@
                     <span class="block font-black text-white">Doğal Granit</span>
                     <span class="block text-[10px] text-slate-600 mt-0.5">Doğal Taş</span>
                   </button>
-                  <button type="button" class="m-tezgah-btn p-3 rounded-xl border-2 border-[#ea580c] bg-orange-50 text-left font-bold" data-val="kuvars">
-                    <span class="block font-black text-[#ea580c]">Kuvars (Çimstone)</span>
+                  <button type="button" class="m-tezgah-btn p-3 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-left font-bold" data-val="kuvars">
+                    <span class="block font-black text-[#1557d5]">Kuvars (Çimstone)</span>
                     <span class="block text-[10px] text-slate-700 font-semibold mt-0.5">Leke Tutmaz</span>
                   </button>
                   <button type="button" class="m-tezgah-btn p-3 rounded-xl border border-slate-300 text-left font-bold" data-val="porselen">
@@ -614,48 +634,48 @@
             <div id="m_step_3" class="m-step-content hidden space-y-4">
               <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">İmalat &amp; Tesisat Kalemleri</label>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="m_chk_yikim" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="m_chk_yikim" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Eski Mutfak Kırım &amp; Moloz</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Dolap ve fayansların sökülüp atılması</span>
                   </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="m_chk_zemin" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="m_chk_zemin" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Zemin Seramik / Porselen</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Zemin kaplama ve derz uygulaması</span>
                   </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="m_chk_su" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="m_chk_su" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Sıhhi Tesisat Yenileme</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">PPRC temiz su ve PVC gider hatları</span>
                   </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="m_chk_elektrik" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="m_chk_elektrik" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Elektrik &amp; Priz Altyapısı</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Ankastre hatları ve tezgah üstü prizler</span>
                   </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="m_chk_boya" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="m_chk_boya" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Tavan &amp; Duvar Boyası</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Jotun / Filli silinebilir antibakteriyel boya</span>
                   </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="m_chk_aydinlatma" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="m_chk_aydinlatma" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Tezgah Altı Gizli LED</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">3000K sıcak lineer profil aydınlatma</span>
@@ -701,7 +721,7 @@
             <div class="flex items-baseline justify-between gap-2">
               <span id="m_min_display" class="text-xl sm:text-2xl font-black text-white font-mono">₺ 0</span>
               <span class="text-xs text-slate-500 font-bold">ile</span>
-              <span id="m_max_display" class="text-xl sm:text-2xl font-black text-[#ea580c] font-mono">₺ 0</span>
+              <span id="m_max_display" class="text-xl sm:text-2xl font-black text-[#e73345] font-mono">₺ 0</span>
             </div>
             <p class="text-[11px] text-[#9AA7AF]">KDV, 1. sınıf malzeme, montaj ve usta işçiliği dahildir.</p>
           </div>
@@ -735,10 +755,10 @@
           
           <div class="p-5 border-b border-[#E2E8F0] bg-[#FAF6F6] flex items-center justify-between">
             <div>
-              <span id="b_step_badge" class="text-xs font-black text-[#ea580c] uppercase tracking-wider block">Adım 1 / 3: Banyo Alanı &amp; Tesisat</span>
+              <span id="b_step_badge" class="text-xs font-black text-[#1557d5] uppercase tracking-wider block">Adım 1 / 3: Banyo Alanı &amp; Tesisat</span>
               <span class="text-sm font-bold text-[#1c282f] mt-0.5 block">Banyo Metrekaresi ve Yapı Yaşı</span>
             </div>
-            <span id="b_step_percent" class="text-xs font-mono font-black px-2.5 py-1 rounded-lg bg-orange-50 text-[#ea580c] border border-orange-200">%33 Tamamlandı</span>
+            <span id="b_step_percent" class="text-xs font-mono font-black px-2.5 py-1 rounded-lg bg-blue-50 text-[#1557d5] border border-blue-200">%33 Tamamlandı</span>
           </div>
 
           <div class="w-full bg-slate-100 h-1.5">
@@ -746,7 +766,7 @@
           </div>
 
           <div class="grid grid-cols-3 border-b border-slate-200 text-xs font-bold bg-[#FAF6F6]">
-            <button type="button" class="b-step-tab py-3 text-center border-b-2 border-amber-500 text-[#1c282f] font-black" data-step="1">1. Banyo Alanı</button>
+            <button type="button" class="b-step-tab py-3 text-center border-b-2 border-[#1557d5] text-[#1c282f] font-black" data-step="1">1. Banyo Alanı</button>
             <button type="button" class="b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-700 font-semibold" data-step="2">2. Seramik &amp; Klozet</button>
             <button type="button" class="b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-700 font-semibold" data-step="3">3. Donatı &amp; İzolasyon</button>
           </div>
@@ -766,10 +786,10 @@
                 <input id="b_alan_slider" type="range" min="3" max="25" value="6" class="w-full h-2 bg-slate-100 rounded-lg cursor-pointer">
                 
                 <div class="flex flex-wrap gap-2 pt-1">
-                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="4">4 m² (Küçük)</button>
-                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border-2 border-[#ea580c] bg-orange-50 text-xs font-black text-[#ea580c]" data-val="6">6 m² (Standart)</button>
-                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="9">9 m² (Ebeveyn)</button>
-                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="14">14 m² (Lüks Spa)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="4">4 m² (Küçük)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]" data-val="6">6 m² (Standart)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="9">9 m² (Ebeveyn)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="14">14 m² (Lüks Spa)</button>
                 </div>
               </div>
 
@@ -777,7 +797,7 @@
                 <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Bina Yaşı &amp; Tesisat Durumu</label>
                 <div class="grid grid-cols-3 gap-2.5 text-xs">
                   <button type="button" class="b-bina-btn p-3 rounded-xl border border-slate-300 text-center font-bold" data-val="yeni">0-5 Yıl (Yeni)</button>
-                  <button type="button" class="b-bina-btn p-3 rounded-xl border-2 border-[#ea580c] bg-orange-50 text-[#ea580c] font-black text-center font-black" data-val="orta">5-20 Yıl (Orta)</button>
+                  <button type="button" class="b-bina-btn p-3 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-[#1557d5] font-black text-center font-black" data-val="orta">5-20 Yıl (Orta)</button>
                   <button type="button" class="b-bina-btn p-3 rounded-xl border border-slate-300 text-center font-bold" data-val="eski">20+ Yıl (Eski Altyapı)</button>
                 </div>
               </div>
@@ -795,8 +815,8 @@
               <div class="space-y-2">
                 <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Fayans / Seramik Kalitesi</label>
                 <div class="grid grid-cols-2 gap-3 text-xs">
-                  <button type="button" class="b-seramik-btn p-4 rounded-xl border-2 border-[#ea580c] bg-orange-50 text-left font-bold" data-val="standart">
-                    <span class="block text-[#ea580c] font-black">Standart</span>
+                  <button type="button" class="b-seramik-btn p-4 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-left font-bold" data-val="standart">
+                    <span class="inline-block text-xs font-black px-2 py-0.5 rounded bg-blue-100 text-[#1557d5]">Standart</span>
                     <span class="block text-sm font-black text-[#1C282F] mt-0.5">30x60 / 60x60 Seramik</span>
                     <span class="block text-[12px] text-[#475569] font-medium mt-1">Ege / Kütahya kaliteli yerli seramik</span>
                   </button>
@@ -816,8 +836,8 @@
                     <span class="block text-sm font-black text-[#1C282F] mt-0.5">Yerden Ayaklı Takım</span>
                     <span class="block text-[12px] text-[#475569] font-medium mt-1">Geleneksel seramik rezervuar</span>
                   </button>
-                  <button type="button" class="b-klozet-btn p-4 rounded-xl border-2 border-[#ea580c] bg-orange-50 text-left font-bold" data-val="asma">
-                    <span class="block text-[#ea580c] font-black">Modern Standart</span>
+                  <button type="button" class="b-klozet-btn p-4 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-left font-bold" data-val="asma">
+                    <span class="inline-block text-xs font-black px-2 py-0.5 rounded bg-blue-100 text-[#1557d5]">Modern Standart</span>
                     <span class="block text-sm font-black text-[#1C282F] mt-0.5">Geberit Asma Klozet</span>
                     <span class="block text-[12px] text-[#475569] font-medium mt-1">Gömme rezervuar &amp; rimless asma taş</span>
                   </button>
@@ -839,48 +859,48 @@
             <div id="b_step_3" class="b-step-content hidden space-y-4">
               <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">İmalat &amp; Donatı Kalemleri</label>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="b_chk_yikim" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="b_chk_yikim" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Eski Banyo Kırım &amp; Moloz</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Eski seramik, küvet ve harç sökümü</span>
                   </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="b_chk_izolasyon" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="b_chk_izolasyon" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Çift Kat Sürme Su İzolasyonu</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Sürme membran ile %100 su sızdırmazlık</span>
                   </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="b_chk_dolap" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="b_chk_dolap" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Marin Hilton Banyo Dolabı</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Suya dayanıklı dolap, seramik lavabo &amp; LED ayna</span>
                   </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="b_chk_dus" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="b_chk_dus" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Walk-in Cam Duşakabin</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">6mm temperli cam &amp; paslanmaz lineer süzgeç</span>
                   </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="b_chk_su" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="b_chk_su" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Sıhhi Tesisat Altyapısı</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Yeni PPRC borulama &amp; batarya bağlantıları</span>
                   </div>
                 </label>
 
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                  <input type="checkbox" id="b_chk_havlupan" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                  <input type="checkbox" id="b_chk_havlupan" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                   <div>
                     <span class="font-bold text-[#1C282F] text-sm block">Mat Siyah / Krom Havlupan</span>
                     <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Radyatör petek &amp; vana montajı</span>
@@ -924,7 +944,7 @@
             <div class="flex items-baseline justify-between gap-2">
               <span id="b_min_display" class="text-xl sm:text-2xl font-black text-white font-mono">₺ 0</span>
               <span class="text-xs text-slate-500 font-bold">ile</span>
-              <span id="b_max_display" class="text-xl sm:text-2xl font-black text-[#ea580c] font-mono">₺ 0</span>
+              <span id="b_max_display" class="text-xl sm:text-2xl font-black text-[#e73345] font-mono">₺ 0</span>
             </div>
             <p class="text-[11px] text-[#9AA7AF]">KDV, VitrA/Geberit malzeme, montaj ve usta işçiliği dahildir.</p>
           </div>
@@ -955,7 +975,7 @@
         <div class="lg:col-span-7 bg-white rounded-2xl border border-[#E2E8F0] shadow-lg overflow-hidden p-6 sm:p-7 space-y-6">
           
           <div>
-            <span class="text-xs font-black text-[#ea580c] uppercase tracking-wider block">Anahtar Teslim Komple Daire Planlayıcı</span>
+            <span class="text-xs font-black text-[#1557d5] uppercase tracking-wider block">Anahtar Teslim Komple Daire Planlayıcı</span>
             <h2 class="text-lg sm:text-xl font-black text-white mt-0.5">Daire Metrekaresi &amp; Kalite Segmenti</h2>
             <p class="text-xs text-slate-600 mt-1">Dairenizin net süpürülebilir kullanım alanını girin ve dahil edilecek imalatları belirleyin.</p>
           </div>
@@ -972,11 +992,11 @@
             <input id="k_alan_slider" type="range" min="40" max="350" value="110" class="w-full h-2 bg-slate-100 rounded-lg cursor-pointer">
             
             <div class="flex flex-wrap gap-2 pt-1">
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="65">65 m² (1+1)</button>
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="90">90 m² (2+1)</button>
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border-2 border-[#ea580c] bg-orange-50 text-xs font-black text-[#ea580c]" data-val="110">110 m² (3+1)</button>
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="140">140 m² (4+1)</button>
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]" data-val="180">180 m² (Dubleks)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="65">65 m² (1+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="90">90 m² (2+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]" data-val="110">110 m² (3+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="140">140 m² (4+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="180">180 m² (Dubleks)</button>
             </div>
           </div>
 
@@ -989,13 +1009,13 @@
                 <span class="block text-sm font-black text-[#1C282F] mt-0.5">İskandinav Pratik</span>
                 <span class="block text-[12px] text-[#475569] font-medium mt-1">8mm parke, laminat tezgah, yerli seramik</span>
               </button>
-              <button type="button" class="k-kalite-btn p-4 rounded-2xl border-2 border-[#ea580c] bg-orange-50 text-left font-bold" data-val="standart">
-                <span class="block text-xs text-[#ea580c] font-black">1.35x Referans</span>
+              <button type="button" class="k-kalite-btn p-4 rounded-2xl border-2 border-[#1557d5] bg-blue-50/60 text-left font-bold" data-val="standart">
+                <span class="inline-block text-xs font-black px-2 py-0.5 rounded bg-[#ffcf24] text-[#0f172a]">1.35x Referans</span>
                 <span class="block text-sm font-black text-[#1C282F] mt-0.5">Modern Konfor</span>
                 <span class="block text-[12px] text-[#475569] font-medium mt-1">Akrilik dolap, Çimstone tezgah, Geberit</span>
               </button>
               <button type="button" class="k-kalite-btn p-4 rounded-2xl border border-slate-300 text-left font-bold" data-val="luks">
-                <span class="block text-xs text-[#ea580c] font-black">1.9x Prestij</span>
+                <span class="inline-block text-xs font-black px-2 py-0.5 rounded bg-blue-100 text-[#1557d5]">1.9x Prestij</span>
                 <span class="block text-sm font-black text-[#1C282F] mt-0.5">A+ Mimari Lüks</span>
                 <span class="block text-[12px] text-[#475569] font-medium mt-1">Balıksırtı meşe, Neolith porselen, LED asma tavan</span>
               </button>
@@ -1006,64 +1026,64 @@
           <div class="space-y-3">
             <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Dahil Edilecek Tadilat Kalemleri</label>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                <input type="checkbox" id="k_chk_mutfak" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                <input type="checkbox" id="k_chk_mutfak" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                 <div>
                   <span class="font-bold text-[#1C282F] text-sm block">Komple Mutfak Yenileme</span>
                   <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Dolap, tezgah, evye &amp; tesisat</span>
                 </div>
               </label>
 
-              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                <input type="checkbox" id="k_chk_banyo" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                <input type="checkbox" id="k_chk_banyo" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                 <div>
                   <span class="font-bold text-[#1C282F] text-sm block">Komple Banyo Yenileme</span>
                   <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Seramik, duşakabin, Geberit &amp; dolap</span>
                 </div>
               </label>
 
-              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                <input type="checkbox" id="k_chk_parke" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                <input type="checkbox" id="k_chk_parke" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                 <div>
                   <span class="font-bold text-[#1C282F] text-sm block">Zemin Parke &amp; Süpürgelik</span>
                   <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Salon ve tüm odalarda derzli laminat parke</span>
                 </div>
               </label>
 
-              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                <input type="checkbox" id="k_chk_boya" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                <input type="checkbox" id="k_chk_boya" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                 <div>
                   <span class="font-bold text-[#1C282F] text-sm block">Tüm Daire Alçı &amp; Boya</span>
                   <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Tamirler, astar ve silinebilir iç cephe boyası</span>
                 </div>
               </label>
 
-              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                <input type="checkbox" id="k_chk_kapi" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                <input type="checkbox" id="k_chk_kapi" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                 <div>
                   <span class="font-bold text-[#1C282F] text-sm block">İç Oda Kapıları (5 Adet)</span>
                   <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Melamin / Lake mobilya oda kapıları</span>
                 </div>
               </label>
 
-              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                <input type="checkbox" id="k_chk_celik_kapi" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                <input type="checkbox" id="k_chk_celik_kapi" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                 <div>
                   <span class="font-bold text-[#1C282F] text-sm block">Çelik Daire Giriş Kapısı</span>
                   <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Çift kilitli monoblok güvenlikli çelik kapı</span>
                 </div>
               </label>
 
-              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                <input type="checkbox" id="k_chk_alcipan" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                <input type="checkbox" id="k_chk_alcipan" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                 <div>
                   <span class="font-bold text-[#1C282F] text-sm block">Asma Tavan &amp; Gizli LED</span>
                   <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Salon ve koridorda ışık bandı havuzu</span>
                 </div>
               </label>
 
-              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#ea580c] cursor-pointer shadow-xs transition-colors">
-                <input type="checkbox" id="k_chk_tesisat" checked class="w-4 h-4 rounded text-[#ea580c] bg-white border-[#23323A] accent-[#ea580c]">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
+                <input type="checkbox" id="k_chk_tesisat" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
                 <div>
                   <span class="font-bold text-[#1C282F] text-sm block">Elektrik &amp; Su Altyapısı</span>
                   <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Pano yenileme, sigortalar ve hat çekimleri</span>
@@ -1100,7 +1120,7 @@
             <div class="flex items-baseline justify-between gap-2">
               <span id="k_min_display" class="text-xl sm:text-2xl font-black text-white font-mono">₺ 0</span>
               <span class="text-xs text-slate-500 font-bold">ile</span>
-              <span id="k_max_display" class="text-xl sm:text-2xl font-black text-[#ea580c] font-mono">₺ 0</span>
+              <span id="k_max_display" class="text-xl sm:text-2xl font-black text-[#e73345] font-mono">₺ 0</span>
             </div>
             <p class="text-[11px] text-[#9AA7AF]">Mimar kontrolü, malzeme, nakliye, montaj ve temizlik dahildir.</p>
           </div>
@@ -1173,9 +1193,9 @@
           const targetId = tab.dataset.target;
           
           mainTabs.forEach(t => {
-            t.className = "main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-[#2d3e48] hover:text-[#ea580c] font-semibold";
+            t.className = "main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-[#2d3e48] hover:text-[#1557d5] font-semibold";
           });
-          tab.className = "main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-[#ea580c] text-white shadow-md";
+          tab.className = "main-cat-tab flex-1 py-3 px-3 sm:px-5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-[#1557d5] text-white shadow-md";
 
           catPanels.forEach(p => p.classList.add("hidden"));
           const targetPanel = document.getElementById(targetId);
@@ -1349,7 +1369,7 @@
         document.querySelectorAll(".m-step-tab").forEach(tab => {
           const s = Number(tab.dataset.step);
           if (s === stepNum) {
-            tab.className = "m-step-tab py-3 text-center border-b-2 border-amber-500 text-[#1c282f] font-black";
+            tab.className = "m-step-tab py-3 text-center border-b-2 border-[#1557d5] text-[#1c282f] font-black";
           } else {
             tab.className = "m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-700 font-semibold";
           }
@@ -1399,9 +1419,9 @@
           mSlider.value = val;
           mState.alan = val;
           document.querySelectorAll(".btn-quick-m-m2").forEach(b => {
-            b.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]";
+            b.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]";
           });
-          btn.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border-2 border-[#ea580c] bg-orange-50 text-xs font-black text-[#ea580c]";
+          btn.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]";
           calcMutfak();
         });
       });
@@ -1412,7 +1432,7 @@
           document.querySelectorAll(".m-bina-btn").forEach(b => {
             b.className = "m-bina-btn p-3 rounded-xl border border-slate-300 text-center font-bold";
           });
-          btn.className = "m-bina-btn p-3 rounded-xl border-2 border-[#ea580c] bg-orange-50 text-[#ea580c] font-black text-center font-black";
+          btn.className = "m-bina-btn p-3 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-[#1557d5] font-black text-center font-black";
           calcMutfak();
         });
       });
@@ -1421,10 +1441,10 @@
         btn.addEventListener("click", () => {
           mState.dolap = btn.dataset.val;
           document.querySelectorAll(".m-dolap-btn").forEach(b => {
-            b.classList.remove("border-2", "border-amber-500", "bg-amber-500/10");
+            b.classList.remove("border-2", "border-[#1557d5]", "bg-blue-50");
             b.classList.add("border-slate-300");
           });
-          btn.classList.add("border-2", "border-amber-500", "bg-amber-500/10");
+          btn.classList.add("border-2", "border-[#1557d5]", "bg-blue-50");
           btn.classList.remove("border-slate-300");
           calcMutfak();
         });
@@ -1434,10 +1454,10 @@
         btn.addEventListener("click", () => {
           mState.tezgah = btn.dataset.val;
           document.querySelectorAll(".m-tezgah-btn").forEach(b => {
-            b.classList.remove("border-2", "border-amber-500", "bg-amber-500/10");
+            b.classList.remove("border-2", "border-[#1557d5]", "bg-blue-50");
             b.classList.add("border-slate-300");
           });
-          btn.classList.add("border-2", "border-amber-500", "bg-amber-500/10");
+          btn.classList.add("border-2", "border-[#1557d5]", "bg-blue-50");
           btn.classList.remove("border-slate-300");
           calcMutfak();
         });
@@ -1567,7 +1587,7 @@
         document.querySelectorAll(".b-step-tab").forEach(tab => {
           const s = Number(tab.dataset.step);
           if (s === stepNum) {
-            tab.className = "b-step-tab py-3 text-center border-b-2 border-amber-500 text-[#1c282f] font-black";
+            tab.className = "b-step-tab py-3 text-center border-b-2 border-[#1557d5] text-[#1c282f] font-black";
           } else {
             tab.className = "b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-700 font-semibold";
           }
@@ -1617,9 +1637,9 @@
           bSlider.value = val;
           bState.alan = val;
           document.querySelectorAll(".btn-quick-b-m2").forEach(b => {
-            b.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]";
+            b.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]";
           });
-          btn.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border-2 border-[#ea580c] bg-orange-50 text-xs font-black text-[#ea580c]";
+          btn.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]";
           calcBanyo();
         });
       });
@@ -1630,7 +1650,7 @@
           document.querySelectorAll(".b-bina-btn").forEach(b => {
             b.className = "b-bina-btn p-3 rounded-xl border border-slate-300 text-center font-bold";
           });
-          btn.className = "b-bina-btn p-3 rounded-xl border-2 border-[#ea580c] bg-orange-50 text-[#ea580c] font-black text-center font-black";
+          btn.className = "b-bina-btn p-3 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-[#1557d5] font-black text-center font-black";
           calcBanyo();
         });
       });
@@ -1639,10 +1659,10 @@
         btn.addEventListener("click", () => {
           bState.seramik = btn.dataset.val;
           document.querySelectorAll(".b-seramik-btn").forEach(b => {
-            b.classList.remove("border-2", "border-amber-500", "bg-amber-500/10");
+            b.classList.remove("border-2", "border-[#1557d5]", "bg-blue-50");
             b.classList.add("border-slate-300");
           });
-          btn.classList.add("border-2", "border-amber-500", "bg-amber-500/10");
+          btn.classList.add("border-2", "border-[#1557d5]", "bg-blue-50");
           btn.classList.remove("border-slate-300");
           calcBanyo();
         });
@@ -1652,10 +1672,10 @@
         btn.addEventListener("click", () => {
           bState.klozet = btn.dataset.val;
           document.querySelectorAll(".b-klozet-btn").forEach(b => {
-            b.classList.remove("border-2", "border-amber-500", "bg-amber-500/10");
+            b.classList.remove("border-2", "border-[#1557d5]", "bg-blue-50");
             b.classList.add("border-slate-300");
           });
-          btn.classList.add("border-2", "border-amber-500", "bg-amber-500/10");
+          btn.classList.add("border-2", "border-[#1557d5]", "bg-blue-50");
           btn.classList.remove("border-slate-300");
           calcBanyo();
         });
@@ -1810,9 +1830,9 @@
           kSlider.value = val;
           kState.alan = val;
           document.querySelectorAll(".btn-quick-k-m2").forEach(b => {
-            b.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-amber-500 hover:text-[#ea580c]";
+            b.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]";
           });
-          btn.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border-2 border-[#ea580c] bg-orange-50 text-xs font-black text-[#ea580c]";
+          btn.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]";
           calcKomple();
         });
       });
@@ -1821,10 +1841,10 @@
         btn.addEventListener("click", () => {
           kState.kalite = btn.dataset.val;
           document.querySelectorAll(".k-kalite-btn").forEach(b => {
-            b.classList.remove("border-2", "border-amber-500", "bg-amber-500/10");
+            b.classList.remove("border-2", "border-[#1557d5]", "bg-blue-50");
             b.classList.add("border-slate-300");
           });
-          btn.classList.add("border-2", "border-amber-500", "bg-amber-500/10");
+          btn.classList.add("border-2", "border-[#1557d5]", "bg-blue-50");
           btn.classList.remove("border-slate-300");
           calcKomple();
         });

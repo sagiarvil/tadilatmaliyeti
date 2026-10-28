@@ -24,7 +24,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#ea580c">
+  <meta name="theme-color" content="#174fbc">
   <meta property="og:site_name" content="Tadilat Maliyeti">
   <link rel="canonical" href="https://tadilatmaliyeti.com/mutfak-yenileme-fiyatlari">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -43,30 +43,48 @@
   <style>
 
     :root{
-      --ink:#1a2520;
-      --ink-dark:#0f1713;
-      --muted:#49584e;
-      --muted-dark:#313e36;
-      --paper:#f9f8f4;
-      --cream:#f0eee7;
+      /* ExcelArşiv Corporate Color Architecture */
+      --blue:#1557d5;
+      --blue-dark:#174fbc;
+      --blue-hover:#1044aa;
+      --red:#e73345;
+      --red-dark:#cd283a;
+      --green:#078653;
+      --green-dark:#067345;
+      --yellow:#ffcf24;
+      --yellow-dark:#f0be15;
+      --ink:#0f172a;
+      --ink-dark:#020617;
+      --muted:#475569;
+      --muted-dark:#334155;
+      --paper:#f6f8fb;
+      --cream:#ffffff;
       --white:#ffffff;
-      --line:#deded4;
-      --line-dark:#c9cbbe;
-      --orange:#f26842;
-      --orange-dark:#d94d24;
-      --blue:#3354c4;
-      --yellow:#f5ba24;
-      --green:#108759;
-      --wp-green:#25d366;
-      --wp-dark:#128c7e;
-      --pale-orange:#fff0e8;
-      --pale-blue:#eaf0ff;
-      --pale-green:#e7f5ed;
-      --pale-yellow:#fff6d6;
-      --r:18px;
-      --radius-lg:25px;
-      --shadow:0 20px 60px rgba(26,37,32,.09);
+      --line:#e5e9ef;
+      --line-dark:#cbd5e1;
+      --wp-green:#078653;
+      --wp-dark:#067345;
+      --pale-red:#fff1f2;
+      --pale-blue:#eff6ff;
+      --pale-green:#ecfdf5;
+      --pale-yellow:#fffbeb;
+      /* Legacy Token Compatibility mapped to ExcelArşiv Palette */
+      --orange:#e73345;
+      --orange-dark:#cd283a;
+      --pale-orange:#fff1f2;
+      --r:16px;
+      --radius-lg:24px;
+      --shadow:0 16px 45px rgba(23,45,75,.08);
     }
+    /* ExcelArşiv Spectrum Dots Signature */
+    .spectrum-dots{display:inline-flex;align-items:center;gap:3px;vertical-align:middle;margin-right:6px}
+    .spectrum-dots i{width:7px;height:7px;border-radius:2px;display:inline-block}
+    .spectrum-dots i:nth-child(1){background:var(--red)}
+    .spectrum-dots i:nth-child(2){background:var(--green)}
+    .spectrum-dots i:nth-child(3){background:var(--yellow)}
+    .spectrum-dots i:nth-child(4){background:var(--blue)}
+    /* ExcelArşiv Spectrum Bar */
+    .spectrum-bar{height:3px;width:100%;background:linear-gradient(90deg, #e73345 0% 25%, #078653 25% 50%, #ffcf24 50% 75%, #1557d5 75% 100%);display:block}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:95px}
     body{
@@ -142,7 +160,7 @@
       transform:rotate(-7deg);
     }
     .logomark span{border-radius:3px}
-    .logomark span:nth-child(1){background:var(--orange)}
+    .logomark span:nth-child(1){background:var(--red)}
     .logomark span:nth-child(2){background:var(--blue)}
     .logomark span:nth-child(3){background:var(--green)}
     .logomark span:nth-child(4){background:var(--yellow)}
@@ -348,7 +366,7 @@
     .btn-primary{
       background:var(--orange);
       color:white;
-      box-shadow:0 7px 0 rgba(174,65,42,.12);
+      box-shadow:0 6px 18px rgba(231,51,69,.25);border-radius:8px;font-weight:800;
     }
     .btn-primary:hover{background:var(--orange-dark)}
     .btn-outline{
@@ -360,7 +378,7 @@
     .btn-dark{background:var(--ink);color:#fff}
     .btn-dark:hover{background:#2a3b32}
     .btn-whatsapp{
-      background:var(--wp-green);
+      background:var(--green);border-radius:8px;font-weight:800;
       color:#ffffff;
       box-shadow:0 6px 18px rgba(37,211,102,.25);
     }
@@ -1436,7 +1454,7 @@
       font-weight:600;
       transition:color .15s;
     }
-    footer .foot-links a:hover{color:var(--orange-dark)}
+    footer .foot-links a:hover{color:var(--blue)}
     .footer-text{
       font-size:14px;
       color:#4a5b50;
@@ -1979,6 +1997,7 @@
       </a>
     </nav>
   </header>
+  <div class="spectrum-bar" aria-hidden="true"></div>
 
   <main id="main">
     <section class="subpage-hero">
