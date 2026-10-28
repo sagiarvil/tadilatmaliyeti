@@ -2007,18 +2007,53 @@
     
     
     
-    /* PORSCHE / AUTOMOTIVE CLEAN STACKED HEADER (SIFIR ÇAKIŞMA / SIFIR EZİLME) */
+    
+    /* GIANT WATERMARK ARCHITECTURE (DEV AÇIK GRİ WATERMARK + NET ÖN BAŞLIK) */
     .wm-header-wrap {
+      position: relative;
       text-align: center;
       margin: 0 auto 28px;
       width: 100%;
-      max-width: 860px;
+      max-width: 900px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px; /* İki başlık arasında net ve ferah 8px boşluk */
+      padding-top: 25px;
     }
+    .wm-giant-text {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(75px, 13vw, 175px);
+      font-weight: 900;
+      color: #ECEEF2; /* Çok açık gri, dev, net */
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+      white-space: nowrap;
+      user-select: none;
+      pointer-events: none;
+      z-index: 1;
+    }
+    @media (min-width: 640px) {
+      .wm-giant-text {
+        top: -35px;
+      }
+    }
+    .wm-real-title {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(22px, 3.4vw, 38px);
+      font-weight: 900;
+      color: #0F172A; /* Koyu antrasit */
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin: 0;
+      padding: 0 12px;
+      margin-top: 35px;
+    }
+
     .wm-eyebrow-large {
       font-size: clamp(26px, 4.5vw, 48px);
       font-weight: 900;
@@ -3060,7 +3095,7 @@
         2027 İzmir &amp; Ege Bölgesi Şeffaf Tadilat Maliyet Motoru
       </div>
       <div class="wm-header-wrap">
-        <span class="wm-eyebrow-large">Daha ferah yaşam alanı.</span>
+        <span class="wm-giant-text" aria-hidden="true">Tadilat.</span>
         <h2 class="wm-real-title">
           Tadilat Bütçenizi Şeffaf &amp; Gerçekçi Olarak Hesaplayın
         </h2>
