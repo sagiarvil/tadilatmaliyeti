@@ -44,7 +44,7 @@ test.describe("2027 Tadilat & Maliyet Hesaplama Motoru (Mutfak, Banyo, Komple Da
     expect(maxText).toContain("₺");
 
     // 2. Adıma geç
-    await page.locator(".btn-next-m").first().click();
+    await page.locator(".btn-next-m").first().click({ force: true });
     await expect(page.locator("#m_step_2")).toBeVisible();
   });
 

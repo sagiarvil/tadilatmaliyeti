@@ -83,6 +83,45 @@
     input[type=range] {
       accent-color: #d97706;
     }
+  
+    /* KULLANICI DOSTU YÖNLENDİRİCİ YANIP SÖNME (PULSE & GLOW) ANİMASYONLARI */
+    @keyframes subtlePulseGuide {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4), 0 0 0 0 rgba(245, 158, 11, 0.5);
+      }
+      50% {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 20px 35px -5px rgba(245, 158, 11, 0.65), 0 0 0 8px rgba(245, 158, 11, 0);
+      }
+    }
+    @keyframes arrowWiggle {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(4px); }
+    }
+    .guide-pulse-btn {
+      animation: subtlePulseGuide 2.2s infinite ease-in-out;
+      position: relative;
+    }
+    .guide-pulse-btn:hover {
+      animation-play-state: paused;
+    }
+    .guide-arrow {
+      display: inline-block;
+      animation: arrowWiggle 1.4s infinite ease-in-out;
+    }
+    @keyframes subtlePulseGreen {
+      0%, 100% {
+        box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4), 0 0 0 0 rgba(16, 185, 129, 0.5);
+      }
+      50% {
+        box-shadow: 0 20px 35px -5px rgba(16, 185, 129, 0.65), 0 0 0 8px rgba(16, 185, 129, 0);
+      }
+    }
+    .guide-pulse-whatsapp {
+      animation: subtlePulseGreen 2.4s infinite ease-in-out;
+    }
+
   </style>
 
   <!-- JSON-LD SCHEMA -->
@@ -248,9 +287,9 @@
 
               <!-- İLERİ BUTONU -->
               <div class="pt-2 flex justify-end">
-                <button type="button" class="btn-next-m px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="2">
+                <button type="button" class="btn-next-m guide-pulse-btn px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="2">
                   <span>2. Adıma Geç: Dolap &amp; Tezgah Seçimi</span>
-                  <span>→</span>
+                  <span class="guide-arrow font-bold text-base">→</span>
                 </button>
               </div>
             </div>
@@ -307,9 +346,9 @@
                 <button type="button" class="btn-prev-m px-4 py-2.5 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-300 font-bold text-xs" data-prev="1">
                   ← 1. Adıma Dön
                 </button>
-                <button type="button" class="btn-next-m px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="3">
+                <button type="button" class="btn-next-m guide-pulse-btn px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="3">
                   <span>3. Adıma Geç: Tesisat &amp; İşçilik</span>
-                  <span>→</span>
+                  <span class="guide-arrow font-bold text-base">→</span>
                 </button>
               </div>
             </div>
@@ -417,7 +456,7 @@
           </div>
 
           <!-- WHATSAPP CTA -->
-          <a id="m_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
+          <a id="m_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-emerald-600 guide-pulse-whatsapp hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
             <span>Mutfak Teklifini WhatsApp'tan Al</span>
           </a>
@@ -487,9 +526,9 @@
               </div>
 
               <div class="pt-2 flex justify-end">
-                <button type="button" class="btn-next-b px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="2">
+                <button type="button" class="btn-next-b guide-pulse-btn px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="2">
                   <span>2. Adıma Geç: Seramik &amp; Klozet</span>
-                  <span>→</span>
+                  <span class="guide-arrow font-bold text-base">→</span>
                 </button>
               </div>
             </div>
@@ -532,9 +571,9 @@
                 <button type="button" class="btn-prev-b px-4 py-2.5 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-300 font-bold text-xs" data-prev="1">
                   ← 1. Adıma Dön
                 </button>
-                <button type="button" class="btn-next-b px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="3">
+                <button type="button" class="btn-next-b guide-pulse-btn px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="3">
                   <span>3. Adıma Geç: Donatı &amp; İzolasyon</span>
-                  <span>→</span>
+                  <span class="guide-arrow font-bold text-base">→</span>
                 </button>
               </div>
             </div>
@@ -638,7 +677,7 @@
             <div id="b_breakdown_list" class="space-y-1.5 max-h-48 overflow-y-auto pr-1"></div>
           </div>
 
-          <a id="b_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
+          <a id="b_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-emerald-600 guide-pulse-whatsapp hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
             <span>Banyo Teklifini WhatsApp'tan Al</span>
           </a>
@@ -814,7 +853,7 @@
             <div id="k_breakdown_list" class="space-y-1.5 max-h-48 overflow-y-auto pr-1"></div>
           </div>
 
-          <a id="k_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
+          <a id="k_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-emerald-600 guide-pulse-whatsapp hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
             <span>Daire Teklifini WhatsApp'tan Al</span>
           </a>
