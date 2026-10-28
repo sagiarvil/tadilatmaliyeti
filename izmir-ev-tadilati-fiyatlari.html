@@ -2112,5 +2112,60 @@
     </a>
     <a href="/tadilat-sozlesmesi-ve-sartname-ornegi" class="btn btn-primary">Sözleşme Al ↗</a>
   </div>
+  <!-- Scroll-Driven Reveal with Staggered Fade-Up (Apple Motion Architecture) -->
+  <style>
+    .reveal-init {
+      opacity: 0 !important;
+      transform: translate3d(0, 24px, 0) !important;
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      will-change: opacity, transform;
+    }
+    .reveal-visible {
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) !important;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-init {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Süzülerek belirecek premium hedef konteyner ve kart grupları
+      const targetSelectors = [
+        '.service-card', '.price-card', '.faq-item', '.workflow-item',
+        '.cat-panel', '.spotlight-card', '.seo-static-table-wrapper',
+        '.guide-card', '.feature-item', '.hero-card', '.tm-ledger-card',
+        '.section-header', '.tm-calculator-gateway'
+      ];
+      
+      const elements = document.querySelectorAll(targetSelectors.join(', '));
+      if (!elements.length) return;
+
+      elements.forEach(el => el.classList.add('reveal-init'));
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        // Ekrana giren elemanları ebeveynlerine göre gruplayıp kademeli (staggered 80ms) akıt
+        const visibleEntries = entries.filter(e => e.isIntersecting);
+        visibleEntries.forEach((entry, idx) => {
+          const el = entry.target;
+          setTimeout(() => {
+            el.classList.add('reveal-visible');
+          }, idx * 80);
+          obs.unobserve(el);
+        });
+      }, {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.12
+      });
+
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+
 </body>
 </html>
