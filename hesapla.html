@@ -229,17 +229,46 @@
 
   
     
-    /* WATERMARK TYPOGRAPHY HEADER (PORSCHE / BMW / APPLE ARCHITECTURE) */
-    .wm-header-group {
+    
+    /* PREMIER WATERMARK ARCHITECTURE (VECTOR SVG - SIFIR KIRILMA / MAKSİMUM NETLİK) */
+    .wm-header-wrap {
       position: relative;
       text-align: center;
-      margin: 0 auto 32px;
-      padding: 10px 0 0;
+      margin: 0 auto 20px;
+      width: 100%;
+      max-width: 980px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
+    .wm-svg-bg {
+      width: 100%;
+      height: auto;
+      max-height: 85px;
+      user-select: none;
+      pointer-events: none;
+      margin-bottom: -32px;
+      z-index: 1;
+    }
+    @media (min-width: 640px) {
+      .wm-svg-bg {
+        max-height: 105px;
+        margin-bottom: -46px;
+      }
+    }
+    .wm-real-title {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(20px, 3.2vw, 36px);
+      font-weight: 900;
+      color: #0F172A;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin: 0 0 10px;
+      padding: 0 12px;
+    }
+
     .wm-ghost-text {
       font-size: clamp(38px, 6.5vw, 76px);
       font-weight: 900;
@@ -346,9 +375,11 @@
         <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
         2027 İzmir &amp; Ege Bölgesi Şeffaf Tadilat Maliyet Motoru
       </div>
-      <div class="wm-header-group">
-        <span class="wm-ghost-text" aria-hidden="true">Daha ferah yaşam alanı.</span>
-        <h1 class="wm-front-title">
+      <div class="wm-header-wrap">
+        <svg class="wm-svg-bg" viewBox="0 0 1000 110" aria-hidden="true">
+          <text x="500" y="88" text-anchor="middle" fill="#E2E8F0" font-size="86" font-weight="900" letter-spacing="-0.03em" font-family="'Plus Jakarta Sans', sans-serif">Daha ferah yaşam alanı.</text>
+        </svg>
+        <h1 class="wm-real-title">
           Tadilat Bütçenizi Şeffaf &amp; Gerçekçi Olarak Hesaplayın
         </h1>
       </div>
@@ -1798,17 +1829,46 @@
     }
   
     
-    /* WATERMARK TYPOGRAPHY HEADER (PORSCHE / BMW / APPLE ARCHITECTURE) */
-    .wm-header-group {
+    
+    /* PREMIER WATERMARK ARCHITECTURE (VECTOR SVG - SIFIR KIRILMA / MAKSİMUM NETLİK) */
+    .wm-header-wrap {
       position: relative;
       text-align: center;
-      margin: 0 auto 32px;
-      padding: 10px 0 0;
+      margin: 0 auto 20px;
+      width: 100%;
+      max-width: 980px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
+    .wm-svg-bg {
+      width: 100%;
+      height: auto;
+      max-height: 85px;
+      user-select: none;
+      pointer-events: none;
+      margin-bottom: -32px;
+      z-index: 1;
+    }
+    @media (min-width: 640px) {
+      .wm-svg-bg {
+        max-height: 105px;
+        margin-bottom: -46px;
+      }
+    }
+    .wm-real-title {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(20px, 3.2vw, 36px);
+      font-weight: 900;
+      color: #0F172A;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin: 0 0 10px;
+      padding: 0 12px;
+    }
+
     .wm-ghost-text {
       font-size: clamp(38px, 6.5vw, 76px);
       font-weight: 900;
