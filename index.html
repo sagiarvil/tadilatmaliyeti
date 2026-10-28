@@ -2003,6 +2003,30 @@
       line-height: 1.15;
     }
 </style>
+<style>
+    /* WATERMARK TYPOGRAPHY HEADER (APPLE / AUTOMOTIVE LUXURY STYLE) */
+    .wm-header-group {
+      position: relative;
+      text-align: center;
+      margin: 0 auto 24px;
+      padding: 10px 0;
+    }
+    .wm-ghost-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(40px, 7vw, 96px);
+      font-weight: 900;
+      color: rgba(15, 23, 42, 0.04);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      white-space: nowrap;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+    }
+</style>
 </head>
 <body>
   <a href="#main" class="skip">İçeriğe geç</a>
@@ -2940,7 +2964,7 @@
     </section>
 
     <!-- Hesaplayıcı Bandı (Calculator Band) -->
-    <!-- 2027 Canlı Tadilat Maliyet Motoru (Orijinal Kurumsal Turuncu #ea580c Paleti) -->
+    <!-- 2027 Canlı Tadilat Maliyet Motoru (Watermark Typography Header Mimarisi) -->
     <section id="hesapla" class="tm-calculator-gateway" style="padding: 60px 0; background: #F4F6F8; color: #1c282f; border-top: 3px solid #ea580c; border-bottom: 3px solid #1c282f;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
@@ -2951,9 +2975,12 @@
         <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
         2027 İzmir &amp; Ege Bölgesi Şeffaf Tadilat Maliyet Motoru
       </div>
-      <h2 class="text-2xl sm:text-4xl font-black text-[#1c282f] tracking-tight">
-        Tadilat Bütçenizi Şeffaf &amp; Gerçekçi Olarak Hesaplayın
-      </h2>
+      <div class="wm-header-group">
+        <span class="wm-ghost-text" aria-hidden="true">Şeffaf Maliyet</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-[#1c282f] tracking-tight relative z-10">
+          Tadilat Bütçenizi Şeffaf &amp; Gerçekçi Olarak Hesaplayın
+        </h2>
+      </div>
       <p class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed max-w-2xl mx-auto">
         Mutfak, banyo veya komple daire alanınızı seçin; malzeme kalitesi ve tesisat kalemlerine göre güncel anahtar teslim maliyet dökümünü anında görün.
       </p>
@@ -3659,6 +3686,7 @@
   
       </div>
     </section>
+
 
 
 
