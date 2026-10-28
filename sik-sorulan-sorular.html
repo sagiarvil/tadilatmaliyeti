@@ -130,13 +130,14 @@
     .announcement .dot{height:7px;width:7px;background:var(--yellow);border-radius:100%;flex:none}
     
     /* Header & Nav */
-    .header{
+        .header{
       position:sticky;
       top:0;
       z-index:50;
-      background:rgba(249,248,244,.97);
-      backdrop-filter:blur(20px);
-      border-bottom:1px solid var(--line);
+      background:#174fbc;
+      color:#ffffff;
+      box-shadow:0 4px 24px rgba(19,43,79,.18);
+      border-bottom:none;
     }
     .nav{
       height:80px;
@@ -169,11 +170,10 @@
       font-weight:800;
       font-size:23px;
       letter-spacing:-.05em;
-      color:var(--ink-dark);
+      color:#ffffff;
     }
-    .logoname strong{font-weight:800;color:var(--orange)}
-    .logoname small{font-size:15px;letter-spacing:-.03em;color:#6d7770;font-weight:700}
-    
+    .logoname strong{font-weight:800;color:var(--yellow)}
+    .logoname small{font-size:15px;letter-spacing:-.03em;color:#bfdbfe;font-weight:700}
     .desktop-nav{
       display:flex;
       align-items:center;
@@ -184,66 +184,24 @@
       white-space:nowrap;
       font-size:15px;
       font-weight:700;
-      color:#324137;
-      transition:color .15s;
+      color:#ffffff;
+      transition:color .18s;
     }
-    .desktop-nav>a:hover{color:var(--orange-dark)}
-    
-    .header-actions{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-    .nav-wp-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      background:#e8f7ee;
-      border:1px solid #c2e8d0;
-      color:#0f6b40;
-      padding:11px 16px;
-      border-radius:12px;
-      font-weight:800;
-      font-size:13px;
-      transition:all .18s;
-      white-space:nowrap;
-    }
-    .nav-wp-btn:hover{
-      background:#d5f2df;
-      color:#09502f;
-      transform:translateY(-1px);
-    }
-    .nav-wp-btn svg{width:18px;height:18px;fill:currentColor}
-    .nav-action{
-      background:var(--ink);
-      color:white;
-      border:none;
-      border-radius:12px;
-      padding:13px 18px;
-      font-weight:800;
-      font-size:13px;
-      white-space:nowrap;
-      display:flex;
-      gap:8px;
-      align-items:center;
-      justify-content:center;
-      transition:background .15s;
-    }
-    .nav-action:hover{background:#2a3b32}
-    
+    .desktop-nav>a:hover{color:var(--yellow)}
     .mobile-menu-btn{
       display:none;
       background:none;
-      border:1px solid var(--line-dark);
+      border:1px solid rgba(255,255,255,.35);
       height:44px;
       width:46px;
       border-radius:10px;
       place-items:center;
-      color:var(--ink);
+      color:#ffffff;
     }
     .mobile-nav{
       display:none;
-      border-top:1px solid var(--line);
+      background:#1344a3;
+      border-top:1px solid rgba(255,255,255,.15);
       padding:16px 0 22px;
       gap:8px;
     }
@@ -252,7 +210,10 @@
       padding:13px 8px;
       font-size:16px;
       font-weight:800;
-      color:var(--ink);
+      color:#ffffff;
+    }
+    .mobile-nav a:hover{
+      color:var(--yellow);
     }
     .mobile-nav .nav-wp-link{
       display:flex;
@@ -1920,7 +1881,7 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: #25D366;
+      background: #078653;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1930,7 +1891,7 @@
       flex-shrink: 0;
     }
     .wp-pill-content {
-      background: linear-gradient(90deg, #dcfce7 0%, rgba(220, 252, 231, 0.7) 65%, rgba(255, 255, 255, 0) 100%);
+      background: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.12);
       padding: 5px 18px 5px 14px;
       margin-left: -12px;
       border-radius: 0 9999px 9999px 0;
