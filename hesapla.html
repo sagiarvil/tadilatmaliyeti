@@ -228,13 +228,47 @@
     }
 
   
-    /* WATERMARK TYPOGRAPHY HEADER (APPLE / AUTOMOTIVE LUXURY STYLE) */
+    
+    /* WATERMARK TYPOGRAPHY HEADER (PORSCHE / BMW / APPLE ARCHITECTURE) */
     .wm-header-group {
       position: relative;
       text-align: center;
-      margin: 0 auto 28px;
-      padding: 35px 0 10px;
+      margin: 0 auto 32px;
+      padding: 10px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
+    .wm-ghost-text {
+      font-size: clamp(38px, 6.5vw, 76px);
+      font-weight: 900;
+      color: #E2E8F0; /* Net, temiz, okunaklı ama arka plan siluetinde açık gri */
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      user-select: none;
+      pointer-events: none;
+      margin-bottom: -18px; /* Ön başlıkla zarif mimari üst üste geçiş */
+      z-index: 1;
+      display: block;
+      text-transform: none;
+    }
+    @media (min-width: 640px) {
+      .wm-ghost-text {
+        margin-bottom: -24px;
+      }
+    }
+    .wm-front-title {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(22px, 3.2vw, 36px);
+      font-weight: 900;
+      color: #0F172A;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin: 0 0 10px;
+    }
+
     .wm-ghost-text {
       position: absolute;
       top: 42%;
@@ -313,8 +347,8 @@
         2027 İzmir &amp; Ege Bölgesi Şeffaf Tadilat Maliyet Motoru
       </div>
       <div class="wm-header-group">
-        <span class="wm-ghost-text" aria-hidden="true">Hesaplama.</span>
-        <h1 class="text-2xl sm:text-4xl font-black text-[#1c282f] tracking-tight relative z-10">
+        <span class="wm-ghost-text" aria-hidden="true">Daha ferah yaşam alanı.</span>
+        <h1 class="wm-front-title">
           Tadilat Bütçenizi Şeffaf &amp; Gerçekçi Olarak Hesaplayın
         </h1>
       </div>
@@ -1763,13 +1797,47 @@
       }
     }
   
-    /* WATERMARK TYPOGRAPHY HEADER (APPLE / AUTOMOTIVE LUXURY STYLE) */
+    
+    /* WATERMARK TYPOGRAPHY HEADER (PORSCHE / BMW / APPLE ARCHITECTURE) */
     .wm-header-group {
       position: relative;
       text-align: center;
-      margin: 0 auto 28px;
-      padding: 35px 0 10px;
+      margin: 0 auto 32px;
+      padding: 10px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
+    .wm-ghost-text {
+      font-size: clamp(38px, 6.5vw, 76px);
+      font-weight: 900;
+      color: #E2E8F0; /* Net, temiz, okunaklı ama arka plan siluetinde açık gri */
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      user-select: none;
+      pointer-events: none;
+      margin-bottom: -18px; /* Ön başlıkla zarif mimari üst üste geçiş */
+      z-index: 1;
+      display: block;
+      text-transform: none;
+    }
+    @media (min-width: 640px) {
+      .wm-ghost-text {
+        margin-bottom: -24px;
+      }
+    }
+    .wm-front-title {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(22px, 3.2vw, 36px);
+      font-weight: 900;
+      color: #0F172A;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin: 0 0 10px;
+    }
+
     .wm-ghost-text {
       position: absolute;
       top: 42%;
