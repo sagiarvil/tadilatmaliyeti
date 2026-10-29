@@ -46,3 +46,8 @@ User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://tadilatmaliyeti.com/sitemap.xml
+
+# LLM Knowledge Graph & GEO
+User-agent: *
+Allow: /llms.txt
+Allow: /llms-full.txt
