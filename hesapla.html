@@ -539,8 +539,8 @@
           <!-- STEPPER TABS -->
           <div class="grid grid-cols-3 border-b border-slate-200 text-xs font-bold bg-[#FAF6F6]">
             <button type="button" class="m-step-tab py-3 text-center border-b-2 border-[#1557d5] text-[#1c282f] font-black" data-step="1">1. Ölçü &amp; Tip</button>
-            <button type="button" class="m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-white font-semibold" data-step="2">2. Dolap &amp; Tezgah</button>
-            <button type="button" class="m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-white font-semibold" data-step="3">3. İmalat &amp; Tesisat</button>
+            <button type="button" class="m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-semibold" data-step="2">2. Dolap &amp; Tezgah</button>
+            <button type="button" class="m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-semibold" data-step="3">3. İmalat &amp; Tesisat</button>
           </div>
 
           <!-- FORM ADIMLARI -->
@@ -551,9 +551,9 @@
               <!-- Mutfak Alanı Slider -->
               <div class="space-y-3">
                 <div class="flex items-center justify-between">
-                  <label class="text-xs sm:text-sm font-black text-white">Mutfak Taban Alanı (m²)</label>
+                  <label class="text-xs sm:text-sm font-black text-slate-800">Mutfak Taban Alanı (m²)</label>
                   <div class="flex items-center gap-1.5">
-                    <input id="m_alan_input" type="number" min="6" max="50" value="14" class="w-16 px-2.5 py-1 text-right font-mono font-black text-sm bg-slate-950 border border-slate-300 rounded-lg text-white">
+                    <input id="m_alan_input" type="number" min="6" max="50" value="14" class="w-16 px-2.5 py-1 text-right font-mono font-black text-sm bg-white border border-slate-300 rounded-lg text-slate-800">
                     <span class="text-xs text-[#64748B] font-bold">m²</span>
                   </div>
                 </div>
@@ -561,17 +561,17 @@
                 
                 <!-- Hızlı Seçim Butonları -->
                 <div class="flex flex-wrap gap-2 pt-1">
-                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="8">8 m² (Küçük)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="8">8 m² (Küçük)</button>
                   <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]" data-val="14">14 m² (Standart)</button>
-                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="22">22 m² (Geniş Ada)</button>
-                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="32">32 m² (Lüks Villa)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="22">22 m² (Geniş Ada)</button>
+                  <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="32">32 m² (Lüks Villa)</button>
                 </div>
                 <p class="text-[11px] text-slate-500">Tahmini Dolap Metrajı: <span id="m_calc_mtul" class="font-bold text-[#1557d5]">5.3 Metretül (mtül)</span></p>
               </div>
 
               <!-- Mutfak Tipi -->
               <div class="space-y-2">
-                <label class="text-xs font-black text-white font-semibold uppercase tracking-wider block">Mutfak Yerleşim Tipi</label>
+                <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Mutfak Yerleşim Tipi</label>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
                   <button type="button" class="m-tip-btn p-3 rounded-xl border border-slate-300 hover:border-slate-500 text-center font-bold" data-val="duz">Düz Tek Hat</button>
                   <button type="button" class="m-tip-btn p-3 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-[#1557d5] font-black text-center font-black" data-val="l">L Mutfak</button>
@@ -582,7 +582,7 @@
 
               <!-- Bina Yaşı / Tesisat Durumu -->
               <div class="space-y-2">
-                <label class="text-xs font-black text-white font-semibold uppercase tracking-wider block">Bina Yaşı &amp; Altyapı Durumu</label>
+                <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Bina Yaşı &amp; Altyapı Durumu</label>
                 <div class="grid grid-cols-3 gap-2.5 text-xs">
                   <button type="button" class="m-bina-btn p-3 rounded-xl border border-slate-300 text-center font-bold" data-val="yeni">0-5 Yıl (Yeni)</button>
                   <button type="button" class="m-bina-btn p-3 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-[#1557d5] font-black text-center font-black" data-val="orta">5-20 Yıl (Orta)</button>
@@ -592,7 +592,7 @@
 
               <!-- İLERİ BUTONU -->
               <div class="pt-2 flex justify-end">
-                <button type="button" class="btn-next-m guide-pulse-btn px-6 py-3 rounded-xl bg-red-600 hover:bg-orange-500 text-[#1c282f] font-black shadow-lg shadow-red-600/30 text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="2">
+                <button type="button" class="btn-next-m guide-pulse-btn px-6 py-3 rounded-xl bg-red-600 hover:bg-orange-500 text-white font-black shadow-lg shadow-red-600/30 text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="2">
                   <span>2. Adıma Geç: Dolap &amp; Tezgah Seçimi</span>
                   <span class="guide-arrow font-bold text-base">→</span>
                 </button>
@@ -603,7 +603,7 @@
             <div id="m_step_2" class="m-step-content hidden space-y-6">
               <!-- Dolap Kapağı -->
               <div class="space-y-2">
-                <label class="text-xs font-black text-white font-semibold uppercase tracking-wider block">Dolap Kapak Modeli</label>
+                <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Dolap Kapak Modeli</label>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <button type="button" class="m-dolap-btn p-4 rounded-xl border border-slate-300 text-left font-bold" data-val="mdf">
                     <span class="block text-xs text-slate-600">Ekonomik</span>
@@ -625,22 +625,22 @@
 
               <!-- Tezgah Seçimi -->
               <div class="space-y-2">
-                <label class="text-xs font-black text-white font-semibold uppercase tracking-wider block">Tezgah Malzemesi</label>
+                <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Tezgah Malzemesi</label>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
                   <button type="button" class="m-tezgah-btn p-3 rounded-xl border border-slate-300 text-left font-bold" data-val="laminat">
-                    <span class="block font-black text-white">Laminat</span>
+                    <span class="block font-black text-slate-800">Laminat</span>
                     <span class="block text-[10px] text-slate-600 mt-0.5">Ekonomik</span>
                   </button>
                   <button type="button" class="m-tezgah-btn p-3 rounded-xl border border-slate-300 text-left font-bold" data-val="granit">
-                    <span class="block font-black text-white">Doğal Granit</span>
+                    <span class="block font-black text-slate-800">Doğal Granit</span>
                     <span class="block text-[10px] text-slate-600 mt-0.5">Doğal Taş</span>
                   </button>
                   <button type="button" class="m-tezgah-btn p-3 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-left font-bold" data-val="kuvars">
                     <span class="block font-black text-[#1557d5]">Kuvars (Çimstone)</span>
-                    <span class="block text-[10px] text-white font-semibold mt-0.5">Leke Tutmaz</span>
+                    <span class="block text-[10px] text-slate-600 font-semibold mt-0.5">Leke Tutmaz</span>
                   </button>
                   <button type="button" class="m-tezgah-btn p-3 rounded-xl border border-slate-300 text-left font-bold" data-val="porselen">
-                    <span class="block font-black text-white">Porselen (Neolith)</span>
+                    <span class="block font-black text-slate-800">Porselen (Neolith)</span>
                     <span class="block text-[10px] text-slate-600 mt-0.5">Sıfır Çizilme</span>
                   </button>
                 </div>
@@ -648,10 +648,10 @@
 
               <!-- STEP NAV BUTONLARI -->
               <div class="pt-2 flex items-center justify-between">
-                <button type="button" class="btn-prev-m px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-white font-semibold font-bold text-xs" data-prev="1">
+                <button type="button" class="btn-prev-m px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 font-semibold font-bold text-xs" data-prev="1">
                   ← 1. Adıma Dön
                 </button>
-                <button type="button" class="btn-next-m guide-pulse-btn px-6 py-3 rounded-xl bg-red-600 hover:bg-orange-500 text-[#1c282f] font-black shadow-lg shadow-red-600/30 text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="3">
+                <button type="button" class="btn-next-m guide-pulse-btn px-6 py-3 rounded-xl bg-red-600 hover:bg-orange-500 text-white font-black shadow-lg shadow-red-600/30 text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="3">
                   <span>3. Adıma Geç: Tesisat &amp; İşçilik</span>
                   <span class="guide-arrow font-bold text-base">→</span>
                 </button>
@@ -660,7 +660,7 @@
 
             <!-- MUTFAK ADIM 3 -->
             <div id="m_step_3" class="m-step-content hidden space-y-4">
-              <label class="text-xs font-black text-white font-semibold uppercase tracking-wider block">İmalat &amp; Tesisat Kalemleri</label>
+              <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">İmalat &amp; Tesisat Kalemleri</label>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                 <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
                   <input type="checkbox" id="m_chk_yikim" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
@@ -713,7 +713,7 @@
 
               <!-- GERİ DÖN BUTONU -->
               <div class="pt-2 flex justify-start">
-                <button type="button" class="btn-prev-m px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-white font-semibold font-bold text-xs" data-prev="2">
+                <button type="button" class="btn-prev-m px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 font-semibold font-bold text-xs" data-prev="2">
                   ← 2. Adıma Dön
                 </button>
               </div>
@@ -745,7 +745,7 @@
 
           <!-- CANLI FİYAT GÖSTERGESİ -->
           <div class="p-4 rounded-xl bg-[#23323A] border border-[#2D3E48] space-y-1">
-            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-600">TAHMİNİ ANAHTAR TESLİM MUTFAK MALİYETİ</span>
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-300">TAHMİNİ ANAHTAR TESLİM MUTFAK MALİYETİ</span>
             <div class="flex items-baseline justify-between gap-2">
               <span id="m_min_display" class="text-xl sm:text-2xl font-black text-white font-mono">₺ 0</span>
               <span class="text-xs text-slate-500 font-bold">ile</span>
@@ -795,8 +795,8 @@
 
           <div class="grid grid-cols-3 border-b border-slate-200 text-xs font-bold bg-[#FAF6F6]">
             <button type="button" class="b-step-tab py-3 text-center border-b-2 border-[#1557d5] text-[#1c282f] font-black" data-step="1">1. Banyo Alanı</button>
-            <button type="button" class="b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-white font-semibold" data-step="2">2. Seramik &amp; Klozet</button>
-            <button type="button" class="b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-white font-semibold" data-step="3">3. Donatı &amp; İzolasyon</button>
+            <button type="button" class="b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-semibold" data-step="2">2. Seramik &amp; Klozet</button>
+            <button type="button" class="b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-semibold" data-step="3">3. Donatı &amp; İzolasyon</button>
           </div>
 
           <div class="p-6 sm:p-7 space-y-6">
@@ -805,24 +805,24 @@
             <div id="b_step_1" class="b-step-content space-y-6">
               <div class="space-y-3">
                 <div class="flex items-center justify-between">
-                  <label class="text-xs sm:text-sm font-black text-white">Banyo Alanı (m²)</label>
+                  <label class="text-xs sm:text-sm font-black text-slate-800">Banyo Alanı (m²)</label>
                   <div class="flex items-center gap-1.5">
-                    <input id="b_alan_input" type="number" min="3" max="25" value="6" class="w-16 px-2.5 py-1 text-right font-mono font-black text-sm bg-slate-950 border border-slate-300 rounded-lg text-white">
+                    <input id="b_alan_input" type="number" min="3" max="25" value="6" class="w-16 px-2.5 py-1 text-right font-mono font-black text-sm bg-white border border-slate-300 rounded-lg text-slate-800">
                     <span class="text-xs text-[#64748B] font-bold">m²</span>
                   </div>
                 </div>
                 <input id="b_alan_slider" type="range" min="3" max="25" value="6" class="w-full h-2 bg-slate-100 rounded-lg cursor-pointer">
                 
                 <div class="flex flex-wrap gap-2 pt-1">
-                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="4">4 m² (Küçük)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="4">4 m² (Küçük)</button>
                   <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]" data-val="6">6 m² (Standart)</button>
-                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="9">9 m² (Ebeveyn)</button>
-                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="14">14 m² (Lüks Spa)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="9">9 m² (Ebeveyn)</button>
+                  <button type="button" class="btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="14">14 m² (Lüks Spa)</button>
                 </div>
               </div>
 
               <div class="space-y-2">
-                <label class="text-xs font-black text-white font-semibold uppercase tracking-wider block">Bina Yaşı &amp; Tesisat Durumu</label>
+                <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Bina Yaşı &amp; Tesisat Durumu</label>
                 <div class="grid grid-cols-3 gap-2.5 text-xs">
                   <button type="button" class="b-bina-btn p-3 rounded-xl border border-slate-300 text-center font-bold" data-val="yeni">0-5 Yıl (Yeni)</button>
                   <button type="button" class="b-bina-btn p-3 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-[#1557d5] font-black text-center font-black" data-val="orta">5-20 Yıl (Orta)</button>
@@ -831,7 +831,7 @@
               </div>
 
               <div class="pt-2 flex justify-end">
-                <button type="button" class="btn-next-b guide-pulse-btn px-6 py-3 rounded-xl bg-red-600 hover:bg-orange-500 text-[#1c282f] font-black shadow-lg shadow-red-600/30 text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="2">
+                <button type="button" class="btn-next-b guide-pulse-btn px-6 py-3 rounded-xl bg-red-600 hover:bg-orange-500 text-white font-black shadow-lg shadow-red-600/30 text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="2">
                   <span>2. Adıma Geç: Seramik &amp; Klozet</span>
                   <span class="guide-arrow font-bold text-base">→</span>
                 </button>
@@ -841,7 +841,7 @@
             <!-- BANYO ADIM 2 -->
             <div id="b_step_2" class="b-step-content hidden space-y-6">
               <div class="space-y-2">
-                <label class="text-xs font-black text-white font-semibold uppercase tracking-wider block">Fayans / Seramik Kalitesi</label>
+                <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Fayans / Seramik Kalitesi</label>
                 <div class="grid grid-cols-2 gap-3 text-xs">
                   <button type="button" class="b-seramik-btn p-4 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-left font-bold" data-val="standart">
                     <span class="inline-block text-xs font-black px-2 py-0.5 rounded bg-blue-100 text-[#1557d5]">Standart</span>
@@ -857,7 +857,7 @@
               </div>
 
               <div class="space-y-2">
-                <label class="text-xs font-black text-white font-semibold uppercase tracking-wider block">Klozet &amp; Rezervuar Tipi</label>
+                <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Klozet &amp; Rezervuar Tipi</label>
                 <div class="grid grid-cols-2 gap-3 text-xs">
                   <button type="button" class="b-klozet-btn p-4 rounded-xl border border-slate-300 text-left font-bold" data-val="standart">
                     <span class="block text-slate-600 font-bold">Standart</span>
@@ -873,10 +873,10 @@
               </div>
 
               <div class="pt-2 flex items-center justify-between">
-                <button type="button" class="btn-prev-b px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-white font-semibold font-bold text-xs" data-prev="1">
+                <button type="button" class="btn-prev-b px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 font-semibold font-bold text-xs" data-prev="1">
                   ← 1. Adıma Dön
                 </button>
-                <button type="button" class="btn-next-b guide-pulse-btn px-6 py-3 rounded-xl bg-red-600 hover:bg-orange-500 text-[#1c282f] font-black shadow-lg shadow-red-600/30 text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="3">
+                <button type="button" class="btn-next-b guide-pulse-btn px-6 py-3 rounded-xl bg-red-600 hover:bg-orange-500 text-white font-black shadow-lg shadow-red-600/30 text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/25 transition-all" data-next="3">
                   <span>3. Adıma Geç: Donatı &amp; İzolasyon</span>
                   <span class="guide-arrow font-bold text-base">→</span>
                 </button>
@@ -885,7 +885,7 @@
 
             <!-- BANYO ADIM 3 -->
             <div id="b_step_3" class="b-step-content hidden space-y-4">
-              <label class="text-xs font-black text-white font-semibold uppercase tracking-wider block">İmalat &amp; Donatı Kalemleri</label>
+              <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">İmalat &amp; Donatı Kalemleri</label>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                 <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
                   <input type="checkbox" id="b_chk_yikim" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
@@ -937,7 +937,7 @@
               </div>
 
               <div class="pt-2 flex justify-start">
-                <button type="button" class="btn-prev-b px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-white font-semibold font-bold text-xs" data-prev="2">
+                <button type="button" class="btn-prev-b px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 font-semibold font-bold text-xs" data-prev="2">
                   ← 2. Adıma Dön
                 </button>
               </div>
@@ -1004,33 +1004,33 @@
           
           <div>
             <span class="text-xs font-black text-[#1557d5] uppercase tracking-wider block">Anahtar Teslim Komple Daire Planlayıcı</span>
-            <h2 class="text-lg sm:text-xl font-black text-white mt-0.5">Daire Metrekaresi &amp; Kalite Segmenti</h2>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900 mt-0.5">Daire Metrekaresi &amp; Kalite Segmenti</h2>
             <p class="text-xs text-slate-600 mt-1">Dairenizin net süpürülebilir kullanım alanını girin ve dahil edilecek imalatları belirleyin.</p>
           </div>
 
           <!-- Daire Alanı Slider -->
           <div class="space-y-3 bg-[#FAF6F6] p-4 rounded-2xl border border-[#E2E8F0]">
             <div class="flex items-center justify-between">
-              <label class="text-xs sm:text-sm font-black text-white">Net Daire Alanı (m²)</label>
+              <label class="text-xs sm:text-sm font-black text-slate-800">Net Daire Alanı (m²)</label>
               <div class="flex items-center gap-1.5">
-                <input id="k_alan_input" type="number" min="40" max="350" value="110" class="w-20 px-2.5 py-1 text-right font-mono font-black text-sm bg-slate-950 border border-slate-300 rounded-lg text-white">
+                <input id="k_alan_input" type="number" min="40" max="350" value="110" class="w-20 px-2.5 py-1 text-right font-mono font-black text-sm bg-white border border-slate-300 rounded-lg text-slate-800">
                 <span class="text-xs text-[#64748B] font-bold">m²</span>
               </div>
             </div>
             <input id="k_alan_slider" type="range" min="40" max="350" value="110" class="w-full h-2 bg-slate-100 rounded-lg cursor-pointer">
             
             <div class="flex flex-wrap gap-2 pt-1">
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="65">65 m² (1+1)</button>
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="90">90 m² (2+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="65">65 m² (1+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="90">90 m² (2+1)</button>
               <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]" data-val="110">110 m² (3+1)</button>
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="140">140 m² (4+1)</button>
-              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="180">180 m² (Dubleks)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="140">140 m² (4+1)</button>
+              <button type="button" class="btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="180">180 m² (Dubleks)</button>
             </div>
           </div>
 
           <!-- 3 Kalite Segmenti -->
           <div class="space-y-2.5">
-            <label class="text-xs font-black text-white font-semibold uppercase tracking-wider block">Malzeme &amp; Kalite Segmenti</label>
+            <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Malzeme &amp; Kalite Segmenti</label>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <button type="button" class="k-kalite-btn p-4 rounded-2xl border border-slate-300 text-left font-bold" data-val="ekonomik">
                 <span class="block text-xs text-[#64748B] font-bold">1.0x Çarpan</span>
@@ -1052,7 +1052,7 @@
 
           <!-- Kapsam Seçim Kutuları -->
           <div class="space-y-3">
-            <label class="text-xs font-black text-white font-semibold uppercase tracking-wider block">Dahil Edilecek Tadilat Kalemleri</label>
+            <label class="text-xs font-black text-slate-700 font-semibold uppercase tracking-wider block">Dahil Edilecek Tadilat Kalemleri</label>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <label class="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#E2E8F0] hover:border-[#1557d5] cursor-pointer shadow-xs transition-colors">
                 <input type="checkbox" id="k_chk_mutfak" checked class="w-4 h-4 rounded text-[#1557d5] bg-white border-[#23323A] accent-[#1557d5]">
@@ -1172,22 +1172,22 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
       <div class="p-4 rounded-2xl bg-white border border-[#E2E8F0] text-center space-y-1 shadow-sm">
         <span class="text-xl block">🛡️</span>
-        <span class="text-xs font-black text-white block">5 Yıl İşçilik Garantisi</span>
+        <span class="text-xs font-black text-slate-900 block">5 Yıl İşçilik Garantisi</span>
         <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Sözleşmeli resmi teminat</span>
       </div>
       <div class="p-4 rounded-2xl bg-white border border-[#E2E8F0] text-center space-y-1 shadow-sm">
         <span class="text-xl block">📜</span>
-        <span class="text-xs font-black text-white block">Sabit Fiyat Sözleşmesi</span>
+        <span class="text-xs font-black text-slate-900 block">Sabit Fiyat Sözleşmesi</span>
         <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Süreçte ek maliyet çıkmaz</span>
       </div>
       <div class="p-4 rounded-2xl bg-white border border-[#E2E8F0] text-center space-y-1 shadow-sm">
         <span class="text-xl block">⏱️</span>
-        <span class="text-xs font-black text-white block">Gecikme Cezai Şartı</span>
+        <span class="text-xs font-black text-slate-900 block">Gecikme Cezai Şartı</span>
         <span class="text-[12px] text-[#475569] font-medium block mt-0.5">Taahhüt edilen günde teslim</span>
       </div>
       <div class="p-4 rounded-2xl bg-white border border-[#E2E8F0] text-center space-y-1 shadow-sm">
         <span class="text-xl block">📐</span>
-        <span class="text-xs font-black text-white block">3D Mimari Projelendirme</span>
+        <span class="text-xs font-black text-slate-900 block">3D Mimari Projelendirme</span>
         <span class="text-[12px] text-[#475569] font-medium block mt-0.5">İmalat öncesi fotorealistik plan</span>
       </div>
     </div>
@@ -1399,7 +1399,7 @@
           if (s === stepNum) {
             tab.className = "m-step-tab py-3 text-center border-b-2 border-[#1557d5] text-[#1c282f] font-black";
           } else {
-            tab.className = "m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-white font-semibold";
+            tab.className = "m-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-semibold";
           }
         });
 
@@ -1447,7 +1447,7 @@
           mSlider.value = val;
           mState.alan = val;
           document.querySelectorAll(".btn-quick-m-m2").forEach(b => {
-            b.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]";
+            b.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]";
           });
           btn.className = "btn-quick-m-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]";
           calcMutfak();
@@ -1617,7 +1617,7 @@
           if (s === stepNum) {
             tab.className = "b-step-tab py-3 text-center border-b-2 border-[#1557d5] text-[#1c282f] font-black";
           } else {
-            tab.className = "b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-white font-semibold";
+            tab.className = "b-step-tab py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-semibold";
           }
         });
 
@@ -1665,7 +1665,7 @@
           bSlider.value = val;
           bState.alan = val;
           document.querySelectorAll(".btn-quick-b-m2").forEach(b => {
-            b.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]";
+            b.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]";
           });
           btn.className = "btn-quick-b-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]";
           calcBanyo();
@@ -1858,7 +1858,7 @@
           kSlider.value = val;
           kState.alan = val;
           document.querySelectorAll(".btn-quick-k-m2").forEach(b => {
-            b.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-white font-semibold hover:border-[#1557d5] hover:text-[#1557d5]";
+            b.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]";
           });
           btn.className = "btn-quick-k-m2 px-3 py-1.5 rounded-lg border-2 border-[#1557d5] bg-blue-50 text-xs font-black text-[#1557d5]";
           calcKomple();
