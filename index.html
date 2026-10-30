@@ -75,7 +75,7 @@
       --pale-orange:#fff1f2;
       --r:16px;
       --radius-lg:24px;
-      --shadow:0 16px 45px rgba(23,45,75,.08);
+      --shadow:0 16px 45px rgba(0,0,0,0.08);
     }
     /* ExcelArşiv Spectrum Dots Signature */
     .spectrum-dots{display:inline-flex;align-items:center;gap:3px;vertical-align:middle;margin-right:6px}
@@ -124,7 +124,7 @@
       color:#ffffff;
       font-size:13px;
       font-weight:700;
-      letter-spacing:.08em;
+      letter-spacing:.04em;
       text-align:center;
       padding:8px 16px;
     }
@@ -137,7 +137,7 @@
       z-index:50;
       background:#174fbc;
       color:#ffffff;
-      box-shadow:0 4px 24px rgba(19,43,79,.18);
+      box-shadow:0 4px 24px rgba(0,0,0,0.15);
       border-bottom:none;
     }
     .nav{
@@ -260,7 +260,7 @@
       gap:8px;
       font-size:12px;
       font-weight:800;
-      letter-spacing:.08em;
+      letter-spacing:.04em;
       color:var(--blue);
       text-transform:uppercase;
     }
@@ -328,7 +328,7 @@
     .btn-primary{
       background:var(--orange);
       color:white;
-      box-shadow:0 6px 18px rgba(231,51,69,.25);border-radius:8px;font-weight:800;
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);border-radius:8px;font-weight:800;
     }
     .btn-primary:hover{background:var(--orange-dark)}
     .btn-outline{
@@ -342,10 +342,10 @@
     .btn-whatsapp{
       background:var(--green);border-radius:8px;font-weight:800;
       color:#ffffff;
-      box-shadow:0 6px 18px rgba(37,211,102,.25);
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
     }
     .btn-whatsapp:hover{
-      background:#20ba59;
+      background:#0d6e32;
       color:#ffffff;
     }
     .btn-whatsapp svg{width:20px;height:20px;fill:currentColor}
@@ -469,7 +469,7 @@
       background:var(--pale-orange);
       border-color:#f89a7a;
       color:#9c3419;
-      box-shadow:0 2px 8px rgba(234, 88, 12,.15);
+      box-shadow:0 2px 8px rgba(0,0,0,0.10);
     }
     .hero-panel .fields{
       display:grid;
@@ -533,7 +533,7 @@
     }
 
     /* Güven Satırı (Trustline) */
-    .trustline{
+    .trustline{padding:16px 20px;
       border-block:1px solid var(--line);
       background:#f5f3ec;
     }
@@ -856,7 +856,7 @@
       border-color:#f59b7e;
       background:#fff1e8;
       color:#a6381b;
-      box-shadow:0 2px 8px rgba(234, 88, 12,.15);
+      box-shadow:0 2px 8px rgba(0,0,0,0.10);
     }
     .wizard-bottom{
       border-top:1px solid #e7e8df;
@@ -1183,7 +1183,7 @@
     .workflow-item{padding:4px 12px 8px 0}
     .step-no{
       font:800 58px/1 Manrope,sans-serif;
-      color:#d8dcd4;
+      color:#64748b;
       letter-spacing:-.07em;
     }
     .workflow-item h3{
@@ -1358,12 +1358,12 @@
     }
 
     /* Bitiş CTA (End CTA) */
-    .end-cta{
+    .end-cta{padding:56px 24px;
       background:var(--blue);
       color:white;
       padding:56px 0;
     }
-    .end-inner{
+    .end-inner{padding:0 20px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -1378,14 +1378,14 @@
     .end-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
     .end-inner .btn-white{background:white;color:#234199;white-space:nowrap}
     .end-inner .btn-wp{
-      background:#25d366;
+      background:#166534;
       color:white;
       border:1px solid rgba(255,255,255,.2);
       white-space:nowrap;
     }
 
     /* Footer */
-    footer{
+    footer .logoname{color:#0f172a} footer .logoname strong{color:#1557d5} footer .logoname small{color:#334155} footer{
       padding:56px 0 28px;
       background:#efece4;
     }
@@ -1398,7 +1398,7 @@
       font-weight:900;
       margin-bottom:16px;
       font-size:13px;
-      letter-spacing:.08em;
+      letter-spacing:.04em;
       color:var(--ink-dark);
     }
     footer .foot-links{
@@ -1563,12 +1563,12 @@
       display:inline-flex;
       align-items:center;
       gap:9px;
-      background:#25d366;
+      background:#166534;
       color:#ffffff;
       height:50px;
       padding:0 20px 0 16px;
       border-radius:50px;
-      box-shadow:0 8px 24px rgba(37,211,102,.35), 0 2px 6px rgba(0,0,0,.08);
+      box-shadow:0 8px 24px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,.08);
       border:none;
       transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
       text-decoration:none;
@@ -1578,8 +1578,8 @@
     }
     .wp-float:hover{
       transform:translateY(-2px);
-      box-shadow:0 12px 28px rgba(37,211,102,.45);
-      background:#20ba5a;
+      box-shadow:0 12px 28px rgba(0,0,0,0.15);
+      background:#0d6e32;
       color:#ffffff;
     }
     .wp-float svg{
@@ -1645,7 +1645,7 @@
       .panel-submit{flex-direction:column;align-items:stretch}
       .panel-submit .helper{max-width:none}
       .trust-inner{grid-template-columns:1fr}
-      .trust-item{padding:14px 0;gap:14px}
+      .trust-item{padding:14px 16px;gap:14px}
       .trust-item+.trust-item{border-left:0;border-top:1px solid #e1ded3}
       section.block{padding:60px 0}
       .section-header h2{font-size:30px}
@@ -1683,7 +1683,7 @@
         padding:0;
         justify-content:center;
         border-radius:50%;
-        box-shadow:0 8px 20px rgba(37,211,102,.4);
+        box-shadow:0 8px 20px rgba(0,0,0,0.15);
       }
       .wp-float .wp-label{display:none}
       .wp-float svg{width:24px;height:24px}
@@ -1879,7 +1879,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(800px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(245, 158, 11, 0.08), transparent 45%);
+      background: radial-gradient(800px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(0,0,0,0.15), transparent 45%);
       pointer-events: none;
       z-index: 1;
       opacity: 0;
@@ -1896,11 +1896,11 @@
     @keyframes subtlePulseGuide {
       0%, 100% {
         transform: translateY(0) scale(1);
-        box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4), 0 0 0 0 rgba(245, 158, 11, 0.5);
+        box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15), 0 0 0 0 rgba(0,0,0,0.15);
       }
       50% {
         transform: translateY(-2px) scale(1.02);
-        box-shadow: 0 20px 35px -5px rgba(245, 158, 11, 0.65), 0 0 0 8px rgba(245, 158, 11, 0);
+        box-shadow: 0 20px 35px -5px rgba(0,0,0,0.15), 0 0 0 8px rgba(0,0,0,0.15);
       }
     }
     @keyframes arrowWiggle {
@@ -1920,10 +1920,10 @@
     }
     @keyframes subtlePulseGreen {
       0%, 100% {
-        box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4), 0 0 0 0 rgba(16, 185, 129, 0.5);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(22, 163, 74, 0.4);
       }
       50% {
-        box-shadow: 0 20px 35px -5px rgba(16, 185, 129, 0.65), 0 0 0 8px rgba(16, 185, 129, 0);
+        box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(22, 163, 74, 0);
       }
     }
     .guide-pulse-whatsapp {
@@ -1945,7 +1945,7 @@
     }
     .wp-support-pill:hover {
       transform: translateY(-1px);
-      filter: drop-shadow(0 4px 12px rgba(37, 211, 102, 0.25));
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
     }
     .wp-icon-bubble {
       width: 42px;
@@ -1955,7 +1955,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.35);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15), inset 0 2px 4px rgba(255, 255, 255, 0.35);
       position: relative;
       z-index: 2;
       flex-shrink: 0;
@@ -1978,7 +1978,7 @@
       letter-spacing: -0.01em;
     }
     .wp-pill-sub {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 500;
       color: #0f172a;
       line-height: 1.15;
@@ -2154,7 +2154,7 @@
 <body>
   <a href="#main" class="skip">İçeriğe geç</a>
   <div class="announcement">
-    <span class="dot" style="background:#25d366"></span>🟢 EKİM 2027 GÜNCEL SAHA RAYİÇLERİ | Usta Sürprizlerine Kapalı, Kalem Kalem Net Tadilat Hesabı<span class="dot" style="background:#25d366"></span>
+    <span class="dot" style="background:#166534;"></span>🟢 EKİM 2027 GÜNCEL SAHA RAYİÇLERİ | Usta Sürprizlerine Kapalı, Kalem Kalem Net Tadilat Hesabı<span class="dot" style="background:#166534;"></span>
   </div>
 
   <header class="header">
@@ -2206,9 +2206,7 @@
         
         <!-- 1. SOL KOLON: DEĞER ÖNERİSİ & DÖNÜŞÜM BUTONLARI -->
         <div class="tm-hero-left">
-          <div class="tm-hero-badge">
-            <span class="spectrum-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> <span>2027 GERÇEK ŞANTİYE & USTA İŞÇİLİK VERİTABANI</span>
-          </div>
+          
           
           <h1 class="tm-hero-title">
             Ev Tadilatı Fiyatları.<br>
@@ -2221,7 +2219,7 @@
           </p>
           
           <div class="tm-hero-cta-group">
-            <a href="#hesapla" class="btn-primary" style="background:#e73345;box-shadow:0 8px 22px rgba(231,51,69,0.35);border-radius:8px;font-weight:800;color:#fff;">🚀 2027 Canlı Maliyet Motoru ↗</a>
+            <a href="#hesapla" class="btn-primary" style="background:#e73345;box-shadow:0 8px 22px rgba(0,0,0,0.15);border-radius:8px;font-weight:800;color:#fff;">🚀 2027 Canlı Maliyet Motoru ↗</a>
             <a href="https://wa.me/905333333303?text=Merhaba%2C%20ev%20tadilat%C4%B1%20maliyeti%20ve%20fiyatlar%20hakk%C4%B1nda%20dan%C4%B1%C5%9Fmak%20istiyorum." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;flex:none;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8 2.53 1.09 2.53.73 2.99.69.45-.04 1.47-.6 1.68-1.18.21-.59.21-1.09.15-1.19-.06-.1-.23-.17-.48-.29"/></svg>
               <span>WhatsApp Ön Fiyat</span>
@@ -2256,7 +2254,7 @@
               <div class="tm-ledger-header">
                 <div>
                   <span class="tm-ledger-eyebrow"><span class="spectrum-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> ÖRNEK ŞANTİYE MALİYET RÖNTGENİ</span>
-                  <h3 class="tm-ledger-title">Kalem Kalem Şeffaf Hesap</h3>
+                  <h2 class="tm-ledger-title">Kalem Kalem Şeffaf Hesap</h2>
                 </div>
                 <div class="tm-live-pill">
                   <span class="tm-pulse-dot"></span> Ekim 2027 Rayici
@@ -2364,9 +2362,9 @@
     .tm-unified-hero {
       position: relative;
       padding: 4.5rem 1.5rem 5.5rem;
-      background: radial-gradient(circle at 12% 16%, rgba(234, 88, 12, 0.035) 0%, transparent 40%),
+      background: radial-gradient(circle at 12% 16%, rgba(0,0,0,0.10) 0%, transparent 40%),
                   radial-gradient(circle at 88% 12%, rgba(37, 99, 235, 0.04) 0%, transparent 45%),
-                  radial-gradient(circle at 80% 85%, rgba(245, 158, 11, 0.045) 0%, transparent 40%),
+                  radial-gradient(circle at 80% 85%, rgba(0,0,0,0.15) 0%, transparent 40%),
                   #fbfbfa;
       border-bottom: 1px solid #e7e5e4;
       overflow: hidden;
@@ -2440,7 +2438,7 @@
       border-radius: 4px;
       z-index: -1;
       opacity: 0.95;
-      box-shadow: 0 2px 8px rgba(250, 204, 21, 0.45);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     }
 
     .tm-hero-lead {
@@ -2480,7 +2478,7 @@
     .tm-hero-cta-group .btn-primary {
       background: var(--red, #e73345);
       color: #fff;
-      box-shadow: 0 6px 18px rgba(231, 51, 69, 0.25);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
     .tm-hero-cta-group .btn-primary:hover {
       background: #c2410c;
@@ -2489,12 +2487,12 @@
     }
 
     .tm-hero-cta-group .btn-whatsapp {
-      background: #25d366;
+      background:#166534;
       color: #fff;
-      box-shadow: 0 4px 14px rgba(37,211,102,.22);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
     }
     .tm-hero-cta-group .btn-whatsapp:hover {
-      background: #20ba5a;
+      background:#0d6e32;
       transform: translateY(-2px);
       color: #fff;
     }
@@ -2517,7 +2515,7 @@
       padding-top: 1.5rem;
       border-top: 1px solid #e2e8f0;
       font-size: 13px;
-      color: #64748b;
+      color: #334155;
     }
 
     .tm-steps-numbers {
@@ -2527,7 +2525,7 @@
 
     .tm-steps-numbers span {
       font-weight: 800;
-      font-size: 11px;
+      font-size: 12px;
       padding: 2px 7px;
       border-radius: 6px;
       display: inline-flex;
@@ -2565,7 +2563,7 @@
       transform: rotate(-14deg);
       z-index: 1;
       pointer-events: none;
-      box-shadow: 0 6px 16px -2px rgba(21, 87, 213, 0.42);
+      box-shadow: 0 6px 16px -2px rgba(0,0,0,0.15);
     }
 
     .tm-shape-yellow {
@@ -2579,7 +2577,7 @@
       transform: rotate(12deg);
       z-index: 1;
       pointer-events: none;
-      box-shadow: 0 10px 24px -4px rgba(255, 207, 36, 0.45);
+      box-shadow: 0 10px 24px -4px rgba(0,0,0,0.10);
     }
 
     .tm-architectural-grid {
@@ -2615,9 +2613,9 @@
 
     .tm-ledger-eyebrow {
       display: block;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.04em;
       color: var(--blue);
       margin-bottom: 4px;
     }
@@ -2637,7 +2635,7 @@
       background: #f0fdf4;
       border: 1px solid #bbf7d0;
       color: #15803d;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 700;
       padding: 5px 10px;
       border-radius: 999px;
@@ -2647,7 +2645,7 @@
     .tm-pulse-dot {
       width: 7px;
       height: 7px;
-      background: #16a34a;
+      background: #15803d;
       border-radius: 50%;
       box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
     }
@@ -2680,9 +2678,9 @@
     }
 
     .tm-tab small {
-      font-size: 10.5px;
+      font-size: 12px;
       font-weight: 500;
-      color: #64748b;
+      color: #334155;
     }
 
     .tm-tab:hover {
@@ -2740,7 +2738,7 @@
     .dot-kirim { background: #ffcf24; }
     .dot-altyapi { background: #0284c7; }
     .dot-malzeme { background: #4f46e5; }
-    .dot-iscilik { background: #16a34a; }
+    .dot-iscilik { background: #15803d; }
 
     .tm-row-info strong {
       display: block;
@@ -2752,8 +2750,8 @@
 
     .tm-row-info small {
       display: block;
-      font-size: 11.5px;
-      color: #64748b;
+      font-size: 12px;
+      color: #334155;
     }
 
     .tm-row-price {
@@ -2782,7 +2780,7 @@
 
     .tm-total-label {
       display: block;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.05em;
       color: #475569;
@@ -2790,8 +2788,8 @@
 
     .tm-total-note {
       display: block;
-      font-size: 11.5px;
-      color: #16a34a;
+      font-size: 12px;
+      color: #15803d;
       font-weight: 600;
       margin-top: 2px;
     }
@@ -2830,7 +2828,7 @@
       margin-top: 12px;
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-left: 4px solid #16a34a;
+      border: 1px solid #cbd5e1;
       border-radius: 10px;
       padding: 12px 16px;
       display: flex;
@@ -2861,8 +2859,8 @@
 
     .tm-floating-trust span {
       display: block;
-      font-size: 11.5px;
-      color: #64748b;
+      font-size: 12px;
+      color: #334155;
     }
 
     /* Mobil Uyumlu Grid */
@@ -3189,7 +3187,7 @@
                   <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="22">22 m² (Geniş Ada)</button>
                   <button type="button" class="btn-quick-m-m2 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 font-semibold hover:border-[#1557d5] hover:text-[#1557d5]" data-val="32">32 m² (Lüks Villa)</button>
                 </div>
-                <p class="text-[11px] text-slate-500">Tahmini Dolap Metrajı: <span id="m_calc_mtul" class="font-bold text-[#1557d5]">5.3 Metretül (mtül)</span></p>
+                <p class="text-[12px] text-slate-500">Tahmini Dolap Metrajı: <span id="m_calc_mtul" class="font-bold text-[#1557d5]">5.3 Metretül (mtül)</span></p>
               </div>
 
               <!-- Mutfak Tipi -->
@@ -3231,7 +3229,7 @@
                   <button type="button" class="m-dolap-btn p-4 rounded-xl border border-slate-300 text-left font-bold" data-val="mdf">
                     <span class="block text-xs text-slate-600">Ekonomik</span>
                     <span class="block text-sm font-black text-[#1C282F] mt-0.5">MDF Lam Kapak</span>
-                    <span class="block text-[11px] text-slate-500 mt-1">Dayanıklı standart yüzey</span>
+                    <span class="block text-[12px] text-slate-500 mt-1">Dayanıklı standart yüzey</span>
                   </button>
                   <button type="button" class="m-dolap-btn p-4 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-left font-bold" data-val="akrilik">
                     <span class="inline-block text-xs font-black px-2 py-0.5 rounded bg-[#ffcf24] text-[#0f172a]">Popüler Referans</span>
@@ -3252,19 +3250,19 @@
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
                   <button type="button" class="m-tezgah-btn p-3 rounded-xl border border-slate-300 text-left font-bold" data-val="laminat">
                     <span class="block font-black text-slate-800">Laminat</span>
-                    <span class="block text-[10px] text-slate-600 mt-0.5">Ekonomik</span>
+                    <span class="block text-[12px] text-slate-600 mt-0.5">Ekonomik</span>
                   </button>
                   <button type="button" class="m-tezgah-btn p-3 rounded-xl border border-slate-300 text-left font-bold" data-val="granit">
                     <span class="block font-black text-slate-800">Doğal Granit</span>
-                    <span class="block text-[10px] text-slate-600 mt-0.5">Doğal Taş</span>
+                    <span class="block text-[12px] text-slate-600 mt-0.5">Doğal Taş</span>
                   </button>
                   <button type="button" class="m-tezgah-btn p-3 rounded-xl border-2 border-[#1557d5] bg-blue-50/60 text-left font-bold" data-val="kuvars">
                     <span class="block font-black text-[#1557d5]">Kuvars (Çimstone)</span>
-                    <span class="block text-[10px] text-slate-700 font-semibold mt-0.5">Leke Tutmaz</span>
+                    <span class="block text-[12px] text-slate-700 font-semibold mt-0.5">Leke Tutmaz</span>
                   </button>
                   <button type="button" class="m-tezgah-btn p-3 rounded-xl border border-slate-300 text-left font-bold" data-val="porselen">
                     <span class="block font-black text-slate-800">Porselen (Neolith)</span>
-                    <span class="block text-[10px] text-slate-600 mt-0.5">Sıfır Çizilme</span>
+                    <span class="block text-[12px] text-slate-600 mt-0.5">Sıfır Çizilme</span>
                   </button>
                 </div>
               </div>
@@ -3346,17 +3344,17 @@
         </div>
 
         <!-- SAĞ KOKPİT (5 SÜTUN): CANLI FİYAT, GERÇEK FOTOĞRAF & WHATSAPP -->
-        <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl border border-slate-200 p-6 shadow-2xl space-y-5 sticky top-24 spotlight-card">
+        <div class="lg:col-span-5 space-y-4 sticky top-24">
           
           <!-- GERÇEK MUTFAK ÖNCESİ / SONRASI SLIDER -->
           <div class="relative w-full h-56 rounded-2xl overflow-hidden border border-slate-200 shadow-inner group">
             <img id="m_after_img" src="images/kitchen-after.jpg" alt="2027 Mutfak Dönüşümü" class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute top-2.5 right-2.5 bg-[#25D366] hover:bg-[#20ba59]/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow">
+            <div class="absolute top-2.5 right-2.5 bg-[#166534] hover:bg-[#14532d]/90 backdrop-blur-sm text-white text-[12px] font-black uppercase px-2.5 py-1 rounded-full shadow">
               2027 Proje Sonrası
             </div>
             <div id="m_before_clip" class="absolute inset-0 overflow-hidden pointer-events-none" style="clip-path: inset(0 50% 0 0);">
               <img src="images/kitchen-before.jpg" alt="Eski Mutfak" class="w-full h-full object-cover">
-              <div class="absolute top-2.5 left-2.5 bg-slate-950/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow border border-red-500/50">
+              <div class="absolute top-2.5 left-2.5 bg-slate-950/90 backdrop-blur-sm text-white text-[12px] font-black uppercase px-2.5 py-1 rounded-full shadow border border-red-500/50">
                 Eski Yapı Öncesi
               </div>
             </div>
@@ -3368,23 +3366,23 @@
 
           <!-- CANLI FİYAT GÖSTERGESİ -->
           <div class="p-4 rounded-xl bg-[#23323A] border border-[#2D3E48] space-y-1">
-            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-300">TAHMİNİ ANAHTAR TESLİM MUTFAK MALİYETİ</span>
+            <span class="text-[12px] font-mono font-bold uppercase tracking-widest text-slate-300">TAHMİNİ ANAHTAR TESLİM MUTFAK MALİYETİ</span>
             <div class="flex items-baseline justify-between gap-2">
               <span id="m_min_display" class="text-xl sm:text-2xl font-black text-white font-mono">₺ 0</span>
               <span class="text-xs text-slate-500 font-bold">ile</span>
               <span id="m_max_display" class="text-xl sm:text-2xl font-black text-[#e73345] font-mono">₺ 0</span>
             </div>
-            <p class="text-[11px] text-[#9AA7AF]">KDV, 1. sınıf malzeme, montaj ve usta işçiliği dahildir.</p>
+            <p class="text-[12px] text-[#9AA7AF]">KDV, 1. sınıf malzeme, montaj ve usta işçiliği dahildir.</p>
           </div>
 
           <!-- KALEM DAĞILIMI -->
           <div class="space-y-2">
-            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-[#9AA7AF]">MALİYET KALEMLERİ KIRILIMI</span>
+            <span class="text-[12px] font-mono font-bold uppercase tracking-widest text-[#9AA7AF]">MALİYET KALEMLERİ KIRILIMI</span>
             <div id="m_breakdown_list" class="space-y-1.5 max-h-48 overflow-y-auto pr-1"></div>
           </div>
 
           <!-- WHATSAPP CTA -->
-          <a id="m_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] guide-pulse-whatsapp hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
+          <a id="m_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-[#166534] hover:bg-[#14532d] guide-pulse-whatsapp hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-black/25 transition-all hover:scale-[1.01]">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
             <span>Mutfak Teklifini WhatsApp'tan Al</span>
           </a>
@@ -3570,17 +3568,17 @@
         </div>
 
         <!-- SAĞ KOKPİT (5 SÜTUN): CANLI BANYO FİYATI & GERÇEK FOTOĞRAF -->
-        <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl border border-slate-200 p-6 shadow-2xl space-y-5 sticky top-24 spotlight-card">
+        <div class="lg:col-span-5 space-y-4 sticky top-24">
           
           <!-- GERÇEK BANYO ÖNCESİ / SONRASI SLIDER -->
           <div class="relative w-full h-56 rounded-2xl overflow-hidden border border-slate-200 shadow-inner group">
             <img src="images/bath-after.jpg" alt="2027 Banyo Dönüşümü" class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute top-2.5 right-2.5 bg-[#25D366] hover:bg-[#20ba59]/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow">
+            <div class="absolute top-2.5 right-2.5 bg-[#166534] hover:bg-[#14532d]/90 backdrop-blur-sm text-white text-[12px] font-black uppercase px-2.5 py-1 rounded-full shadow">
               2027 Proje Sonrası
             </div>
             <div id="b_before_clip" class="absolute inset-0 overflow-hidden pointer-events-none" style="clip-path: inset(0 50% 0 0);">
               <img src="images/bath-before.jpg" alt="Eski Banyo" class="w-full h-full object-cover">
-              <div class="absolute top-2.5 left-2.5 bg-slate-950/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow border border-red-500/50">
+              <div class="absolute top-2.5 left-2.5 bg-slate-950/90 backdrop-blur-sm text-white text-[12px] font-black uppercase px-2.5 py-1 rounded-full shadow border border-red-500/50">
                 Eski Yapı Öncesi
               </div>
             </div>
@@ -3591,21 +3589,21 @@
           </div>
 
           <div class="p-4 rounded-xl bg-[#23323A] border border-[#2D3E48] space-y-1">
-            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-600">TAHMİNİ BANYO YENİLEME MALİYETİ</span>
+            <span class="text-[12px] font-mono font-bold uppercase tracking-widest text-slate-600">TAHMİNİ BANYO YENİLEME MALİYETİ</span>
             <div class="flex items-baseline justify-between gap-2">
               <span id="b_min_display" class="text-xl sm:text-2xl font-black text-white font-mono">₺ 0</span>
               <span class="text-xs text-slate-500 font-bold">ile</span>
               <span id="b_max_display" class="text-xl sm:text-2xl font-black text-[#e73345] font-mono">₺ 0</span>
             </div>
-            <p class="text-[11px] text-[#9AA7AF]">KDV, VitrA/Geberit malzeme, montaj ve usta işçiliği dahildir.</p>
+            <p class="text-[12px] text-[#9AA7AF]">KDV, VitrA/Geberit malzeme, montaj ve usta işçiliği dahildir.</p>
           </div>
 
           <div class="space-y-2">
-            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-[#9AA7AF]">MALİYET KALEMLERİ KIRILIMI</span>
+            <span class="text-[12px] font-mono font-bold uppercase tracking-widest text-[#9AA7AF]">MALİYET KALEMLERİ KIRILIMI</span>
             <div id="b_breakdown_list" class="space-y-1.5 max-h-48 overflow-y-auto pr-1"></div>
           </div>
 
-          <a id="b_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] guide-pulse-whatsapp hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
+          <a id="b_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-[#166534] hover:bg-[#14532d] guide-pulse-whatsapp hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-black/25 transition-all hover:scale-[1.01]">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
             <span>Banyo Teklifini WhatsApp'tan Al</span>
           </a>
@@ -3632,7 +3630,7 @@
           </div>
 
           <!-- Daire Alanı Slider -->
-          <div class="space-y-3 bg-[#FAF6F6] p-4 rounded-2xl border border-[#E2E8F0]">
+          <div class="space-y-3 p-4">
             <div class="flex items-center justify-between">
               <label class="text-xs sm:text-sm font-black text-slate-800">Net Daire Alanı (m²)</label>
               <div class="flex items-center gap-1.5">
@@ -3746,17 +3744,17 @@
         </div>
 
         <!-- SAĞ KOKPİT (5 SÜTUN): KOMPLE DAİRE CANLI FİYAT & FOTOĞRAF -->
-        <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl border border-slate-200 p-6 shadow-2xl space-y-5 sticky top-24 spotlight-card">
+        <div class="lg:col-span-5 space-y-4 sticky top-24">
           
           <!-- GERÇEK KOMPLE DAİRE ÖNCESİ / SONRASI SLIDER -->
           <div class="relative w-full h-56 rounded-2xl overflow-hidden border border-slate-200 shadow-inner group">
             <img src="images/living-after.jpg" alt="2027 Komple Daire Dönüşümü" class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute top-2.5 right-2.5 bg-[#25D366] hover:bg-[#20ba59]/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow">
+            <div class="absolute top-2.5 right-2.5 bg-[#166534] hover:bg-[#14532d]/90 backdrop-blur-sm text-white text-[12px] font-black uppercase px-2.5 py-1 rounded-full shadow">
               2027 Proje Sonrası
             </div>
             <div id="k_before_clip" class="absolute inset-0 overflow-hidden pointer-events-none" style="clip-path: inset(0 50% 0 0);">
               <img src="images/living-before.jpg" alt="Eski Daire" class="w-full h-full object-cover">
-              <div class="absolute top-2.5 left-2.5 bg-slate-950/90 backdrop-blur-sm text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow border border-red-500/50">
+              <div class="absolute top-2.5 left-2.5 bg-slate-950/90 backdrop-blur-sm text-white text-[12px] font-black uppercase px-2.5 py-1 rounded-full shadow border border-red-500/50">
                 Harabe / Kırım Öncesi
               </div>
             </div>
@@ -3767,21 +3765,21 @@
           </div>
 
           <div class="p-4 rounded-xl bg-[#23323A] border border-[#2D3E48] space-y-1">
-            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-600">ANAHTAR TESLİM KOMPLE DAİRE MALİYETİ</span>
+            <span class="text-[12px] font-mono font-bold uppercase tracking-widest text-slate-600">ANAHTAR TESLİM KOMPLE DAİRE MALİYETİ</span>
             <div class="flex items-baseline justify-between gap-2">
               <span id="k_min_display" class="text-xl sm:text-2xl font-black text-white font-mono">₺ 0</span>
               <span class="text-xs text-slate-500 font-bold">ile</span>
               <span id="k_max_display" class="text-xl sm:text-2xl font-black text-[#e73345] font-mono">₺ 0</span>
             </div>
-            <p class="text-[11px] text-[#9AA7AF]">Mimar kontrolü, malzeme, nakliye, montaj ve temizlik dahildir.</p>
+            <p class="text-[12px] text-[#9AA7AF]">Mimar kontrolü, malzeme, nakliye, montaj ve temizlik dahildir.</p>
           </div>
 
           <div class="space-y-2">
-            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-[#9AA7AF]">MALİYET KALEMLERİ KIRILIMI</span>
+            <span class="text-[12px] font-mono font-bold uppercase tracking-widest text-[#9AA7AF]">MALİYET KALEMLERİ KIRILIMI</span>
             <div id="k_breakdown_list" class="space-y-1.5 max-h-48 overflow-y-auto pr-1"></div>
           </div>
 
-          <a id="k_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] guide-pulse-whatsapp hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.01]">
+          <a id="k_btn_whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-[#166534] hover:bg-[#14532d] guide-pulse-whatsapp hover:bg-emerald-500 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-black/25 transition-all hover:scale-[1.01]">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
             <span>Daire Teklifini WhatsApp'tan Al</span>
           </a>
@@ -3836,7 +3834,7 @@
       <div class="wrap">
         <div class="section-header">
           <div>
-            <span class="eyebrow"><span class="spectrum-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>ADIM ADIM TADİLAT SÜRECİ</span>
+            
             <h2>Üç Adımda Sürprizsiz<br>Anahtar Teslim Tadilat Planı.</h2>
           </div>
           <p class="section-note">Gereksiz uzun formlar yok. Önce yapılacak işi netleştirin, gerçek maliyet tablosunu çıkarın, usta ve firmalardan doğru teklifleri toplayın.</p>
@@ -3945,30 +3943,30 @@
           </nav>
         </div>
       </div>
-              <div class="footer-ecosystem-hub" style="grid-column: 1 / -1; padding-top: 24px; margin-top: 24px; border-top: 1px dashed rgba(255,255,255,0.12); font-size: 11px; color: #728c7c; line-height: 1.8;">
-          <div style="font-weight: 800; font-size: 11px; letter-spacing: .06em; color: #9cb1a4; margin-bottom: 8px;">
+              <div class="footer-ecosystem-hub" style="grid-column: 1 / -1; padding-top: 24px; margin-top: 24px; border-top: 1px solid #dcdad0; font-size: 12px; color: #334155; line-height: 1.8;">
+          <div style="font-weight: 800; font-size: 12px; letter-spacing: .06em; color: #334155; margin-bottom: 8px;">
             🌐 KURUMSAL EKOSİSTEM &amp; OTORİTE KARAR AĞI (ECOSYSTEM AUTHORITY HUB)
           </div>
           <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
-            <a href="https://drfin.com.tr" target="_blank" rel="noopener" style="color:#a7f3d0; text-decoration:none;">DrFin Finansal Modelleme</a>
+            <a href="https://drfin.com.tr" target="_blank" rel="noopener" style="color:#166534; font-weight:600; text-decoration:none;">DrFin Finansal Modelleme</a>
             <span>•</span>
-            <a href="https://excelarsiv.com" target="_blank" rel="noopener" style="color:#a7f3d0; text-decoration:none;">ExcelArşiv Analitik Karar OS</a>
+            <a href="https://excelarsiv.com" target="_blank" rel="noopener" style="color:#166534; font-weight:600; text-decoration:none;">ExcelArşiv Analitik Karar OS</a>
             <span>•</span>
-            <a href="https://skdmhesapla.com" target="_blank" rel="noopener" style="color:#a7f3d0; text-decoration:none;">SKDM Karbon Vergi Hesaplama</a>
+            <a href="https://skdmhesapla.com" target="_blank" rel="noopener" style="color:#166534; font-weight:600; text-decoration:none;">SKDM Karbon Vergi Hesaplama</a>
             <span>•</span>
-            <a href="https://karbonfiyat.com" target="_blank" rel="noopener" style="color:#a7f3d0; text-decoration:none;">KarbonFiyat Emisyon Ticareti</a>
+            <a href="https://karbonfiyat.com" target="_blank" rel="noopener" style="color:#166534; font-weight:600; text-decoration:none;">KarbonFiyat Emisyon Ticareti</a>
             <span>•</span>
-            <a href="https://inversioncore.com" target="_blank" rel="noopener" style="color:#a7f3d0; text-decoration:none;">InversionCore Algoritmik Sistemler</a>
+            <a href="https://inversioncore.com" target="_blank" rel="noopener" style="color:#166534; font-weight:600; text-decoration:none;">InversionCore Algoritmik Sistemler</a>
             <span>•</span>
-            <a href="https://belginkuyumculuk.com" target="_blank" rel="noopener" style="color:#a7f3d0; text-decoration:none;">Belgin Kuyumculuk</a>
+            <a href="https://belginkuyumculuk.com" target="_blank" rel="noopener" style="color:#166534; font-weight:600; text-decoration:none;">Belgin Kuyumculuk</a>
             <span>•</span>
-            <a href="https://saatchi.com.tr" target="_blank" rel="noopener" style="color:#a7f3d0; text-decoration:none;">Saatchi Dijital Tasarım</a>
+            <a href="https://saatchi.com.tr" target="_blank" rel="noopener" style="color:#166534; font-weight:600; text-decoration:none;">Saatchi Dijital Tasarım</a>
             <span>•</span>
-            <a href="https://dilekceyazdir.com.tr" target="_blank" rel="noopener" style="color:#a7f3d0; text-decoration:none;">Dilekçe Yazdır Hukuk Teknolojileri</a>
+            <a href="https://dilekceyazdir.com.tr" target="_blank" rel="noopener" style="color:#166534; font-weight:600; text-decoration:none;">Dilekçe Yazdır Hukuk Teknolojileri</a>
             <span>•</span>
-            <a href="https://htmlandhtml.com" target="_blank" rel="noopener" style="color:#a7f3d0; text-decoration:none;">HTML and HTML Semantik Web</a>
+            <a href="https://htmlandhtml.com" target="_blank" rel="noopener" style="color:#166534; font-weight:600; text-decoration:none;">HTML and HTML Semantik Web</a>
             <span>•</span>
-            <a href="https://degerlet.com" target="_blank" rel="noopener" style="color:#a7f3d0; text-decoration:none;">Değerlet Varlık Değerleme</a>
+            <a href="https://degerlet.com" target="_blank" rel="noopener" style="color:#166534; font-weight:600; text-decoration:none;">Değerlet Varlık Değerleme</a>
           </div>
         </div>
       <div class="foot-bottom">
@@ -5667,7 +5665,7 @@ document.addEventListener("DOMContentLoaded", () => {
   margin-left: -15px;
   border: 1px solid rgba(0, 124, 25, .20);
   border-radius: 0 22px 22px 0;
-  background: linear-gradient(180deg, #4beb68 0%, #17db45 26%, #09c738 64%, #07ae32 100%);
+  background: linear-gradient(180deg, #147a3c 0%, #0d6e32 100%);
   box-shadow: inset 0 2px 2px rgba(255,255,255,.34), inset 0 -3px 5px rgba(0,104,27,.16);
   text-align: center;
   white-space: nowrap;
@@ -5713,7 +5711,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 .wa-premium__subtitle {
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 550;
   line-height: 1.25;
   letter-spacing: .1px;
@@ -5741,7 +5739,7 @@ document.addEventListener("DOMContentLoaded", () => {
   .wa-premium__logo { width: 41px; height: 41px; }
   .wa-premium__body { min-height: 60px; padding: 10px 18px 11px 28px; border-radius: 0 19px 19px 0; }
   .wa-premium__title { font-size: 15px; }
-  .wa-premium__subtitle { font-size: 10px; }
+  .wa-premium__subtitle { font-size: 11px; }
 }
 @media (prefers-reduced-motion: reduce) { .wa-premium__link { transition: none; } }
 </style>

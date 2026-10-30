@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "createdAt": "2026-10-30T17:27:35.482Z",
+        "reason": "Brand font in design-tokens.json"
+      }
+    ]
+  }
+}
